@@ -1,0 +1,28 @@
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Orbs;
+
+namespace TheEngineer.TheEngineerCode.Relics;
+
+[Pool(typeof(TheEngineerRelicPool))]
+public class PocketTurret : TheEngineerRelic
+{
+    public override RelicRarity Rarity => RelicRarity.Starter;
+
+    public override async Task BeforeSideTurnStart(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        ICombatState combatState)
+    {
+        if (side != Owner.Creature.Side || combatState.RoundNumber > 1)
+            return;
+
+        await OrbCmd.Channel<TurretOrb>(
+            new BlockingPlayerChoiceContext(),
+            Owner);
+    }
+}

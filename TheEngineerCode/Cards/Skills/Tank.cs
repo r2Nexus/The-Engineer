@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Extensions;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
+using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Util;
+
+namespace TheEngineer.TheEngineerCode.Cards.Skills;
+
+[Pool(typeof(TheEngineerCardPool))]
+public class Tank : TheEngineerCard
+{
+    private const decimal BASE_BLOCK = 2m;
+    private const decimal UPGRADE_BLOCK = 1m;
+
+    private const decimal BASE_DAMAGE = 10m;
+    private const decimal UPGRADE_DAMAGE = 2m;
+
+    private const decimal BASE_CONSUME = 2m;
+    private const decimal UPGRADE_CONSUME = 0m;
+
+    private const int BASE_REPLAY = 3;
+
+    public Tank() : base(
+        2,
+        CardType.Skill,
+        CardRarity.Uncommon,
+        TargetType.AnyEnemy)
+    {
+        _baseReplayCount = BASE_REPLAY;
+    }
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new BlockVar(BASE_BLOCK, ValueProp.Move),
+        new DamageVar(BASE_DAMAGE, ValueProp.Move),
+        new ConsumeVar(BASE_CONSUME)
+    ];
+
+    protected override async Task OnPlay(
+        PlayerChoiceContext choiceContext,
+        CardPlay play)
+    {
+        ArgumentNullException.ThrowIfNull(play.Target);
+
+        await CreatureCmd.GainBlock(
+            Owner.Creature,
+            DynamicVars.Block.BaseValue,
+            ValueProp.Unpowered,
+            null);
+
+        bool consumed = await MaterialHelper.ConsumeMaterial(
+            this,
+            choiceContext,
+            (int)DynamicVars.Consume().BaseValue,
+            MaterialSource.Stock);
+
+        if (!consumed)
+            return;
+
+        await CommonActions.CardAttack(this, play.Target)
+            .Execute(choiceContext);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
+        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        DynamicVars.Consume().UpgradeValueBy(UPGRADE_CONSUME);
+    }
+}

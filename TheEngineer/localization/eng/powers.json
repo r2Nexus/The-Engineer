@@ -1,0 +1,78 @@
+{
+  "THEENGINEER-OIL_POWER.description": "The next time the creature is attacked, [gold]Oil[/gold] is spent to deal additional damage.",
+  "THEENGINEER-OIL_POWER.smartDescription": "When attacked, it immediately takes [blue]{Amount}[/blue] damage and loses all [gold]Oil[/gold].",
+  "THEENGINEER-OIL_POWER.title": "Oil",
+
+  "THEENGINEER-ECONOMY_BOOM_POWER.description": "At the start of your turn, [gold]Channel[/gold] [blue]1[/blue] [gold]Miner[/gold].",
+  "THEENGINEER-ECONOMY_BOOM_POWER.smartDescription": "At the start of your turn, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Miner[/gold].",
+  "THEENGINEER-ECONOMY_BOOM_POWER.title": "Economy Boom",
+
+  "THEENGINEER-NUCLEAR_REACTOR_POWER.description": "At the start of your turn, [gold]Consume[/gold] [blue]1[/blue] from [gold]Stock[/gold]: Gain {Energy:energyIcons()}.",
+  "THEENGINEER-NUCLEAR_REACTOR_POWER.smartDescription": "At the start of your turn, [gold]Consume[/gold] [blue]{Consume:diff()}[/blue] from [gold]Stock[/gold]: Gain {Energy:energyIcons()}.",
+  "THEENGINEER-NUCLEAR_REACTOR_POWER.title": "Nuclear Reactor",
+
+  "THEENGINEER-BIOCHAMBER_POWER.description": "",
+  "THEENGINEER-BIOCHAMBER_POWER.smartDescription": "Whenever you [gold]Consume[/gold], apply [blue]{Amount}[/blue] [gold]Oil[/gold] to a random enemy.",
+  "THEENGINEER-BIOCHAMBER_POWER.title": "Biochamber",
+
+  "THEENGINEER-YELLOW_INSERTER_POWER.description": "At the start of next turn, draw 1 card and [gold]Produce[/gold] 1.",
+  "THEENGINEER-YELLOW_INSERTER_POWER.smartDescription": "At the start of the next {Amount} turn{Amount:plural:|s}, draw {Cards} and [gold]Produce[/gold] {Produce}.",
+  "THEENGINEER-YELLOW_INSERTER_POWER.title": "Yellow Inserter",
+
+  "THEENGINEER-RED_SCIENCE_POWER.description": "At the start of your turn, [gold]Produce[/gold] 1.",
+  "THEENGINEER-RED_SCIENCE_POWER.smartDescription": "At the start of your turn, [gold]Produce[/gold] {Amount}.",
+  "THEENGINEER-RED_SCIENCE_POWER.title": "Red Science",
+
+  "THEENGINEER-GREEN_SCIENCE_POWER.description": "At the start of your turn, draw 1 card.",
+  "THEENGINEER-GREEN_SCIENCE_POWER.smartDescription": "At the start of your turn, draw {Amount} card{Amount:plural:|s}.",
+  "THEENGINEER-GREEN_SCIENCE_POWER.title": "Green Science",
+
+  "THEENGINEER-PURPLE_SCIENCE_POWER.description": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] 1.",
+  "THEENGINEER-PURPLE_SCIENCE_POWER.smartDescription": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] {Amount}.",
+  "THEENGINEER-PURPLE_SCIENCE_POWER.title": "Purple Science",
+
+  "THEENGINEER-CORROSIVE_MIXTURE_POWER.description": "This turn, your [gold]Land Mines[/gold] apply [blue]1[/blue] [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE_POWER.smartDescription": "This turn, your [gold]Land Mines[/gold] apply [blue]{Amount}[/blue] [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE_POWER.title": "Corrosive Mixture",
+
+  "THEENGINEER-SLOWDOWN_CAPSULE_POWER.description": "This turn, your [gold]Land Mines[/gold] apply [blue]1[/blue] [gold]Weak[/gold].",
+  "THEENGINEER-SLOWDOWN_CAPSULE_POWER.smartDescription": "This turn, your [gold]Land Mines[/gold] apply [blue]{Amount}[/blue] [gold]Weak[/gold].",
+  "THEENGINEER-SLOWDOWN_CAPSULE_POWER.title": "Slowdown Capsule",
+
+  "THEENGINEER-STORAGE_CHEST_POWER.description": "At the end of your turn, choose up to [blue]{Amount}[/blue] cards to [gold]Retain[/gold].",
+  "THEENGINEER-STORAGE_CHEST_POWER.smartDescription": "At the end of your turn, choose up to [blue]{Amount}[/blue] cards to [gold]Retain[/gold].",
+  "THEENGINEER-STORAGE_CHEST_POWER.selectionScreenPrompt": "Choose up to [blue]{Amount}[/blue] cards to Retain.",
+  "THEENGINEER-STORAGE_CHEST_POWER.title": "Storage Chest",
+
+  "THEENGINEER-PUMPJACK_POWER.description": "At the start of your turn, add [blue]1[/blue] [gold]Oil Barrel[/gold] to your hand.",
+  "THEENGINEER-PUMPJACK_POWER.smartDescription": "At the start of your turn, add [blue]{Amount}[/blue] [gold]Oil Barrel[/gold]{Amount:plural:|s} to your hand.",
+  "THEENGINEER-PUMPJACK_POWER.title": "Pumpjack",
+
+  "THEENGINEER-REPAIR_SYSTEM_POWER.description": "Whenever you [gold]Consume[/gold], gain [blue]1[/blue] [gold]Block[/gold].",
+  "THEENGINEER-REPAIR_SYSTEM_POWER.smartDescription": "Whenever you [gold]Consume[/gold], gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "THEENGINEER-REPAIR_SYSTEM_POWER.title": "Repair System",
+
+  "THEENGINEER-REACTIVE_ARMOUR_POWER.description": "At the start of your next turn, [gold]Channel[/gold] [blue]1[/blue] [gold]Land Mine[/gold].",
+  "THEENGINEER-REACTIVE_ARMOUR_POWER.smartDescription": "At the start of your next turn, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Land Mine[/gold]{Amount:plural:|s}.",
+  "THEENGINEER-REACTIVE_ARMOUR_POWER.title": "Reactive Armour",
+
+  "THEENGINEER-CHAIN_SIGNAL_POWER.description": "",
+  "THEENGINEER-CHAIN_SIGNAL_POWER.smartDescription": "",
+  "THEENGINEER-CHAIN_SIGNAL_POWER.title": "Chain Signal",
+
+  "THEENGINEER-RAIL_SIGNAL_POWER.description": "",
+  "THEENGINEER-RAIL_SIGNAL_POWER.smartDescription": "",
+  "THEENGINEER-RAIL_SIGNAL_POWER.title": "Rail Signal",
+
+  "THEENGINEER-SPACE_SCIENCE_POWER.title": "Space Science",
+  "THEENGINEER-SPACE_SCIENCE_POWER.description": "Your Science cards get played [blue]{Amount}[/blue] additional time.",
+  "THEENGINEER-SPACE_SCIENCE_POWER.smartDescription": "Your Science cards get played [blue]{Amount}[/blue] additional time.",
+
+  "THEENGINEER-POLYMERISATION_POWER.description": "",
+  "THEENGINEER-POLYMERISATION_POWER.smartDescription": "",
+  "THEENGINEER-POLYMERISATION_POWER.title": "Polymerisation",
+
+  "THEENGINEER-OIL_SPILL_POWER.description": "",
+  "THEENGINEER-OIL_SPILL_POWER.smartDescription": "",
+  "THEENGINEER-OIL_SPILL_POWER.title": "Oil Spill"
+}

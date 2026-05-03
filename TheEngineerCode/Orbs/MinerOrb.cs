@@ -1,0 +1,72 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Godot;
+using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
+using TheEngineer.TheEngineerCode.Util;
+
+namespace TheEngineer.TheEngineerCode.Orbs;
+
+public sealed class MinerOrb : CustomOrbModel
+{
+    public override Color DarkenedColor => new Color("7a6740");
+
+    public override string? CustomIconPath => "res://TheEngineer/images/orbs/turret_orb.png";
+
+    public override string? CustomPassiveSfx => "event:/sfx/characters/defect/defect_frost_passive";
+    public override string? CustomEvokeSfx   => "event:/sfx/characters/defect/defect_frost_evoke";
+    public override string? CustomChannelSfx => "event:/sfx/characters/defect/defect_frost_channel";
+
+    public override decimal PassiveVal => 1m;
+    public override decimal EvokeVal   => 2m;
+
+    public override Node2D? CreateCustomSprite()
+    {
+        var container = new Node2D();
+
+        string frostPath = SceneHelper.GetScenePath("orbs/orb_visuals/frost_orb");
+        Node2D frost = PreloadManager.Cache.GetScene(frostPath)
+            .Instantiate<Node2D>(PackedScene.GenEditState.Disabled);
+
+        new MegaSprite(frost.GetNode("SpineSkeleton"))
+            .GetAnimationState().SetAnimation("idle_loop");
+
+        frost.Modulate = new Color(0.75f, 0.62f, 0.30f, 1.0f);
+        container.AddChild(frost);
+
+        return container;
+    }
+
+    public override async Task AfterTurnStartOrbTrigger(PlayerChoiceContext choiceContext)
+        => await Passive(choiceContext, null);
+
+    public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
+    {
+        Trigger();
+        PlayPassiveSfx();
+        await MaterialHelper.ProduceMaterial(
+            Owner,
+            choiceContext,
+            (int)PassiveVal,
+            MaterialDestination.Hand,
+            this);
+    }
+
+    public override async Task<IEnumerable<Creature>> Evoke(PlayerChoiceContext choiceContext)
+    {
+        PlayEvokeSfx();
+
+        await MaterialHelper.ProduceMaterial(
+            Owner,
+            choiceContext,
+            (int)EvokeVal,
+            MaterialDestination.Hand,
+            this);
+
+        return [];
+    }
+}
