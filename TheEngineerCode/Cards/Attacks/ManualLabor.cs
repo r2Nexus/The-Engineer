@@ -25,7 +25,8 @@ public class ManualLabor() : TheEngineerCard(
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(BASE_DAMAGE, ValueProp.Move)
+        new DamageVar(BASE_DAMAGE, ValueProp.Move),
+        new ConsumeVar(2)
     ];
 
     protected override async Task OnPlay(
@@ -40,7 +41,7 @@ public class ManualLabor() : TheEngineerCard(
         await MaterialHelper.ProduceMaterial(
             Owner,
             choiceContext,
-            2,
+            (int)DynamicVars.Consume().BaseValue,
             MaterialDestination.Hand,
             this);
     }

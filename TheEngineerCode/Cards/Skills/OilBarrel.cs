@@ -16,7 +16,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 public class OilBarrel() : TheEngineerCard(
     0,
     CardType.Skill,
-    CardRarity.None,
+    CardRarity.Token,
     TargetType.RandomEnemy)
 {
     private const decimal BASE_OIL = 8m;

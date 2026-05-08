@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Localization.DynamicVars;
+﻿using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace TheEngineer.TheEngineerCode.Util;
 
@@ -34,10 +35,12 @@ public sealed class ChargeMaxVar : DynamicVar
 
     public ChargeMaxVar(decimal amount) : base(DefaultName, amount)
     {
+        this.WithTooltip();
     }
 
     public ChargeMaxVar(string name, decimal amount) : base(name, amount)
     {
+        this.WithTooltip();
     }
 }
 

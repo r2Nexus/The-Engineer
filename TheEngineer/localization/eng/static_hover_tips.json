@@ -1,4 +1,16 @@
 {
-  "THEENGINEER-OIL_POWER.description": "The next time this creature takes attack damage, Oil is spent to deal additional damage.",
-  "THEENGINEER-OIL_POWER.title": "Oil"
+  "THEENGINEER-CONSUME.title": "Consume {Consume}",
+  "THEENGINEER-CONSUME.description": "Exhaust [blue]{Consume}[/blue] Material {Consume:plural:card|cards} from your hand, unless specified otherwise, to activate an additional effect.",
+
+  "THEENGINEER-CONSUMEALL.title": "Consume",
+  "THEENGINEER-CONSUMEALL.description": "Exhaust Material from your hand, unless specified otherwise, to activate an additional effect.",
+
+  "THEENGINEER-PRODUCE.title": "Produce {Produce}",
+  "THEENGINEER-PRODUCE.description": "Create [blue]{Produce}[/blue] Material {Produce:plural:card|cards} in your hand, unless specified otherwise.",
+
+  "THEENGINEER-STOCK.title": "Stock",
+  "THEENGINEER-STOCK.description": "Your Stock is the total Material in your hand, draw pile, and discard pile.",
+
+  "THEENGINEER-CHARGE_MAX.title": "Charge",
+  "THEENGINEER-CHARGE_MAX.description": "When Material is consumed, this card gains Charge. When it reaches its maximum Charge, its charged effect activates the next time it is played."
 }

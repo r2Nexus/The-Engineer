@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Localization.DynamicVars;
+﻿using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace TheEngineer.TheEngineerCode.Util;
 
@@ -8,10 +9,12 @@ public sealed class ProduceVar : DynamicVar
 
     public ProduceVar(decimal amount) : base(DefaultName, amount)
     {
+        this.WithTooltip();
     }
 
     public ProduceVar(string name, decimal amount) : base(name, amount)
     {
+        this.WithTooltip();
     }
 }
 
