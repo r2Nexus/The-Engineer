@@ -74,5 +74,17 @@
 
   "THEENGINEER-OIL_SPILL_POWER.description": "",
   "THEENGINEER-OIL_SPILL_POWER.smartDescription": "",
-  "THEENGINEER-OIL_SPILL_POWER.title": "Oil Spill"
+  "THEENGINEER-OIL_SPILL_POWER.title": "Oil Spill",
+
+  "THEENGINEER-E_M_PLANT_POWER.description": "",
+  "THEENGINEER-E_M_PLANT_POWER.smartDescription": "Whenever you draw a card with Charge, increase its Charge by {Amount}.",
+  "THEENGINEER-E_M_PLANT_POWER.title": "EM Plant",
+
+  "THEENGINEER-TRAIN_RAMP_POWER.description": "",
+  "THEENGINEER-TRAIN_RAMP_POWER.smartDescription": "",
+  "THEENGINEER-TRAIN_RAMP_POWER.title": "Train Ramp",
+
+  "THEENGINEER-TRAIN_STOP_POWER.description": "",
+  "THEENGINEER-TRAIN_STOP_POWER.smartDescription": "",
+  "THEENGINEER-TRAIN_STOP_POWER.title": "Train Stop"
 }

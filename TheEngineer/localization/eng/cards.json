@@ -143,8 +143,8 @@
   "THEENGINEER-REACTIVE_ARMOUR.description": "Gain {Block:diff()} [gold]Block[/gold].\nNow and at the start of your next turn, [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
   "THEENGINEER-REACTIVE_ARMOUR.title": "Reactive Armour",
 
-  "THEENGINEER-PERSONAL_BATTERY.description": "Gain {Energy:energyIcons()}.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Gain {HotfixPower:diff()} [gold]Focus[/gold] this turn.",
   "THEENGINEER-PERSONAL_BATTERY.title": "Personal Battery",
+  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} Power Cell{IfUpgraded:show:+|}s to your draw pile.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Add them to your hand instead.",
 
   "THEENGINEER-CHAIN_SIGNAL.description": "Your next {ChainSignalPower:diff()} Wagon card gets played twice.",
   "THEENGINEER-CHAIN_SIGNAL.title": "Chain Signal",
@@ -185,5 +185,29 @@
   "THEENGINEER-POLYMERISATION.title": "Polymerisation",
 
   "THEENGINEER-OIL_SPILL.description": "Apply {OilPower:diff()} Oil to ALL enemies.\nNext time their Oil is spent, apply 1 Weaken.",
-  "THEENGINEER-OIL_SPILL.title": "Oil Spill"
+  "THEENGINEER-OIL_SPILL.title": "Oil Spill",
+
+  "THEENGINEER-REINFORCED_WAGON.description": "Deal {Damage:diff()} damage.\nGain {Block:diff()} Block for each Material in hand.",
+  "THEENGINEER-REINFORCED_WAGON.title": "Reinforced Wagon",
+
+  "THEENGINEER-ARTILLERY_WAGON.description": "Consume {Consume:diff()} from Stock: deal {Damage:diff()} damage to ALL enemies.",
+  "THEENGINEER-ARTILLERY_WAGON.title": "Artillery Wagon",
+
+  "THEENGINEER-E_M_PLANT.description": "Whenever you draw a [gold]Charge[/gold] card, increase its [gold]Charge[/gold] by {EMPlantPower:diff()}.",
+  "THEENGINEER-E_M_PLANT.title": "EM Plant",
+
+  "THEENGINEER-TRAIN_RAMP.description": "Whenever you draw a Wagon card, deal {Damage:diff()} to a random enemy.",
+  "THEENGINEER-TRAIN_RAMP.title": "Train Ramp",
+
+  "THEENGINEER-TRAIN_STOP.description": "At the start of your turn, add a random Wagon card to your hand.",
+  "THEENGINEER-TRAIN_STOP.title": "Train Stop",
+
+  "THEENGINEER-LABORATORY.description": "Draw 2 cards.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Add {Cards:diff()} random Science card{Cards:plural:|s} to your hand. It costs 0 this turn.",
+  "THEENGINEER-LABORATORY.title": "Laboratory",
+
+  "THEENGINEER-POWER_CELL.description": "Gain {Energy:energyIcons()}.\nGain {PersonalBatteryPower:diff()} Focus this turn.",
+  "THEENGINEER-POWER_CELL.title": "Power Cell",
+
+  "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\\nApply {OilPower} [gold]Oil[/gold] for each [gold]Material[/gold] in your hand.",
+  "THEENGINEER-FLUID_WAGON.title": "Fluid Wagon"
 }

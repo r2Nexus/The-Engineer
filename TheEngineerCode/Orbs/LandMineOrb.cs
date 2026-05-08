@@ -29,7 +29,7 @@ public sealed class LandMineOrb : CustomOrbModel
     public override string? CustomChannelSfx => "event:/sfx/characters/defect/defect_dark_channel";
 
     public override decimal PassiveVal => ModifyOrbValue(3m);
-    public override decimal EvokeVal   => ModifyOrbValue(2m);
+    public override decimal EvokeVal   => ModifyOrbValue(3m);
 
     public override async Task BeforeTurnEndOrbTrigger(PlayerChoiceContext choiceContext)
         => await Passive(choiceContext, null);
