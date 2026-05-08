@@ -85,6 +85,6 @@
   "THEENGINEER-TRAIN_RAMP_POWER.smartDescription": "Whenever you draw a Wagon card, deal [blue]{Amount}[/blue] damage to a random enemy.",
 
   "THEENGINEER-TRAIN_STOP_POWER.title": "Train Stop",
-  "THEENGINEER-TRAIN_STOP_POWER.description": "At the start of your turn, add a random Wagon card to your hand.",
-  "THEENGINEER-TRAIN_STOP_POWER.smartDescription": "At the start of your turn, add [blue]{Amount}[/blue] random Wagon card{Amount:plural:|s} to your hand."
+  "THEENGINEER-TRAIN_STOP_POWER.description": "At the start of your turn, add a random Wagon card to your hand. It gains [gold]Ethereal[/gold].",
+  "THEENGINEER-TRAIN_STOP_POWER.smartDescription": "At the start of your turn, add [blue]{Amount}[/blue] random Wagon card{Amount:plural:|s} to your hand. It gains [gold]Ethereal[/gold]."
 }

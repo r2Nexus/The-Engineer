@@ -200,7 +200,7 @@
   "THEENGINEER-TRAIN_RAMP.description": "Whenever you draw a Wagon card, deal {Damage:diff()} damage to a random enemy.",
 
   "THEENGINEER-TRAIN_STOP.title": "Train Stop",
-  "THEENGINEER-TRAIN_STOP.description": "At the start of your turn, add a random Wagon card to your hand.",
+  "THEENGINEER-TRAIN_STOP.description": "At the start of your turn, add a random Wagon card to your hand. It gains [gold]Ethereal[/gold].",
 
   "THEENGINEER-LABORATORY.title": "Laboratory",
   "THEENGINEER-LABORATORY.description": "Draw 2 cards.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Add {Cards:diff()} random Science card{Cards:plural:|s} to your hand. {Cards:plural:It costs|They cost} 0 this turn.",

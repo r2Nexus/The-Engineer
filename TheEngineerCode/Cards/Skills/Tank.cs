@@ -16,16 +16,16 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 [Pool(typeof(TheEngineerCardPool))]
 public class Tank : TheEngineerCard
 {
-    private const decimal BASE_BLOCK = 2m;
-    private const decimal UPGRADE_BLOCK = 1m;
+    private const decimal BASE_BLOCK = 3m;
+    private const decimal UPGRADE_BLOCK = 0m;
 
-    private const decimal BASE_DAMAGE = 10m;
-    private const decimal UPGRADE_DAMAGE = 2m;
+    private const decimal BASE_DAMAGE = 9m;
+    private const decimal UPGRADE_DAMAGE = 3m;
 
     private const decimal BASE_CONSUME = 2m;
     private const decimal UPGRADE_CONSUME = 0m;
 
-    private const int BASE_REPLAY = 3;
+    private const int BASE_REPLAY = 2;
 
     public Tank() : base(
         2,

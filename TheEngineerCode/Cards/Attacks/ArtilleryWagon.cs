@@ -12,11 +12,12 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 [Pool(typeof(TheEngineerCardPool))]
 public class ArtilleryWagon : TheEngineerCard
 {
-    private const decimal BASE_DAMAGE = 12;
-    private const decimal UPGRADE_DAMAGE = 3;
+    private const decimal BASE_DAMAGE = 18;
+    private const decimal UPGRADE_DAMAGE = 0;
 
     private const decimal BASE_CONSUME = 3;
     private const decimal BASE_REPLAY = 2;
+    private const decimal UPPGRADE_REPLAY = 1;
 
     public ArtilleryWagon() : base(2,
         CardType.Attack, CardRarity.Rare,
@@ -44,5 +45,6 @@ public class ArtilleryWagon : TheEngineerCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        _baseReplayCount += (int)BASE_REPLAY;
     }
 }

@@ -7,9 +7,11 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 using TheEngineer.TheEngineerCode.Cards.Attacks;
 using TheEngineer.TheEngineerCode.Cards.Skills;
 using TheEngineer.TheEngineerCode.Relics;
+using TheEngineer.TheEngineerCode.Ui;
 using MaterialCard = TheEngineer.TheEngineerCode.Cards.Material;
 
 namespace TheEngineer.TheEngineerCode.Character;
@@ -62,9 +64,41 @@ public class TheEngineer : PlaceholderCharacterModel
         }
     }
 
+    public override Color EnergyLabelOutlineColor =>
+        new Color("#2b2418");
+    public override string? CustomEnergyCounterPath =>
+        "res://TheEngineer/scenes/engineer_energy_counter.tscn";
+    
+    public static readonly AddedNode<NEnergyCounter, EngineerMaterialCounter> MaterialCounterNode =
+        new(parent =>
+        {
+            var counter = new EngineerMaterialCounter
+            {
+                Name = "EngineerMaterialCounter",
+                MouseFilter = Control.MouseFilterEnum.Ignore
+            };
+
+            counter.SetAnchorsPreset(Control.LayoutPreset.TopLeft);
+            counter.Position = Vector2.Zero;
+            counter.Size = new Vector2(128, 128);
+
+            var visualScene = ResourceLoader.Load<PackedScene>(
+                "res://TheEngineer/scenes/engineer_material_counter.tscn");
+
+            var visual = visualScene.Instantiate<Control>();
+            visual.Name = "Visual";
+            visual.MouseFilter = Control.MouseFilterEnum.Ignore;
+
+            counter.AddChild(visual);
+
+            return counter;
+        });
+
     public override int BaseOrbSlotCount => 3;
     public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    
+    
 }
