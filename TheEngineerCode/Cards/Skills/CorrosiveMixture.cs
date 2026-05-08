@@ -3,7 +3,9 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Orbs;
@@ -20,7 +22,12 @@ public class CorrosiveMixture() : TheEngineerCard(1,
     private const decimal BASE_CORRODE = 1;
     private const decimal UPGRADE_CORRODE = 1;
     
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.Static(StaticHoverTip.Channeling),
+        HoverTipFactory.FromOrb<LandMineOrb>(),
+        HoverTipFactory.FromPower<VulnerablePower>()
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ConsumeVar(2),
         new PowerVar<CorrosiveMixturePower>(BASE_CORRODE)

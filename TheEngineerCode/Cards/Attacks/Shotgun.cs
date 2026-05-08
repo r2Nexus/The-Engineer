@@ -32,7 +32,8 @@ public class Shotgun() : TheEngineerCard(
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new PowerVar<WeakPower>(BASE_WEAK)
+        new PowerVar<WeakPower>(BASE_WEAK),
+        new ConsumeVar(2)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

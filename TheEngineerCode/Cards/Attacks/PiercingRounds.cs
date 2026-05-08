@@ -2,6 +2,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -20,6 +21,11 @@ public class PiercingRounds() : TheEngineerCard(1,
     
     private const decimal BASE_VULNERABLE = 2m;
     private const decimal UPGRADE_VULNERABLE = 1m;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<VulnerablePower>()
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ConsumeVar(2),

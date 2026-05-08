@@ -3,6 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheEngineer.TheEngineerCode.Cards;
@@ -18,13 +19,19 @@ public class BuildLandMine() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.None)
 {
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.Static(StaticHoverTip.Channeling),
+        HoverTipFactory.FromOrb<LandMineOrb>()
+    ];
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Ethereal
     ];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new ConsumeVar(1)
+    ];
 
 
     protected override async Task OnPlay(

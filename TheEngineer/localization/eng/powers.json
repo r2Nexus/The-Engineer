@@ -61,8 +61,8 @@
   "THEENGINEER-CHAIN_SIGNAL_POWER.smartDescription": "Your next [blue]{Amount}[/blue] Wagon card{Amount:plural:|s} {Amount:plural:is|are} played twice.",
 
   "THEENGINEER-RAIL_SIGNAL_POWER.title": "Rail Signal",
-  "THEENGINEER-RAIL_SIGNAL_POWER.description": "Your next Wagon card is played an additional time.",
-  "THEENGINEER-RAIL_SIGNAL_POWER.smartDescription": "Your next Wagon card is played [blue]{Amount}[/blue] additional time{Amount:plural:|s}.",
+  "THEENGINEER-RAIL_SIGNAL_POWER.description": "Next time you play a Wagon card, gain 6 Block.",
+  "THEENGINEER-RAIL_SIGNAL_POWER.smartDescription": "Next time you play a Wagon card, gain {Amount} Block.",
 
   "THEENGINEER-SPACE_SCIENCE_POWER.title": "Space Science",
   "THEENGINEER-SPACE_SCIENCE_POWER.description": "Your Science cards are played 1 additional time.",

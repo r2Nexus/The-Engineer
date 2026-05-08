@@ -22,7 +22,7 @@ public class SlowdownCapsule() : TheEngineerCard(1,
     private const decimal UPGRADE_CORRODE = 0;
 
     private const int BASE_CONSUME = 3;
-    private const int UPGRADE_CONSUME = 1;
+    private const int UPGRADE_CONSUME = -1;
     
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

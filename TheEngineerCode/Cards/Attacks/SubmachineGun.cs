@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
@@ -21,10 +22,16 @@ public class SubmachineGun() : TheEngineerCard(
 {
     private const decimal BASE_DAMAGE = 6m;
     private const decimal UPGRADE_DAMAGE = 2m;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(BASE_DAMAGE, ValueProp.Move)
+        new DamageVar(BASE_DAMAGE, ValueProp.Move),
+        new ConsumeVar(1)
     ];
 
     protected override async Task OnPlay(

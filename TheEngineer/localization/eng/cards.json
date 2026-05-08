@@ -42,7 +42,7 @@
   "THEENGINEER-HEAVY_ARMOR.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] 2: Gain {PlatingPower:diff()} [gold]Plating[/gold].",
 
   "THEENGINEER-CARGO_WAGON.title": "Cargo Wagon",
-  "THEENGINEER-CARGO_WAGON.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()} in your hand and discard pile.",
+  "THEENGINEER-CARGO_WAGON.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\n[gold]Produce[/gold] {Produce:diff()} in discard pile.",
 
   "THEENGINEER-EXOSKELETON.title": "Exoskeleton",
   "THEENGINEER-EXOSKELETON.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
@@ -75,7 +75,7 @@
   "THEENGINEER-YELLOW_INSERTER.description": "Now and at the start of your next {YellowInserterPower:diff()} turn{YellowInserterPower:plural:|s}, draw 1 card and [gold]Produce[/gold] 1.",
 
   "THEENGINEER-PIERCING_ROUNDS.title": "Piercing Rounds",
-  "THEENGINEER-PIERCING_ROUNDS.description": "Deal {Damage:diff()} damage.\nConsume {Consume:diff()}: Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-PIERCING_ROUNDS.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
 
   "THEENGINEER-BLUE_INSERTER.title": "Blue Inserter",
   "THEENGINEER-BLUE_INSERTER.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\nDiscard {Discard:diff()} card{Discard:plural:|s}.",
@@ -108,7 +108,7 @@
   "THEENGINEER-PURPLE_SCIENCE.description": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] 1.",
 
   "THEENGINEER-TARGET_PRACTICE.title": "Target Practice",
-  "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turret[/gold]s.",
+  "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
   "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
@@ -150,7 +150,7 @@
   "THEENGINEER-CHAIN_SIGNAL.description": "Your next {ChainSignalPower:diff()} Wagon card{ChainSignalPower:plural:|s} {ChainSignalPower:plural:gets|get} played twice.",
 
   "THEENGINEER-RAIL_SIGNAL.title": "Rail Signal",
-  "THEENGINEER-RAIL_SIGNAL.description": "Your next Wagon card is played an additional time.",
+  "THEENGINEER-RAIL_SIGNAL.description": "Produce {Produce:diff()}. Next time you play a Wagon card, gain {RailSignalPower:diff()} Block.",
 
   "THEENGINEER-BLUEPRINT.title": "Blueprint",
   "THEENGINEER-BLUEPRINT.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold], 1 [gold]Turret[/gold], and 1 [gold]Miner[/gold].",

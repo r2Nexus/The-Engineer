@@ -7,6 +7,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
@@ -21,8 +22,15 @@ public sealed class Pipeline() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<OilPower>()
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [];
+        [
+            new ProduceVar(1)
+        ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

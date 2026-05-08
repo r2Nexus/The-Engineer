@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
@@ -18,6 +19,11 @@ public class NuclearOption() : TheEngineerCard(4,
     private const decimal BASE_DAMAGE = 30m;
     private const decimal DAMAGE_STACK = 6m;
     
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(BASE_DAMAGE),
         new ExtraDamageVar(DAMAGE_STACK),

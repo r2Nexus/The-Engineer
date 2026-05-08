@@ -28,8 +28,8 @@ public sealed class RailSignal() : TheEngineerCard(
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new ProduceVar(BASE_PRODUCE),
-        new PowerVar<RailSignalPower>(BASE_BLOCK)
+        new PowerVar<RailSignalPower>(BASE_BLOCK),
+        new ProduceVar(BASE_PRODUCE)
     ];
 
     protected override async Task OnPlay(
