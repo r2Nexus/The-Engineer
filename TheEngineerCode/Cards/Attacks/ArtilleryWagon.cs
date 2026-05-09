@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
@@ -27,6 +28,11 @@ public class ArtilleryWagon : TheEngineerCard
     }
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Wagon];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(BASE_DAMAGE,ValueProp.Move),

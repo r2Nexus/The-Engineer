@@ -2,6 +2,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheEngineer.TheEngineerCode.Cards;
@@ -16,6 +17,11 @@ public class BlackScience() : TheEngineerCard(1,
 {
     private const decimal BASE_POWER = 2;
     private const decimal UPGRADE_POWER = 1;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<StrengthPower>()
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<StrengthPower>(BASE_POWER)

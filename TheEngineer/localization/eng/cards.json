@@ -150,7 +150,7 @@
   "THEENGINEER-CHAIN_SIGNAL.description": "Your next {ChainSignalPower:diff()} Wagon card{ChainSignalPower:plural:|s} {ChainSignalPower:plural:gets|get} played twice.",
 
   "THEENGINEER-RAIL_SIGNAL.title": "Rail Signal",
-  "THEENGINEER-RAIL_SIGNAL.description": "Produce {Produce:diff()}. Next time you play a Wagon card, gain {RailSignalPower:diff()} Block.",
+  "THEENGINEER-RAIL_SIGNAL.description": "Produce {Produce:diff()}. Next time you play a Wagon card, gain {RailSignalPower:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-BLUEPRINT.title": "Blueprint",
   "THEENGINEER-BLUEPRINT.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold], 1 [gold]Turret[/gold], and 1 [gold]Miner[/gold].",
@@ -209,5 +209,8 @@
   "THEENGINEER-POWER_CELL.description": "Gain {Energy:energyIcons()}.\nGain {PersonalBatteryPower:diff()} [gold]Focus[/gold] this turn.",
 
   "THEENGINEER-FLUID_WAGON.title": "Fluid Wagon",
-  "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\nApply {OilPower:diff()} [gold]Oil[/gold] for each [gold]Material[/gold] in your hand."
+  "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\nApply {OilPower:diff()} [gold]Oil[/gold] for each [gold]Material[/gold] in your hand.",
+
+  "THEENGINEER-EXCAVATE.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\nYour next [gold]Consume[/gold] is free.",
+  "THEENGINEER-EXCAVATE.title": "Excavate"
 }

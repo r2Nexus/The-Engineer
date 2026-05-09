@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Character;
@@ -24,6 +25,11 @@ public sealed class PerimeterWall() : TheEngineerCard(
     private const decimal BASE_CARDS = 2m;
     private const decimal UPGRADE_CARDS = 1m;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromKeyword(CardKeyword.Ethereal)
+    ];
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
         CardKeyword.Exhaust
     ];

@@ -3,6 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
@@ -16,6 +17,12 @@ public class Refinery() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.RandomEnemy)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
+        HoverTipFactory.FromPower<OilPower>()
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<OilPower>(BASE_OIL)
     ];

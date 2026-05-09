@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
@@ -18,6 +19,12 @@ public class MissileBarrage() : TheEngineerCard(2,
     
     private const decimal BASE_DAMAGE = 4m;
     private const decimal UPGRADE_DAMAGE = 1m;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK"),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(BASE_DAMAGE,ValueProp.Move)

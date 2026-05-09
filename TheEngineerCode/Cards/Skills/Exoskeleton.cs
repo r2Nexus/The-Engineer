@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -30,9 +31,13 @@ public sealed class Exoskeleton() : TheEngineerCard(
 
     private const decimal BASE_CHARGE_MAX = 8m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
-
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<DexterityPower>()
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(BASE_BLOCK, ValueProp.Move),
         new ChargeInitialVar(BASE_CHARGE_INITIAL),

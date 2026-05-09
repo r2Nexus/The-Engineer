@@ -3,6 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
@@ -19,6 +20,7 @@ public class TrainRamp() : TheEngineerCard(2,
     private const decimal UPGRADE_DAMAGE = 1;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new DamageVar(BASE_DAMAGE, ValueProp.Unpowered),
         new PowerVar<TrainRampPower>(BASE_DAMAGE)
     ];
 
@@ -32,5 +34,6 @@ public class TrainRamp() : TheEngineerCard(2,
     protected override void OnUpgrade()
     {
         DynamicVars.Power<TrainRampPower>().UpgradeValueBy(UPGRADE_DAMAGE);
+        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
     }
 }

@@ -2,8 +2,10 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Cards;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
@@ -13,6 +15,11 @@ public class RepairSystem() : TheEngineerCard(2,
 {
     private const decimal BASE_REPAIR = 2m;
     private const decimal UPGRADE_REPAIR = 1m;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<RepairSystemPower>(BASE_REPAIR)

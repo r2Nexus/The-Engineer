@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -7,6 +8,7 @@ using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Hooks;
+using TheEngineer.TheEngineerCode.Powers;
 
 namespace TheEngineer.TheEngineerCode.Util;
 
@@ -54,6 +56,9 @@ public static class MaterialHelper
         if (owner == null || amount <= 0)
             return false;
 
+        if (HasFreeConsume(owner))
+            return true;
+
         return GetMaterials(owner, source).Count >= amount;
     }
 
@@ -78,6 +83,9 @@ public static class MaterialHelper
     {
         if (owner == null || amount <= 0)
             return false;
+
+        if (await TrySpendFreeConsume(owner, choiceContext, causedBy))
+            return true;
 
         var materials = GetMaterials(owner, source);
 
@@ -198,6 +206,40 @@ public static class MaterialHelper
         }
 
         return produced;
+    }
+
+    private static bool HasFreeConsume(Player owner)
+    {
+        return GetFreeConsumePower(owner) != null;
+    }
+
+    private static FreeConsumePower? GetFreeConsumePower(Player owner)
+    {
+        return owner.Creature
+            .Powers
+            .OfType<FreeConsumePower>()
+            .FirstOrDefault(power => power.Amount > 0);
+    }
+
+    private static async Task<bool> TrySpendFreeConsume(
+        Player owner,
+        PlayerChoiceContext choiceContext,
+        AbstractModel? causedBy = null)
+    {
+        FreeConsumePower? freeConsume = GetFreeConsumePower(owner);
+
+        if (freeConsume == null)
+            return false;
+
+        freeConsume.Flash();
+
+        await CommonActions.Apply<FreeConsumePower>(
+            choiceContext,
+            owner.Creature,
+            causedBy as CardModel,
+            -1m);
+
+        return true;
     }
 
     private static List<MaterialRef> GetMaterials(Player owner, MaterialSource source)

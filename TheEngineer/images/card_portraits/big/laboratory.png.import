@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfui6cf1tmnra"
-path="res://.godot/imported/science_lab.png-7b9ae8cddc7b03cf26ea855cce1bf260.ctex"
+path="res://.godot/imported/laboratory.png-a594d743e83ec96f768194506257d13b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/card_portraits/big/science_lab.png"
-dest_files=["res://.godot/imported/science_lab.png-7b9ae8cddc7b03cf26ea855cce1bf260.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/laboratory.png"
+dest_files=["res://.godot/imported/laboratory.png-a594d743e83ec96f768194506257d13b.ctex"]
 
 [params]
 

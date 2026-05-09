@@ -8,6 +8,9 @@
   "THEENGINEER-PRODUCE.title": "Produce {Produce}",
   "THEENGINEER-PRODUCE.description": "Create [blue]{Produce}[/blue] Material {Produce:plural:card|cards} in your hand, unless specified otherwise.",
 
+  "THEENGINEER-PRODUCEALL.title": "Produce",
+  "THEENGINEER-PRODUCEALL.description": "Create Material cards in your hand, unless specified otherwise.",
+  
   "THEENGINEER-STOCK.title": "Stock",
   "THEENGINEER-STOCK.description": "Stock refers to your Hand, Draw pile and Discard pile specifically in this order.",
 

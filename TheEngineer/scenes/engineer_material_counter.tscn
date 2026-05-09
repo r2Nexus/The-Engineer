@@ -4,6 +4,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_g2jq1"]
 font_size = 32
+font_color = Color(0.85044706, 0.74501073, 0.7614664, 1)
 outline_size = 8
 outline_color = Color(0.22755772, 0.07914703, 0, 1)
 shadow_size = 8
@@ -49,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(32, 32)
+theme_override_colors/font_color = Color(0.637489, 0.5681795, 0.44362032, 1)
 text = "3"
 label_settings = SubResource("LabelSettings_g2jq1")
 horizontal_alignment = 1

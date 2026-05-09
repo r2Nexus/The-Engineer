@@ -6,6 +6,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
@@ -36,6 +37,11 @@ public class Tank : TheEngineerCard
         _baseReplayCount = BASE_REPLAY;
     }
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(BASE_BLOCK, ValueProp.Move),

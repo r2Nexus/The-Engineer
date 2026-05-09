@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
@@ -16,6 +17,11 @@ public class RapidDeployment() : TheEngineerCard(0,
 {
     protected override bool HasEnergyCostX => true;
     
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.Static(StaticHoverTip.Channeling),
+        HoverTipFactory.FromOrb<TurretOrb>()
+    ];
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Exhaust
