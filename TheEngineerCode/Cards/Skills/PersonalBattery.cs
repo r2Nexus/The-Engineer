@@ -4,6 +4,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Util;
@@ -22,6 +23,12 @@ public sealed class PersonalBattery() : TheEngineerCard(
     private const decimal BASE_CHARGE_INITIAL = 2m;
     private const decimal BASE_CHARGE_MAX = 7m;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<PowerCell>(IsUpgraded)
+    ];
+
+    
     protected override HashSet<CardTag> CanonicalTags =>
     [
         TheEngineerCardTags.Charge

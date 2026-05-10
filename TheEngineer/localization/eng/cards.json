@@ -144,7 +144,7 @@
   "THEENGINEER-REACTIVE_ARMOUR.description": "Gain {Block:diff()} [gold]Block[/gold].\nNow and at the start of your next turn, [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
 
   "THEENGINEER-PERSONAL_BATTERY.title": "Personal Battery",
-  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} Power Cell{Cards:plural:|s} to your draw pile.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Add the card{Cards:plural:|s} to your hand instead.",
+  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} {IfUpgraded:show:Power Cells+|Power Cells} to your draw pile.\n[gold]Charge[/gold] {ChargeCurrent:diff()}/{ChargeMax:diff()}: Add the card{Cards:plural:|s} to your hand instead.",
 
   "THEENGINEER-CHAIN_SIGNAL.title": "Chain Signal",
   "THEENGINEER-CHAIN_SIGNAL.description": "Your next {ChainSignalPower:diff()} Wagon card{ChainSignalPower:plural:|s} {ChainSignalPower:plural:gets|get} played twice.",
