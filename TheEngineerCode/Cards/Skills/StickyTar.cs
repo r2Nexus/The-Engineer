@@ -25,8 +25,8 @@ public sealed class StickyTar() : TheEngineerCard(
     CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_OIL = 9m;
-    private const decimal UPGRADE_OIL = 4m;
+    private const decimal BASE_OIL = 8m;
+    private const decimal UPGRADE_OIL = 3m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

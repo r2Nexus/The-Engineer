@@ -84,13 +84,13 @@
   "THEENGINEER-RAPID_DEPLOYMENT.description": "[gold]Channel[/gold] X [gold]Turret[/gold]s.",
 
   "THEENGINEER-RED_BELT.title": "Red Belt",
-  "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] ALL in [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
+  "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] ALL from [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
 
   "THEENGINEER-FLAMETHROWER.title": "Flamethrower",
   "THEENGINEER-FLAMETHROWER.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] 1: Apply {OilPower:diff()} [gold]Oil[/gold].",
 
   "THEENGINEER-NUCLEAR_OPTION.title": "Nuclear Option",
-  "THEENGINEER-NUCLEAR_OPTION.description": "[gold]Consume[/gold] ALL in [gold]Stock[/gold].\nDeal {CalculatedDamage:diff()} damage, increased by 6 for each [gold]Material[/gold] [gold]Consumed[/gold].",
+  "THEENGINEER-NUCLEAR_OPTION.description": "[gold]Consume[/gold] ALL from [gold]Stock[/gold].\nDeal {CalculatedDamage:diff()} damage, increased by 6 for each [gold]Material[/gold] [gold]Consumed[/gold].",
 
   "THEENGINEER-BLUE_SCIENCE.title": "Blue Science",
   "THEENGINEER-BLUE_SCIENCE.description": "Gain {FocusPower:diff()} [gold]Focus[/gold].",
@@ -135,10 +135,10 @@
   "THEENGINEER-REPAIR_SYSTEM.description": "Whenever you [gold]Consume[/gold], gain {RepairSystemPower:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-MISSILE_BARRAGE.title": "Missile Barrage",
-  "THEENGINEER-MISSILE_BARRAGE.description": "[gold]Consume[/gold] ALL in [gold]Stock[/gold]: Deal {Damage:diff()} damage to ALL enemies for each [gold]Material[/gold] [gold]Consumed[/gold].",
+  "THEENGINEER-MISSILE_BARRAGE.description": "[gold]Consume[/gold] ALL from [gold]Stock[/gold]: Deal {Damage:diff()} damage to ALL enemies for each [gold]Material[/gold] [gold]Consumed[/gold].",
 
   "THEENGINEER-TANK.title": "Tank",
-  "THEENGINEER-TANK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] {Consume:diff()} in [gold]Stock[/gold]: Deal {Damage:diff()} damage.",
+  "THEENGINEER-TANK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Deal {Damage:diff()} damage.",
 
   "THEENGINEER-REACTIVE_ARMOUR.title": "Reactive Armour",
   "THEENGINEER-REACTIVE_ARMOUR.description": "Gain {Block:diff()} [gold]Block[/gold].\nNow and at the start of your next turn, [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",

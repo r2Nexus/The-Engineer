@@ -45,7 +45,7 @@ public class NuclearOption() : TheEngineerCard(4,
 
         await DamageCmd.Attack(damage)
             .FromCard(this)
-            .TargetingAllOpponents(CombatState)
+            .Targeting(play.Target)
             .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);

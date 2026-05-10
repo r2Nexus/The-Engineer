@@ -27,7 +27,7 @@ public class Refinery() : TheEngineerCard(1,
         new PowerVar<OilPower>(BASE_OIL)
     ];
 
-    private const decimal BASE_OIL = 6m;
+    private const decimal BASE_OIL = 7m;
     private const decimal UPGRADE_OIL = 2m;
     
     protected override async Task OnPlay(

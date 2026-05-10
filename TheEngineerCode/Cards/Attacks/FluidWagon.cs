@@ -17,7 +17,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class FluidWagon() : TheEngineerCard(
-    2,
+    1,
     CardType.Attack,
     CardRarity.Uncommon,
     TargetType.AnyEnemy)

@@ -11,7 +11,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class ReinforcedWagon() : TheEngineerCard(2,
+public class ReinforcedWagon() : TheEngineerCard(1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {

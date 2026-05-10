@@ -31,7 +31,7 @@ public class ManualLabor() : TheEngineerCard(
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new ConsumeVar(2)
+        new ProduceVar(2)
     ];
 
     protected override async Task OnPlay(
