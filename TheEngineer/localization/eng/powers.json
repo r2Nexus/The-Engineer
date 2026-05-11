@@ -90,5 +90,9 @@
 
   "THEENGINEER-FREE_CONSUME_POWER.description": "Your next [gold]Consume[/gold] is free.",
   "THEENGINEER-FREE_CONSUME_POWER.smartDescription": "Your next [gold]Consume[/gold] is free.",
-  "THEENGINEER-FREE_CONSUME_POWER.title": "Free Consume"
+  "THEENGINEER-FREE_CONSUME_POWER.title": "Free Consume",
+
+  "THEENGINEER-RESIDUE_POWER.description": "",
+  "THEENGINEER-RESIDUE_POWER.smartDescription": "",
+  "THEENGINEER-RESIDUE_POWER.title": "Residue"
 }

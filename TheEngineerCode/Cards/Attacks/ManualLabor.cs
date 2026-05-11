@@ -46,7 +46,7 @@ public class ManualLabor() : TheEngineerCard(
         await MaterialHelper.ProduceMaterial(
             Owner,
             choiceContext,
-            (int)DynamicVars.Consume().BaseValue,
+            (int)DynamicVars.Produce().BaseValue,
             MaterialDestination.Hand,
             this);
     }

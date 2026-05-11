@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Abstracts;
+using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -20,7 +21,7 @@ public sealed class OilPower : TheEngineerPower
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    protected IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
+    protected  IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
 
     public override async Task BeforeDamageReceived(
         PlayerChoiceContext choiceContext,
@@ -44,8 +45,13 @@ public sealed class OilPower : TheEngineerPower
             return;
 
         Flash();
-        
         await PowerCmd.ModifyAmount(choiceContext,this, -spent, null, null);
+        await PowerCmd.Apply<ResiduePower>(
+            choiceContext,
+            Owner,
+            spent,
+            dealer,
+            cardSource);
         
         var room = NCombatRoom.Instance;
         room?.CombatVfxContainer.AddChildSafely(
