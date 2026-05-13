@@ -36,8 +36,6 @@ public class TheEngineer : PlaceholderCharacterModel
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
-        ModelDb.Card<Defend>(),
-        ModelDb.Card<MaterialCard>(),
         ModelDb.Card<MaterialCard>(),
         ModelDb.Card<BuildTurret>(),
         ModelDb.Card<ManualLabor>()

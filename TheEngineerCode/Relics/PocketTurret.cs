@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Orbs;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Relics;
 
@@ -24,5 +25,6 @@ public class PocketTurret : TheEngineerRelic
         await OrbCmd.Channel<TurretOrb>(
             new BlockingPlayerChoiceContext(),
             Owner);
+        await MaterialHelper.ProduceMaterial(Owner, choiceContext, 1, MaterialDestination.Hand);
     }
 }

@@ -17,7 +17,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class PerimeterWall() : TheEngineerCard(
-    3,
+    2,
     CardType.Skill,
     CardRarity.Rare,
     TargetType.Self)
