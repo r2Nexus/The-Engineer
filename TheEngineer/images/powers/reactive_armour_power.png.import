@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://chlc6gjh84pqc"
+path="res://.godot/imported/reactive_armour_power.png-57fcf8ee4ee09b7aa33f55a82d7c8a93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/reactive_armour_power.png"
+dest_files=["res://.godot/imported/reactive_armour_power.png-57fcf8ee4ee09b7aa33f55a82d7c8a93.ctex"]
 
 [params]
 

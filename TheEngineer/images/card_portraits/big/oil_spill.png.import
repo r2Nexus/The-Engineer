@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://dlov2vwfrwem"
+path="res://.godot/imported/oil_spill.png-42234f3474f2d70a49eda666f39dae4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/oil_spill.png"
+dest_files=["res://.godot/imported/oil_spill.png-42234f3474f2d70a49eda666f39dae4a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://cycouc3b4laod"
+path="res://.godot/imported/slowdown_capsule_power.png-243b7e94382409a9da896d7b3d508118.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/slowdown_capsule_power.png"
+dest_files=["res://.godot/imported/slowdown_capsule_power.png-243b7e94382409a9da896d7b3d508118.ctex"]
 
 [params]
 

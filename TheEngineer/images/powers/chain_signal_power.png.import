@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://banoo1tb3q61"
+path="res://.godot/imported/chain_signal_power.png-2959feb4e41b84b505a9241e6447b960.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/chain_signal_power.png"
+dest_files=["res://.godot/imported/chain_signal_power.png-2959feb4e41b84b505a9241e6447b960.ctex"]
 
 [params]
 

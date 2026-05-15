@@ -94,5 +94,9 @@
 
   "THEENGINEER-RESIDUE_POWER.description": "",
   "THEENGINEER-RESIDUE_POWER.smartDescription": "",
-  "THEENGINEER-RESIDUE_POWER.title": "Residue"
+  "THEENGINEER-RESIDUE_POWER.title": "Residue",
+
+  "THEENGINEER-FOUNDRY_POWER.description": "",
+  "THEENGINEER-FOUNDRY_POWER.smartDescription": "",
+  "THEENGINEER-FOUNDRY_POWER.title": "Foundry"
 }

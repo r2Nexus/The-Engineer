@@ -176,7 +176,7 @@
   "THEENGINEER-PERIMETER_WALL.description": "Add {Cards:diff()} random cards with [gold]Block[/gold] to your hand.\nThey cost 0 this turn and gain [gold]Ethereal[/gold].",
 
   "THEENGINEER-RAINING_BULLETS.title": "Raining Bullets",
-  "THEENGINEER-RAINING_BULLETS.description": "Deal {Damage:diff()} damage X-1 times.\n[gold]Fire[/gold] all [gold]Turret[/gold]s X-1 times.",
+  "THEENGINEER-RAINING_BULLETS.description": "Consume {IfUpgraded:show:X-1|X} from Stock: Fire all turrets X times.",
 
   "THEENGINEER-PIPELINE.title": "Pipeline",
   "THEENGINEER-PIPELINE.description": "Apply the target's [gold]Oil[/gold] to {IfUpgraded:show:ALL|all other} enemies.\n[gold]Produce[/gold] 1.",
@@ -212,5 +212,17 @@
   "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\nApply {OilPower:diff()} [gold]Oil[/gold] for each [gold]Material[/gold] in your hand.",
 
   "THEENGINEER-EXCAVATE.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\nYour next [gold]Consume[/gold] is free.",
-  "THEENGINEER-EXCAVATE.title": "Excavate"
+  "THEENGINEER-EXCAVATE.title": "Excavate",
+
+  "THEENGINEER-LIGHT_ARMOR.description": "Consume {Consume:diff()}: gain {Block:diff()} Block.",
+  "THEENGINEER-LIGHT_ARMOR.title": "Light Armor",
+
+  "THEENGINEER-SUPERCAPACITOR.description": "Gain {Block:diff()} Block.\nIncrease Charge on Charge cards by {IfUpgraded:show:2|1}.",
+  "THEENGINEER-SUPERCAPACITOR.title": "Supercapacitor",
+
+  "THEENGINEER-BIG_DRILL.description": "Deal {Damage:diff()} damage.\nChannel 2 Miners.",
+  "THEENGINEER-BIG_DRILL.title": "Big Drill",
+
+  "THEENGINEER-FOUNDRY.description": "Whenever you produce 2 or more, channel a Turret.",
+  "THEENGINEER-FOUNDRY.title": "Foundry"
 }

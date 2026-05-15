@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://n0862bqfv5bs"
+path="res://.godot/imported/train_stop.png-ae1b5ea0e1788b22901f1a71ef00f3c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/train_stop.png"
+dest_files=["res://.godot/imported/train_stop.png-ae1b5ea0e1788b22901f1a71ef00f3c0.ctex"]
 
 [params]
 

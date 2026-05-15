@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://c3vf544fq74dn"
+path="res://.godot/imported/foundry_power.png-8ccefced39f3586ca5cfed29dd057b44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/foundry_power.png"
+dest_files=["res://.godot/imported/foundry_power.png-8ccefced39f3586ca5cfed29dd057b44.ctex"]
 
 [params]
 

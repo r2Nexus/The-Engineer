@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://b0xtvsow511lu"
+path="res://.godot/imported/resupply_wagon.png-0cd31b6a72b34859e0d58411d92aa43f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/resupply_wagon.png"
+dest_files=["res://.godot/imported/resupply_wagon.png-0cd31b6a72b34859e0d58411d92aa43f.ctex"]
 
 [params]
 

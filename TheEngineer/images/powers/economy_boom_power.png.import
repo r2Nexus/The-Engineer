@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://2taafaeomu86"
+path="res://.godot/imported/economy_boom_power.png-8e82f0fa9a847323e26a44c98b441f15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/economy_boom_power.png"
+dest_files=["res://.godot/imported/economy_boom_power.png-8e82f0fa9a847323e26a44c98b441f15.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://c1lye7wtsxlic"
+path="res://.godot/imported/e_m_plant_power.png-93a3f33816473957cb8692dc0055e227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/powers/e_m_plant_power.png"
+dest_files=["res://.godot/imported/e_m_plant_power.png-93a3f33816473957cb8692dc0055e227.ctex"]
 
 [params]
 

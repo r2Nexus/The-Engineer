@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://0l3sq8bhbdh5"
+path="res://.godot/imported/excavate.png-3c29f3d3c15ef9f4b00d36db00b86261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/excavate.png"
+dest_files=["res://.godot/imported/excavate.png-3c29f3d3c15ef9f4b00d36db00b86261.ctex"]
 
 [params]
 

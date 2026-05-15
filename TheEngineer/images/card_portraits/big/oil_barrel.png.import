@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://dj0yxadu02fpm"
+path="res://.godot/imported/oil_barrel.png-e220f026f4738d867b7eab95035fabe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/oil_barrel.png"
+dest_files=["res://.godot/imported/oil_barrel.png-e220f026f4738d867b7eab95035fabe8.ctex"]
 
 [params]
 

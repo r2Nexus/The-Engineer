@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://drvg68yrq7cko"
+path="res://.godot/imported/pipeline.png-a94b12e78eb1b5ad8d6cd41785316489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/pipeline.png"
+dest_files=["res://.godot/imported/pipeline.png-a94b12e78eb1b5ad8d6cd41785316489.ctex"]
 
 [params]
 

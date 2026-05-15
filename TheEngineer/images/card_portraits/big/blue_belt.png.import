@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnypqkv2e12j2"
-path="res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"
+uid="uid://bw2pgshfwyjax"
+path="res://.godot/imported/blue_belt.png-68d75847466ce59eb8e14e5ee2b6cbe4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/powers/power.png"
-dest_files=["res://.godot/imported/power.png-1856866014355b01766f95710d64a5a4.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/blue_belt.png"
+dest_files=["res://.godot/imported/blue_belt.png-68d75847466ce59eb8e14e5ee2b6cbe4.ctex"]
 
 [params]
 
