@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards;
+using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Hooks;
 using TheEngineer.TheEngineerCode.Powers;
 
@@ -48,7 +49,7 @@ public static class MaterialHelper
         MaterialSource source)
         => CanConsumeMaterial(sourceCard.Owner, amount, source);
 
-    public static bool CanConsumeMaterial(
+    private static bool CanConsumeMaterial(
         Player? owner,
         int amount,
         MaterialSource source)
@@ -184,7 +185,7 @@ public static class MaterialHelper
 
         for (var i = 0; i < amount; i++)
         {
-            var material = combatState.CreateCard<Material>(owner);
+            CardModel material = CreateProducedMaterial(owner, combatState);
 
             await CardPileCmd.AddGeneratedCardToCombat(
                 material,
@@ -206,6 +207,49 @@ public static class MaterialHelper
         }
 
         return produced;
+    }
+    
+    private static CardModel CreateProducedMaterial(
+        Player owner,
+        ICombatState combatState)
+    {
+        OverhaulModPower? overhaulMod = GetOverhaulModPower(owner);
+
+        if (overhaulMod != null)
+        {
+            CardModel replacement = overhaulMod.CreateMaterialReplacement(owner);
+
+            EnsureMaterialKeyword(replacement);
+            return replacement;
+        }
+
+        CardModel material = combatState.CreateCard<Material>(owner);
+
+        EnsureMaterialKeyword(material);
+        return material;
+    }
+
+    private static OverhaulModPower? GetOverhaulModPower(Player owner)
+    {
+        return owner.Creature
+            .Powers
+            .OfType<OverhaulModPower>()
+            .FirstOrDefault(power => power.Amount > 0);
+    }
+
+    private static void EnsureMaterialKeyword(CardModel card)
+    {
+        if (!card.Keywords.Contains(TheEngineerKeyWords.Material))
+            card.AddKeyword(TheEngineerKeyWords.Material);
+    }
+
+    private static bool IsMaterial(CardModel? card)
+    {
+        return card != null
+               && (
+                   card is Material
+                   || card.Keywords.Contains(TheEngineerKeyWords.Material)
+               );
     }
 
     private static bool HasFreeConsume(Player owner)
@@ -270,7 +314,7 @@ public static class MaterialHelper
     {
         foreach (var card in pile.Cards)
         {
-            if (card is Material)
+            if (IsMaterial(card))
                 yield return new MaterialRef(pile, card);
         }
     }

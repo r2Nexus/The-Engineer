@@ -6,7 +6,7 @@
   "THEENGINEER-DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-MATERIAL.title": "Material",
-  "THEENGINEER-MATERIAL.description": "[gold]Unplayable[/gold].\nCan be [gold]Consumed[/gold] by other cards.",
+  "THEENGINEER-MATERIAL.description": "[gold]Unplayable[/gold].",
 
   "THEENGINEER-MANUAL_LABOR.title": "Manual Labor",
   "THEENGINEER-MANUAL_LABOR.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] 2.",
@@ -224,5 +224,8 @@
   "THEENGINEER-BIG_DRILL.title": "Big Drill",
 
   "THEENGINEER-FOUNDRY.description": "Whenever you produce 2 or more, channel a Turret.",
-  "THEENGINEER-FOUNDRY.title": "Foundry"
+  "THEENGINEER-FOUNDRY.title": "Foundry",
+
+  "THEENGINEER-OVERHAUL_MOD.description": "Produce now creates random Defect cards. They count as Material.",
+  "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod"
 }

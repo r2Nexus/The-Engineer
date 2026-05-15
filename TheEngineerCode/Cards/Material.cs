@@ -17,6 +17,11 @@ public class Material() : TheEngineerCard(-1,
     protected override bool IsPlayable => false;
     public override int MaxUpgradeLevel => 0;
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Material
+    ];
+    
     protected override Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

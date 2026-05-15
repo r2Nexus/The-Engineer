@@ -44,3 +44,8 @@ public static class TheEngineerCardTags
     [CustomEnum]
     public static CardTag Wagon;
 }
+public static class TheEngineerKeyWords
+{
+    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Material;
+}

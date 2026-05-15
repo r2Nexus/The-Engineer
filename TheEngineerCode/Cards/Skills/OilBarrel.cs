@@ -19,15 +19,15 @@ public class OilBarrel() : TheEngineerCard(
     CardRarity.Token,
     TargetType.RandomEnemy)
 {
-    private const decimal BASE_OIL = 8m;
-    private const decimal UPGRADE_OIL = 3m;
+    private const decimal BASE_OIL = 6m;
+    private const decimal UPGRADE_OIL = 2m;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<OilPower>(BASE_OIL)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
-        CardKeyword.Ethereal,
+        TheEngineerKeyWords.Material,
         CardKeyword.Exhaust
     ];
     

@@ -98,5 +98,9 @@
 
   "THEENGINEER-FOUNDRY_POWER.description": "",
   "THEENGINEER-FOUNDRY_POWER.smartDescription": "",
-  "THEENGINEER-FOUNDRY_POWER.title": "Foundry"
+  "THEENGINEER-FOUNDRY_POWER.title": "Foundry",
+
+  "THEENGINEER-OVERHAUL_MOD_POWER.description": "",
+  "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "",
+  "THEENGINEER-OVERHAUL_MOD_POWER.title": "Overhaul Mod"
 }
