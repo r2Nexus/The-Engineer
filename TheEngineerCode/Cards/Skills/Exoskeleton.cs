@@ -32,6 +32,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
     private const decimal BASE_CHARGE_MAX = 8m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

@@ -33,6 +33,7 @@ public sealed class PersonalBattery() : TheEngineerCard(
     [
         TheEngineerCardTags.Charge
     ];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

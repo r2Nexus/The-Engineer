@@ -30,6 +30,7 @@ public class CombatStim() : TheEngineerCard(1,
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

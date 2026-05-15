@@ -34,6 +34,7 @@ public sealed class EnergyShield() : TheEngineerCard(
     private const string CHARGED_BLOCK_VAR = "ChargedBlock";
 
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {

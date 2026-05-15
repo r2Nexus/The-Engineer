@@ -31,6 +31,7 @@ public sealed class BoosterWagon() : TheEngineerCard(
     private const decimal UPGRADE_CHARGE_MAX = -2m;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge, TheEngineerCardTags.Wagon];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

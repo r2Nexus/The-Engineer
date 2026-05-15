@@ -28,11 +28,14 @@ public sealed class Laboratory() : TheEngineerCard(
 
     private const decimal BASE_SCIENCE_CARDS = 1m;
     private const decimal UPGRADE_SCIENCE_CARDS = 1m;
+    
+    
 
     protected override HashSet<CardTag> CanonicalTags =>
     [
         TheEngineerCardTags.Charge
     ];
+    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
