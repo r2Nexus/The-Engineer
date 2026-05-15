@@ -1,7 +1,7 @@
 {
   "THEENGINEER-OIL_POWER.title": "Oil",
-  "THEENGINEER-OIL_POWER.description": "The next time this creature is attacked, [gold]Oil[/gold] is spent to deal additional damage.",
-  "THEENGINEER-OIL_POWER.smartDescription": "When attacked, this creature immediately takes [blue]{Amount}[/blue] damage and loses all [gold]Oil[/gold].",
+  "THEENGINEER-OIL_POWER.description": "The next time this creature is attacked, [gold]Oil[/gold] is spent to deal additional damage.\nEvery 2 spent [gold]Oil[/gold] is refunded at the start of your next turn.",
+  "THEENGINEER-OIL_POWER.smartDescription": "When attacked, this creature immediately takes [blue]{Amount}[/blue] damage and loses all [gold]Oil[/gold].\nEvery 2 spent [gold]Oil[/gold] is refunded at the start of your next turn.",
 
   "THEENGINEER-ECONOMY_BOOM_POWER.title": "Economy Boom",
   "THEENGINEER-ECONOMY_BOOM_POWER.description": "At the start of your turn, [gold]Channel[/gold] 1 [gold]Miner[/gold].",
@@ -92,15 +92,15 @@
   "THEENGINEER-FREE_CONSUME_POWER.smartDescription": "Your next [gold]Consume[/gold] is free.",
   "THEENGINEER-FREE_CONSUME_POWER.title": "Free Consume",
 
-  "THEENGINEER-RESIDUE_POWER.description": "",
-  "THEENGINEER-RESIDUE_POWER.smartDescription": "",
+  "THEENGINEER-RESIDUE_POWER.description": "At the start of your turn, gets converted to [gold]Oil[gold] at 2:1 ratio.",
+  "THEENGINEER-RESIDUE_POWER.smartDescription": "At the start of your turn, gets converted to [gold]Oil[gold] at 2:1 ratio.",
   "THEENGINEER-RESIDUE_POWER.title": "Residue",
 
-  "THEENGINEER-FOUNDRY_POWER.description": "",
-  "THEENGINEER-FOUNDRY_POWER.smartDescription": "",
+  "THEENGINEER-FOUNDRY_POWER.description": "Whenever you [gold]Produce[/gold] 2 or more material at once, [gold]Channel[/gold] 1 [gold]Turret[/gold].",
+  "THEENGINEER-FOUNDRY_POWER.smartDescription": "Whenever you [gold]Produce[/gold] 2 or more material at once, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Turret[/gold]",
   "THEENGINEER-FOUNDRY_POWER.title": "Foundry",
 
-  "THEENGINEER-OVERHAUL_MOD_POWER.description": "",
-  "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "",
+  "THEENGINEER-OVERHAUL_MOD_POWER.description": "*Produce now creates random Defect cards. They count as *Material.",
+  "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "*Produce now creates random Defect cards. They count as *Material.",
   "THEENGINEER-OVERHAUL_MOD_POWER.title": "Overhaul Mod"
 }
