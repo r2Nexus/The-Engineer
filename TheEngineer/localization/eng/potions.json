@@ -1,0 +1,10 @@
+﻿{
+  "THEENGINEER-OIL_CANISTER.description": "#Apply [blue]{OilPower:diff()}[/blue] *Oil*.",
+  "THEENGINEER-OIL_CANISTER.title": "Oil Canister",
+
+  "THEENGINEER-MATERIAL_POTION.description": "#*Produce* [blue]{Produce:diff()}[/blue].",
+  "THEENGINEER-MATERIAL_POTION.title": "Material Potion",
+
+  "THEENGINEER-HOLMIUM_BREW.description": "#Draw [blue]{Cards:diff()}[/blue] cards. Add [blue]3[/blue] *Charge to all *Charge cards.",
+  "THEENGINEER-HOLMIUM_BREW.title": "Holmium Brew"
+}
