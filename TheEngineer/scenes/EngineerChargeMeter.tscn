@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://16mc2l2umplu"]
+
+[ext_resource type="Script" uid="uid://dq1q584nplxau" path="res://TheEngineerCode/Ui/EngineerChargeMeter.cs" id="1_6xru4"]
+[ext_resource type="Script" uid="uid://bbdx6dv3vuh1c" path="res://TheEngineerCode/Ui/EngineerChargeSegmentOverlay.cs" id="2_2vt3y"]
+[ext_resource type="Texture2D" uid="uid://c2g52exjvxbi3" path="res://TheEngineer/images/charui/charge_meter.png" id="2_77ocy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ocy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vt3y"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="EngineerChargeMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 80.0
+rotation = -0.2617994
+pivot_offset = Vector2(32, 32)
+script = ExtResource("1_6xru4")
+
+[node name="Bounds" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.773972
+offset_top = -12.296135
+offset_right = 56.493683
+offset_bottom = 32.1243
+grow_vertical = 0
+rotation = -1.5707964
+scale = Vector2(1.3199999, 0.6400012)
+
+[node name="ColorRect" type="ColorRect" parent="Bounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23392546, 0.23392546, 0.23392543, 1)
+
+[node name="Bar" type="ProgressBar" parent="Bounds"]
+modulate = Color(0, 0.89, 0.13349988, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+theme_override_styles/background = SubResource("StyleBoxFlat_77ocy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2vt3y")
+value = 5.0
+show_percentage = false
+
+[node name="SegmentOverlay" type="Control" parent="Bounds"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_2vt3y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_77ocy")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.2617994
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 40)
+theme_override_colors/font_color = Color(0.99215686, 0.9607843, 0.88235295, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.76862746)
+theme_override_colors/font_outline_color = Color(0.35686275, 0.32941177, 0.25882354, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 14
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 48
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
