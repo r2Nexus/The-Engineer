@@ -25,11 +25,22 @@ public class FoundryPower : TheEngineerPower, IOnProduced
     public override PowerStackType StackType => PowerStackType.Counter;
 
 
-    public async Task OnProduced(PlayerChoiceContext choiceContext, Player player, int amount, MaterialDestination destination,
+    public async Task OnProduced(
+        PlayerChoiceContext choiceContext,
+        Player player,
+        int amount,
+        MaterialDestination destination,
         AbstractModel? causedBy)
     {
-        if (amount < 2) return;
-        
-        await OrbCmd.Channel<TurretOrb>(choiceContext, Owner.Player!);
+        if (amount < 2)
+            return;
+
+        if (DeferredOrbChannel.IsChannelResolving)
+        {
+            DeferredOrbChannel.Enqueue<TurretOrb>(choiceContext, player);
+            return;
+        }
+
+        await OrbCmd.Channel<TurretOrb>(choiceContext, player);
     }
 }
