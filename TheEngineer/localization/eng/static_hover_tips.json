@@ -1,22 +1,22 @@
 {
   "THEENGINEER-CONSUME.title": "Consume {Consume}",
-  "THEENGINEER-CONSUME.description": "Exhaust [blue]{Consume}[/blue] Material {Consume:plural:card|cards} from your hand, unless specified otherwise, to activate an additional effect.",
+  "THEENGINEER-CONSUME.description": "Exhaust [blue]{Consume}[/blue] Material {Consume:plural:card|cards} from your hand (unless specified otherwise), to activate an additional effect.",
 
   "THEENGINEER-CONSUMEALL.title": "Consume",
   "THEENGINEER-CONSUMEALL.description": "Exhaust Material from your hand (unless specified otherwise), to activate an additional effect.",
 
   "THEENGINEER-PRODUCE.title": "Produce {Produce}",
-  "THEENGINEER-PRODUCE.description": "Create [blue]{Produce}[/blue] Material {Produce:plural:card|cards} in your hand, unless specified otherwise.",
+  "THEENGINEER-PRODUCE.description": "Create [blue]{Produce}[/blue] Material {Produce:plural:card|cards} in your hand (unless specified otherwise).",
 
   "THEENGINEER-PRODUCEALL.title": "Produce",
-  "THEENGINEER-PRODUCEALL.description": "Create Material cards in your hand, unless specified otherwise.",
+  "THEENGINEER-PRODUCEALL.description": "#*Create Material cards in your hand (unless specified otherwise).",
   
   "THEENGINEER-STOCK.title": "Stock",
-  "THEENGINEER-STOCK.description": "Stock refers to your Hand, Draw pile and Discard pile specifically in this order.",
+  "THEENGINEER-STOCK.description": "#*Stock refers to your Hand, Draw pile and Discard pile specifically in this order.",
 
   "THEENGINEER-CHARGE_MAX.title": "Charge",
-  "THEENGINEER-CHARGE_MAX.description": "When Material is consumed, this card gains Charge. When it reaches its maximum Charge, its charged effect activates the next time it is played.",
+  "THEENGINEER-CHARGE_MAX.description": "#When *Material is *Consumed, this card gains *Charge. When it reaches its maximum *Charge, its *Charge effect activates the next time it is played.",
 
   "THEENGINEER-FIRE.title": "Fire",
-  "THEENGINEER-FIRE.description": "Fire causes the turret to deal its passive damage."
+  "THEENGINEER-FIRE.description": "#*Fire causes the *Turret to deal its passive damage."
 }

@@ -1,6 +1,6 @@
 ﻿{
   "THEENGINEER-TURRET_ORB.description": "Orb: [gold]Consumes[/gold] [gold]Material[/gold] to damage random enemies.",
-  "THEENGINEER-TURRET_ORB.smartDescription": "[gold]Passive:[/gold] At the end of turn, Consume 1: deal [blue]{Passive}[/blue] damage to a random enemy.\n[gold]Evoke:[/gold] Deal [blue]{Evoke}[/blue] damage to a random enemy.",
+  "THEENGINEER-TURRET_ORB.smartDescription": "[gold]Passive:[/gold] At the end of turn, [gold]Consume[/gold] 1: deal [blue]{Passive}[/blue] damage to a random enemy.\n[gold]Evoke:[/gold] Deal [blue]{Evoke}[/blue] damage to a random enemy.",
   "THEENGINEER-TURRET_ORB.title": "Turret",
 
   "THEENGINEER-LAND_MINE_ORB.description": "Orb: Detonates when an enemy intends to attack, giving [gold]Block[/gold] and applying  [gold]Oil[/gold] to all enemies.",
@@ -8,6 +8,6 @@
   "THEENGINEER-LAND_MINE_ORB.title": "Land Mine",
 
   "THEENGINEER-MINER_ORB.description": "Orb: [gold]Produces[/gold] [gold]Material[/gold] at the start of your turn.",
-  "THEENGINEER-MINER_ORB.smartDescription": "[gold]Passive:[/gold] At the start of your turn, [gold]Produce[/gold] [blue]{Passive}[/blue].\n[gold]Evoke:[/gold] Produce [blue]{Evoke}[/blue].",
+  "THEENGINEER-MINER_ORB.smartDescription": "[gold]Passive:[/gold] At the start of your turn, [gold]Produce[/gold] [blue]{Passive}[/blue].\n[gold]Evoke:[/gold] [gold]Produce[/gold] [blue]{Evoke}[/blue].",
   "THEENGINEER-MINER_ORB.title": "Miner"
 }
