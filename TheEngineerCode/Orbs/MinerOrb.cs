@@ -7,7 +7,10 @@ using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
+using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
+using MaterialCard = TheEngineer.TheEngineerCode.Cards.Material;
 
 namespace TheEngineer.TheEngineerCode.Orbs;
 
@@ -24,6 +27,11 @@ public sealed class MinerOrb : CustomOrbModel
     public override decimal PassiveVal => 1m;
     public override decimal EvokeVal   => 2m;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<MaterialCard>(),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
+    ];
     public override Node2D? CreateCustomSprite()
     {
         var container = new Node2D();

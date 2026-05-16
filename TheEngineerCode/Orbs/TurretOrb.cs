@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Util;
 
@@ -27,6 +28,11 @@ public sealed class TurretOrb : CustomOrbModel
 
     public override decimal PassiveVal => ModifyOrbValue(7m);
     public override decimal EvokeVal => ModifyOrbValue(9m);
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
+    ];
 
     public override async Task BeforeTurnEndOrbTrigger(PlayerChoiceContext choiceContext)
         => await Passive(choiceContext, null);

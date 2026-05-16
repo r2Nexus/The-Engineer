@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Powers;
@@ -31,6 +32,11 @@ public sealed class LandMineOrb : CustomOrbModel
     public override decimal PassiveVal => ModifyOrbValue(3m);
     public override decimal EvokeVal   => ModifyOrbValue(2m);
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<OilPower>()
+    ];
+    
     public override async Task BeforeTurnEndOrbTrigger(PlayerChoiceContext choiceContext)
         => await Passive(choiceContext, null);
 
