@@ -81,6 +81,7 @@ public class TheEngineer : PlaceholderCharacterModel
             counter.SetAnchorsPreset(Control.LayoutPreset.TopLeft);
             counter.Position = Vector2.Zero;
             counter.Size = new Vector2(128, 128);
+            counter.ZIndex = 0;
 
             var visualScene = ResourceLoader.Load<PackedScene>(
                 "res://TheEngineer/scenes/engineer_material_counter.tscn");

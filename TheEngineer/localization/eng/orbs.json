@@ -4,7 +4,7 @@
   "THEENGINEER-TURRET_ORB.title": "Turret",
 
   "THEENGINEER-LAND_MINE_ORB.description": "Orb: Detonates when an enemy intends to attack, giving [gold]Block[/gold] and applying  [gold]Oil[/gold] to all enemies.",
-  "THEENGINEER-LAND_MINE_ORB.smartDescription": "[gold]Passive:[/gold] If an enemy intends to Attack, [gold]Evoke[/gold] self.\n[gold]Evoke:[/gold] Gain [blue]{Passive}[/blue] Block. Deal apply {Evoke} Oil to all enemies.",
+  "THEENGINEER-LAND_MINE_ORB.smartDescription": "[gold]Passive:[/gold] If an enemy intends to Attack, [gold]Evoke[/gold] self.\n[gold]Evoke:[/gold] Gain [blue]{Passive}[/blue] Block. Deal apply {Evoke} [gold]Oil[/gold] to all enemies.",
   "THEENGINEER-LAND_MINE_ORB.title": "Land Mine",
 
   "THEENGINEER-MINER_ORB.description": "Orb: [gold]Produces[/gold] [gold]Material[/gold] at the start of your turn.",

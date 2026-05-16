@@ -18,5 +18,8 @@
   "THEENGINEER-CHARGE_MAX.description": "#When *Material is *Consumed, this card gains *Charge. When it reaches its maximum *Charge, its *Charge effect activates the next time it is played.",
 
   "THEENGINEER-FIRE.title": "Fire",
-  "THEENGINEER-FIRE.description": "#*Fire causes the *Turret to deal its passive damage."
+  "THEENGINEER-FIRE.description": "#*Fire causes the *Turret to deal its passive damage.",
+
+  "THEENGINEER_MATERIAL_COUNTER.title": "Material",
+  "THEENGINEER_MATERIAL_COUNTER.description": "[gold]Material[/gold] can be [gold]Consumed[/gold] by other cards.\n\nIn Draw: [blue]{draw}[/blue]\nin Hand: [blue]{hand}[/blue]\nIn Discard: [blue]{discard}[/blue]"
 }
