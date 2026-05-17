@@ -3,7 +3,7 @@
   "name": "The Engineer",
   "author": "lovecMC",
   "description": "Slay the Spire 2 character mod adding the Engineer from the hit game Factorio as a playable character.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "min_game_version": "0.105.1",
   "has_pck": true,
   "has_dll": true,
