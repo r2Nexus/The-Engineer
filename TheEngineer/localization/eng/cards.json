@@ -242,5 +242,5 @@
   "THEENGINEER-RAILGUN.title": "Railgun",
 
   "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage to a random enemy {CalculatedHits} times.\nHits an additional time for each fully charged *Charge card you have.",
-  "THEENGINEER-TESLA_TURRET.title": "Tesla Coil"
+  "THEENGINEER-TESLA_TURRET.title": "Tesla Turret"
 }

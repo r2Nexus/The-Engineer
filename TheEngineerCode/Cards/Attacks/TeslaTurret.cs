@@ -3,9 +3,11 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Orbs;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
@@ -19,14 +21,19 @@ public sealed class TeslaTurret() : TheEngineerCard(
 {
     private const decimal BASE_DAMAGE = 12m;
     private const decimal UPGRADE_DAMAGE = 3m;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX"),
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
 
-        ..MakeCalculatedVar("CalculatedHits", 0,
+        ..MakeCalculatedVar("CalculatedHits", 1,
             (card, target) =>
-                1 + ChargeHelper.CountFullyChargedCards(card.Owner, card))
+                0 + ChargeHelper.CountFullyChargedCards(card.Owner, card))
     ];
 
     protected override async Task OnPlay(
