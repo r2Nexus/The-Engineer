@@ -220,7 +220,7 @@
   "THEENGINEER-SUPERCAPACITOR.description": "#Gain {Block:diff()} *Block.\nIncrease *Charge on cards with *Charge by {IfUpgraded:show:2|1}.",
   "THEENGINEER-SUPERCAPACITOR.title": "Supercapacitor",
 
-  "THEENGINEER-BIG_DRILL.description": "Deal {Damage:diff()} damage.\nChannel 2 Miners.",
+  "THEENGINEER-BIG_DRILL.description": "#Deal {Damage:diff()} damage.\n*Channel 2 *Miners.",
   "THEENGINEER-BIG_DRILL.title": "Big Drill",
 
   "THEENGINEER-FOUNDRY.description": "#Whenever you *Produce 2 or more *Material at once, *Channel a *Turret.",
