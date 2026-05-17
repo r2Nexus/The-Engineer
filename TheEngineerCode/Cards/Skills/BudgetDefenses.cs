@@ -18,10 +18,10 @@ public class BudgetDefenses() : TheEngineerCard(
     TargetType.Self)
 {
     private const decimal BASE_BLOCK = 8m;
-    private const decimal UPGRADE_BLOCK = 2m;
+    private const decimal UPGRADE_BLOCK = 3m;
 
-    private const int BASE_PRODUCE = 1;
-    private const int UPGRADE_PRODUCE = 1;
+    private const int BASE_PRODUCE = 2;
+    private const int UPGRADE_PRODUCE = 0;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

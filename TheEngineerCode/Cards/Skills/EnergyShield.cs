@@ -25,11 +25,11 @@ public sealed class EnergyShield() : TheEngineerCard(
     private const decimal BASE_CHARGED_BLOCK = 8m;
     private const decimal UPGRADE_CHARGED_BLOCK = 0m;
 
-    private const decimal BASE_CHARGE_INITIAL = 2m;
-    private const decimal UPGRADE_CHARGE_INITIAL = 4m;
+    private const decimal BASE_CHARGE_INITIAL = 3m;
+    private const decimal UPGRADE_CHARGE_INITIAL = 0m;
 
     private const decimal BASE_CHARGE_MAX = 8m;
-    private const decimal UPGRADE_CHARGE_MAX = 0m;
+    private const decimal UPGRADE_CHARGE_MAX = -2m;
 
     private const string CHARGED_BLOCK_VAR = "ChargedBlock";
 

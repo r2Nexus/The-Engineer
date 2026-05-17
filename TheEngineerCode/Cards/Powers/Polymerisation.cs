@@ -18,8 +18,8 @@ public class Polymerisation() : TheEngineerCard(2,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 2;
-    private const decimal UPGRADE_BLOCK = 1;
+    private const decimal BASE_BLOCK = 3;
+    private const decimal UPGRADE_BLOCK = 0;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -39,6 +39,6 @@ public class Polymerisation() : TheEngineerCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Power<PolymerisationPower>().UpgradeValueBy(UPGRADE_BLOCK);
+        EnergyCost.UpgradeBy(-1);
     }
 }

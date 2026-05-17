@@ -15,7 +15,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 [Pool(typeof(TheEngineerCardPool))]
 public class Refinery() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.RandomEnemy)
+    TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -40,13 +40,8 @@ public class Refinery() : TheEngineerCard(1,
 
             for (int i = 0; i < consumed; i++)
             {
-                Creature? target = Owner.RunState.Rng.CombatTargets.NextItem(
-                    CombatState.HittableEnemies);
-
-                if (target == null)
-                    return;
-                
-                await CommonActions.Apply<OilPower>(target, this,DynamicVars.Power<OilPower>().BaseValue);
+                if (play.Target != null)
+                    await CommonActions.Apply<OilPower>(choiceContext, play.Target,this);
             }
         }
     }

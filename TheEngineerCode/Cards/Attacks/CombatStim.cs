@@ -23,10 +23,10 @@ public class CombatStim() : TheEngineerCard(1,
     private const decimal BASE_DAMAGE = 7m;
     private const decimal UPGRADE_DAMAGE = 2m;
     
-    private const decimal BASE_CHARGE_INITIAL = 0m;
-    private const decimal UPGRADE_CHARGE_INITIAL = 6m;
+    private const decimal BASE_CHARGE_INITIAL = 2m;
+    private const decimal UPGRADE_CHARGE_INITIAL = 2m;
 
-    private const decimal BASE_CHARGE_MAX = 8m;
+    private const decimal BASE_CHARGE_MAX = 6m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];

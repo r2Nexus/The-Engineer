@@ -24,7 +24,7 @@ public sealed class Laboratory() : TheEngineerCard(
     private const int BASE_DRAW = 2;
 
     private const decimal BASE_CHARGE_INITIAL = 2m;
-    private const decimal BASE_CHARGE_MAX = 7m;
+    private const decimal BASE_CHARGE_MAX = 6m;
 
     private const decimal BASE_SCIENCE_CARDS = 1m;
     private const decimal UPGRADE_SCIENCE_CARDS = 1m;
