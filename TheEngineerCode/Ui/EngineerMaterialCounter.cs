@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.HoverTips;
+using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Ui;
@@ -30,8 +31,6 @@ public partial class EngineerMaterialCounter : Control
 
 	public override void _Ready()
 	{
-		// We do not use Godot hover signals for this UI.
-		// We manually check only the three arm rects.
 		SetMouseFilterRecursive(this, MouseFilterEnum.Ignore);
 
 		_handArm = FindArm("HandArm");
@@ -48,9 +47,21 @@ public partial class EngineerMaterialCounter : Control
 			_player = energyCounter._player;
 		}
 
+		if (!ShouldShowForPlayer(_player))
+		{
+			HideMaterialTooltip();
+			Visible = false;
+			SetProcess(false);
+			return;
+		}
+
+		Visible = true;
+		SetProcess(true);
+
 		GD.Print(
 			$"[TheEngineer] MaterialCounter ready. " +
 			$"Player: {_player != null}, " +
+			$"Engineer: {ShouldShowForPlayer(_player)}, " +
 			$"HandArm: {_handArm != null}, " +
 			$"DrawArm: {_drawArm != null}, " +
 			$"DiscardArm: {_discardArm != null}, " +
@@ -68,8 +79,24 @@ public partial class EngineerMaterialCounter : Control
 
 	public override void _Process(double delta)
 	{
+		if (!ShouldShowForPlayer(_player))
+		{
+			HideMaterialTooltip();
+			Visible = false;
+			SetProcess(false);
+			return;
+		}
+
 		Refresh(force: false);
 		UpdateMaterialHover();
+	}
+
+	private static bool ShouldShowForPlayer(Player? player)
+	{
+		if (player == null)
+			return false;
+
+		return player.Character is Character.TheEngineer;
 	}
 
 	private static void SetMouseFilterRecursive(Node node, MouseFilterEnum mouseFilter)
@@ -154,6 +181,9 @@ public partial class EngineerMaterialCounter : Control
 	private void ShowMaterialTooltip()
 	{
 		if (_player == null)
+			return;
+
+		if (!ShouldShowForPlayer(_player))
 			return;
 
 		if (_tooltipShown)
