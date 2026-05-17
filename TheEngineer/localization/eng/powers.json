@@ -102,5 +102,9 @@
 
   "THEENGINEER-OVERHAUL_MOD_POWER.description": "*Produce now creates random Defect cards. They count as *Material.",
   "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "*Produce now creates random Defect cards. They count as *Material.",
-  "THEENGINEER-OVERHAUL_MOD_POWER.title": "Overhaul Mod"
+  "THEENGINEER-OVERHAUL_MOD_POWER.title": "Overhaul Mod",
+
+  "THEENGINEER-ASTEROID_COLLECTOR_POWER.title": "Asteroid Collector",
+  "THEENGINEER-ASTEROID_COLLECTOR_POWER.description": "#This turn, whenever you play an Attack, *Produce 1.",
+  "THEENGINEER-ASTEROID_COLLECTOR_POWER.smartDescription": "#This turn, whenever you play an Attack, *Produce [blue]{Amount}[/blue]."
 }

@@ -85,6 +85,7 @@ public static class ChargeHelper
             return false;
 
         Empty(card);
+
         return true;
     }
 
@@ -143,5 +144,76 @@ public static class ChargeHelper
             if (HasCharge(card))
                 yield return card;
         }
+    }
+    
+    public static decimal CountRemovableCharge(Player? owner, CardModel? extraCard = null)
+    {
+        decimal total = 0m;
+        HashSet<CardModel> seen = new();
+
+        if (owner != null)
+        {
+            foreach (CardModel card in GetAllRelevantCombatCards(owner))
+            {
+                if (!seen.Add(card))
+                    continue;
+
+                total += GetCurrent(card);
+            }
+        }
+
+        if (extraCard != null && HasCharge(extraCard) && seen.Add(extraCard))
+            total += GetCurrent(extraCard);
+
+        return total;
+    }
+
+    public static decimal RemoveChargeFromAll(Player? owner, CardModel? extraCard = null)
+    {
+        decimal removed = 0m;
+        HashSet<CardModel> seen = new();
+
+        if (owner != null)
+        {
+            foreach (CardModel card in GetAllRelevantCombatCards(owner))
+            {
+                if (!seen.Add(card))
+                    continue;
+
+                removed += GetCurrent(card);
+                Empty(card);
+            }
+        }
+
+        if (extraCard != null && HasCharge(extraCard) && seen.Add(extraCard))
+        {
+            removed += GetCurrent(extraCard);
+            Empty(extraCard);
+        }
+
+        return removed;
+    }
+    
+    public static int CountFullyChargedCards(Player? owner, CardModel? extraCard = null)
+    {
+        if (owner == null)
+            return 0;
+
+        int count = 0;
+        HashSet<CardModel> seen = new();
+
+        foreach (CardModel card in GetAllRelevantCombatCards(owner))
+        {
+            if (!seen.Add(card))
+                continue;
+
+            if (IsFull(card))
+                count++;
+        }
+        
+        if (extraCard != null && seen.Add(extraCard) && IsFull(extraCard))
+            count++;
+
+        return count;
     }
 }

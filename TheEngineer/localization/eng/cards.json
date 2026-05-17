@@ -227,5 +227,20 @@
   "THEENGINEER-FOUNDRY.title": "Foundry",
 
   "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They count as *Material.",
-  "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod"
+  "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod",
+
+  "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits} times.\nHits once for each *Turret you have.\n*Charge: hit 2 additional times.",
+  "THEENGINEER-LASER_TURRET.title": "Laser Turret",
+
+  "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",
+  "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {Damage:diff()} damage.\nThis turn, whenever you play an Attack, *Produce {Produce:diff()}.",
+  
+  "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTurn all *Residue on this enemy into *Oil at a 1:1 ratio.",
+  "THEENGINEER-LIQUEFY.title": "Liquefy",
+
+  "THEENGINEER-RAILGUN.description": "#Remove all *Charge from your cards.\nDeal damage equal to the *Charge removed.\n{InCombat:(Currently [blue]{CalculatedDamage}[/blue] damage)}",
+  "THEENGINEER-RAILGUN.title": "Railgun",
+
+  "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage to a random enemy {CalculatedHits} times.\nHits an additional time for each fully charged *Charge card you have.",
+  "THEENGINEER-TESLA_TURRET.title": "Tesla Coil"
 }
