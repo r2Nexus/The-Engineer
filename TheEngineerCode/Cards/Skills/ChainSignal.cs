@@ -2,9 +2,11 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
@@ -18,6 +20,11 @@ public sealed class ChainSignal() : TheEngineerCard(
     private const decimal BASE_REPLAY = 1m;
     private const decimal UPGRADE_REPLAY = 1m;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Wagon)
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<ChainSignalPower>(BASE_REPLAY)

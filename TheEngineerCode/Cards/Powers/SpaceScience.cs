@@ -5,6 +5,7 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
@@ -23,6 +24,11 @@ public sealed class SpaceScience() : TheEngineerCard(
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Science)
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<SpaceSciencePower>(BASE_POWER)

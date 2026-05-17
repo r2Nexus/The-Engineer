@@ -5,44 +5,87 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace TheEngineer.TheEngineerCode.HoverTips;
 
-public static class CycleHoverTip
+public interface IResolvingHoverTip : IHoverTip
 {
-    public static IHoverTip FromCards(
+    IHoverTip ResolveHoverTip();
+    
+    int ResolveVersion { get; }
+}
+
+public sealed class CycleHoverTip : IResolvingHoverTip
+{
+    private readonly IReadOnlyList<CardModel> _cards;
+    private readonly double _secondsPerCard;
+    private readonly bool _upgrade;
+
+    public CycleHoverTip(
         IReadOnlyList<CardModel> cards,
         double secondsPerCard = 1.25,
         bool upgrade = false)
     {
         if (cards == null || cards.Count == 0)
-            throw new ArgumentException("Cycling card hover tip needs at least one card.", nameof(cards));
+            throw new ArgumentException("CycleHoverTip needs at least one card.", nameof(cards));
 
-        CardModel card = PickCard(cards, secondsPerCard);
-        return HoverTipFactory.FromCard(card, upgrade);
+        _cards = cards;
+        _secondsPerCard = Math.Max(0.25, secondsPerCard);
+        _upgrade = upgrade;
     }
 
-    public static IEnumerable<IHoverTip> FromCardsWithCardHoverTips(
-        IReadOnlyList<CardModel> cards,
-        double secondsPerCard = 1.25,
-        bool upgrade = false)
+    private int CurrentIndex
     {
-        if (cards == null || cards.Count == 0)
-            yield break;
-
-        CardModel card = PickCard(cards, secondsPerCard);
-
-        yield return HoverTipFactory.FromCard(card, upgrade);
-        
-        foreach (IHoverTip tip in card.HoverTips)
-            yield return tip;
+        get
+        {
+            double elapsedSeconds = Time.GetTicksMsec() / 1000.0;
+            return (int)(Math.Floor(elapsedSeconds / _secondsPerCard) % _cards.Count);
+        }
     }
 
-    private static CardModel PickCard(
-        IReadOnlyList<CardModel> cards,
-        double secondsPerCard)
-    {
-        double safeSeconds = Math.Max(0.25, secondsPerCard);
-        double elapsedSeconds = Time.GetTicksMsec() / 1000.0;
+    public int ResolveVersion => CurrentIndex;
 
-        int index = (int)(Math.Floor(elapsedSeconds / safeSeconds) % cards.Count);
-        return cards[index];
+    public IHoverTip ResolveHoverTip()
+    {
+        return HoverTipFactory.FromCard(_cards[CurrentIndex], _upgrade);
+    }
+
+    public string Id => "THEENGINEER-CYCLE_HOVER_TIP";
+    public bool IsSmart => false;
+    public bool IsDebuff => false;
+    public bool IsInstanced => true;
+    public AbstractModel? CanonicalModel => null;
+}
+
+public static class HoverTipResolver
+{
+    public static IHoverTip Resolve(IHoverTip tip)
+    {
+        return tip is IResolvingHoverTip resolving
+            ? resolving.ResolveHoverTip()
+            : tip;
+    }
+
+    public static List<IHoverTip> ResolveAll(IEnumerable<IHoverTip> tips)
+    {
+        return tips.Select(Resolve).ToList();
+    }
+
+    public static bool HasResolvingTip(IEnumerable<IHoverTip> tips)
+    {
+        return tips.Any(t => t is IResolvingHoverTip);
+    }
+
+    public static int GetVersionKey(IEnumerable<IHoverTip> tips)
+    {
+        unchecked
+        {
+            int hash = 17;
+
+            foreach (IHoverTip tip in tips)
+            {
+                if (tip is IResolvingHoverTip resolving)
+                    hash = hash * 31 + resolving.ResolveVersion;
+            }
+
+            return hash;
+        }
     }
 }

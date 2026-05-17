@@ -19,7 +19,8 @@ public class EMPlant() : TheEngineerCard(2,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX"),
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Charge)
     ];
 
     private const decimal BASE_CHARGE = 1;

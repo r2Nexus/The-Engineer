@@ -18,7 +18,8 @@ public class Supercapacitor() : TheEngineerCard(1,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX"),
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Charge)
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(6,ValueProp.Move)

@@ -10,6 +10,7 @@ using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Orbs;
 using TheEngineer.TheEngineerCode.Powers;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
@@ -21,7 +22,8 @@ public class TrainStop() : TheEngineerCard(2,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromKeyword(CardKeyword.Ethereal)
+        HoverTipFactory.FromKeyword(CardKeyword.Ethereal),
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Wagon)
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<TrainStopPower>(1),

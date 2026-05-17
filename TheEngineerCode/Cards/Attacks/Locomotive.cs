@@ -33,6 +33,11 @@ public sealed class Locomotive : TheEngineerCard
     {
     }
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Wagon)
+    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move)

@@ -5,6 +5,7 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
@@ -26,6 +27,10 @@ public sealed class RailSignal() : TheEngineerCard(
     private const decimal BASE_BLOCK = 6m;
     private const decimal UPGRADE_BLOCK = 3m;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Wagon)
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<RailSignalPower>(BASE_BLOCK),
