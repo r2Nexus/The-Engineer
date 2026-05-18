@@ -9,7 +9,7 @@
 
   "THEENGINEER-NUCLEAR_REACTOR_POWER.title": "Nuclear Reactor",
   "THEENGINEER-NUCLEAR_REACTOR_POWER.description": "At the start of your turn, [gold]Consume[/gold] from [gold]Stock[/gold]: Gain Energy.",
-  "THEENGINEER-NUCLEAR_REACTOR_POWER.smartDescription": "At the start of your turn, [gold]Consume[/gold] [blue]{Consume}[/blue] from [gold]Stock[/gold]: Gain {Energy:energyIcons()}.",
+  "THEENGINEER-NUCLEAR_REACTOR_POWER.smartDescription": "At the start of your turn,\n[gold]Consume[/gold] [blue]{MaterialAmount}[/blue] from [gold]Stock[/gold]:\nGain {Amount:energyIcons()}.",
 
   "THEENGINEER-BIOCHAMBER_POWER.title": "Biochamber",
   "THEENGINEER-BIOCHAMBER_POWER.description": "Whenever you [gold]Consume[/gold], apply [gold]Oil[/gold] to a random enemy.",

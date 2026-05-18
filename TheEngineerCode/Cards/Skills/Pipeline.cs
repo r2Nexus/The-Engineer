@@ -42,19 +42,19 @@ public sealed class Pipeline() : TheEngineerCard(
             .OfType<OilPower>()
             .FirstOrDefault()?.Amount ?? 0;
 
-        if (oilAmount <= 0)
-            return;
-
-        List<Creature> enemies = CombatState.HittableEnemies
-            .Where(enemy => IsUpgraded || enemy != cardPlay.Target)
-            .ToList();
-
-        foreach (Creature enemy in enemies)
+        if (oilAmount > 0)
         {
-            await CommonActions.Apply<OilPower>(
-                enemy,
-                this,
-                oilAmount);
+            List<Creature> enemies = CombatState.HittableEnemies
+                .Where(enemy => IsUpgraded || enemy != cardPlay.Target)
+                .ToList();
+
+            foreach (Creature enemy in enemies)
+            {
+                await CommonActions.Apply<OilPower>(
+                    enemy,
+                    this,
+                    oilAmount);
+            }
         }
 
         await MaterialHelper.ProduceMaterial(this, choiceContext, 1, MaterialDestination.Hand);
