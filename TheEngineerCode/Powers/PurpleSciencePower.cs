@@ -27,6 +27,7 @@ public class PurpleSciencePower: TheEngineerPower, IOnProduced
         MaterialDestination destination,
         AbstractModel? causedBy)
     {
+        if (Owner != player.Creature) return;
         if (causedBy == this)
             return;
         Flash();

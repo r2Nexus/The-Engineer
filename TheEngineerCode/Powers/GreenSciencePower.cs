@@ -19,6 +19,7 @@ public class GreenSciencePower : TheEngineerPower
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
+        if(player != Owner.Player) return;
         Flash();
         await CardPileCmd.Draw(choiceContext, Amount, player);
     }

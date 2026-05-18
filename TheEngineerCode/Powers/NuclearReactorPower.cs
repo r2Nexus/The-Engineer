@@ -25,6 +25,8 @@ public class NuclearReactorPower : TheEngineerPower
     
     public override async Task AfterPlayerTurnStartLate(PlayerChoiceContext choiceContext, Player player)
     {
+        if (player.Creature != Owner) return;
+        
         bool consumed = await MaterialHelper.ConsumeMaterial(
             player,
             choiceContext,

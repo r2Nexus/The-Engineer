@@ -23,6 +23,7 @@ public class TrainRampPower : TheEngineerPower
         CardModel card,
         bool causedByHandDraw)
     {
+        if(card.Owner.Creature != Owner) return;
         if (!card.Tags.Contains(TheEngineerCardTags.Wagon))
             return;
 

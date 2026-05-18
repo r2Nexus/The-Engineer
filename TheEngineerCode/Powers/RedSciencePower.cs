@@ -18,6 +18,7 @@ public class RedSciencePower : TheEngineerPower
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
+        if(player != Owner.Player) return;
         Flash();
         await MaterialHelper.ProduceMaterial(
             player,

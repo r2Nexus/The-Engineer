@@ -22,6 +22,7 @@ public class RepairSystemPower : TheEngineerPower, IOnConsumed
     public async Task OnConsumed(PlayerChoiceContext choiceContext, Player player, int amount, MaterialSource source,
         AbstractModel? causedBy)
     {
+        if(Owner != player.Creature) return;
         await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
     }
 }

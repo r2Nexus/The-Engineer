@@ -30,6 +30,8 @@ public class BiochamberPower : TheEngineerPower, IOnConsumed
         MaterialSource source,
         AbstractModel? causedBy)
     {
+        if(Owner != player.Creature) return;
+        
         Creature? target = CombatState.RunState.Rng.CombatTargets.NextItem(
             CombatState.HittableEnemies);
 

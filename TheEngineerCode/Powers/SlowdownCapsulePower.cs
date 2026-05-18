@@ -20,6 +20,7 @@ public class SlowdownCapsulePower : TheEngineerPower
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
+        if (player != Owner.Player) return;
         await PowerCmd.ModifyAmount(choiceContext,this, -Amount, null, null);
     }
 }

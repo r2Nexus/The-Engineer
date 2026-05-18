@@ -24,6 +24,7 @@ public class EMPlantPower : TheEngineerPower
         CardModel card,
         bool causedByHandDraw)
     {
+        if(card.Owner.Creature != Owner) return;
         if (!ChargeHelper.HasCharge(card))
             return;
 

@@ -22,11 +22,13 @@ public class YellowInserterPower : TheEngineerPower
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
+        if(player != Owner.Player) return;
+        
         Flash();
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, player);
-        await PowerCmd.ModifyAmount(choiceContext,this, -1, null, null);
+        await PowerCmd.ModifyAmount(choiceContext,this, -1, Owner, null);
         await MaterialHelper.ProduceMaterial(
-            player,
+            Owner.Player,
             choiceContext,
             (int)DynamicVars.Produce().BaseValue,
             MaterialDestination.Hand,
