@@ -55,7 +55,7 @@ public sealed class RailSignal() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
+        //DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
         DynamicVars.Power<RailSignalPower>().UpgradeValueBy(UPGRADE_BLOCK);
     }
 }

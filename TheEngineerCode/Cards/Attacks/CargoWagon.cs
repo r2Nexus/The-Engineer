@@ -65,7 +65,7 @@ public sealed class CargoWagon() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        //DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
         DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
     }
 }

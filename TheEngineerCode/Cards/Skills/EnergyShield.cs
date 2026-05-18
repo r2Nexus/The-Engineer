@@ -67,8 +67,8 @@ public sealed class EnergyShield() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
-        DynamicVars[CHARGED_BLOCK_VAR].UpgradeValueBy(UPGRADE_CHARGED_BLOCK);
+        //DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
+        //DynamicVars[CHARGED_BLOCK_VAR].UpgradeValueBy(UPGRADE_CHARGED_BLOCK);
         DynamicVars.ChargeInitial().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeCurrent().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeMax().UpgradeValueBy(UPGRADE_CHARGE_MAX);

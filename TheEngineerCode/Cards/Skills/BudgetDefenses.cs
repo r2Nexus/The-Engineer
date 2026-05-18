@@ -51,6 +51,6 @@ public class BudgetDefenses() : TheEngineerCard(
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
-        DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
+        //DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
     }
 }

@@ -62,7 +62,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
-        DynamicVars.Power<DexterityPower>().UpgradeValueBy(UPGRADE_DEXTERITY);
+        //DynamicVars.Power<DexterityPower>().UpgradeValueBy(UPGRADE_DEXTERITY);
         DynamicVars.ChargeInitial().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeCurrent().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeMax().UpgradeValueBy(UPGRADE_CHARGE_MAX);

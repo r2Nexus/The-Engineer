@@ -49,7 +49,7 @@ public class YellowBelt() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(UPGRADE_DRAW);
+        //DynamicVars.Cards.UpgradeValueBy(UPGRADE_DRAW);
         DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
     }
 }

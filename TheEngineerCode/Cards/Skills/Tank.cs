@@ -76,8 +76,8 @@ public class Tank : TheEngineerCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
+        //DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
         DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
-        DynamicVars.Consume().UpgradeValueBy(UPGRADE_CONSUME);
+        //DynamicVars.Consume().UpgradeValueBy(UPGRADE_CONSUME);
     }
 }

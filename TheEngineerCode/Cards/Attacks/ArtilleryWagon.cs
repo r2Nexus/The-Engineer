@@ -50,7 +50,7 @@ public class ArtilleryWagon : TheEngineerCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        //DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
         BaseReplayCount += (int)BASE_REPLAY;
     }
 }

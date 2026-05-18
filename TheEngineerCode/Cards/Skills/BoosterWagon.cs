@@ -58,8 +58,8 @@ public sealed class BoosterWagon() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(UPGRADE_CARDS);
-        DynamicVars.Energy.UpgradeValueBy(UPGRADE_ENERGY);
+        //DynamicVars.Cards.UpgradeValueBy(UPGRADE_CARDS);
+        //DynamicVars.Energy.UpgradeValueBy(UPGRADE_ENERGY);
         DynamicVars.ChargeInitial().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeCurrent().UpgradeValueBy(UPGRADE_CHARGE_INITIAL);
         DynamicVars.ChargeMax().UpgradeValueBy(UPGRADE_CHARGE_MAX);

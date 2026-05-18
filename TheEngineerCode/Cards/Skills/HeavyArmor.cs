@@ -59,7 +59,7 @@ public class HeavyArmor() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
+        //DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
         DynamicVars.Power<PlatingPower>().UpgradeValueBy(UPGRADE_PLATED);
     }
 }
