@@ -34,7 +34,7 @@ public class Tank : TheEngineerCard
         CardRarity.Uncommon,
         TargetType.AnyEnemy)
     {
-        _baseReplayCount = BASE_REPLAY;
+        BaseReplayCount = BASE_REPLAY;
     }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

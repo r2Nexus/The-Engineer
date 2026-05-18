@@ -31,7 +31,7 @@ public class Flamethrower : TheEngineerCard
         CardRarity.Uncommon,
         TargetType.AnyEnemy)
     {
-        _baseReplayCount = BASE_REPLAY;
+        BaseReplayCount = BASE_REPLAY;
     }
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -59,6 +59,6 @@ public class Flamethrower : TheEngineerCard
 
     protected override void OnUpgrade()
     {
-        _baseReplayCount += UPGRADE_REPLAY;
+        BaseReplayCount += UPGRADE_REPLAY;
     }
 }

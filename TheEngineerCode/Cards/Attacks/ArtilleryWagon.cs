@@ -24,7 +24,7 @@ public class ArtilleryWagon : TheEngineerCard
         CardType.Attack, CardRarity.Rare,
         TargetType.AllEnemies)
     {
-        _baseReplayCount = (int)BASE_REPLAY;
+        BaseReplayCount = (int)BASE_REPLAY;
     }
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Wagon];
@@ -51,6 +51,6 @@ public class ArtilleryWagon : TheEngineerCard
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
-        _baseReplayCount += (int)BASE_REPLAY;
+        BaseReplayCount += (int)BASE_REPLAY;
     }
 }

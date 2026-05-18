@@ -17,7 +17,7 @@ public class BlueBelt : TheEngineerCard
         TargetType.Self)
 
     {
-        _baseReplayCount = BASE_REPLAY;
+        BaseReplayCount = BASE_REPLAY;
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -36,6 +36,6 @@ public class BlueBelt : TheEngineerCard
 
     protected override void OnUpgrade()
     {
-        _baseReplayCount += UPGRADE_REPLAY;
+        BaseReplayCount += UPGRADE_REPLAY;
     }
 }
