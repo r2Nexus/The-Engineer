@@ -66,7 +66,7 @@ public sealed class LaserTurret() : TheEngineerCard(
 
         int hits = TurretHelper.GetOrbs<TurretOrb>(Owner).Count;
 
-        if (ChargeHelper.TrySpendFullCharge(this))
+        if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
             hits += CHARGED_EXTRA_HITS;
 
         if (hits <= 0)

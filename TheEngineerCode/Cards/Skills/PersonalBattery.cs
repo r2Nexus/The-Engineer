@@ -53,7 +53,7 @@ public sealed class PersonalBattery() : TheEngineerCard(
             "Cast",
             Owner.Character.CastAnimDelay);
 
-        bool charged = ChargeHelper.TrySpendFullCharge(this);
+        bool charged = await ChargeHelper.TrySpendFullCharge(choiceContext, this, this);
 
         PileType destination = charged
             ? PileType.Hand

@@ -68,4 +68,26 @@ public static class EngineerHooks
                 destination,
                 causedBy));
     }
+    
+    public static Task OnChargeSpent(
+        ICombatState? combatState,
+        PlayerChoiceContext choiceContext,
+        Player player,
+        CardModel? spentCard,
+        decimal amount,
+        AbstractModel? causedBy)
+    {
+        if (combatState == null || amount <= 0)
+            return Task.CompletedTask;
+
+        return Dispatch<IOnChargeSpent>(
+            combatState,
+            choiceContext,
+            listener => listener.OnChargeSpent(
+                choiceContext,
+                player,
+                spentCard,
+                amount,
+                causedBy));
+    }
 }

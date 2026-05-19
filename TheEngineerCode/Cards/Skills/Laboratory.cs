@@ -60,7 +60,7 @@ public sealed class Laboratory() : TheEngineerCard(
             choiceContext,
             BASE_DRAW, Owner);
 
-        if (!ChargeHelper.TrySpendFullCharge(this))
+        if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
             return;
 
         IEnumerable<CardModel> scienceCards = Owner.Character.CardPool

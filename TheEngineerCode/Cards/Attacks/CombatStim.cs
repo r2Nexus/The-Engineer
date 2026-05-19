@@ -56,7 +56,7 @@ public class CombatStim() : TheEngineerCard(1,
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
         
-        if (ChargeHelper.TrySpendFullCharge(this))
+        if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
             await CommonActions.ApplySelf<StrengthPower>(this,DynamicVars.Power<StrengthPower>().BaseValue);
             await CommonActions.ApplySelf<FocusPower>(this, DynamicVars.Power<FocusPower>().BaseValue);

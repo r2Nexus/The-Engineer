@@ -55,7 +55,7 @@ public sealed class EnergyShield() : TheEngineerCard(
             ValueProp.Unpowered,
             null);
 
-        if (ChargeHelper.TrySpendFullCharge(this))
+        if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
             await CreatureCmd.GainBlock(
                 Owner.Creature,

@@ -20,7 +20,7 @@ public class CorrosiveMixture() : TheEngineerCard(1,
     TargetType.Self)
 {
     private const decimal BASE_CORRODE = 1;
-    private const decimal UPGRADE_CORRODE = 1;
+    private const decimal UPGRADE_CORRODE = 0;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -29,7 +29,7 @@ public class CorrosiveMixture() : TheEngineerCard(1,
         HoverTipFactory.FromPower<VulnerablePower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ConsumeVar(2),
+        new ConsumeVar(1),
         new PowerVar<CorrosiveMixturePower>(BASE_CORRODE)
     ];
 
@@ -38,6 +38,7 @@ public class CorrosiveMixture() : TheEngineerCard(1,
         CardPlay play)
     {
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
+        if(IsUpgraded) await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(
             this, 
@@ -52,6 +53,6 @@ public class CorrosiveMixture() : TheEngineerCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Power<CorrosiveMixturePower>().UpgradeValueBy(UPGRADE_CORRODE);
+        //DynamicVars.Power<CorrosiveMixturePower>().UpgradeValueBy(UPGRADE_CORRODE);
     }
 }

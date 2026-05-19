@@ -84,7 +84,7 @@
   "THEENGINEER-RAPID_DEPLOYMENT.description": "[gold]Channel[/gold] X [gold]Turret[/gold]s.",
 
   "THEENGINEER-RED_BELT.title": "Red Belt",
-  "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] ALL from [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
+  "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] up to {Consume:diff()} from [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
 
   "THEENGINEER-FLAMETHROWER.title": "Flamethrower",
   "THEENGINEER-FLAMETHROWER.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] 1: Apply {OilPower:diff()} [gold]Oil[/gold].",
@@ -111,7 +111,7 @@
   "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IsUpgraded:2|1} [gold]{IsUpgraded:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
 
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",
@@ -126,10 +126,10 @@
   "THEENGINEER-STORAGE_CHEST.description": "At the end of your turn, choose up to {StorageChestPower:diff()} card{StorageChestPower:plural:|s} to [gold]Retain[/gold].",
 
   "THEENGINEER-PUMPJACK.title": "Pumpjack",
-  "THEENGINEER-PUMPJACK.description": "{IfUpgraded:show:Now and at|At} the start of your turn, add 1 Oil Barrel to your hand.",
+  "THEENGINEER-PUMPJACK.description": "{IfUpgraded:show:Now and at|At} the start of your turn, add 1 Oil Barrel to your [gold]Hand[/gold].",
 
   "THEENGINEER-REFINERY.title": "Refinery",
-  "THEENGINEER-REFINERY.description": "[gold]Consume[/gold] ALL: For each [gold]Material[/gold] [gold]Consumed[/gold], apply {OilPower:diff()} [gold]Oil[/gold] to a random enemy.",
+  "THEENGINEER-REFINERY.description": "[gold]Consume[/gold] ALL: For each [gold]Material[/gold] [gold]Consumed[/gold], apply {OilPower:diff()} [gold]Oil[/gold].",
 
   "THEENGINEER-REPAIR_SYSTEM.title": "Repair System",
   "THEENGINEER-REPAIR_SYSTEM.description": "Whenever you [gold]Consume[/gold], gain {RepairSystemPower:diff()} [gold]Block[/gold].",
@@ -144,7 +144,7 @@
   "THEENGINEER-REACTIVE_ARMOUR.description": "Gain {Block:diff()} [gold]Block[/gold].\nNow and at the start of your next turn, [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
 
   "THEENGINEER-PERSONAL_BATTERY.title": "Personal Battery",
-  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} {IfUpgraded:show:Power Cells+|Power Cells} to your draw pile.\n[gold]Charge[/gold]: Add the card{Cards:plural:|s} to your hand instead.",
+  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} {IfUpgraded:show:Power Cells+|Power Cells} to your draw pile.\n[gold]Charge[/gold]: Add the card{Cards:plural:|s} to your [gold]Hand[/gold] instead.",
 
   "THEENGINEER-CHAIN_SIGNAL.title": "Chain Signal",
   "THEENGINEER-CHAIN_SIGNAL.description": "#Your next {ChainSignalPower:diff()} *Wagon card{ChainSignalPower:plural:|s} {ChainSignalPower:plural:gets|get} played twice.",
@@ -162,18 +162,18 @@
   "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()}: Draw {Cards:diff()} card{Cards:plural:|s}.",
 
   "THEENGINEER-STICKY_TAR.title": "Sticky Tar",
-  "THEENGINEER-STICKY_TAR.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to an enemy.\nAdd [gold]Retain[/gold] to a card in hand.",
+  "THEENGINEER-STICKY_TAR.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to an enemy.\nAdd [gold]Retain[/gold] to a card in [gold]Hand[/gold].",
   "THEENGINEER-STICKY_TAR.selectionScreenPrompt": "Choose a card to gain Retain.",
 
   "THEENGINEER-RESUPPLY_WAGON.title": "Resupply Wagon",
-  "THEENGINEER-RESUPPLY_WAGON.description": "Deal {Damage:diff()} damage.\nPut a card from your discard pile into your hand.",
-  "THEENGINEER-RESUPPLY_WAGON.selectionScreenPrompt": "Choose a card to put into your hand.",
+  "THEENGINEER-RESUPPLY_WAGON.description": "Deal {Damage:diff()} damage.\nPut a card from your discard pile into your [gold]Hand[/gold].",
+  "THEENGINEER-RESUPPLY_WAGON.selectionScreenPrompt": "Choose a card to put into your [gold]Hand[/gold].",
 
   "THEENGINEER-SPACE_SCIENCE.title": "Space Science",
   "THEENGINEER-SPACE_SCIENCE.description": "#Your *Science cards play 1 additional time.",
 
   "THEENGINEER-PERIMETER_WALL.title": "Perimeter Wall",
-  "THEENGINEER-PERIMETER_WALL.description": "Add {Cards:diff()} random cards with [gold]Block[/gold] to your hand.\nThey cost 0 this turn and gain [gold]Ethereal[/gold].",
+  "THEENGINEER-PERIMETER_WALL.description": "Add {Cards:diff()} random cards with [gold]Block[/gold] to your [gold]Hand[/gold].\nThey cost 0 this turn and gain [gold]Ethereal[/gold].",
 
   "THEENGINEER-RAINING_BULLETS.title": "Raining Bullets",
   "THEENGINEER-RAINING_BULLETS.description": "Consume {IfUpgraded:show:X-1|X} from Stock: Fire all turrets X times.",
@@ -188,7 +188,7 @@
   "THEENGINEER-OIL_SPILL.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to ALL enemies.\nNext time their [gold]Oil[/gold] is spent, apply 1 [gold]Weak[/gold].",
 
   "THEENGINEER-REINFORCED_WAGON.title": "Reinforced Wagon",
-  "THEENGINEER-REINFORCED_WAGON.description": "Deal {Damage:diff()} damage.\nGain {Block:diff()} [gold]Block[/gold] for each [gold]Material[/gold] in your hand.",
+  "THEENGINEER-REINFORCED_WAGON.description": "Deal {Damage:diff()} damage.\nGain {Block:diff()} [gold]Block[/gold] for each [gold]Material[/gold] in your [gold]Hand[/gold].",
 
   "THEENGINEER-ARTILLERY_WAGON.title": "Artillery Wagon",
   "THEENGINEER-ARTILLERY_WAGON.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
@@ -200,16 +200,16 @@
   "THEENGINEER-TRAIN_RAMP.description": "#Whenever you draw a *Wagon card, deal {Damage:diff()} damage to a random enemy.",
 
   "THEENGINEER-TRAIN_STOP.title": "Train Stop",
-  "THEENGINEER-TRAIN_STOP.description": "#At the start of your turn, add a random *Wagon card to your hand. It gains [gold]Ethereal[/gold].",
+  "THEENGINEER-TRAIN_STOP.description": "#At the start of your turn, add a random *Wagon card to your [gold]Hand[/gold]. It gains [gold]Ethereal[/gold].",
 
   "THEENGINEER-LABORATORY.title": "Laboratory",
-  "THEENGINEER-LABORATORY.description": "#Draw 2 cards.\n[gold]Charge[/gold]: Add {Cards:diff()} random *Science card{Cards:plural:|s} to your hand. {Cards:plural:It costs|They cost} 0 this turn.",
+  "THEENGINEER-LABORATORY.description": "#Draw 2 cards.\n[gold]Charge[/gold]: Add {Cards:diff()} random *Science card{Cards:plural:|s} to your [gold]Hand[/gold]. {Cards:plural:It costs|They cost} 0 this turn.",
 
   "THEENGINEER-POWER_CELL.title": "Power Cell",
   "THEENGINEER-POWER_CELL.description": "Gain {Energy:energyIcons()}.\nGain {PersonalBatteryPower:diff()} [gold]Focus[/gold] this turn.",
 
   "THEENGINEER-FLUID_WAGON.title": "Fluid Wagon",
-  "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\nApply {OilPower:diff()} [gold]Oil[/gold] for each [gold]Material[/gold] in your hand.",
+  "THEENGINEER-FLUID_WAGON.description": "Deal {Damage:diff()} damage.\nApply {OilPower:diff()} [gold]Oil[/gold] for each [gold]Material[/gold] in your [gold]Hand[/gold].",
 
   "THEENGINEER-EXCAVATE.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\nYour next [gold]Consume[/gold] is free.",
   "THEENGINEER-EXCAVATE.title": "Excavate",
@@ -238,9 +238,9 @@
   "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTurn all *Residue on this enemy into *Oil at a 1:1 ratio.",
   "THEENGINEER-LIQUEFY.title": "Liquefy",
 
-  "THEENGINEER-RAILGUN.description": "#Remove all *Charge from your cards.\nDeal damage equal to the *Charge removed.\n{InCombat:(Currently [blue]{CalculatedDamage}[/blue] damage)}",
+  "THEENGINEER-RAILGUN.description": "#Remove all *Charge from your cards.\nDeal damage equal to the *Charge removed.\n{InCombat:(Currently [blue]{CalculatedDamage:diff()}[/blue] damage)}",
   "THEENGINEER-RAILGUN.title": "Railgun",
 
-  "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage to a random enemy {CalculatedHits} times.\nHits an additional time for each fully charged *Charge card you have.",
+  "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage.\nWhenever you spend [gold]Charge[/gold], put this in your [gold]Hand[/gold] and increase its damage by {IfUpgraded:show:4|3}.",
   "THEENGINEER-TESLA_TURRET.title": "Tesla Turret"
 }

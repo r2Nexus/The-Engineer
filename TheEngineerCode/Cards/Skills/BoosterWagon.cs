@@ -48,7 +48,7 @@ public sealed class BoosterWagon() : TheEngineerCard(
     {
         await CommonActions.Draw(this,choiceContext);
 
-        if (ChargeHelper.TrySpendFullCharge(this))
+        if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
             await PlayerCmd.GainEnergy(
                 DynamicVars.Energy.BaseValue,

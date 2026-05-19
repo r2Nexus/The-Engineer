@@ -11,7 +11,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class Railgun() : TheEngineerCard(
-    2,
+    1,
     CardType.Attack,
     CardRarity.Rare,
     TargetType.AnyEnemy)
@@ -55,7 +55,7 @@ public class Railgun() : TheEngineerCard(
 
         decimal damage = DynamicVars.CalculatedDamage.Calculate(play.Target);
 
-        ChargeHelper.RemoveChargeFromAll(Owner, this);
+        await ChargeHelper.RemoveChargeFromAll(choiceContext, Owner, this, this);
 
         await DamageCmd.Attack(damage)
             .FromCard(this)

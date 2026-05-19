@@ -14,24 +14,40 @@ public class RedBelt() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
+    private const int MaxConsume = 5;
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK"),
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
     ];
-    
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new ConsumeVar(MaxConsume),
+        new ProduceVar(MaxConsume)
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int consumed = await MaterialHelper.ConsumeAllMaterial(
-            Owner,
-            choiceContext,
-            MaterialSource.Stock,
-            this);
+        int consumed = 0;
+
+        for (int i = 0; i < MaxConsume; i++)
+        {
+            bool didConsume = await MaterialHelper.ConsumeMaterial(
+                Owner,
+                choiceContext,
+                1,
+                MaterialSource.Stock,
+                this);
+
+            if (!didConsume)
+                break;
+
+            consumed++;
+        }
+
         if (consumed > 0)
         {
             await MaterialHelper.ProduceMaterial(

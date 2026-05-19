@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Hooks;
 
 namespace TheEngineer.TheEngineerCode.Util;
 
@@ -79,12 +80,33 @@ public static class ChargeHelper
         SetCurrent(card, target);
     }
 
-    public static bool TrySpendFullCharge(CardModel card)
+    public static async Task<bool> TrySpendFullCharge(
+        PlayerChoiceContext choiceContext,
+        CardModel card,
+        AbstractModel? causedBy = null)
     {
         if (!IsFull(card))
             return false;
 
+        decimal spent = GetCurrent(card);
+
+        if (spent <= 0m)
+            return false;
+
         Empty(card);
+
+        Player? owner = card.Owner;
+
+        if (owner != null)
+        {
+            await EngineerHooks.OnChargeSpent(
+                owner.Creature.CombatState,
+                choiceContext,
+                owner,
+                card,
+                spent,
+                causedBy);
+        }
 
         return true;
     }
@@ -168,7 +190,11 @@ public static class ChargeHelper
         return total;
     }
 
-    public static decimal RemoveChargeFromAll(Player? owner, CardModel? extraCard = null)
+    public static async Task<decimal> RemoveChargeFromAll(
+        PlayerChoiceContext choiceContext,
+        Player? owner,
+        CardModel? extraCard = null,
+        AbstractModel? causedBy = null)
     {
         decimal removed = 0m;
         HashSet<CardModel> seen = new();
@@ -180,17 +206,28 @@ public static class ChargeHelper
                 if (!seen.Add(card))
                     continue;
 
-                removed += GetCurrent(card);
+                decimal current = GetCurrent(card);
+
+                if (current <= 0m)
+                    continue;
+
+                removed += current;
                 Empty(card);
             }
         }
 
         if (extraCard != null && HasCharge(extraCard) && seen.Add(extraCard))
         {
-            removed += GetCurrent(extraCard);
-            Empty(extraCard);
+            decimal current = GetCurrent(extraCard);
+
+            if (current > 0m)
+            {
+                removed += current;
+                Empty(extraCard);
+            }
         }
 
+        await Task.CompletedTask;
         return removed;
     }
     

@@ -17,10 +17,10 @@ public class PiercingRounds() : TheEngineerCard(1,
 {
     
     private const decimal BASE_DAMAGE = 8m;
-    private const decimal UPGRADE_DAMAGE = 2m;
+    private const decimal UPGRADE_DAMAGE = 3m;
     
     private const decimal BASE_VULNERABLE = 2m;
-    private const decimal UPGRADE_VULNERABLE = 1m;
+    private const decimal UPGRADE_VULNERABLE = 0m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -28,7 +28,7 @@ public class PiercingRounds() : TheEngineerCard(1,
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ConsumeVar(2),
+        new ConsumeVar(1),
         new PowerVar<VulnerablePower>(BASE_VULNERABLE),
         new DamageVar(BASE_DAMAGE, ValueProp.Move)
     ];
@@ -56,6 +56,6 @@ public class PiercingRounds() : TheEngineerCard(1,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
-        DynamicVars.Power<VulnerablePower>().UpgradeValueBy(UPGRADE_VULNERABLE);
+        //DynamicVars.Power<VulnerablePower>().UpgradeValueBy(UPGRADE_VULNERABLE);
     }
 }
