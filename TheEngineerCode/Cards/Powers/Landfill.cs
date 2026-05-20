@@ -10,7 +10,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class Landfill() : TheEngineerCard(1,
-    CardType.Power, CardRarity.Uncommon,
+    CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
     private const decimal BASE_ORBS= 2m;

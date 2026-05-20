@@ -95,7 +95,7 @@ public class TheEngineer : PlaceholderCharacterModel
             return counter;
         });
 
-    public override int BaseOrbSlotCount => 3;
+    public override int BaseOrbSlotCount => 4;
     public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
