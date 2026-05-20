@@ -45,7 +45,7 @@ public sealed class OilPower : TheEngineerPower
             return;
 
         Flash();
-        await PowerCmd.ModifyAmount(choiceContext,this, -spent, null, null);
+        await PowerCmd.ModifyAmount(choiceContext,this, -spent, dealer, null);
         await PowerCmd.Apply<ResiduePower>(
             choiceContext,
             Owner,

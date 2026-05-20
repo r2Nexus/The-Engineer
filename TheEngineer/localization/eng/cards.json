@@ -242,5 +242,8 @@
   "THEENGINEER-RAILGUN.title": "Railgun",
 
   "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage.\nWhenever you spend [gold]Charge[/gold], put this in your [gold]Hand[/gold] and increase its damage by {IfUpgraded:show:4|3}.",
-  "THEENGINEER-TESLA_TURRET.title": "Tesla Turret"
+  "THEENGINEER-TESLA_TURRET.title": "Tesla Turret",
+
+  "THEENGINEER-GREASY.description": "#Apply {OilPower:diff()} *Oil*.\nWhoever spends the targets *Oil* next, draws {GreasyPower:diff()} cards.",
+  "THEENGINEER-GREASY.title": "Greasy"
 }

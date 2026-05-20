@@ -106,5 +106,9 @@
 
   "THEENGINEER-ASTEROID_COLLECTOR_POWER.title": "Asteroid Collector",
   "THEENGINEER-ASTEROID_COLLECTOR_POWER.description": "#This turn, whenever you play an Attack, *Produce 1.",
-  "THEENGINEER-ASTEROID_COLLECTOR_POWER.smartDescription": "#This turn, whenever you play an Attack, *Produce [blue]{Amount}[/blue]."
+  "THEENGINEER-ASTEROID_COLLECTOR_POWER.smartDescription": "#This turn, whenever you play an Attack, *Produce [blue]{Amount}[/blue].",
+
+  "THEENGINEER-GREASY_POWER.description": "Whoever spends the targets Oil next, draws cards.",
+  "THEENGINEER-GREASY_POWER.smartDescription": "Whoever spends the targets Oil next, draws {Amount} cards.",
+  "THEENGINEER-GREASY_POWER.title": "Greasy"
 }
