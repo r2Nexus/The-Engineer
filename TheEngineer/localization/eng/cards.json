@@ -249,5 +249,9 @@
 
   "THEENGINEER-CLIFF_EXPLOSIVE.description": "#Deal {Damage:diff()} damage to ALL enemies.\n*Exhaust* a card.",
   "THEENGINEER-CLIFF_EXPLOSIVE.title": "Cliff Explosive",
-  "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust."
+  "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust.",
+
+  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Exhaust} cards.\nFor each card *Exhausted, draw a card and *Produce {Produce}.",
+  "THEENGINEER-COLD_START.title": "Cold Start",
+  "THEENGINEER-COLD_START.selectionScreenPrompt": "Choose cards up to {Exhaust} to Exhaust."
 }
