@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Orbs;
@@ -26,8 +27,14 @@ public sealed class TurretOrb : CustomOrbModel
     public override string? CustomEvokeSfx => "event:/sfx/characters/defect/defect_lightning_evoke";
     public override string? CustomChannelSfx => "event:/sfx/characters/defect/defect_lightning_channel";
 
-    public override decimal PassiveVal => ModifyOrbValue(7m);
-    public override decimal EvokeVal => ModifyOrbValue(9m);
+    private const decimal BASE_PASSIVE_DAMAGE = 7m;
+    private const decimal BASE_EVOKE_DAMAGE = 9m;
+
+    public override decimal PassiveVal =>
+        ModifyOrbValue(BeltFedPower.ModifyTurretFireDamage(Owner, BASE_PASSIVE_DAMAGE));
+
+    public override decimal EvokeVal =>
+        ModifyOrbValue(BASE_EVOKE_DAMAGE);
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -56,7 +63,6 @@ public sealed class TurretOrb : CustomOrbModel
     }
     public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
     {
-        
         bool paid = await MaterialHelper.ConsumeMaterial(
             Owner,
             choiceContext,
@@ -65,25 +71,33 @@ public sealed class TurretOrb : CustomOrbModel
 
         if (!paid)
             return;
+
         await Fire(choiceContext, target);
     }
 
     public async Task Fire(PlayerChoiceContext choiceContext, Creature? target)
     {
-        Trigger();
-        Creature? enemy = target ?? GetRandomEnemy();
-        if (enemy == null)
-            return;
+        int fireCount = BeltFedPower.GetTurretFireCount(Owner);
 
-        VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
-        PlayPassiveSfx();
-        
-        await CreatureCmd.Damage(
-            choiceContext,
-            new[] { enemy },
-            PassiveVal,
-            ValueProp.Unpowered,
-            Owner.Creature);
+        for (int i = 0; i < fireCount; i++)
+        {
+            Creature? enemy = target ?? GetRandomEnemy();
+
+            if (enemy == null || !enemy.IsHittable)
+                return;
+
+            Trigger();
+
+            VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
+            PlayPassiveSfx();
+
+            await CreatureCmd.Damage(
+                choiceContext,
+                new[] { enemy },
+                PassiveVal,
+                ValueProp.Unpowered,
+                Owner.Creature);
+        }
     }
 
     public override async Task<IEnumerable<Creature>> Evoke(PlayerChoiceContext choiceContext)
