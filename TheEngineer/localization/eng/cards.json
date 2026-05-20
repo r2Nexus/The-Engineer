@@ -245,5 +245,9 @@
   "THEENGINEER-TESLA_TURRET.title": "Tesla Turret",
 
   "THEENGINEER-GREASY.description": "#Apply {OilPower:diff()} *Oil*.\nWhoever spends the targets *Oil* next, draws {GreasyPower:diff()} cards.",
-  "THEENGINEER-GREASY.title": "Greasy"
+  "THEENGINEER-GREASY.title": "Greasy",
+
+  "THEENGINEER-CLIFF_EXPLOSIVE.description": "#Deal {Damage:diff()} damage to ALL enemies.\n*Exhaust* a card.",
+  "THEENGINEER-CLIFF_EXPLOSIVE.title": "Cliff Explosive",
+  "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust."
 }
