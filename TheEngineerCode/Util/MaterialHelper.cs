@@ -63,24 +63,23 @@ public static class MaterialHelper
         return GetMaterials(owner, source).Count >= amount;
     }
 
-    public static Task<bool> ConsumeMaterial(
-        CardModel sourceCard,
+    public static Task<bool> ConsumeMaterial(CardModel sourceCard,
         PlayerChoiceContext choiceContext,
         int amount,
-        MaterialSource source)
+        MaterialSource source, CardPlay? play = null)
         => ConsumeMaterial(
             sourceCard.Owner,
             choiceContext,
             amount,
             source,
-            sourceCard);
+            sourceCard,
+            play);
 
-    public static async Task<bool> ConsumeMaterial(
-        Player? owner,
+    public static async Task<bool> ConsumeMaterial(Player? owner,
         PlayerChoiceContext choiceContext,
         int amount,
         MaterialSource source,
-        AbstractModel? causedBy = null)
+        AbstractModel? causedBy = null, CardPlay? play = null)
     {
         if (owner == null || amount <= 0)
             return false;
@@ -102,26 +101,26 @@ public static class MaterialHelper
             owner,
             amount,
             source,
-            causedBy);
+            causedBy,
+            play);
 
         return true;
     }
 
-    public static Task<int> ConsumeAllMaterial(
-        CardModel sourceCard,
+    public static Task<int> ConsumeAllMaterial(CardModel sourceCard,
         PlayerChoiceContext choiceContext,
-        MaterialSource source)
+        MaterialSource source, CardPlay? play = null)
         => ConsumeAllMaterial(
             sourceCard.Owner,
             choiceContext,
             source,
-            sourceCard);
+            sourceCard,
+            play);
 
-    public static async Task<int> ConsumeAllMaterial(
-        Player? owner,
+    public static async Task<int> ConsumeAllMaterial(Player? owner,
         PlayerChoiceContext choiceContext,
         MaterialSource source,
-        AbstractModel? causedBy = null)
+        AbstractModel? causedBy = null, CardPlay? play = null)
     {
         if (owner == null)
             return 0;
@@ -141,7 +140,8 @@ public static class MaterialHelper
             owner,
             amount,
             source,
-            causedBy);
+            causedBy,
+            play);
 
         return amount;
     }

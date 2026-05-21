@@ -44,7 +44,8 @@ public class PiercingRounds() : TheEngineerCard(1,
             this,
             choiceContext,
             (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Hand);
+            MaterialSource.Hand,
+            play);
 
         if (consumed)
         {

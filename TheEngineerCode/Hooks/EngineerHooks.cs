@@ -34,7 +34,8 @@ public static class EngineerHooks
         Player player,
         int amount,
         MaterialSource source,
-        AbstractModel? causedBy)
+        AbstractModel? causedBy,
+        CardPlay? play = null)
     {
         return Dispatch<IOnConsumed>(
             combatState,
@@ -44,7 +45,8 @@ public static class EngineerHooks
                 player,
                 amount,
                 source,
-                causedBy));
+                causedBy, 
+                play));
     }
     
     public static Task OnProduced(

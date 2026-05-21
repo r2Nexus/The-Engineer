@@ -34,7 +34,7 @@ public class TargetPractice() : TheEngineerCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play).Execute(choiceContext);
-        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand);
+        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand, play);
         if(consumed) await TurretHelper.FireAllTurrets(choiceContext,Owner);
     }
 

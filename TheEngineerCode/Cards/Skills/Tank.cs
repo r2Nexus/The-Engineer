@@ -65,7 +65,8 @@ public class Tank : TheEngineerCard
             this,
             choiceContext,
             (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Stock);
+            MaterialSource.Stock,
+            play);
 
         if (!consumed)
             return;

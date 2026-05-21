@@ -30,7 +30,7 @@ public class BlueBelt : TheEngineerCard
         CardPlay play)
     {
         bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Hand);
+            MaterialSource.Hand, play);
         if (consumed) await CommonActions.Draw(this,choiceContext);
     }
 

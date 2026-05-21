@@ -44,7 +44,7 @@ public class ArtilleryWagon : TheEngineerCard
         CardPlay play)
     {
         bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Stock);
+            MaterialSource.Stock, play);
         if (consumed) await CommonActions.CardAttack(this, play).Execute(choiceContext);
     }
 

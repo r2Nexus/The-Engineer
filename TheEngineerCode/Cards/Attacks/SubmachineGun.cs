@@ -47,7 +47,8 @@ public class SubmachineGun() : TheEngineerCard(
             this,
             choiceContext,
             1,
-            MaterialSource.Stock);
+            MaterialSource.Stock, 
+            play);
 
         if (consumed)
         {

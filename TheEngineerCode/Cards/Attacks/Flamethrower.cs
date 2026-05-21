@@ -49,7 +49,7 @@ public class Flamethrower : TheEngineerCard
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
 
-        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand);
+        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand, play);
 
         if (consumed)
         {

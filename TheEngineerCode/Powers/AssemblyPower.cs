@@ -21,12 +21,11 @@ public sealed class AssemblyPower : TheEngineerPower, IOnConsumed
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public async Task OnConsumed(
-        PlayerChoiceContext choiceContext,
+    public async Task OnConsumed(PlayerChoiceContext choiceContext,
         Player player,
         int amount,
         MaterialSource source,
-        AbstractModel? causedBy)
+        AbstractModel? causedBy, CardPlay? play)
     {
         if (player != Owner.Player)
             return;

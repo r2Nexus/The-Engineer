@@ -34,7 +34,7 @@ public class MissileBarrage() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        var consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Stock);
+        var consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Stock, play);
         if (consumed <= 0) return;
         
         for (var i = 0; i < consumed; i++)

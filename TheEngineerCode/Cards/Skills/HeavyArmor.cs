@@ -47,7 +47,8 @@ public class HeavyArmor() : TheEngineerCard(
             this,
             choiceContext,
             2,
-            MaterialSource.Hand);
+            MaterialSource.Hand,
+            play);
 
         if (consumed)
         {

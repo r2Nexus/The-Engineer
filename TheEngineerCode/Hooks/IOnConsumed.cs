@@ -9,10 +9,9 @@ namespace TheEngineer.TheEngineerCode.Hooks;
 
 public interface IOnConsumed
 {
-    Task OnConsumed(
-        PlayerChoiceContext choiceContext,
+    Task OnConsumed(PlayerChoiceContext choiceContext,
         Player player,
         int amount,
         MaterialSource source,
-        AbstractModel? causedBy);
+        AbstractModel? causedBy, CardPlay? play);
 }

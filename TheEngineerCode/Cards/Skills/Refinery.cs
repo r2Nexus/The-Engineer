@@ -34,7 +34,7 @@ public class Refinery() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Hand);
+        int consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Hand, play);
         if (consumed > 0)
         {
 

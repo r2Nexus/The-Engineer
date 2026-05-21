@@ -36,7 +36,8 @@ public class RainingBullets() : TheEngineerCard(0,
             this,
             choiceContext,
             consumeCount,
-            MaterialSource.Stock);
+            MaterialSource.Stock,
+            play);
 
         if (!consumed)
             return;

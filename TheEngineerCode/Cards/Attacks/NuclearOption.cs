@@ -41,7 +41,8 @@ public class NuclearOption() : TheEngineerCard(4,
         int consumed = await MaterialHelper.ConsumeAllMaterial(
             this,
             choiceContext,
-            MaterialSource.Stock);
+            MaterialSource.Stock,
+            play);
 
         await DamageCmd.Attack(damage)
             .FromCard(this)

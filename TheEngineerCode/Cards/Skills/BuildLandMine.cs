@@ -44,7 +44,8 @@ public class BuildLandMine() : TheEngineerCard(1,
             this,
             choiceContext,
             1,
-            MaterialSource.Hand);
+            MaterialSource.Hand,
+            play);
 
         if (consumed)
         {

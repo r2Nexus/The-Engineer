@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -11,12 +12,11 @@ namespace TheEngineer.TheEngineerCode.Character;
 public class TheEngineerSingleton()
     : CustomSingletonModel(true, true), IOnConsumed
 {
-    public Task OnConsumed(
-        PlayerChoiceContext choiceContext,
+    public Task OnConsumed(PlayerChoiceContext choiceContext,
         Player player,
         int amount,
         MaterialSource source,
-        AbstractModel? causedBy)
+        AbstractModel? causedBy, CardPlay? play)
         => ChargeHelper.OnConsumed(
             choiceContext,
             player,

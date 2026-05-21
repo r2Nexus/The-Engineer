@@ -47,7 +47,8 @@ public class SlowdownCapsule() : TheEngineerCard(1,
             this, 
             choiceContext, 
             (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Hand);
+            MaterialSource.Hand,
+            play);
         if (consumed)
         {
             await CommonActions.ApplySelf<SlowdownCapsulePower>(this, DynamicVars.Power<SlowdownCapsulePower>().BaseValue);

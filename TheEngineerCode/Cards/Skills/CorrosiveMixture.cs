@@ -44,7 +44,8 @@ public class CorrosiveMixture() : TheEngineerCard(1,
             this, 
             choiceContext, 
             (int)DynamicVars.Consume().BaseValue,
-            MaterialSource.Hand);
+            MaterialSource.Hand,
+            play);
         if (consumed)
         {
             await CommonActions.ApplySelf<CorrosiveMixturePower>(this, DynamicVars.Power<CorrosiveMixturePower>().BaseValue);
