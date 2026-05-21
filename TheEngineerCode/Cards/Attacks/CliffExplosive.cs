@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Orbs;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
@@ -21,7 +22,7 @@ public class CliffExplosive() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
-    private const decimal BASE_DAMAGE = 7m;
+    private const decimal BASE_DAMAGE = 6m;
     private const decimal UPGRADE_DAMAGE = 2m;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -40,6 +41,8 @@ public class CliffExplosive() : TheEngineerCard(
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);
 
+        await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
+        
         CardSelectorPrefs prefs = new(SelectionScreenPrompt, 1)
         {
             PretendCardsCanBePlayed = true
