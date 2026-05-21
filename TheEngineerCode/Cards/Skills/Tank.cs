@@ -58,7 +58,7 @@ public class Tank : TheEngineerCard
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block.BaseValue,
-            ValueProp.Unpowered,
+            ValueProp.Move,
             null);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(
