@@ -114,5 +114,9 @@
 
   "THEENGINEER-BELT_FED_POWER.description": "Your Turrets deal 2 less damage and Fire twice.",
   "THEENGINEER-BELT_FED_POWER.smartDescription": "Your Turrets deal 2 less damage and Fire twice.",
-  "THEENGINEER-BELT_FED_POWER.title": "Belt Fed"
+  "THEENGINEER-BELT_FED_POWER.title": "Belt Fed",
+
+  "THEENGINEER-ASSEMBLY_POWER.description": "The next card that *Consumes is played an additional time.",
+  "THEENGINEER-ASSEMBLY_POWER.smartDescription": "The next {Amount:diff()} card{Amount:plural:|s} that *Consume{Amount:plural:s|} is played an additional time.",
+  "THEENGINEER-ASSEMBLY_POWER.title": "Assembly"
 }

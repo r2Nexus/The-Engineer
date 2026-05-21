@@ -259,5 +259,11 @@
   "THEENGINEER-BELT_FED.title": "Belt Fed",
 
   "THEENGINEER-RESEARCH_WAGON.description": "#Add {Cards} random {IfUpgraded:show:upgraded |}*Science cards to your hand. They cost 0 this turn.",
-  "THEENGINEER-RESEARCH_WAGON.title": "Research Wagon"
+  "THEENGINEER-RESEARCH_WAGON.title": "Research Wagon",
+
+  "THEENGINEER-OUTPOST.description": "#*Channel* a *Miner*.\nGain {Block:diff()} *Block* for each *Miner* you have.",
+  "THEENGINEER-OUTPOST.title": "Outpost",
+
+  "THEENGINEER-ASSEMBLY.description": "#*Produce {Produce:diff()}.\n#The next card that *Consumes is played an additional time.",
+  "THEENGINEER-ASSEMBLY.title": "Assembly"
 }
