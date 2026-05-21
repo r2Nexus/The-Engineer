@@ -19,6 +19,7 @@ public class Foundry() : TheEngineerCard(2,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
+        HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromOrb<TurretOrb>()
     ];
     

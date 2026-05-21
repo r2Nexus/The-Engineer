@@ -19,6 +19,8 @@ public class OverhaulMod() : TheEngineerCard(3,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL"),
+        HoverTipFactory.FromCard<Material>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Character;
@@ -26,6 +27,10 @@ public class ColdStart() : TheEngineerCard(
     private const int DRAW_PER_EXHAUST = 1;
     private const int PRODUCE_PER_EXHAUST = 1;
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar(ExhaustKey, BASE_EXHAUST),

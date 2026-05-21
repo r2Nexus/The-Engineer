@@ -2,6 +2,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheEngineer.TheEngineerCode.Cards;
@@ -19,6 +20,10 @@ public class BlueScience() : TheEngineerCard(1,
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];
     
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<FocusPower>()
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<FocusPower>(BASE_POWER)
     ];

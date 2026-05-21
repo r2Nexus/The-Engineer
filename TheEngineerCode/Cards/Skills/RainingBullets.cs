@@ -2,10 +2,12 @@
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Orbs;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
@@ -17,6 +19,13 @@ public class RainingBullets() : TheEngineerCard(0,
 {
     protected override bool HasEnergyCostX => true;
     
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK"),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-FIRE"),
+        HoverTipFactory.FromOrb<TurretOrb>()
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
     protected override async Task OnPlay(
