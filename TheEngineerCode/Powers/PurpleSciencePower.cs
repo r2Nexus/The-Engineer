@@ -1,50 +1,63 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using TheEngineer.TheEngineerCode.Hooks;
-using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Powers;
 
-public class PurpleSciencePower: TheEngineerPower, IOnProduced
+public sealed class PurpleSciencePower : TheEngineerPower
 {
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+    ];
+
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [];
-    
-    public bool hasHappenedThisTurn = false;
 
-    public async Task OnProduced(
+    public override async Task AfterPlayerTurnStartLate(
         PlayerChoiceContext choiceContext,
-        Player player,
-        int amount,
-        MaterialDestination destination,
-        AbstractModel? causedBy)
+        Player player)
     {
-        if (Owner != player.Creature) return;
-        if (causedBy == this)
+        if (player.Creature != Owner)
             return;
-        Flash();
-        if (!hasHappenedThisTurn)
+
+        if (Amount <= 0)
+            return;
+
+        for (int i = 0; i < Amount; i++)
         {
-            hasHappenedThisTurn = true;
-            await MaterialHelper.ProduceMaterial(
-                Owner.Player,
-                choiceContext,
-                Amount,
-                MaterialDestination.Hand,
-                this);
+            CardModel? card = PickRandomUpgradableCard(player);
+
+            if (card == null)
+                break;
+
+            Flash();
+            CardCmd.Upgrade(card);
         }
+
+        await Task.CompletedTask;
     }
 
-    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+    private static CardModel? PickRandomUpgradableCard(Player player)
     {
-        hasHappenedThisTurn = false;
+        List<CardModel> candidates = PileType.Hand
+            .GetPile(player)
+            .Cards
+            .Where(card => card.IsUpgradable)
+            .ToList();
+
+        if (candidates.Count <= 0)
+            return null;
+
+        int index = player.RunState.Rng.CombatCardGeneration
+            .NextInt(candidates.Count);
+
+        return candidates[index];
     }
 }

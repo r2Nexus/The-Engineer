@@ -28,8 +28,8 @@
   "THEENGINEER-GREEN_SCIENCE_POWER.smartDescription": "At the start of your turn, draw [blue]{Amount}[/blue] card{Amount:plural:|s}.",
 
   "THEENGINEER-PURPLE_SCIENCE_POWER.title": "Purple Science",
-  "THEENGINEER-PURPLE_SCIENCE_POWER.description": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] 1.",
-  "THEENGINEER-PURPLE_SCIENCE_POWER.smartDescription": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] [blue]{Amount}[/blue].",
+  "THEENGINEER-PURPLE_SCIENCE_POWER.description": "#At the start of your turn, *Upgrade a random card in your *Hand*.",
+  "THEENGINEER-PURPLE_SCIENCE_POWER.smartDescription": "#At the start of your turn, *Upgrade {Amount:plural:|up to} {Amount} random card{Amount:plural:|s} in your *Hand*.",
 
   "THEENGINEER-CORROSIVE_MIXTURE_POWER.title": "Corrosive Mixture",
   "THEENGINEER-CORROSIVE_MIXTURE_POWER.description": "This turn, your [gold]Land Mine[/gold]s apply 1 [gold]Vulnerable[/gold].",

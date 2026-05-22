@@ -105,13 +105,13 @@
   "THEENGINEER-GREEN_SCIENCE.description": "At the start of your turn, draw 1 card.",
 
   "THEENGINEER-PURPLE_SCIENCE.title": "Purple Science",
-  "THEENGINEER-PURPLE_SCIENCE.description": "The first time you [gold]Produce[/gold] each turn, [gold]Produce[/gold] 1.",
+  "THEENGINEER-PURPLE_SCIENCE.description": "#At the start of your turn, *Upgrade a random card in your *Hand*.",
 
   "THEENGINEER-TARGET_PRACTICE.title": "Target Practice",
   "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IsUpgraded:2|1} [gold]{IsUpgraded:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:2|1} [gold]{IfUpgraded:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
 
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",
