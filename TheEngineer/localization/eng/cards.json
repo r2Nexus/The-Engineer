@@ -81,7 +81,7 @@
   "THEENGINEER-BLUE_INSERTER.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\nDiscard {Discard:diff()} card{Discard:plural:|s}.",
 
   "THEENGINEER-RAPID_DEPLOYMENT.title": "Rapid Deployment",
-  "THEENGINEER-RAPID_DEPLOYMENT.description": "[gold]Channel[/gold] X [gold]Turret[/gold]s.",
+  "THEENGINEER-RAPID_DEPLOYMENT.description": "#*Channel 1 *Turret*.\n*Consume {Consume:diff()}:\n*Channel 1 *Turret*.\n*Charge*: *Channel 1 *Turret*.",
 
   "THEENGINEER-RED_BELT.title": "Red Belt",
   "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] up to {Consume:diff()} from [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
