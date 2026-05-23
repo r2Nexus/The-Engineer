@@ -61,28 +61,28 @@ public sealed class Laboratory() : TheEngineerCard(
             BASE_DRAW, Owner);
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
-            return;
-
-        IEnumerable<CardModel> scienceCards = Owner.Character.CardPool
-            .GetUnlockedCards(
-                Owner.UnlockState,
-                Owner.RunState.CardMultiplayerConstraint)
-            .Where(card => card.Tags.Contains(TheEngineerCardTags.Science));
-
-        List<CardModel> cards = CardFactory.GetDistinctForCombat(
-                Owner,
-                scienceCards,
-                (int)DynamicVars.Cards.BaseValue,
-                Owner.RunState.Rng.CombatCardGeneration)
-            .ToList();
-
-        foreach (CardModel card in cards)
         {
-            card.SetToFreeThisTurn();
-            await CardPileCmd.AddGeneratedCardToCombat(
-                card,
-                PileType.Hand,
-                Owner);
+            IEnumerable<CardModel> scienceCards = Owner.Character.CardPool
+                .GetUnlockedCards(
+                    Owner.UnlockState,
+                    Owner.RunState.CardMultiplayerConstraint)
+                .Where(card => card.Tags.Contains(TheEngineerCardTags.Science));
+
+            List<CardModel> cards = CardFactory.GetDistinctForCombat(
+                    Owner,
+                    scienceCards,
+                    (int)DynamicVars.Cards.BaseValue,
+                    Owner.RunState.Rng.CombatCardGeneration)
+                .ToList();
+
+            foreach (CardModel card in cards)
+            {
+                card.SetToFreeThisTurn();
+                await CardPileCmd.AddGeneratedCardToCombat(
+                    card,
+                    PileType.Hand,
+                    Owner);
+            }
         }
     }
 
