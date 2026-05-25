@@ -18,8 +18,8 @@ public class TrainRamp() : TheEngineerCard(2,
     TargetType.Self)
 {
 
-    private const decimal BASE_DAMAGE = 3;
-    private const decimal UPGRADE_DAMAGE = 1;
+    private const decimal BASE_DAMAGE = 5;
+    private const decimal UPGRADE_DAMAGE = 7;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
