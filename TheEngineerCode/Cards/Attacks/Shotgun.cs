@@ -33,7 +33,7 @@ public class Shotgun() : TheEngineerCard(
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
         new PowerVar<WeakPower>(BASE_WEAK),
-        new ConsumeVar(2)
+        new ConsumeVar(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -56,7 +56,7 @@ public class Shotgun() : TheEngineerCard(
         bool consumed = await MaterialHelper.ConsumeMaterial(
             this,
             choiceContext,
-            2,
+            (int)DynamicVars.Consume().BaseValue,
             MaterialSource.Hand,
             play);
 
