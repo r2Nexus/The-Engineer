@@ -15,7 +15,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class RapidDeployment() : TheEngineerCard(
-    1,
+    0,
     CardType.Skill,
     CardRarity.Uncommon,
     TargetType.Self)
@@ -32,11 +32,6 @@ public sealed class RapidDeployment() : TheEngineerCard(
 
     protected override bool ShouldGlowGoldInternal =>
         ChargeHelper.IsFull(this);
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-        IsUpgraded
-            ? []
-            : [CardKeyword.Exhaust];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
@@ -76,5 +71,10 @@ public sealed class RapidDeployment() : TheEngineerCard(
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
             await OrbCmd.Channel<TurretOrb>(choiceContext, Owner);
+    }
+
+    protected override void OnUpgrade()
+    {
+        DynamicVars.Consume().UpgradeValueBy(-1);
     }
 }
