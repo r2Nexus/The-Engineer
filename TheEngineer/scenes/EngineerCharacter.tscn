@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://dljv8jk5dtwcv"]
+
+[ext_resource type="PackedScene" uid="uid://xt8rr0mln783" path="res://TheEngineer/scenes/cube3d.tscn" id="1_wou8f"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wou8f"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hdkhf"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3fbqa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t6ktt"]
+xfade_time = 0.15
+
+[sub_resource type="Curve" id="Curve_wou8f"]
+_data = [Vector2(0, 0), 0.0, 3.0970309, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oueow"]
+xfade_time = 0.6
+xfade_curve = SubResource("Curve_wou8f")
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_20884"]
+states/End/position = Vector2(735, 166)
+states/Start/position = Vector2(419, 166)
+states/attack/node = SubResource("AnimationNodeAnimation_wou8f")
+states/attack/position = Vector2(568, 234)
+states/idle/node = SubResource("AnimationNodeAnimation_hdkhf")
+states/idle/position = Vector2(568, 122)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3fbqa"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_t6ktt"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_oueow")]
+graph_offset = Vector2(-167, -103)
+
+[node name="Root" type="Node2D"]
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="ViewportDisplay" type="TextureRect" parent="Visuals"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -256.0
+offset_right = 256.0
+grow_vertical = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Visuals"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -958.0
+offset_right = 538.0
+offset_bottom = -318.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="ModelViewport" type="SubViewport" parent="Visuals/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 640)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="Visuals/SubViewportContainer/ModelViewport" instance=ExtResource("1_wou8f")]
+
+[node name="Cube" parent="Visuals/SubViewportContainer/ModelViewport/Node3D/cube" index="0"]
+transform = Transform3D(-0.9047364, 0, -0.42597097, 0, 1, 0, 0.42597097, 0, -0.9047364, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="Visuals/SubViewportContainer/ModelViewport/Node3D/cube" index="1"]
+root_motion_local = true
+
+[node name="AnimationTree" type="AnimationTree" parent="Visuals/SubViewportContainer/ModelViewport/Node3D/cube" index="2"]
+root_motion_local = true
+tree_root = SubResource("AnimationNodeStateMachine_20884")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Camera3D" parent="Visuals/SubViewportContainer/ModelViewport/Node3D" index="1"]
+transform = Transform3D(0.97639036, 0, -0.2160136, 0, 1, 0, 0.2160136, 0, 0.97639036, 1.730228, 4.7900267, 9.991232)
+
+[node name="Bounds" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -44.999996
+offset_top = -373.0
+offset_right = 355.0
+offset_bottom = 139.0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+position = Vector2(105, -283)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+position = Vector2(106, -150)
+
+[node name="OrbPos" type="Marker2D" parent="."]
+position = Vector2(105, -357)
+
+[node name="TalkPos" type="Marker2D" parent="."]
+position = Vector2(173, -288)
+
+[editable path="Visuals/SubViewportContainer/ModelViewport/Node3D"]
+[editable path="Visuals/SubViewportContainer/ModelViewport/Node3D/cube"]

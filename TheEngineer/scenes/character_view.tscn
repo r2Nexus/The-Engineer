@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx36qfjugtclx"]
+
+[ext_resource type="PackedScene" uid="uid://ctyk6m66hj550" path="res://TheEngineer/scenes/engineer_char_imported.tscn" id="1_e3636"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.4413175, -0.7605998)
+projection = 1
+current = true
+size = 1.2
+
+[node name="engineer_char" parent="." instance=ExtResource("1_e3636")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+visible = false
+light_color = Color(0.9561065, 0.8988724, 0.92846364, 1)
