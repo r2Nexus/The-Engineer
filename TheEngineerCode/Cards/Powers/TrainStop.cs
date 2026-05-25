@@ -15,7 +15,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class TrainStop() : TheEngineerCard(2,
+public class TrainStop() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -38,6 +38,6 @@ public class TrainStop() : TheEngineerCard(2,
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        AddKeyword(CardKeyword.Retain);
     }
 }
