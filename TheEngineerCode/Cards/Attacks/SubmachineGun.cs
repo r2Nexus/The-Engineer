@@ -20,7 +20,7 @@ public class SubmachineGun() : TheEngineerCard(
     CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 6m;
+    private const decimal BASE_DAMAGE = 7m;
     private const decimal UPGRADE_DAMAGE = 2m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
