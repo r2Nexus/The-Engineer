@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx36qfjugtclx"]
+[gd_scene load_steps=8 format=3 uid="uid://cx36qfjugtclx"]
 
 [ext_resource type="PackedScene" uid="uid://ctyk6m66hj550" path="res://TheEngineer/scenes/engineer_char_imported.tscn" id="1_e3636"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3636"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bevi2"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_beura"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5h754"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qwmix"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dtlgh"]
+states/Start/position = Vector2(208, 76)
+states/attack/node = SubResource("AnimationNodeAnimation_e3636")
+states/attack/position = Vector2(402, 121)
+states/idle/node = SubResource("AnimationNodeAnimation_bevi2")
+states/idle/position = Vector2(371, 49)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_beura"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_5h754"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_qwmix")]
 
 [node name="Node3D" type="Node3D"]
 
@@ -8,11 +32,94 @@
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.4413175, -0.7605998)
 projection = 1
 current = true
-size = 1.2
 
 [node name="engineer_char" parent="." instance=ExtResource("1_e3636")]
+
+[node name="Skeleton3D" parent="engineer_char/Armature" index="0"]
+bones/0/position = Vector3(0.08092877, 0.005660992, 0.6195999)
+bones/0/rotation = Quaternion(-0.19366212, -0.019958114, -0.012785155, 0.98078203)
+bones/1/rotation = Quaternion(0.11503436, -0.119385794, -0.053911526, 0.9846867)
+bones/2/rotation = Quaternion(0.061911006, -0.0040364796, 0.03805117, 0.9973479)
+bones/3/rotation = Quaternion(0.01691903, 0.024170209, -0.023889326, 0.99927914)
+bones/4/rotation = Quaternion(0.050777245, 0.12768619, 0.98958385, 0.042916)
+bones/5/rotation = Quaternion(-0.30438918, 0.0016098137, -0.24845847, 0.9195723)
+bones/6/rotation = Quaternion(0.014202048, -0.17365073, 0.9831016, -0.056169588)
+bones/7/rotation = Quaternion(0.061079416, 0.07302434, -0.6218694, 0.77731293)
+bones/9/rotation = Quaternion(0.10412629, -0.16963501, 0.9425073, 0.2684429)
+bones/10/rotation = Quaternion(-0.019793754, 0.0030921728, 0.14398178, 0.9893776)
+bones/11/rotation = Quaternion(-0.010578237, -0.19628769, 0.9697568, -0.14467585)
+bones/12/rotation = Quaternion(-0.010779137, -5.398639e-05, 0.21982023, 0.97548085)
+bones/13/position = Vector3(0.25461182, 1.4447223, -0.85384196)
+bones/13/rotation = Quaternion(0.012911145, -0.04831561, -0.07330516, 0.9960549)
+bones/14/position = Vector3(1.09896064e-07, 8.05594e-07, -2.1234155e-07)
+bones/15/rotation = Quaternion(-0.04837486, 0.016863195, 0.20052233, 0.97834885)
+bones/16/position = Vector3(2.9162426, -3.7813385, 0.40214399)
+bones/16/rotation = Quaternion(0.0059665814, 0.006805498, -0.65921384, 0.75190103)
+bones/17/rotation = Quaternion(-0.014727273, 0.0007655228, 0.9018247, -0.43185043)
+bones/18/position = Vector3(-0.0012352467, -1.8380848, 0.418725)
+bones/19/position = Vector3(-1.3928329, 1.7542502, -0.14243186)
+bones/19/rotation = Quaternion(0.1282584, -0.0838578, 0.40880558, 0.8996643)
+bones/21/position = Vector3(-2.4357157, -3.931696, 0.7986387)
+bones/22/rotation = Quaternion(-0.025907798, -0.030007891, 0.99742645, -0.05973883)
+
+[node name="Bone_003" parent="engineer_char/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.9667207, 0.029549252, -0.25412148, -0.02813204, 0.9995616, 0.009209987, 0.25428218, -0.0017545987, 0.96712834, 0.40368584, 4.2940984, -0.21888617)
+
+[node name="Bone_002" parent="engineer_char/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.9538527, -0.006979812, -0.3001935, 0.020911187, 0.9988466, 0.043220162, 0.29954553, -0.047503136, 0.95289856, 0.407094, 3.8063731, -0.19569093)
+
+[node name="Bone_012" parent="engineer_char/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.7524801, -0.52319306, -0.40005133, 0.6179831, -0.77092654, -0.15417233, -0.22774819, -0.36323667, 0.903432, -0.9399433, 2.4226446, 0.17358285)
+
+[node name="Bone_007" parent="engineer_char/Armature/Skeleton3D" index="3"]
+transform = Transform3D(-0.959828, -0.24069846, -0.14419676, 0.16638562, -0.9020669, 0.3982349, -0.22592941, 0.3582452, 0.9058786, -0.555978, 3.8616347, -0.3978951)
+
+[node name="Bone_009" parent="engineer_char/Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.25739518, -0.9154648, -0.30930883, 0.96245503, -0.27143052, 0.002436921, -0.08618684, -0.29706842, 0.9509587, 1.5757605, 1.8376114, -0.42473525)
+
+[node name="Bone_008" parent="engineer_char/Armature/Skeleton3D" index="5"]
+transform = Transform3D(-0.9604008, 0.10343559, -0.25871083, -0.056955524, -0.98181283, -0.18110676, -0.27273834, -0.15920003, 0.9488254, 1.390382, 3.5972261, -0.1394155)
+
+[node name="Bone_001" parent="engineer_char/Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.9525954, 0.10217927, -0.2865681, -0.055606596, 0.98452306, 0.16619867, 0.29911494, -0.14238508, 0.9435341, 0.1164061, 1.0055214, 0.20937788)
+
+[node name="Bone_014" parent="engineer_char/Armature/Skeleton3D" index="7"]
+transform = Transform3D(-0.95291364, -0.30078366, 0.03852986, 0.2996796, -0.95350534, -0.031922594, 0.0463402, -0.018872887, 0.99874717, -1.6664375, -1.499754, 0.84818554)
+
+[node name="Bone_004" parent="engineer_char/Armature/Skeleton3D" index="8"]
+transform = Transform3D(-0.8276385, -0.5579065, 0.061273936, 0.5590102, -0.8291597, 0.0010581613, 0.050215513, 0.035128504, 0.9981202, -0.33346167, 0.4813122, 0.7642549)
+
+[node name="Bone_016" parent="engineer_char/Armature/Skeleton3D" index="9"]
+transform = Transform3D(-0.7550117, 0.65570694, 0.0024005203, -0.6555713, -0.7547699, -0.023421202, -0.013545549, -0.019256901, 0.99972254, 1.4249628, -2.0617201, 0.44715837)
+
+[node name="Bone_005" parent="engineer_char/Armature/Skeleton3D" index="10"]
+transform = Transform3D(-0.96326375, 0.2684403, -0.00790647, -0.2684118, -0.9632936, -0.004487604, -0.008820899, -0.0022004545, 0.99995834, 0.758374, 0.3303214, 0.45262247)
+
+[node name="Bone" parent="engineer_char/Armature/Skeleton3D" index="11"]
+transform = Transform3D(0.9988764, 0.03280915, -0.034197103, -0.017348634, 0.9246629, 0.38039082, 0.044101104, -0.37937018, 0.9241931, 0.08092877, 0.005660992, 0.6195999)
+
+[node name="Gun" parent="engineer_char/Armature/Skeleton3D" index="12"]
+transform = Transform3D(-0.1775838, -0.9663965, -0.18585378, 0.9833095, -0.18184201, 0.0059810225, -0.039576083, -0.1816897, 0.98255914, -0.544914, 1.6243354, -0.92129976)
+
+[node name="Bone_010" parent="engineer_char/Armature/Skeleton3D" index="13"]
+transform = Transform3D(0.2150248, -0.9723936, -0.09063489, 0.97539985, 0.21844758, -0.02959001, 0.048572104, -0.08204265, 0.99544454, 0.25461206, 1.4447231, -0.85384214)
+
+[node name="Bone_017" parent="engineer_char/Armature/Skeleton3D" index="14"]
+transform = Transform3D(-0.8542428, -0.51972497, -0.012435613, 0.5196699, -0.85433346, 0.0075651817, -0.014555976, 8.6613e-08, 0.9998939, 2.9162426, -3.7813385, 0.40214399)
+
+[node name="Bone_013" parent="engineer_char/Armature/Skeleton3D" index="15"]
+transform = Transform3D(-0.5851771, -0.8109051, 0.00053275377, 0.7855577, -0.5670484, -0.24769941, 0.20116279, -0.14452955, 0.9688366, -1.3928329, 1.7542504, -0.14243174)
+
+[node name="Bone_015" parent="engineer_char/Armature/Skeleton3D" index="16"]
+transform = Transform3D(-0.11761564, -0.9910616, -0.06295674, 0.993058, -0.11755849, -0.00461876, -0.0028236248, -0.06306275, 0.9980056, -2.435716, -3.931696, 0.7986387)
+
+[node name="AnimationTree" type="AnimationTree" parent="engineer_char"]
+tree_root = SubResource("AnimationNodeStateMachine_dtlgh")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 visible = false
 light_color = Color(0.9561065, 0.8988724, 0.92846364, 1)
+
+[editable path="engineer_char"]
