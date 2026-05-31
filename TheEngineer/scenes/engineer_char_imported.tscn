@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctyk6m66hj550"]
-
-[ext_resource type="PackedScene" uid="uid://biuh2nyx4r1xd" path="res://TheEngineer/scenes/model/engineer/engineer_char.glb" id="1_km2h8"]
-
-[node name="engineer_char" instance=ExtResource("1_km2h8")]
-
-[node name="AnimationPlayer" parent="." index="1"]
-autoplay = "idle"
