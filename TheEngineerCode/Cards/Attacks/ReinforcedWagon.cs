@@ -31,7 +31,9 @@ public class ReinforcedWagon() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play)
+            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
+            .Execute(choiceContext);
         int material = MaterialHelper.CountMaterial(this, MaterialSource.Hand);
         await CreatureCmd.GainBlock(
             Owner.Creature,

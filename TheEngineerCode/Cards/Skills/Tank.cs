@@ -72,6 +72,7 @@ public class Tank : TheEngineerCard
             return;
 
         await CommonActions.CardAttack(this, play.Target)
+            .WithAttackerAnim("Cast", Owner.Character.AttackAnimDelay)
             .Execute(choiceContext);
     }
 

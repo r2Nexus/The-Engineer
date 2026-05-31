@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -29,6 +30,10 @@ public class Supercapacitor() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, play);
             var charge = IsUpgraded ? 2 : 1;
         await ChargeHelper.OnConsumed(choiceContext, Owner, charge, MaterialSource.Hand, this);

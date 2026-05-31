@@ -31,6 +31,10 @@ public class BuildMiner() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, DynamicVars.Block, play);
         await OrbCmd.Channel<MinerOrb>(choiceContext, this.Owner);
     }

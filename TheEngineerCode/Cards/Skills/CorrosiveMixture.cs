@@ -37,6 +37,10 @@ public class CorrosiveMixture() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
         if(IsUpgraded) await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
 

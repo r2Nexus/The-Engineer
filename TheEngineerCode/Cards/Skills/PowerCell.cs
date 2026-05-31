@@ -43,6 +43,10 @@ public sealed class PowerCell() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await PlayerCmd.GainEnergy(
             DynamicVars.Energy.IntValue,
             Owner);

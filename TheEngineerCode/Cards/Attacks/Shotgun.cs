@@ -49,7 +49,6 @@ public class Shotgun() : TheEngineerCard(
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .TargetingAllOpponents(CombatState)
-            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);
 

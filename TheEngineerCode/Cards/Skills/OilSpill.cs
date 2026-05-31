@@ -1,5 +1,6 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -38,6 +39,10 @@ public class OilSpill() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
             await CommonActions.Apply<OilPower>(

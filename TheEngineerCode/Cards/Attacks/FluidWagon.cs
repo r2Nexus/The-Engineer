@@ -50,6 +50,7 @@ public class FluidWagon() : TheEngineerCard(
         ArgumentNullException.ThrowIfNull(play.Target);
 
         await CommonActions.CardAttack(this, play)
+            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
 
         int material = MaterialHelper.CountMaterial(

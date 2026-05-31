@@ -55,6 +55,7 @@ public sealed class Locomotive : TheEngineerCard
         ArgumentNullException.ThrowIfNull(play.Target);
 
         await CommonActions.CardAttack(this, play.Target)
+            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
 
         List<CardPlay> wagonPlays = CombatManager.Instance.History.CardPlaysFinished

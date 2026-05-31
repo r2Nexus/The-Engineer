@@ -45,6 +45,10 @@ public sealed class StickyTar() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.Apply<OilPower>(
             play.Target,
             this,

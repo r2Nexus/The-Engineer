@@ -46,6 +46,10 @@ public sealed class BoosterWagon() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.Draw(this,choiceContext);
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))

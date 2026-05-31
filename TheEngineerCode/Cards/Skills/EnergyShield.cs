@@ -49,6 +49,10 @@ public sealed class EnergyShield() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CreatureCmd.GainBlock(
             Owner.Creature,
             DynamicVars.Block.BaseValue,

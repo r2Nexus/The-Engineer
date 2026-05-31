@@ -39,6 +39,10 @@ public class OilBarrel() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         Creature? target = Owner.RunState.Rng.CombatTargets.NextItem(
             CombatState.HittableEnemies);
 
