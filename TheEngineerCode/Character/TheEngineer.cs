@@ -47,7 +47,7 @@ public class TheEngineer : PlaceholderCharacterModel
         ModelDb.Relic<PocketTurret>()
     ];
     
-    public override string CustomVisualPath => "res://TheEngineer/scenes/engineer_character.tscn";
+    public override string CustomVisualPath => "res://TheEngineer/scenes/model/engineer/engineer_character.tscn";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheEngineerCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheEngineerRelicPool>();
