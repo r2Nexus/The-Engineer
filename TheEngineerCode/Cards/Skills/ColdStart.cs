@@ -42,6 +42,10 @@ public class ColdStart() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         List<CardModel> validCards = PileType.Hand
             .GetPile(Owner)
             .Cards

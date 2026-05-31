@@ -54,6 +54,7 @@ public class CombatStim() : TheEngineerCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target)
+            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
         
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))

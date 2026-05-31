@@ -37,6 +37,10 @@ public sealed class Outpost() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
 
         int minerCount = TurretHelper.GetOrbs<MinerOrb>(Owner).Count;

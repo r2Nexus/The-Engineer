@@ -4,6 +4,7 @@ using BaseLib.Utils.NodeFactories;
 using TheEngineer.TheEngineerCode.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -45,6 +46,8 @@ public class TheEngineer : PlaceholderCharacterModel
     [
         ModelDb.Relic<PocketTurret>()
     ];
+    
+    public override string CustomVisualPath => "res://TheEngineer/scenes/model/engineer/engineer_character.tscn";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheEngineerCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheEngineerRelicPool>();

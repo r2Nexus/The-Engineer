@@ -35,6 +35,10 @@ public class ReactiveArmour() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, play);
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
         await CommonActions.ApplySelf<ReactiveArmourPower>(this);

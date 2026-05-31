@@ -41,6 +41,10 @@ public class HeavyArmor() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, DynamicVars.Block, play);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(

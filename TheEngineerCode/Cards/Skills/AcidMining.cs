@@ -47,6 +47,11 @@ public sealed class AcidMining() : TheEngineerCard(
 
         int minerCount = TurretHelper.GetOrbs<MinerOrb>(Owner).Count;
 
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
+        
         if (minerCount <= 0)
             return;
 

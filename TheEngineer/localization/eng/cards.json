@@ -111,7 +111,7 @@
   "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:2|1} [gold]{IfUpgraded:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:show:2|1} [gold]{IfUpgraded:show:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
 
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",

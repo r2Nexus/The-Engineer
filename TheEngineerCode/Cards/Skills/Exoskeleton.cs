@@ -51,6 +51,10 @@ public sealed class Exoskeleton() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, DynamicVars.Block, play);
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))

@@ -29,6 +29,10 @@ public class MineField() : TheEngineerCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         var energy = ResolveEnergyXValue();
         for(var e = 0; e < energy; e++)
         {

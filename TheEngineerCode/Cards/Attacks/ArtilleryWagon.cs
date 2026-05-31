@@ -45,7 +45,7 @@ public class ArtilleryWagon : TheEngineerCard
     {
         bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, (int)DynamicVars.Consume().BaseValue,
             MaterialSource.Stock, play);
-        if (consumed) await CommonActions.CardAttack(this, play).Execute(choiceContext);
+        if (consumed) await CommonActions.CardAttack(this, play).WithAttackerAnim("Cast", Owner.Character.CastAnimDelay).Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

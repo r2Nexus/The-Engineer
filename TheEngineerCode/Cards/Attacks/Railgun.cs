@@ -60,7 +60,6 @@ public class Railgun() : TheEngineerCard(
         await DamageCmd.Attack(damage)
             .FromCard(this)
             .Targeting(play.Target)
-            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);
     }
