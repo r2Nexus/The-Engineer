@@ -51,7 +51,7 @@
   "THEENGINEER-BUILD_MINER.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Channel[/gold] 1 [gold]Miner[/gold].",
 
   "THEENGINEER-COMBAT_STIM.title": "Combat Stim",
-  "THEENGINEER-COMBAT_STIM.description": "Deal {Damage:diff()} damage.\n[gold]Charge[/gold]: Gain {StrengthPower:diff()} [gold]Strength[/gold] and {FocusPower:diff()} [gold]Focus[/gold].",
+  "THEENGINEER-COMBAT_STIM.description": "#Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} *Vulnerable*.\n[gold]Charge[/gold]: Gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "THEENGINEER-BUILD_LAND_MINE.title": "Build Land Mine",
   "THEENGINEER-BUILD_LAND_MINE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] 1: [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
@@ -268,5 +268,8 @@
   "THEENGINEER-ASSEMBLY.title": "Assembly",
 
   "THEENGINEER-ACID_MINING.title": "Acid Mining",
-  "THEENGINEER-ACID_MINING.description": "#Channel a *Miner.\nTarget enemy loses {AcidMiningPower:diff()} *Strength this turn for each *Miner you have."
+  "THEENGINEER-ACID_MINING.description": "#Channel a *Miner.\nTarget enemy loses {AcidMiningPower:diff()} *Strength this turn for each *Miner you have.",
+  
+  "THEENGINEER-RECYCLER.description": "#Deal {Damage:diff()} damage.\nAll current *Status* cards count as *Material*.",
+  "THEENGINEER-RECYCLER.title": "Recycler"
 }

@@ -17,7 +17,7 @@ public class NuclearOption() : TheEngineerCard(4,
     TargetType.AnyEnemy)
 {
     private const decimal BASE_DAMAGE = 30m;
-    private const decimal DAMAGE_STACK = 6m;
+    private const decimal DAMAGE_STACK = 8m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

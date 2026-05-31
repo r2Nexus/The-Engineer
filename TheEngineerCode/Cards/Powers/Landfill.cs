@@ -8,7 +8,6 @@ using TheEngineer.TheEngineerCode.Character;
 
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
-[Pool(typeof(TheEngineerCardPool))]
 public class Landfill() : TheEngineerCard(1,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)

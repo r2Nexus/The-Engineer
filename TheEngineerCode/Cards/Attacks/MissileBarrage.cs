@@ -17,8 +17,8 @@ public class MissileBarrage() : TheEngineerCard(2,
     TargetType.AllEnemies)
 {
     
-    private const decimal BASE_DAMAGE = 4m;
-    private const decimal UPGRADE_DAMAGE = 1m;
+    private const decimal BASE_DAMAGE = 5m;
+    private const decimal UPGRADE_DAMAGE = 7m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

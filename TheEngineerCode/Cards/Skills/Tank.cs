@@ -21,7 +21,7 @@ public class Tank : TheEngineerCard
     private const decimal UPGRADE_BLOCK = 0m;
 
     private const decimal BASE_DAMAGE = 9m;
-    private const decimal UPGRADE_DAMAGE = 3m;
+    private const decimal UPGRADE_DAMAGE = 4m;
 
     private const decimal BASE_CONSUME = 2m;
     private const decimal UPGRADE_CONSUME = 0m;

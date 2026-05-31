@@ -13,7 +13,7 @@ public class RepairSystem() : TheEngineerCard(2,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_REPAIR = 2m;
+    private const decimal BASE_REPAIR = 3m;
     private const decimal UPGRADE_REPAIR = 1m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

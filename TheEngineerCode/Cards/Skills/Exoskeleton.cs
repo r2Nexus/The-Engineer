@@ -20,8 +20,8 @@ public sealed class Exoskeleton() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 12m;
-    private const decimal UPGRADE_BLOCK = 4m;
+    private const decimal BASE_BLOCK = 17m;
+    private const decimal UPGRADE_BLOCK = 6m;
 
     private const decimal BASE_DEXTERITY = 2m;
     private const decimal UPGRADE_DEXTERITY = 0m;

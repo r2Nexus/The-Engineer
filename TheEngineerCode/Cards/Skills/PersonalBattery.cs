@@ -15,7 +15,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 public sealed class PersonalBattery() : TheEngineerCard(
     0,
     CardType.Skill,
-    CardRarity.Uncommon,
+    CardRarity.Rare,
     TargetType.Self)
 {
     private const int BASE_CARDS = 2;

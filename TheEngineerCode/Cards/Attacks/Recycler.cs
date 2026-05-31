@@ -6,32 +6,30 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
-using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
-
 [Pool(typeof(TheEngineerCardPool))]
-public class SubmachineGun() : TheEngineerCard(
+public class Recycler() : TheEngineerCard(
     1,
     CardType.Attack,
-    CardRarity.Common,
+    CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 7m;
-    private const decimal UPGRADE_DAMAGE = 2m;
-    
+    private const decimal BASE_DAMAGE = 10m;
+    private const decimal UPGRADE_DAMAGE = 3m;
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+        HoverTipFactory.FromCard<Material>()
     ];
-
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new ConsumeVar(1)
+        new DamageVar(BASE_DAMAGE, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(
@@ -43,17 +41,23 @@ public class SubmachineGun() : TheEngineerCard(
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
 
-        bool consumed = await MaterialHelper.ConsumeMaterial(
-            this,
-            choiceContext,
-            1,
-            MaterialSource.Stock, 
-            play);
-
-        if (consumed)
+        foreach (CardPile pile in new[]
+                 {
+                     PileType.Hand.GetPile(Owner),
+                     PileType.Draw.GetPile(Owner),
+                     PileType.Discard.GetPile(Owner)
+                 })
         {
-            await CommonActions.CardAttack(this, play.Target)
-                .Execute(choiceContext);
+            foreach (CardModel card in pile.Cards)
+            {
+                if (card.Type != CardType.Status)
+                    continue;
+
+                if (card.Keywords.Contains(TheEngineerKeyWords.Material))
+                    continue;
+
+                card.AddKeyword(TheEngineerKeyWords.Material);
+            }
         }
     }
 

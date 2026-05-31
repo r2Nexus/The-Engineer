@@ -19,7 +19,7 @@ public sealed class EnergyShield() : TheEngineerCard(
     CardRarity.Common,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 7m;
+    private const decimal BASE_BLOCK = 8m;
     private const decimal UPGRADE_BLOCK = 0m;
 
     private const decimal BASE_CHARGED_BLOCK = 8m;
