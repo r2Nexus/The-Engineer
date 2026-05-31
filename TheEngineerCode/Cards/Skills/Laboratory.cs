@@ -56,6 +56,10 @@ public sealed class Laboratory() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await CardPileCmd.Draw(
             choiceContext,
             BASE_DRAW, Owner);

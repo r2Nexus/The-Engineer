@@ -42,6 +42,7 @@ public sealed class Detonator() : TheEngineerCard(
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .Targeting(cardPlay.Target)
+            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3")
             .Execute(choiceContext);
 

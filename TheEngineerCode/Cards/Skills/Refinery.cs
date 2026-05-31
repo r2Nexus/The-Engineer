@@ -1,5 +1,6 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -37,7 +38,10 @@ public class Refinery() : TheEngineerCard(1,
         int consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Hand, play);
         if (consumed > 0)
         {
-
+            await CreatureCmd.TriggerAnim(
+                Owner.Creature,
+                "Cast",
+                Owner.Character.CastAnimDelay);
             for (int i = 0; i < consumed; i++)
             {
                 if (play.Target != null)

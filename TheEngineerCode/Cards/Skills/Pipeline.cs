@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -44,6 +45,11 @@ public sealed class Pipeline() : TheEngineerCard(
 
         if (oilAmount > 0)
         {
+            await CreatureCmd.TriggerAnim(
+                Owner.Creature,
+                "Cast",
+                Owner.Character.CastAnimDelay);
+            
             List<Creature> enemies = CombatState.HittableEnemies
                 .Where(enemy => IsUpgraded || enemy != cardPlay.Target)
                 .ToList();

@@ -41,6 +41,10 @@ public class SlowdownCapsule() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(
