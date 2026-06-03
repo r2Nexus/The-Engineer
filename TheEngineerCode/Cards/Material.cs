@@ -2,12 +2,13 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 
 namespace TheEngineer.TheEngineerCode.Cards;
 
-[Pool(typeof(TheEngineerCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class Material() : TheEngineerCard(-1,
     CardType.Skill, CardRarity.Token,
     TargetType.None)
