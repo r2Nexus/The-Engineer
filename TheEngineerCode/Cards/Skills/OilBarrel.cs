@@ -6,13 +6,14 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
-[Pool(typeof(TheEngineerCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class OilBarrel() : TheEngineerCard(
     0,
     CardType.Skill,
