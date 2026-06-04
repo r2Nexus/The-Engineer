@@ -5,39 +5,51 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class MissileBarrage() : TheEngineerCard(2,
-    CardType.Attack, CardRarity.Rare,
+public class MissileBarrage() : TheEngineerCard(
+    2,
+    CardType.Attack,
+    CardRarity.Rare,
     TargetType.AllEnemies)
 {
-    
     private const decimal BASE_DAMAGE = 5m;
-    private const decimal UPGRADE_DAMAGE = 7m;
-    
+    private const decimal UPGRADE_DAMAGE = 2m;
+
+    private const int BASE_HITS = 1;
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK"),
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
     ];
-    
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(BASE_DAMAGE,ValueProp.Move)
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new DamageVar(BASE_DAMAGE, ValueProp.Move),
+
+        ..MakeCalculatedVar("CalculatedHits", BASE_HITS,
+            (card, target) =>
+                MaterialHelper.CountMaterial(card, MaterialSource.Stock))
     ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        var consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Stock, play);
-        if (consumed <= 0) return;
-        
-        for (var i = 0; i < consumed; i++)
+        int consumed = await MaterialHelper.ConsumeAllMaterial(
+            this,
+            choiceContext,
+            MaterialSource.Stock,
+            play);
+
+        int hits = BASE_HITS + consumed;
+
+        for (int i = 0; i < hits; i++)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
                 .FromCard(this)
