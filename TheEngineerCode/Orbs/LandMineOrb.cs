@@ -9,18 +9,27 @@ using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheEngineer.TheEngineerCode.Hooks;
 using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Orbs;
 
-public sealed class LandMineOrb : CustomOrbModel
+public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
 {
+    private const decimal BASE_BLOCK = 3m;
+    private const decimal BASE_OIL = 2m;
+
+    private decimal _oilAmount = BASE_OIL;
+
     public override Color DarkenedColor => new Color("7a5b2e");
 
     public override string? CustomIconPath => "res://TheEngineer/images/orbs/turret_orb.png";
@@ -29,8 +38,8 @@ public sealed class LandMineOrb : CustomOrbModel
     public override string? CustomEvokeSfx   => "event:/sfx/characters/defect/defect_dark_evoke";
     public override string? CustomChannelSfx => "event:/sfx/characters/defect/defect_dark_channel";
 
-    public override decimal PassiveVal => ModifyOrbValue(3m);
-    public override decimal EvokeVal   => ModifyOrbValue(2m);
+    public override decimal PassiveVal => ModifyOrbValue(BASE_BLOCK);
+    public override decimal EvokeVal   => ModifyOrbValue(_oilAmount);
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -113,5 +122,29 @@ public sealed class LandMineOrb : CustomOrbModel
         return CombatState
             .GetOpponentsOf(Owner.Creature)
             .Any(e => e.IsHittable && e.Monster != null && e.Monster.IntendsToAttack);
+    }
+
+    public Task OnConsumed(
+        PlayerChoiceContext choiceContext,
+        Player player,
+        int amount,
+        MaterialSource source,
+        AbstractModel? causedBy,
+        CardPlay? play)
+    {
+        if (player != Owner || amount <= 0)
+            return Task.CompletedTask;
+
+        _oilAmount += amount;
+        
+        PlayPassiveSfx();
+        Trigger();
+
+        NCombatRoom.Instance?
+            .GetCreatureNode(Owner.Creature)?
+            .OrbManager?
+            .UpdateVisuals(OrbEvokeType.None);
+
+        return Task.CompletedTask;
     }
 }
