@@ -25,7 +25,7 @@ namespace TheEngineer.TheEngineerCode.Orbs;
 
 public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
 {
-    private const decimal BASE_BLOCK = 3m;
+    private const decimal BASE_BLOCK = 4m;
     private const decimal BASE_OIL = 2m;
 
     private decimal _oilAmount = BASE_OIL;

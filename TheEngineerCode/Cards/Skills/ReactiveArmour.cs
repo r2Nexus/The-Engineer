@@ -17,7 +17,7 @@ public class ReactiveArmour() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 4;
+    private const decimal BASE_BLOCK = 3;
     private const decimal UPGRADE_BLOCK = 3;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
