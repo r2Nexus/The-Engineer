@@ -55,11 +55,7 @@ public class Tank : TheEngineerCard
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CreatureCmd.GainBlock(
-            Owner.Creature,
-            DynamicVars.Block.BaseValue,
-            ValueProp.Move,
-            null);
+        await CommonActions.CardBlock(this, DynamicVars.Block, play);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(
             this,
