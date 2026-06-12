@@ -4,6 +4,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Vfx;
+using LovecsVfxLib;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
@@ -29,6 +31,7 @@ public class Strike() : TheEngineerCard(1,
         ArgumentNullException.ThrowIfNull(play.Target);
 
         await CommonActions.CardAttack(this, play.Target)
+            .WithHitVfxNode(LovecVfx.Bloom)
             .Execute(choiceContext);
     }
 

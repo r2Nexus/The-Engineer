@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbkx55glxfksu"
-path.s3tc="res://.godot/imported/engineer_char_hand_L e=png.png-eaa7c2b0abb5591b3713bcefab3f39b1.s3tc.ctex"
+uid="uid://caibyub582ddg"
+path="res://.godot/imported/explosion.png-5c69733be422dce00356f337da15e7d5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "9e6ff7e67723f81f7a11bb2799ee61d8"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/scenes/model/engineer/engineer_char_hand_L e=png.png"
-dest_files=["res://.godot/imported/engineer_char_hand_L e=png.png-eaa7c2b0abb5591b3713bcefab3f39b1.s3tc.ctex"]
+source_file="res://TheEngineer/images/particles/explosion.png"
+dest_files=["res://.godot/imported/explosion.png-5c69733be422dce00356f337da15e7d5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
