@@ -159,7 +159,7 @@
   "THEENGINEER-LOCOMOTIVE.description": "#Deal {Damage:diff()} damage.\n[gold]Replay[/gold] all *Wagon cards played this combat.",
 
   "THEENGINEER-BLUE_BELT.title": "Blue Belt",
-  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()}: Draw {Cards:diff()} card{Cards:plural:|s}.",
+  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Play the top card of your [gold]Draw Pile[/gold].",
 
   "THEENGINEER-STICKY_TAR.title": "Sticky Tar",
   "THEENGINEER-STICKY_TAR.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to an enemy.\nAdd [gold]Retain[/gold] to a card in [gold]Hand[/gold].",
