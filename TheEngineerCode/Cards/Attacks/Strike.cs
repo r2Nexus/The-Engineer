@@ -31,7 +31,7 @@ public class Strike() : TheEngineerCard(1,
         ArgumentNullException.ThrowIfNull(play.Target);
 
         await CommonActions.CardAttack(this, play.Target)
-            .WithHitVfxNode(LovecVfx.Bloom)
+            .WithHitVfxNode(LovecVfx.Bite)
             .Execute(choiceContext);
     }
 

@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Godot;
+using LovecsVfxLibCode.Vfx.Auras;
+using LovecsVfxLibCode.Vfx.Auras;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -22,6 +24,12 @@ public sealed class OilPower : TheEngineerPower
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
     protected  IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
+
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        this.WithAura(Colors.Black, 0.02f);
+        return base.AfterApplied(applier, cardSource);
+    }
 
     public override async Task BeforeDamageReceived(
         PlayerChoiceContext choiceContext,

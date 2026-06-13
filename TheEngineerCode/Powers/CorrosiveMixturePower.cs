@@ -9,20 +9,18 @@ using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Powers;
 
-
-public class CorrosiveMixturePower: TheEngineerPower
+public class CorrosiveMixturePower : TheEngineerPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new PowerVar<VulnerablePower>(Amount)
-    ];
 
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterPlayerTurnStart(
+        PlayerChoiceContext choiceContext,
+        Player player)
     {
-        if (player != Owner.Player) return;
-        await PowerCmd.ModifyAmount(choiceContext,this, -Amount, null, null);
+        if (player != Owner.Player)
+            return;
+
+        await PowerCmd.ModifyAmount(choiceContext, this, -Amount, null, null);
     }
 }

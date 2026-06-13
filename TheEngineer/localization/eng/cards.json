@@ -111,7 +111,7 @@
   "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:show:2|1} [gold]{IfUpgraded:show:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:show:2|1} [gold]{IfUpgraded:show:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mines[/gold] apply [gold]Oil[/gold] an additional time.",
 
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",
@@ -153,13 +153,13 @@
   "THEENGINEER-RAIL_SIGNAL.description": "#Produce {Produce:diff()}. Next time you play a *Wagon card, gain {RailSignalPower:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-BLUEPRINT.title": "Blueprint",
-  "THEENGINEER-BLUEPRINT.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold], 1 [gold]Turret[/gold], and 1 [gold]Miner[/gold].",
+  "THEENGINEER-BLUEPRINT.description": "#*Channel 2 *Land *Mines.\n*Channel 1 *Turret.\n*Channel 1 *Miner.",
 
   "THEENGINEER-LOCOMOTIVE.title": "Locomotive",
   "THEENGINEER-LOCOMOTIVE.description": "#Deal {Damage:diff()} damage.\n[gold]Replay[/gold] all *Wagon cards played this combat.",
 
   "THEENGINEER-BLUE_BELT.title": "Blue Belt",
-  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()}: Draw {Cards:diff()} card{Cards:plural:|s}.",
+  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Play the top card\nof your [gold]Draw Pile[/gold].",
 
   "THEENGINEER-STICKY_TAR.title": "Sticky Tar",
   "THEENGINEER-STICKY_TAR.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to an enemy.\nAdd [gold]Retain[/gold] to a card in [gold]Hand[/gold].",
@@ -176,7 +176,7 @@
   "THEENGINEER-PERIMETER_WALL.description": "Add {Cards:diff()} random cards with [gold]Block[/gold] to your [gold]Hand[/gold].\nThey cost 0 this turn and gain [gold]Ethereal[/gold].",
 
   "THEENGINEER-RAINING_BULLETS.title": "Raining Bullets",
-  "THEENGINEER-RAINING_BULLETS.description": "Consume {IfUpgraded:show:X-1|X} from Stock: Fire all turrets X times.",
+  "THEENGINEER-RAINING_BULLETS.description": "#*Consume {IfUpgraded:show:X-1|X} from *Stock*: *Fire all *Turrets X times.",
 
   "THEENGINEER-PIPELINE.title": "Pipeline",
   "THEENGINEER-PIPELINE.description": "Apply the target's [gold]Oil[/gold] to {IfUpgraded:show:ALL|all other} enemies.\n[gold]Produce[/gold] 1.",
@@ -251,7 +251,7 @@
   "THEENGINEER-CLIFF_EXPLOSIVE.title": "Cliff Explosive",
   "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust.",
 
-  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Exhaust} cards.\nFor each card *Exhausted, draw a card and *Produce {Produce}.",
+  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Discard:diff()} cards.\nFor each card *Discarded, draw a card and *Produce {Produce:diff()}.",
   "THEENGINEER-COLD_START.title": "Cold Start",
   "THEENGINEER-COLD_START.selectionScreenPrompt": "Choose cards up to {Exhaust} to Exhaust.",
 

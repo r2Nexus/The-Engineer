@@ -20,11 +20,10 @@ public class HeavyArmor() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 8m;
-    private const decimal UPGRADE_BLOCK = 0m;
+    private const decimal BASE_BLOCK = 7m;
+    private const decimal UPGRADE_BLOCK = 3m;
 
-    private const decimal BASE_PLATED = 4m;
-    private const decimal UPGRADE_PLATED = 1m;
+    private const decimal BASE_PLATED = 5m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -64,7 +63,6 @@ public class HeavyArmor() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        //DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
-        DynamicVars.Power<PlatingPower>().UpgradeValueBy(UPGRADE_PLATED);
+        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
     }
 }

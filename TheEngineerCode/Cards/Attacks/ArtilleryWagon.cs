@@ -20,7 +20,7 @@ public class ArtilleryWagon : TheEngineerCard
     private const decimal BASE_REPLAY = 2;
     private const decimal UPPGRADE_REPLAY = 1;
 
-    public ArtilleryWagon() : base(2,
+    public ArtilleryWagon() : base(1,
         CardType.Attack, CardRarity.Rare,
         TargetType.AllEnemies)
     {

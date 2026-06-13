@@ -21,11 +21,11 @@ public class ColdStart() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.Self)
 {
-    private const string ExhaustKey = "Exhaust";
+    private const string DiscardKey = "Discard";
 
-    private const decimal BASE_EXHAUST = 3m;
-    private const int DRAW_PER_EXHAUST = 1;
-    private const int PRODUCE_PER_EXHAUST = 1;
+    private const decimal BASE_DISCARD = 3m;
+    private const int DRAW_PER_DISCARD = 1;
+    private const int PRODUCE_PER_DISCARD = 1;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -33,9 +33,9 @@ public class ColdStart() : TheEngineerCard(
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar(ExhaustKey, BASE_EXHAUST),
-        new CardsVar(DRAW_PER_EXHAUST),
-        new ProduceVar(PRODUCE_PER_EXHAUST)
+        new DynamicVar(DiscardKey, BASE_DISCARD),
+        new CardsVar(DRAW_PER_DISCARD),
+        new ProduceVar(PRODUCE_PER_DISCARD)
     ];
 
     protected override async Task OnPlay(
@@ -54,8 +54,8 @@ public class ColdStart() : TheEngineerCard(
 
         if (validCards.Count <= 0) return;
 
-        int maxToExhaust = (int)DynamicVars[ExhaustKey].BaseValue;
-        int selectionCount = int.Min(maxToExhaust, validCards.Count);
+        int maxToDiscard = (int)DynamicVars[DiscardKey].BaseValue;
+        int selectionCount = int.Min(maxToDiscard, validCards.Count);
 
         CardSelectorPrefs prefs = new(SelectionScreenPrompt, 0, selectionCount)
         {
@@ -72,7 +72,7 @@ public class ColdStart() : TheEngineerCard(
 
         foreach (CardModel card in selectedCards)
         {
-            await CardCmd.Exhaust(choiceContext, card);
+            await CardCmd.Discard(choiceContext, card);
 
             await CardPileCmd.Draw(
                 choiceContext,
