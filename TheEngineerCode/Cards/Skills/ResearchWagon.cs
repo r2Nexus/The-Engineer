@@ -22,7 +22,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.Self)
 {
-    private const int BASE_CARDS = 2;
+    private const int BASE_CARDS = 1;
 
     protected override HashSet<CardTag> CanonicalTags =>
     [
