@@ -111,7 +111,7 @@
   "THEENGINEER-TARGET_PRACTICE.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] {Consume:diff()}: [gold]Fire[/gold] all [gold]Turrets[/gold].",
 
   "THEENGINEER-CORROSIVE_MIXTURE.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:show:2|1} [gold]{IfUpgraded:show:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {CorrosiveMixturePower:diff()} [gold]Vulnerable[/gold].",
+  "THEENGINEER-CORROSIVE_MIXTURE.description": "[gold]Channel[/gold] {IfUpgraded:show:2|1} [gold]{IfUpgraded:show:Land Mines|Land Mine}[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mines[/gold] apply [gold]Oil[/gold] an additional time.",
 
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",
@@ -251,7 +251,7 @@
   "THEENGINEER-CLIFF_EXPLOSIVE.title": "Cliff Explosive",
   "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust.",
 
-  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Exhaust} cards.\nFor each card *Exhausted, draw a card and *Produce {Produce}.",
+  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Discard:diff()} cards.\nFor each card *Discarded, draw a card and *Produce {Produce:diff()}.",
   "THEENGINEER-COLD_START.title": "Cold Start",
   "THEENGINEER-COLD_START.selectionScreenPrompt": "Choose cards up to {Exhaust} to Exhaust.",
 

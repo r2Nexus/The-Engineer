@@ -89,25 +89,25 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
             Owner.Creature,
             PassiveVal,
             ValueProp.Unpowered,
-            (CardPlay)null);
+            null);
         
-        int corrodePower = Owner.Creature.Powers
+        int extraOilApplications = Owner.Creature.Powers
             .OfType<CorrosiveMixturePower>()
             .FirstOrDefault()?.Amount ?? 0;
-        
+
+        int oilApplications = 1 + extraOilApplications;
+
         int slowPower = Owner.Creature.Powers
             .OfType<SlowdownCapsulePower>()
             .FirstOrDefault()?.Amount ?? 0;
 
         foreach (Creature enemy in enemies)
         {
-            await CommonActions.Apply<OilPower>(enemy, null, EvokeVal);
-            
-            if (corrodePower > 0)
+            for (int i = 0; i < oilApplications; i++)
             {
-                await CommonActions.Apply<VulnerablePower>(enemy, null, corrodePower);
+                await CommonActions.Apply<OilPower>(enemy, null, EvokeVal);
             }
-            
+
             if (slowPower > 0)
             {
                 await CommonActions.Apply<WeakPower>(enemy, null, slowPower);

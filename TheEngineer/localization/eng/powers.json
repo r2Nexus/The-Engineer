@@ -32,9 +32,9 @@
   "THEENGINEER-PURPLE_SCIENCE_POWER.smartDescription": "#At the start of your turn, *Upgrade {Amount:plural:|up to} {Amount} random card{Amount:plural:|s} in your *Hand*.",
 
   "THEENGINEER-CORROSIVE_MIXTURE_POWER.title": "Corrosive Mixture",
-  "THEENGINEER-CORROSIVE_MIXTURE_POWER.description": "This turn, your [gold]Land Mine[/gold]s apply 1 [gold]Vulnerable[/gold].",
-  "THEENGINEER-CORROSIVE_MIXTURE_POWER.smartDescription": "This turn, your [gold]Land Mine[/gold]s apply [blue]{Amount}[/blue] [gold]Vulnerable[/gold].",
-
+  "THEENGINEER-CORROSIVE_MIXTURE_POWER.description": "This turn, whenever your [gold]Land Mines[/gold] apply [gold]Oil[/gold], they apply an additional time..",
+  "THEENGINEER-CORROSIVE_MIXTURE_POWER.smartDescription": "This turn, whenever your [gold]Land Mines[/gold] apply [gold]Oil[/gold], they apply it [blue]{Amount}[/blue] additional time{Amount:plural:|s}.",
+  
   "THEENGINEER-SLOWDOWN_CAPSULE_POWER.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE_POWER.description": "This turn, your [gold]Land Mine[/gold]s apply 1 [gold]Weak[/gold].",
   "THEENGINEER-SLOWDOWN_CAPSULE_POWER.smartDescription": "This turn, your [gold]Land Mine[/gold]s apply [blue]{Amount}[/blue] [gold]Weak[/gold].",
