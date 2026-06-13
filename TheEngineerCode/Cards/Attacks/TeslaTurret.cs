@@ -23,10 +23,10 @@ public sealed class TeslaTurret() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.AnyEnemy), IOnChargeSpent
 {
-    private const decimal BASE_DAMAGE = 6m;
-    private const decimal UPGRADE_DAMAGE = 1m;
+    private const decimal BASE_DAMAGE = 5m;
+    private const decimal UPGRADE_DAMAGE = 2m;
 
-    private const decimal BASE_DAMAGE_GAIN = 3m;
+    private const decimal BASE_DAMAGE_GAIN = 2m;
     private const decimal UPGRADE_DAMAGE_GAIN = 1m;
 
     private decimal DamageGain =>
