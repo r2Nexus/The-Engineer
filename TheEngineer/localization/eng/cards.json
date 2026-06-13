@@ -153,13 +153,13 @@
   "THEENGINEER-RAIL_SIGNAL.description": "#Produce {Produce:diff()}. Next time you play a *Wagon card, gain {RailSignalPower:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-BLUEPRINT.title": "Blueprint",
-  "THEENGINEER-BLUEPRINT.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold], 1 [gold]Turret[/gold], and 1 [gold]Miner[/gold].",
+  "THEENGINEER-BLUEPRINT.description": "#*Channel 2 *Land *Mines.\n*Channel 1 *Turret.\n*Channel 1 *Miner.",
 
   "THEENGINEER-LOCOMOTIVE.title": "Locomotive",
   "THEENGINEER-LOCOMOTIVE.description": "#Deal {Damage:diff()} damage.\n[gold]Replay[/gold] all *Wagon cards played this combat.",
 
   "THEENGINEER-BLUE_BELT.title": "Blue Belt",
-  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Play the top card of your [gold]Draw Pile[/gold].",
+  "THEENGINEER-BLUE_BELT.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Play the top card\nof your [gold]Draw Pile[/gold].",
 
   "THEENGINEER-STICKY_TAR.title": "Sticky Tar",
   "THEENGINEER-STICKY_TAR.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to an enemy.\nAdd [gold]Retain[/gold] to a card in [gold]Hand[/gold].",

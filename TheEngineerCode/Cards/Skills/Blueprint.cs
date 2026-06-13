@@ -37,6 +37,7 @@ public class Blueprint() : TheEngineerCard(2,
             "Cast",
             Owner.Character.CastAnimDelay);
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
+        await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
         await OrbCmd.Channel<TurretOrb>(choiceContext, Owner);
         await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
     }
