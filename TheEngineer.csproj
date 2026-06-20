@@ -60,7 +60,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="TheEngineer\images\card_portraits\big\"/>
         <Folder Include="TheEngineer\images\powers\big\"/>
         <Folder Include="TheEngineer\images\relics\big\"/>
         <Folder Include="TheEngineer\scenes\model\" />
