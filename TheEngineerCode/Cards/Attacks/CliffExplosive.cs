@@ -35,7 +35,7 @@ public class CliffExplosive() : TheEngineerCard(
         CardPlay play)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .TargetingAllOpponents(CombatState)
             .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")

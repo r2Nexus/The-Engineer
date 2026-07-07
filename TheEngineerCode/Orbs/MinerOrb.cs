@@ -54,7 +54,6 @@ public sealed class MinerOrb : CustomOrbModel
 
     public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
     {
-        Trigger();
         PlayPassiveSfx();
         await MaterialHelper.ProduceMaterial(
             Owner,

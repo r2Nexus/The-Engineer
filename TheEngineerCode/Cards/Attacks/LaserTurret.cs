@@ -75,7 +75,7 @@ public sealed class LaserTurret() : TheEngineerCard(
         for (int i = 0; i < hits; i++)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, play)
                 .Targeting(play.Target)
                 .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
                 .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")

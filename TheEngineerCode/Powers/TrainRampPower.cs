@@ -41,7 +41,7 @@ public class TrainRampPower : TheEngineerPower
             target,
             Amount,
             ValueProp.Unpowered,
-            Owner,
+            null,
             null);
     }
 }

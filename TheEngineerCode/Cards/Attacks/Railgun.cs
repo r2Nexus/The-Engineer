@@ -58,7 +58,7 @@ public class Railgun() : TheEngineerCard(
         await ChargeHelper.RemoveChargeFromAll(choiceContext, Owner, this, this);
 
         await DamageCmd.Attack(damage)
-            .FromCard(this)
+            .FromCard(this, play)
             .Targeting(play.Target)
             .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);

@@ -71,8 +71,6 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
         if (!AnyEnemyIntendsToAttack())
             return;
         
-        Trigger();
-
         await OrbCmdHelper.EvokeSpecific(choiceContext, Owner, this);
     }
 
@@ -138,7 +136,6 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
         _oilAmount += amount;
         
         PlayPassiveSfx();
-        Trigger();
 
         NCombatRoom.Instance?
             .GetCreatureNode(Owner.Creature)?

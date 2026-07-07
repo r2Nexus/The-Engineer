@@ -86,8 +86,6 @@ public sealed class TurretOrb : CustomOrbModel
             if (enemy == null || !enemy.IsHittable)
                 return;
 
-            Trigger();
-
             VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
             PlayPassiveSfx();
 

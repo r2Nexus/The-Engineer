@@ -52,7 +52,7 @@ public class MissileBarrage() : TheEngineerCard(
         for (int i = 0; i < hits; i++)
         {
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, play)
                 .TargetingAllOpponents(CombatState)
                 .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
                 .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
