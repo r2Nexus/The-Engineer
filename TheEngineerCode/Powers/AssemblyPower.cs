@@ -101,7 +101,7 @@ public sealed class AssemblyPower : TheEngineerPower, IOnConsumed
             Owner,
             null);
 
-        CardModel copy = originalCard.CreateDupe();
+        CardModel copy = originalCard.CreateDupe(Owner.Player!);
         
         copy.BaseReplayCount = 0;
 

@@ -73,7 +73,7 @@ public sealed class Locomotive : TheEngineerCard
 
             await CardCmd.AutoPlay(
                 choiceContext,
-                wagonPlay.Card.CreateDupe(),
+                wagonPlay.Card.CreateDupe(Owner),
                 target);
         }
     }
