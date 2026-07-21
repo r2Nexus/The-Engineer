@@ -35,11 +35,11 @@ public class Supercapacitor() : TheEngineerCard(1,
             "Cast",
             Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, play);
-            var charge = IsUpgraded ? 2 : 1;
-        await ChargeHelper.OnConsumed(choiceContext, Owner, charge, MaterialSource.Hand, this);
+        await ChargeHelper.OnConsumed(choiceContext, Owner, 2, MaterialSource.Hand, this);
     }
 
     protected override void OnUpgrade()
     {
+        DynamicVars.Block.UpgradeValueBy(3);
     }
 }

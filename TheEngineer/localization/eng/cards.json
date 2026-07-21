@@ -217,7 +217,7 @@
   "THEENGINEER-LIGHT_ARMOR.description": "#*Consume* {Consume:diff()} from *Stock*:\ngain {Block:diff()} *Block*.",
   "THEENGINEER-LIGHT_ARMOR.title": "Light Armor",
 
-  "THEENGINEER-SUPERCAPACITOR.description": "#Gain {Block:diff()} *Block.\nIncrease *Charge on cards with *Charge by {IfUpgraded:show:2|1}.",
+  "THEENGINEER-SUPERCAPACITOR.description": "#Gain {Block:diff()} *Block.\nIncrease *Charge on cards with *Charge by 2.",
   "THEENGINEER-SUPERCAPACITOR.title": "Supercapacitor",
 
   "THEENGINEER-BIG_DRILL.description": "#Deal {Damage:diff()} damage.\n*Channel 2 *Miners.",
