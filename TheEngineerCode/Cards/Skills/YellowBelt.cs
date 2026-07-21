@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using BaseLib.Cards.Variables;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,21 +14,23 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class YellowBelt() : TheEngineerCard(
-    1,
+    0,
     CardType.Skill,
     CardRarity.Common,
     TargetType.Self)
 {
-    private const int BASE_DRAW = 2;
+    private const int BASE_DRAW = 1;
     private const int UPGRADE_DRAW = 0;
 
     private const decimal BASE_PRODUCE = 1m;
-    private const decimal UPGRADE_PRODUCE = 1m;
+
+    private const int EXHAUSTIVE = 3;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(BASE_DRAW),
-        new ProduceVar(BASE_PRODUCE)
+        new ProduceVar(BASE_PRODUCE),
+        new ExhaustiveVar(EXHAUSTIVE)
     ];
 
     protected override async Task OnPlay(
@@ -47,9 +50,15 @@ public class YellowBelt() : TheEngineerCard(
             this);
     }
 
+    protected override CardLocation GetResultLocationForCardPlay()
+    {
+        CardLocation locationForCardPlay = base.GetResultLocationForCardPlay();
+        if (locationForCardPlay.pileType == PileType.Discard)
+            locationForCardPlay.pileType = PileType.Hand;
+        return locationForCardPlay;
+    }
     protected override void OnUpgrade()
     {
-        //DynamicVars.Cards.UpgradeValueBy(UPGRADE_DRAW);
-        DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
+        DynamicVars["Exhaustive"].UpgradeValueBy(1);
     }
 }
