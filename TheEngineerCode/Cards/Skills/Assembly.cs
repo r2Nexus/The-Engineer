@@ -16,7 +16,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class Assembly() : TheEngineerCard(
-    1,
+    0,
     CardType.Skill,
     CardRarity.Rare,
     TargetType.Self)
