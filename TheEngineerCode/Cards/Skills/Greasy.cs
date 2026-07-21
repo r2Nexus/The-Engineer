@@ -25,7 +25,7 @@ public class Greasy() : TheEngineerCard(
     private const decimal UPGRADE_OIL = 2m;
 
     private const decimal DRAW = 2m;
-
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<OilPower>(BASE_OIL),
