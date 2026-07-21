@@ -214,7 +214,7 @@
   "THEENGINEER-EXCAVATE.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\nYour next [gold]Consume[/gold] is free.",
   "THEENGINEER-EXCAVATE.title": "Excavate",
 
-  "THEENGINEER-LIGHT_ARMOR.description": "#*Consume {Consume:diff()}: gain {Block:diff()} *Block.",
+  "THEENGINEER-LIGHT_ARMOR.description": "#*Consume* {Consume:diff()} from *Stock*:\ngain {Block:diff()} *Block*.",
   "THEENGINEER-LIGHT_ARMOR.title": "Light Armor",
 
   "THEENGINEER-SUPERCAPACITOR.description": "#Gain {Block:diff()} *Block.\nIncrease *Charge on cards with *Charge by {IfUpgraded:show:2|1}.",

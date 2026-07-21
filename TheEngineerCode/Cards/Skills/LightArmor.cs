@@ -33,7 +33,7 @@ public class LightArmor() : TheEngineerCard(0,
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        var consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand, play);
+        var consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Stock, play);
         if (consumed) await CommonActions.CardBlock(this, play);
     }
 
