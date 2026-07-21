@@ -16,7 +16,7 @@ public class PiercingRounds() : TheEngineerCard(1,
     TargetType.AnyEnemy)
 {
     
-    private const decimal BASE_DAMAGE = 8m;
+    private const decimal BASE_DAMAGE = 9m;
     private const decimal UPGRADE_DAMAGE = 3m;
     
     private const decimal BASE_VULNERABLE = 2m;
