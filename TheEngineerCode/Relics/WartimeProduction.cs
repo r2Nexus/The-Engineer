@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -32,52 +33,26 @@ public class WartimeProduction : TheEngineerRelic
         HoverTipFactory.FromOrb<TurretOrb>()
     ];
 
-    public override Task BeforeCombatStart()
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
-        SetTurnsRemaining(ACTIVE_TURNS);
-        Status = RelicStatus.Active;
-        return Task.CompletedTask;
-    }
-
-    public override async Task AfterPlayerTurnStart(
-        PlayerChoiceContext choiceContext,
-        Player player)
-    {
-        if (player != Owner)
+        if (side != Owner.Creature.Side || combatState.RoundNumber > 1)
             return;
 
-        if (_turnsRemaining <= 0)
-            return;
-
+        Flash();
+        
         await OrbCmd.Channel<TurretOrb>(
             new BlockingPlayerChoiceContext(),
             Owner);
-
-        await MaterialHelper.ProduceMaterial(
-            Owner,
-            choiceContext,
-            1,
-            MaterialDestination.Hand);
-
-        SetTurnsRemaining(_turnsRemaining - 1);
-
-        if (_turnsRemaining <= 0)
-            Status = RelicStatus.Normal;
-    }
-
-    public override Task AfterCombatEnd(CombatRoom _)
-    {
-        SetTurnsRemaining(0);
-        Status = RelicStatus.Normal;
-        return Task.CompletedTask;
-    }
-
-    private void SetTurnsRemaining(int value)
-    {
-        AssertMutable();
-
-        _turnsRemaining = Math.Max(0, value);
-
-        InvokeDisplayAmountChanged();
+        await OrbCmd.Channel<TurretOrb>(
+            new BlockingPlayerChoiceContext(),
+            Owner);
+        await OrbCmd.Channel<MinerOrb>(
+            new BlockingPlayerChoiceContext(),
+            Owner);
+        await OrbCmd.Channel<MinerOrb>(
+            new BlockingPlayerChoiceContext(),
+            Owner);
+        await MaterialHelper.ProduceMaterial(Owner, choiceContext, 1, MaterialDestination.Hand);
     }
 }

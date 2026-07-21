@@ -3,7 +3,7 @@
   "THEENGINEER-POCKET_TURRET.flavor": "Smells like progress...",
   "THEENGINEER-POCKET_TURRET.title": "Pocket Turret",
 
-  "THEENGINEER-WARTIME_PRODUCTION.description": "#At the start of your first 3 turns, *Channel *Turret and *Produce 1.",
+  "THEENGINEER-WARTIME_PRODUCTION.description": "#At the start of combat, *Channel 2 *Turrets, *Channel 2 *Miners and *Produce 1.",
   "THEENGINEER-WARTIME_PRODUCTION.flavor": "The Engineer did nothing wrong.",
   "THEENGINEER-WARTIME_PRODUCTION.title": "Wartime Production"
 }
