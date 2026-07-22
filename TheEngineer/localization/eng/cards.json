@@ -271,5 +271,8 @@
   "THEENGINEER-ACID_MINING.description": "#Channel a *Miner.\nTarget enemy loses {AcidMiningPower:diff()} *Strength this turn for each *Miner you have.",
   
   "THEENGINEER-RECYCLER.description": "#Deal {Damage:diff()} damage.\nAll current *Status* cards count as *Material*.",
-  "THEENGINEER-RECYCLER.title": "Recycler"
+  "THEENGINEER-RECYCLER.title": "Recycler",
+
+  "THEENGINEER-PYLON.description": "#Deal {Damage:diff()} damage.\nGain {FocusedStrikePower:diff()} *Focus this turn.",
+  "THEENGINEER-PYLON.title": "Pylon"
 }
