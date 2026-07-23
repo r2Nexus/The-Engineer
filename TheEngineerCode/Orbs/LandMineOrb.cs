@@ -18,6 +18,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Hooks;
+using TheEngineer.TheEngineerCode.Orbs.Vfx;
 using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
@@ -32,7 +33,7 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
 
     public override Color DarkenedColor => new Color("7a5b2e");
 
-    public override string? CustomIconPath => "res://TheEngineer/images/orbs/turret_orb.png";
+    public override string? CustomIconPath => "res://TheEngineer/images/orbs/landmine_orb.png";
 
     public override string? CustomPassiveSfx => "event:/sfx/characters/defect/defect_dark_passive";
     public override string? CustomEvokeSfx   => "event:/sfx/characters/defect/defect_dark_evoke";
@@ -51,19 +52,15 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
 
     public override Node2D? CreateCustomSprite()
     {
-        var container = new Node2D();
+        PackedScene scene = PreloadManager.Cache.GetScene(
+            "res://TheEngineer/scenes/model/orbs/landmine_orb.tscn");
 
-        string darkPath = SceneHelper.GetScenePath("orbs/orb_visuals/dark_orb");
-        Node2D dark = PreloadManager.Cache.GetScene(darkPath)
-            .Instantiate<Node2D>(PackedScene.GenEditState.Disabled);
+        NEngineerOrbVfx visual =
+            scene.Instantiate<NEngineerOrbVfx>();
 
-        new MegaSprite(dark.GetNode("SpineSkeleton"))
-            .GetAnimationState().SetAnimation("idle_loop");
+        visual.InitializeForOrb(this);
 
-        dark.Modulate = new Color(0.65f, 0.55f, 0.2f, 1.0f);
-        container.AddChild(dark);
-
-        return container;
+        return visual;
     }
 
     public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
@@ -82,6 +79,7 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
             .ToList();
 
         PlayEvokeSfx();
+        ActivateEvoke([Owner.Creature]);
 
         await CreatureCmd.GainBlock(
             Owner.Creature,
