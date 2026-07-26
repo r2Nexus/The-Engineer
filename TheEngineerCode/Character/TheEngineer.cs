@@ -22,7 +22,10 @@ public class TheEngineer : PlaceholderCharacterModel
 {
     public const string CharacterId = "TheEngineer";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("dea914");
+    public override Color MapDrawingColor => new("dea914");
+    public override Color RemoteTargetingLineColor => new("fadd8c");
+    public override Color RemoteTargetingLineOutline => Colors.Black;
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Masculine;
