@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
+using TheEngineer.TheEngineerCode.Orbs.Vfx;
 using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 using MaterialCard = TheEngineer.TheEngineerCode.Cards.Material;
@@ -18,7 +19,7 @@ public sealed class MinerOrb : CustomOrbModel
 {
     public override Color DarkenedColor => new Color("7a6740");
 
-    public override string? CustomIconPath => "res://TheEngineer/images/orbs/turret_orb.png";
+    public override string? CustomIconPath => "res://TheEngineer/images/orbs/miner_orb.png";
 
     public override string? CustomPassiveSfx => "event:/sfx/characters/defect/defect_frost_passive";
     public override string? CustomEvokeSfx   => "event:/sfx/characters/defect/defect_frost_evoke";
@@ -34,19 +35,15 @@ public sealed class MinerOrb : CustomOrbModel
     ];
     public override Node2D? CreateCustomSprite()
     {
-        var container = new Node2D();
+        PackedScene scene = PreloadManager.Cache.GetScene(
+            "res://TheEngineer/scenes/model/orbs/miner_orb.tscn");
 
-        string frostPath = SceneHelper.GetScenePath("orbs/orb_visuals/frost_orb");
-        Node2D frost = PreloadManager.Cache.GetScene(frostPath)
-            .Instantiate<Node2D>(PackedScene.GenEditState.Disabled);
+        NEngineerOrbVfx visual =
+            scene.Instantiate<NEngineerOrbVfx>();
 
-        new MegaSprite(frost.GetNode("SpineSkeleton"))
-            .GetAnimationState().SetAnimation("idle_loop");
+        visual.InitializeForOrb(this);
 
-        frost.Modulate = new Color(0.75f, 0.62f, 0.30f, 1.0f);
-        container.AddChild(frost);
-
-        return container;
+        return visual;
     }
 
     public override async Task AfterTurnStartOrbTrigger(PlayerChoiceContext choiceContext)
@@ -55,6 +52,7 @@ public sealed class MinerOrb : CustomOrbModel
     public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
     {
         PlayPassiveSfx();
+        ActivatePassive();
         await MaterialHelper.ProduceMaterial(
             Owner,
             choiceContext,
@@ -66,7 +64,7 @@ public sealed class MinerOrb : CustomOrbModel
     public override async Task<IEnumerable<Creature>> Evoke(PlayerChoiceContext choiceContext)
     {
         PlayEvokeSfx();
-
+        ActivatePassive();
         await MaterialHelper.ProduceMaterial(
             Owner,
             choiceContext,
