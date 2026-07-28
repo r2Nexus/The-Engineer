@@ -1,0 +1,200 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgabpi87kltft"]
+
+[ext_resource type="Script" uid="uid://b0akxtxll26hd" path="res://TheEngineerCode/Orbs/Vfx/NEngineerOrbVfx.cs" id="1_b4bn2"]
+[ext_resource type="Texture2D" uid="uid://4aqj17qf0im5" path="res://TheEngineer/images/orbs/sprites/landmine_orb.png" id="1_b6sic"]
+[ext_resource type="Texture2D" uid="uid://barmlartcfdq0" path="res://TheEngineer/images/particles/gun/flash.png" id="3_puakt"]
+
+[sub_resource type="Animation" id="Animation_puakt"]
+resource_name = "Evoke"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Vector2(0.16, 0.16), Vector2(0.4, 0.4), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.6050248, 0.5407007, 1), Color(0.18646076, 0.001976766, 3.7120842e-06, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b4bn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.16, 0.16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b6sic"]
+resource_name = "idle_loop"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, -3), Vector2(-1, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [-0.08726646259971647, 0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puakt"]
+_data = {
+&"Evoke": SubResource("Animation_puakt"),
+&"RESET": SubResource("Animation_b4bn2"),
+&"idle_loop": SubResource("Animation_b6sic")
+}
+
+[sub_resource type="Gradient" id="Gradient_puakt"]
+offsets = PackedFloat32Array(0.65495205, 1)
+colors = PackedColorArray(0.23567587, 0, 0.073466845, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b6sic"]
+gradient = SubResource("Gradient_puakt")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_vf1ro"]
+offsets = PackedFloat32Array(0, 0.48698884, 0.7100372, 0.9888476)
+colors = PackedColorArray(0.9996101, 0.96325773, 0.9239756, 1, 0.35674626, 0.4237781, 0.6152076, 1, 0.016800001, 0.1133067, 0.28, 0.7764706, 0.02, 0.011833333, 0.0003999996, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k3dsm"]
+gradient = SubResource("Gradient_vf1ro")
+
+[sub_resource type="Curve" id="Curve_ngo4f"]
+_data = [Vector2(0, 0), 0.0, 4.2366433, 0, 0, Vector2(0.17627119, 1), 0.0, 0.0, 0, 0, Vector2(0.47118646, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ouf1o"]
+curve = SubResource("Curve_ngo4f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x0koy"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 180.0
+initial_velocity_max = 240.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.29999998
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_ouf1o")
+color = Color(0.8892861, 0.8703334, 0.84947413, 1)
+color_ramp = SubResource("GradientTexture1D_k3dsm")
+hue_variation_min = -0.010000022
+hue_variation_max = 0.009999977
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b4bn2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_puakt")
+}
+autoplay = "idle_loop"
+speed_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_b6sic")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = -128.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture = SubResource("GradientTexture2D_b6sic")
+
+[node name="Evoke" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+texture = ExtResource("3_puakt")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_x0koy")

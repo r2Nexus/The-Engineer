@@ -1,0 +1,281 @@
+[gd_scene load_steps=17 format=3 uid="uid://beu6soyj2qqox"]
+
+[ext_resource type="Texture2D" uid="uid://d2y5adoaxtcru" path="res://TheEngineer/images/orbs/sprites/miner_orb/Body.PNG" id="1_dtfah"]
+[ext_resource type="Script" uid="uid://b0akxtxll26hd" path="res://TheEngineerCode/Orbs/Vfx/NEngineerOrbVfx.cs" id="1_gncf3"]
+[ext_resource type="Texture2D" uid="uid://ds0kpaph8e8bs" path="res://TheEngineer/images/orbs/sprites/miner_orb/Bit.PNG" id="2_gncf3"]
+[ext_resource type="Texture2D" uid="uid://cri50p7j1m5b8" path="res://TheEngineer/images/orbs/sprites/miner_orb/Leg.PNG" id="3_vi2fa"]
+[ext_resource type="Texture2D" uid="uid://barmlartcfdq0" path="res://TheEngineer/images/particles/gun/flash.png" id="5_vi2fa"]
+
+[sub_resource type="Animation" id="Animation_gncf3"]
+resource_name = "idle_loop"
+length = 0.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.18, 0.185]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Bit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, 2),
+"update": 0,
+"values": [Vector2(-1, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 1,
+"values": [0.18, 0.183]
+}
+
+[sub_resource type="Animation" id="Animation_vi2fa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.18]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Bit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5.5555553, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.18]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.18, 0.18)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Bit:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_efye0"]
+resource_name = "Passive"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(2, -0.5, 1),
+"update": 0,
+"values": [Vector2(0.18, 0.18), Vector2(0.2, 0.05), Vector2(0.18, 0.18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Bit:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 2, 0),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.81346464, 0.9337645, 0.95405453, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vi2fa"]
+_data = {
+&"Passive": SubResource("Animation_efye0"),
+&"RESET": SubResource("Animation_vi2fa"),
+&"idle_loop": SubResource("Animation_gncf3")
+}
+
+[sub_resource type="Gradient" id="Gradient_vi2fa"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_efye0"]
+gradient = SubResource("Gradient_vi2fa")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_efye0"]
+offsets = PackedFloat32Array(0, 0.4275093, 0.7100372, 0.9888476)
+colors = PackedColorArray(0.9996101, 0.96325773, 0.9239756, 1, 0.3462777, 0.46066982, 0.53399885, 1, 0.43933415, 0.6411362, 0.97684735, 0.7764706, 0.02, 0.011833333, 0.0003999996, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k3dsm"]
+gradient = SubResource("Gradient_efye0")
+
+[sub_resource type="Curve" id="Curve_qv5ar"]
+_data = [Vector2(0, 0), 0.0, 4.2366433, 0, 0, Vector2(0.2542373, 1), 0.0, 0.0, 0, 0, Vector2(0.7389831, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ouf1o"]
+curve = SubResource("Curve_qv5ar")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3un8l"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+initial_velocity_min = 120.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_ouf1o")
+color_ramp = SubResource("GradientTexture1D_k3dsm")
+hue_variation_min = -0.010000022
+hue_variation_max = 0.009999977
+
+[node name="MinerOrb" type="Node2D"]
+script = ExtResource("1_gncf3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vi2fa")
+}
+autoplay = "idle_loop"
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_dtfah")
+
+[node name="Bit" type="Sprite2D" parent="Body"]
+position = Vector2(-5.5555553, 0)
+texture = ExtResource("2_gncf3")
+
+[node name="Legs" type="Sprite2D" parent="Body"]
+show_behind_parent = true
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("3_vi2fa")
+
+[node name="TextureRect" type="TextureRect" parent="Body"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.44446
+offset_top = -161.11111
+offset_right = -144.44446
+offset_bottom = -161.11111
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(64, 64)
+texture = SubResource("GradientTexture2D_efye0")
+
+[node name="Passive" type="GPUParticles2D" parent="."]
+position = Vector2(0, 26)
+rotation = -1.5707964
+emitting = false
+amount = 12
+texture = ExtResource("5_vi2fa")
+lifetime = 0.4
+one_shot = true
+explosiveness = 0.6
+process_material = SubResource("ParticleProcessMaterial_3un8l")

@@ -1,0 +1,274 @@
+[gd_scene load_steps=13 format=3 uid="uid://bj4fawadn68ho"]
+
+[ext_resource type="Texture2D" uid="uid://baec0ovgg20i7" path="res://TheEngineer/images/charui/select/char_select_bg.png" id="1_v3exf"]
+[ext_resource type="Texture2D" uid="uid://c2rsgjnt35idr" path="res://TheEngineer/images/charui/select/gear.png" id="2_n0jlq"]
+[ext_resource type="Texture2D" uid="uid://ccxc0svexrevg" path="res://TheEngineer/images/charui/select/engineer.PNG" id="3_n0jlq"]
+[ext_resource type="Texture2D" uid="uid://cwmmknnb8ygfx" path="res://TheEngineer/images/charui/select/Paper.PNG" id="4_fecdl"]
+
+[sub_resource type="Animation" id="Animation_bf5j4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gear:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_n6g8w"]
+resource_name = "loop"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gear:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gko41"]
+_data = {
+&"RESET": SubResource("Animation_bf5j4"),
+&"loop": SubResource("Animation_n6g8w")
+}
+
+[sub_resource type="Gradient" id="Gradient_1mxlw"]
+offsets = PackedFloat32Array(0.022364218, 1)
+colors = PackedColorArray(0, 0, 0, 0.7411765, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_psx0c"]
+gradient = SubResource("Gradient_1mxlw")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Animation" id="Animation_v3exf"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, 0.03490658503988659]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(-0.5, 1),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(1.25, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, -0.08726646259971647]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.03490658503988659]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n0jlq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fecdl"]
+_data = {
+&"RESET": SubResource("Animation_n0jlq"),
+&"loop": SubResource("Animation_v3exf")
+}
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -523.0
+offset_right = 1600.0
+offset_bottom = 677.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1280, 600)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gko41")
+}
+autoplay = "loop"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -319.0
+offset_top = -50.0
+offset_right = -319.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v3exf")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1182.0
+offset_top = 1.0
+offset_right = -1182.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(64, 64)
+texture = SubResource("GradientTexture2D_psx0c")
+
+[node name="Gear" type="Sprite2D" parent="."]
+position = Vector2(1675, 1047)
+scale = Vector2(2.7050781, 2.7050781)
+texture = ExtResource("2_n0jlq")
+
+[node name="Engi" type="Sprite2D" parent="."]
+position = Vector2(1220, 599)
+texture = ExtResource("3_n0jlq")
+
+[node name="TextureRect" type="TextureRect" parent="Engi"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -991.0
+offset_top = -592.0
+offset_right = -991.0
+offset_bottom = -592.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(64, 64)
+texture = SubResource("GradientTexture2D_psx0c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Engi"]
+libraries = {
+&"": SubResource("AnimationLibrary_fecdl")
+}
+autoplay = "loop"
+
+[node name="Sprite2D" type="Sprite2D" parent="Engi"]
+position = Vector2(15.14455, -109.015785)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_fecdl")

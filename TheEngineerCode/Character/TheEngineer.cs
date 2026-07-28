@@ -22,7 +22,10 @@ public class TheEngineer : PlaceholderCharacterModel
 {
     public const string CharacterId = "TheEngineer";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("dea914");
+    public override Color MapDrawingColor => new("dea914");
+    public override Color RemoteTargetingLineColor => new("fadd8c");
+    public override Color RemoteTargetingLineOutline => Colors.Black;
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Masculine;
@@ -48,6 +51,7 @@ public class TheEngineer : PlaceholderCharacterModel
     ];
     
     public override string CustomVisualPath => "res://TheEngineer/scenes/model/engineer/engineer_character.tscn";
+    public override string CustomCharacterSelectBg => "res://TheEngineer/scenes/character_select.tscn";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheEngineerCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheEngineerRelicPool>();

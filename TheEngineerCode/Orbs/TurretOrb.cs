@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheEngineer.TheEngineerCode.Orbs.Vfx;
 using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
@@ -42,24 +43,20 @@ public sealed class TurretOrb : CustomOrbModel
     ];
 
     public override async Task BeforeTurnEndOrbTrigger(PlayerChoiceContext choiceContext)
-        => await Passive(choiceContext, null);
+        => await TriggerPassive(choiceContext, null);
 
     
     public override Node2D? CreateCustomSprite()
     {
-        var container = new Node2D();
+        PackedScene scene = PreloadManager.Cache.GetScene(
+            "res://TheEngineer/scenes/model/orbs/turret_orb.tscn");
 
-        string lightningPath = SceneHelper.GetScenePath("orbs/orb_visuals/lightning_orb");
-        Node2D lightning = PreloadManager.Cache.GetScene(lightningPath)
-            .Instantiate<Node2D>(PackedScene.GenEditState.Disabled);
+        NEngineerOrbVfx visual =
+            scene.Instantiate<NEngineerOrbVfx>();
 
-        new MegaSprite(lightning.GetNode("SpineSkeleton"))
-            .GetAnimationState().SetAnimation("idle_loop");
+        visual.InitializeForOrb(this);
 
-        lightning.Modulate = new Color(0.7f, 0.5f, 0.2f, 1.0f);
-        container.AddChild(lightning);
-
-        return container;
+        return visual;
     }
     public override async Task Passive(PlayerChoiceContext choiceContext, Creature? target)
     {
@@ -71,7 +68,6 @@ public sealed class TurretOrb : CustomOrbModel
 
         if (!paid)
             return;
-
         await Fire(choiceContext, target);
     }
 
@@ -86,6 +82,7 @@ public sealed class TurretOrb : CustomOrbModel
             if (enemy == null || !enemy.IsHittable)
                 return;
 
+            ActivatePassive();
             VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
             PlayPassiveSfx();
 
@@ -107,6 +104,7 @@ public sealed class TurretOrb : CustomOrbModel
         VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
         PlayEvokeSfx();
 
+        ActivatePassive();
         await CreatureCmd.Damage(
             choiceContext,
             new[] { enemy },
