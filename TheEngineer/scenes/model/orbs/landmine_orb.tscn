@@ -4,6 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://4aqj17qf0im5" path="res://TheEngineer/images/orbs/sprites/landmine_orb.png" id="1_b6sic"]
 [ext_resource type="Texture2D" uid="uid://barmlartcfdq0" path="res://TheEngineer/images/particles/gun/flash.png" id="3_puakt"]
 
+[sub_resource type="Animation" id="Animation_puakt"]
+resource_name = "Evoke"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(2, 2, 1),
+"update": 0,
+"values": [Vector2(0.16, 0.16), Vector2(0.4, 0.4), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.6050248, 0.5407007, 1), Color(0.18646076, 0.001976766, 3.7120842e-06, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_b4bn2"]
 length = 0.001
 tracks/0/type = "value"
@@ -84,34 +112,6 @@ tracks/1/keys = {
 "values": [-0.08726646259971647, 0.08726646259971647]
 }
 
-[sub_resource type="Animation" id="Animation_puakt"]
-resource_name = "Evoke"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(2, 2, 1),
-"update": 0,
-"values": [Vector2(0.16, 0.16), Vector2(0.4, 0.4), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 0.6050248, 0.5407007, 1), Color(0.18646076, 0.001976766, 3.7120842e-06, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_puakt"]
 _data = {
 &"Evoke": SubResource("Animation_puakt"),
@@ -119,12 +119,12 @@ _data = {
 &"idle_loop": SubResource("Animation_b6sic")
 }
 
-[sub_resource type="Gradient" id="Gradient_1mxlw"]
+[sub_resource type="Gradient" id="Gradient_puakt"]
 offsets = PackedFloat32Array(0.65495205, 1)
 colors = PackedColorArray(0.23567587, 0, 0.073466845, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b6sic"]
-gradient = SubResource("Gradient_1mxlw")
+gradient = SubResource("Gradient_puakt")
 width = 128
 height = 128
 fill = 1
