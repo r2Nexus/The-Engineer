@@ -7,10 +7,11 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
+using TheEngineer.TheEngineerCode.Character;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
-
+[Pool(typeof(TheEngineerCardPool))]
 public class Pylon() : TheEngineerCard(2,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)

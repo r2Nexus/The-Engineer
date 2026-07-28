@@ -251,9 +251,9 @@
   "THEENGINEER-CLIFF_EXPLOSIVE.title": "Cliff Explosive",
   "THEENGINEER-CLIFF_EXPLOSIVE.selectionScreenPrompt": "Choose a card to Exhaust.",
 
-  "THEENGINEER-COLD_START.description": "#*Exhaust up to {Discard:diff()} cards.\nFor each card *Discarded, draw a card and *Produce {Produce:diff()}.",
+  "THEENGINEER-COLD_START.description": "#*Discard up to {Discard:diff()} cards.\nFor each card *Discarded, draw a card and *Produce {Produce:diff()}.",
   "THEENGINEER-COLD_START.title": "Cold Start",
-  "THEENGINEER-COLD_START.selectionScreenPrompt": "Choose cards up to {Exhaust} to Exhaust.",
+  "THEENGINEER-COLD_START.selectionScreenPrompt": "Choose cards up to {Discard} to Discard.",
 
   "THEENGINEER-BELT_FED.description": "#Your *Turrets deal 2 less damage and *Fire twice.",
   "THEENGINEER-BELT_FED.title": "Belt Fed",
