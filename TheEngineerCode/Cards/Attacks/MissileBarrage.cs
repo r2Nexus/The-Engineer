@@ -17,6 +17,8 @@ public class MissileBarrage() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.AllEnemies)
 {
+    private const string CALCULATED_HITS_KEY = "CalculatedHits";
+
     private const decimal BASE_DAMAGE = 5m;
     private const decimal UPGRADE_DAMAGE = 2m;
 
@@ -32,9 +34,13 @@ public class MissileBarrage() : TheEngineerCard(
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
 
-        ..MakeCalculatedVar("CalculatedHits", BASE_HITS,
-            (card, target) =>
-                MaterialHelper.CountMaterial(card, MaterialSource.Stock))
+        ..MakeCalculatedVar(
+            CALCULATED_HITS_KEY,
+            BASE_HITS,
+            (card, _) =>
+                MaterialHelper.CountMaterial(
+                    card,
+                    MaterialSource.Stock))
     ];
 
     protected override async Task OnPlay(
@@ -49,15 +55,17 @@ public class MissileBarrage() : TheEngineerCard(
 
         int hits = BASE_HITS + consumed;
 
-        for (int i = 0; i < hits; i++)
-        {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this, play)
-                .TargetingAllOpponents(CombatState)
-                .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
-                .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
-                .Execute(choiceContext);
-        }
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .WithHitCount(hits)
+            .FromCard(this, play)
+            .TargetingAllOpponents(CombatState)
+            .WithAttackerAnim(
+                "Cast",
+                Owner.Character.CastAnimDelay)
+            .WithHitFx(
+                "vfx/vfx_attack_blunt",
+                tmpSfx: "heavy_attack.mp3")
+            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
