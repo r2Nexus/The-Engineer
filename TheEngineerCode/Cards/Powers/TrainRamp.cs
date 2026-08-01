@@ -13,13 +13,13 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class TrainRamp() : TheEngineerCard(2,
+public class TrainRamp() : TheEngineerCard(1,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
 
     private const decimal BASE_DAMAGE = 5;
-    private const decimal UPGRADE_DAMAGE = 7;
+    private const decimal UPGRADE_DAMAGE = 2;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
