@@ -11,11 +11,11 @@ using TheEngineer.TheEngineerCode.Powers;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class StorageChest() : TheEngineerCard(2,
+public class StorageChest() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_RETAIN = 2m;
+    private const decimal BASE_RETAIN = 1m;
     private const decimal UPGRADE_RETAIN = 1m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
