@@ -63,7 +63,7 @@
   "THEENGINEER-NUCLEAR_REACTOR.description": "At the start of your turn, [gold]Consume[/gold] 2 from [gold]Stock[/gold]: Gain {Energy:energyIcons(1)}.",
 
   "THEENGINEER-MINE_FIELD.title": "Mine Field",
-  "THEENGINEER-MINE_FIELD.description": "[gold]Channel[/gold] {IfUpgraded:show:X+1|X} [gold]Land Mine[/gold]s.",
+  "THEENGINEER-MINE_FIELD.description": "#Gain {MineFieldPower:diff()} Orb slots this turn.\nFill your empty Orbs slots with *Land *Mines.",
 
   "THEENGINEER-LANDFILL.title": "Landfill",
   "THEENGINEER-LANDFILL.description": "Gain {Repeat:diff()} orb slots.",

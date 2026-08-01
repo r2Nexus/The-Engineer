@@ -118,5 +118,9 @@
 
   "THEENGINEER-ASSEMBLY_POWER.description": "#The next card that *Consumes is played an additional time.",
   "THEENGINEER-ASSEMBLY_POWER.smartDescription": "#The next {Amount} card{Amount:plural:|s} that {Amount:plural:*Consumes*|*Consume*} {Amount:plural:is|are} played an additional time.",
-  "THEENGINEER-ASSEMBLY_POWER.title": "Assembly"
+  "THEENGINEER-ASSEMBLY_POWER.title": "Assembly",
+
+  "THEENGINEER-MINE_FIELD_POWER.description": "Gain additional Orb slots this turn.",
+  "THEENGINEER-MINE_FIELD_POWER.smartDescription": "Gain {Amount} additional Orb slots this turn.",
+  "THEENGINEER-MINE_FIELD_POWER.title": "Mine Field"
 }
