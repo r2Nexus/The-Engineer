@@ -1,4 +1,5 @@
-﻿using BaseLib.Extensions;
+﻿using BaseLib.Cards.Variables;
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -15,9 +16,9 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 
 [Pool(typeof(TheEngineerCardPool))]
-public class BuildLandMine() : TheEngineerCard(1,
+public class BuildLandMine() : TheEngineerCard(0,
     CardType.Skill, CardRarity.Common,
-    TargetType.None)
+    TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -26,11 +27,11 @@ public class BuildLandMine() : TheEngineerCard(1,
     ];
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Ethereal
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ConsumeVar(1)
+        new ConsumeVar(1),
+        new ExhaustiveVar(2)
     ];
 
 
@@ -59,6 +60,7 @@ public class BuildLandMine() : TheEngineerCard(1,
 
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Ethereal);
+        DynamicVars["Exhaustive"]
+            .UpgradeValueBy(1);
     }
 }

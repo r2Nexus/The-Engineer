@@ -54,7 +54,7 @@
   "THEENGINEER-COMBAT_STIM.description": "#Deal {Damage:diff()} damage.\nApply {VulnerablePower:diff()} *Vulnerable*.\n[gold]Charge[/gold]: Gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "THEENGINEER-BUILD_LAND_MINE.title": "Build Land Mine",
-  "THEENGINEER-BUILD_LAND_MINE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] 1: [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
+  "THEENGINEER-BUILD_LAND_MINE.description": "#[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] 1:\n[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n*Exhaustive {Exhaustive:diff()}.",
 
   "THEENGINEER-ECONOMY_BOOM.title": "Economy Boom",
   "THEENGINEER-ECONOMY_BOOM.description": "{IfUpgraded:show:Now and a|A}t the start of your turn, [gold]Channel[/gold] 1 [gold]Miner[/gold].",
