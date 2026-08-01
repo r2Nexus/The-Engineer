@@ -52,6 +52,8 @@ public class TheEngineer : PlaceholderCharacterModel
     
     public override string CustomVisualPath => "res://TheEngineer/scenes/model/engineer/engineer_character.tscn";
     public override string CustomCharacterSelectBg => "res://TheEngineer/scenes/character_select.tscn";
+    
+    public override string? CustomCharacterSelectIconPath => "res://TheEngineer/images/charui/select/character_select_engineer.png";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheEngineerCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheEngineerRelicPool>();
@@ -103,10 +105,9 @@ public class TheEngineer : PlaceholderCharacterModel
         });
 
     public override int BaseOrbSlotCount => 4;
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
-    public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
+    public override string CustomIconTexturePath => "head.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "engin_marker.png".CharacterUiPath();
     
     
 }
