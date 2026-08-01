@@ -107,7 +107,7 @@ public class TheEngineer : PlaceholderCharacterModel
     public override int BaseOrbSlotCount => 4;
     public override string CustomIconTexturePath => "head.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "engi_marker.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "engin_marker.png".CharacterUiPath();
     
     
 }
