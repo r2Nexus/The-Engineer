@@ -14,12 +14,12 @@ using TheEngineer.TheEngineerCode.Powers;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class Polymerisation() : TheEngineerCard(2,
+public class Polymerisation() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 4;
-    private const decimal UPGRADE_BLOCK = 0;
+    private const decimal BASE_BLOCK = 3;
+    private const decimal UPGRADE_BLOCK = 2;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -39,6 +39,6 @@ public class Polymerisation() : TheEngineerCard(2,
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars.Power<PolymerisationPower>().UpgradeValueBy(UPGRADE_BLOCK);
     }
 }
