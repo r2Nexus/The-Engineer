@@ -258,8 +258,8 @@
   "THEENGINEER-BELT_FED.description": "#Your *Turrets deal 2 less damage and *Fire twice.",
   "THEENGINEER-BELT_FED.title": "Belt Fed",
 
-  "THEENGINEER-RESEARCH_WAGON.description": "#Add {Cards} random {IfUpgraded:show:upgraded |}*Science cards to your hand. They cost 0 this turn.",
   "THEENGINEER-RESEARCH_WAGON.title": "Research Wagon",
+  "THEENGINEER-RESEARCH_WAGON.description": "#Deal {Damage:diff()} damage.\n*Transform a card in your *Hand into a random *Science and reduce its *Cost by 1.",
 
   "THEENGINEER-OUTPOST.description": "#*Channel* a *Miner*.\nGain {Block:diff()} *Block* for each *Miner* you have.",
   "THEENGINEER-OUTPOST.title": "Outpost",
