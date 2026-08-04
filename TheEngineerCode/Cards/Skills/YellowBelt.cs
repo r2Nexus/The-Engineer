@@ -24,7 +24,7 @@ public class YellowBelt() : TheEngineerCard(
 
     private const decimal BASE_PRODUCE = 1m;
 
-    private const int EXHAUSTIVE = 3;
+    private const int EXHAUSTIVE = 2;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
