@@ -16,12 +16,12 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class AsteroidCollector() : TheEngineerCard(
-    1,
+    0,
     CardType.Attack,
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 7m;
+    private const decimal BASE_DAMAGE = 6m;
     private const decimal UPGRADE_DAMAGE = 3m;
 
     private const decimal PRODUCE_PER_ATTACK = 1m;
