@@ -12,7 +12,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class RedScience() : TheEngineerCard(2,
+public class RedScience() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {

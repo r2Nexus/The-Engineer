@@ -15,7 +15,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class SpaceScience() : TheEngineerCard(
-    2,
+    1,
     CardType.Power,
     CardRarity.Rare,
     TargetType.Self)
