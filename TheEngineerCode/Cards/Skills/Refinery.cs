@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
@@ -20,38 +21,36 @@ public class Refinery() : TheEngineerCard(1,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
-        HoverTipFactory.FromPower<OilPower>()
+        HoverTipFactory.FromCard<OilBarrel>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<OilPower>(BASE_OIL)
     ];
-
-    private const decimal BASE_OIL = 6m;
-    private const decimal UPGRADE_OIL = 1m;
+    
+    protected override bool HasEnergyCostX => true;
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int consumed = await MaterialHelper.ConsumeAllMaterial(this, choiceContext, MaterialSource.Hand, play);
-        if (consumed > 0)
+        int energy = IsUpgraded ? ResolveEnergyXValue() + 1 : ResolveEnergyXValue();
+            
+        await CreatureCmd.TriggerAnim(
+            Owner.Creature,
+            "Cast",
+            Owner.Character.CastAnimDelay);
+        for (int i = 0; i < energy; i++)
         {
-            await CreatureCmd.TriggerAnim(
-                Owner.Creature,
-                "Cast",
-                Owner.Character.CastAnimDelay);
-            for (int i = 0; i < consumed; i++)
-            {
-                if (play.Target != null)
-                    await CommonActions.Apply<OilPower>(choiceContext, play.Target,this);
-            }
+            CardModel card = Owner.Creature.CombatState.CreateCard<OilBarrel>(Owner);
+
+            await CardPileCmd.AddGeneratedCardToCombat(
+                card,
+                PileType.Hand,
+                Owner);
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Power<OilPower>().UpgradeValueBy(UPGRADE_OIL);
     }
 }

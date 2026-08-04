@@ -126,10 +126,10 @@
   "THEENGINEER-STORAGE_CHEST.description": "At the end of your turn, choose up to {StorageChestPower:diff()} card{StorageChestPower:plural:|s} to [gold]Retain[/gold].",
 
   "THEENGINEER-PUMPJACK.title": "Pumpjack",
-  "THEENGINEER-PUMPJACK.description": "{IfUpgraded:show:Now and at|At} the start of your turn, add 1 Oil Barrel to your [gold]Hand[/gold].",
+  "THEENGINEER-PUMPJACK.description": "#{IfUpgraded:show:Now and at|At} the start of your turn, add 1 *Oil *Barrel to your [gold]Hand[/gold].",
 
   "THEENGINEER-REFINERY.title": "Refinery",
-  "THEENGINEER-REFINERY.description": "[gold]Consume[/gold] ALL: For each [gold]Material[/gold] [gold]Consumed[/gold], apply {OilPower:diff()} [gold]Oil[/gold].",
+  "THEENGINEER-REFINERY.description": "#Add {IfUpgraded:show:X+1|X} *Oil *Barrels to your *Hand*.",
 
   "THEENGINEER-REPAIR_SYSTEM.title": "Repair System",
   "THEENGINEER-REPAIR_SYSTEM.description": "Whenever you [gold]Consume[/gold], gain {RepairSystemPower:diff()} [gold]Block[/gold].",
