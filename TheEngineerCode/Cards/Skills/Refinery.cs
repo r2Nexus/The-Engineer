@@ -17,7 +17,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 [Pool(typeof(TheEngineerCardPool))]
 public class Refinery() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.AnyEnemy)
+    TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
