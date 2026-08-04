@@ -102,7 +102,7 @@
   "THEENGINEER-RED_SCIENCE.description": "At the start of your turn, [gold]Produce[/gold] 1.",
 
   "THEENGINEER-GREEN_SCIENCE.title": "Green Science",
-  "THEENGINEER-GREEN_SCIENCE.description": "At the start of your turn, draw 1 card.",
+  "THEENGINEER-GREEN_SCIENCE.description": "#{IfUpgraded:show:*Produce 2.\n}At the start of your turn, draw 1 card.",
 
   "THEENGINEER-PURPLE_SCIENCE.title": "Purple Science",
   "THEENGINEER-PURPLE_SCIENCE.description": "#At the start of your turn, *Upgrade a random card in your *Hand*.",
