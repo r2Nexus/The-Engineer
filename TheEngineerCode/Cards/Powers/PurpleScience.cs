@@ -13,7 +13,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 
 [Pool(typeof(TheEngineerCardPool))]
-public class PurpleScience() : TheEngineerCard(2,
+public class PurpleScience() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
