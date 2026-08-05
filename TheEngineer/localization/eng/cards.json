@@ -191,7 +191,7 @@
   "THEENGINEER-REINFORCED_WAGON.description": "Deal {Damage:diff()} damage.\nGain {Block:diff()} [gold]Block[/gold] for each [gold]Material[/gold] in your [gold]Hand[/gold].",
 
   "THEENGINEER-ARTILLERY_WAGON.title": "Artillery Wagon",
-  "THEENGINEER-ARTILLERY_WAGON.description": "[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Deal {Damage:diff()} damage to ALL enemies.",
+  "THEENGINEER-ARTILLERY_WAGON.description": "#Deal {Damage:diff()} damage to ALL enemies.\nTransform ALL *Material cards in your *Hand and *Draw *Pile in to *Artillery *Shell.",
 
   "THEENGINEER-E_M_PLANT.title": "EM Plant",
   "THEENGINEER-E_M_PLANT.description": "Whenever you draw a [gold]Charge[/gold] card, increase its [gold]Charge[/gold] by {EMPlantPower:diff()}.",
@@ -274,5 +274,8 @@
   "THEENGINEER-RECYCLER.title": "Recycler",
 
   "THEENGINEER-PYLON.description": "#Deal {Damage:diff()} damage.\nGain {FocusedStrikePower:diff()} *Focus this turn.",
-  "THEENGINEER-PYLON.title": "Pylon"
+  "THEENGINEER-PYLON.title": "Pylon",
+
+  "THEENGINEER-ARTILLERY_SHELL.description": "Deal {Damage:diff()} damage.",
+  "THEENGINEER-ARTILLERY_SHELL.title": "Artillery Shell"
 }
