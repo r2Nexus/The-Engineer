@@ -176,7 +176,7 @@
   "THEENGINEER-PERIMETER_WALL.description": "Add {Cards:diff()} random cards with [gold]Block[/gold] to your [gold]Hand[/gold].\nThey cost 0 this turn and gain [gold]Ethereal[/gold].",
 
   "THEENGINEER-RAINING_BULLETS.title": "Raining Bullets",
-  "THEENGINEER-RAINING_BULLETS.description": "#*Consume {IfUpgraded:show:X-1|X} from *Stock*: *Fire all *Turrets X times.",
+  "THEENGINEER-RAINING_BULLETS.description": "#Deal {Damage:diff()} damage to ALL enemies.\n*Fire all *Turrets twice.",
 
   "THEENGINEER-PIPELINE.title": "Pipeline",
   "THEENGINEER-PIPELINE.description": "Apply the target's [gold]Oil[/gold] to {IfUpgraded:show:ALL|all other} enemies.\n[gold]Produce[/gold] 1.",
@@ -238,7 +238,7 @@
   "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTurn all *Residue on this enemy into *Oil at a 1:1 ratio.",
   "THEENGINEER-LIQUEFY.title": "Liquefy",
 
-  "THEENGINEER-RAILGUN.description": "#Remove all *Charge from your cards.\nDeal damage equal to the *Charge removed.\n{InCombat:(Currently [blue]{CalculatedDamage:diff()}[/blue] damage)}",
+  "THEENGINEER-RAILGUN.description": "#Remove all *Charge\nfrom your cards.\nDeal damage equal to\n*X times *Charge removed.{InCombat:\n(Currently [blue]{CalculatedDamage:diff()}[/blue] damage)|}",
   "THEENGINEER-RAILGUN.title": "Railgun",
 
   "THEENGINEER-TESLA_TURRET.description": "#Deal {Damage:diff()} damage.\nWhenever you spend [gold]Charge[/gold], put this in your [gold]Hand[/gold] and increase its damage by {IfUpgraded:show:4|3}.",

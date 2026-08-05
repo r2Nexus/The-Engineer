@@ -16,18 +16,21 @@ public class Railgun() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_CHARGE = 8m;
-    private const decimal BASE_MAX_CHARGE = 16m;
+    private const decimal BASE_CHARGE = 0m;
+    private const decimal BASE_MAX_CHARGE = 5m;
 
     private const decimal UPGRADE_CHARGE = 4m;
-    private const decimal UPGRADE_MAX_CHARGE = 8m;
+    private const decimal UPGRADE_MAX_CHARGE = 4m;
+
+    protected override bool HasEnergyCostX => true;
 
     protected override HashSet<CardTag> CanonicalTags =>
     [
         TheEngineerCardTags.Charge
     ];
-    
-    protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
+
+    protected override bool ShouldGlowGoldInternal =>
+        ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -48,26 +51,51 @@ public class Railgun() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        decimal rawCharge = ChargeHelper.CountRemovableCharge(Owner, this);
+        int energyMultiplier = ResolveEnergyXValue();
 
-        if (rawCharge <= 0)
+        // Prevent playing it for 0 energy from wasting all stored Charge.
+        if (energyMultiplier <= 0)
             return;
 
-        decimal damage = DynamicVars.CalculatedDamage.Calculate(play.Target);
+        decimal chargeSpent =
+            ChargeHelper.CountRemovableCharge(Owner, this);
 
-        await ChargeHelper.RemoveChargeFromAll(choiceContext, Owner, this, this);
+        if (chargeSpent <= 0)
+            return;
 
-        await DamageCmd.Attack(damage)
+        decimal damagePerEnergy =
+            DynamicVars.CalculatedDamage.Calculate(play.Target);
+
+        decimal totalDamage =
+            damagePerEnergy * energyMultiplier;
+
+        await ChargeHelper.RemoveChargeFromAll(
+            choiceContext,
+            Owner,
+            this,
+            this);
+
+        await DamageCmd.Attack(totalDamage)
             .FromCard(this, play)
             .Targeting(play.Target)
-            .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
+            .WithAttackerAnim(
+                "Cast",
+                Owner.Character.CastAnimDelay)
+            .WithHitFx(
+                "vfx/vfx_attack_blunt",
+                tmpSfx: "heavy_attack.mp3")
             .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.ChargeInitial().UpgradeValueBy(UPGRADE_CHARGE);
-        DynamicVars.ChargeCurrent().UpgradeValueBy(UPGRADE_CHARGE);
-        DynamicVars.ChargeMax().UpgradeValueBy(UPGRADE_MAX_CHARGE);
+        DynamicVars.ChargeInitial()
+            .UpgradeValueBy(UPGRADE_CHARGE);
+
+        DynamicVars.ChargeCurrent()
+            .UpgradeValueBy(UPGRADE_CHARGE);
+
+        DynamicVars.ChargeMax()
+            .UpgradeValueBy(UPGRADE_MAX_CHARGE);
     }
 }
