@@ -1,4 +1,8 @@
-﻿using BaseLib.Utils;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Cards.Variables;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -44,21 +48,29 @@ public sealed class LaserTurret() : TheEngineerCard(
 
         ..MakeCalculatedVar(
             "CalculatedHits",
-            BASE_HITS,
+            2,
             (card, _) =>
-                BASE_HITS +
-                (ChargeHelper.IsFull(card)
+                ChargeHelper.IsFull(card)
                     ? CHARGED_EXTRA_HITS
-                    : 0))
+                    : 0)
     ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        ArgumentNullException.ThrowIfNull(play.Target);
+
+        int hitCount = (int)
+            ((CustomCalculatedVar)DynamicVars["CalculatedHits"])
+            .CalculateCustom(play.Target);
+
         bool wasFullyCharged = ChargeHelper.IsFull(this);
 
-        await CommonActions.CardAttack(this, play)
+        await CommonActions.CardAttack(
+                this,
+                play,
+                hitCount)
             .Execute(choiceContext);
 
         if (wasFullyCharged)
