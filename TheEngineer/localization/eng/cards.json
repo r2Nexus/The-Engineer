@@ -229,8 +229,8 @@
   "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They count as *Material.",
   "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod",
 
-  "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits} times.\nHits once for each *Turret you have.\n*Charge: hit 2 additional times.",
-  "THEENGINEER-LASER_TURRET.title": "Laser Turret",
+  "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits} times.\n*Charge: hit 2 additional times.",
+  "THEENGINEER-LASER_TURRET.title": "Personal Laser",
 
   "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",
   "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {Damage:diff()} damage.\nThis turn, whenever you play an Attack, *Produce {Produce:diff()}.",
