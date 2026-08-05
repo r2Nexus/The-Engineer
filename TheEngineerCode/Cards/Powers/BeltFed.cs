@@ -12,7 +12,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class BeltFed() : TheEngineerCard(
-    2,
+    1,
     CardType.Power,
     CardRarity.Rare,
     TargetType.Self)
