@@ -18,10 +18,10 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 public class Tank : TheEngineerCard
 {
     private const decimal BASE_BLOCK = 3m;
-    private const decimal UPGRADE_BLOCK = 0m;
+    private const decimal UPGRADE_BLOCK = 1m;
 
-    private const decimal BASE_DAMAGE = 9m;
-    private const decimal UPGRADE_DAMAGE = 4m;
+    private const decimal BASE_DAMAGE = 12m;
+    private const decimal UPGRADE_DAMAGE = 0m;
 
     private const decimal BASE_CONSUME = 2m;
     private const decimal UPGRADE_CONSUME = 0m;
@@ -74,8 +74,8 @@ public class Tank : TheEngineerCard
 
     protected override void OnUpgrade()
     {
-        //DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
-        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
+        //DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
         //DynamicVars.Consume().UpgradeValueBy(UPGRADE_CONSUME);
     }
 }
