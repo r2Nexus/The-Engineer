@@ -90,7 +90,7 @@
   "THEENGINEER-FLAMETHROWER.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] 1: Apply {OilPower:diff()} [gold]Oil[/gold].",
 
   "THEENGINEER-NUCLEAR_OPTION.title": "Nuclear Option",
-  "THEENGINEER-NUCLEAR_OPTION.description": "[gold]Consume[/gold] ALL from [gold]Stock[/gold].\nDeal {CalculatedDamage:diff()} damage, increased by 6 for each [gold]Material[/gold] [gold]Consumed[/gold].",
+  "THEENGINEER-NUCLEAR_OPTION.description": "#Deal {Damage:diff()} damage.\nCosts 1 less for each *Material *Consumed this combat.",
 
   "THEENGINEER-BLUE_SCIENCE.title": "Blue Science",
   "THEENGINEER-BLUE_SCIENCE.description": "Gain {FocusPower:diff()} [gold]Focus[/gold].",

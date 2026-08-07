@@ -1,59 +1,68 @@
 ﻿using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Hooks;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class NuclearOption() : TheEngineerCard(4,
-    CardType.Attack, CardRarity.Uncommon,
-    TargetType.AnyEnemy)
+public class NuclearOption() : TheEngineerCard(
+    BASE_COST,
+    CardType.Attack,
+    CardRarity.Uncommon,
+    TargetType.AnyEnemy), IOnConsumed
 {
-    private const decimal BASE_DAMAGE = 30m;
-    private const decimal DAMAGE_STACK = 8m;
-    
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    private const int BASE_COST = 16;
+
+    private const decimal BASE_DAMAGE = 25m;
+    private const decimal UPGRADE_DAMAGE = 5m;
+
+    private int _consumedThisCombat;
+
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
-    ];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CalculationBaseVar(BASE_DAMAGE),
-        new ExtraDamageVar(DAMAGE_STACK),
-        new CalculatedDamageVar(ValueProp.Move)
-            .WithMultiplier((card, _) =>
-                MaterialHelper.CountMaterial(card.Owner, MaterialSource.Stock))
+        new DamageVar(BASE_DAMAGE, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        decimal damage = DynamicVars.CalculatedDamage.Calculate(play.Target);
+        ArgumentNullException.ThrowIfNull(play.Target);
 
-        int consumed = await MaterialHelper.ConsumeAllMaterial(
-            this,
-            choiceContext,
-            MaterialSource.Stock,
-            play);
-
-        await DamageCmd.Attack(damage)
-            .FromCard(this, play)
-            .Targeting(play.Target)
-            .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
-            .WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "heavy_attack.mp3")
+        await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
+    }
+
+    public Task OnConsumed(
+        PlayerChoiceContext choiceContext,
+        Player player,
+        int amount,
+        MaterialSource source,
+        AbstractModel? causedBy,
+        CardPlay? play)
+    {
+        if (player != Owner || amount <= 0)
+            return Task.CompletedTask;
+
+        _consumedThisCombat = Math.Min(
+            BASE_COST,
+            _consumedThisCombat + amount);
+
+        EnergyCost.SetCustomBaseCost(
+            BASE_COST - _consumedThisCombat);
+
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
     }
 }
