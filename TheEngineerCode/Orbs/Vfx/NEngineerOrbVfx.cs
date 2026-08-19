@@ -1,6 +1,6 @@
 using Godot;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
+using MegaCrit.Sts2.Core.Nodes.Orbs;
 
 namespace TheEngineer.TheEngineerCode.Orbs.Vfx;
 
