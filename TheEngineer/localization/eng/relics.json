@@ -5,5 +5,9 @@
 
   "THEENGINEER-WARTIME_PRODUCTION.description": "#At the start of combat, *Channel 2 *Turrets, *Channel 2 *Miners and *Produce 1.",
   "THEENGINEER-WARTIME_PRODUCTION.flavor": "The Engineer did nothing wrong.",
-  "THEENGINEER-WARTIME_PRODUCTION.title": "Wartime Production"
+  "THEENGINEER-WARTIME_PRODUCTION.title": "Wartime Production",
+
+  "THEENGINEER-ARCOSPHERE.description": "#At the end of your turn, if you have at least 2 *Materials in your *Hand, *Draw *Pile and *Discard *Pile, gain 1 *Strength.",
+  "THEENGINEER-ARCOSPHERE.flavor": "This makes my head hurt...",
+  "THEENGINEER-ARCOSPHERE.title": "Arcosphere"
 }
