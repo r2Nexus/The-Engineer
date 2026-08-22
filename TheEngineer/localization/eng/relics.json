@@ -17,5 +17,9 @@
 
   "THEENGINEER-TRAIN_TICKET.description": "#The first time each turn you play a *Wagon card, draw 1 card.",
   "THEENGINEER-TRAIN_TICKET.flavor": "Choo choo!",
-  "THEENGINEER-TRAIN_TICKET.title": "Train Ticket"
+  "THEENGINEER-TRAIN_TICKET.title": "Train Ticket",
+
+  "THEENGINEER-LOGISTICS_BOT.description": "#At the end of your turn, *Retain a random Skill.",
+  "THEENGINEER-LOGISTICS_BOT.flavor": "Beep boop, zwoop!",
+  "THEENGINEER-LOGISTICS_BOT.title": "Logistics Bot"
 }
