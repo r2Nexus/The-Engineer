@@ -9,5 +9,9 @@
 
   "THEENGINEER-ARCOSPHERE.description": "#At the end of your turn, if you have at least 2 *Materials in your *Hand, *Draw *Pile and *Discard *Pile, gain 1 *Strength.",
   "THEENGINEER-ARCOSPHERE.flavor": "This makes my head hurt...",
-  "THEENGINEER-ARCOSPHERE.title": "Arcosphere"
+  "THEENGINEER-ARCOSPHERE.title": "Arcosphere",
+
+  "THEENGINEER-LANDFILL.description": "#At the start of combat, gain 1 additional Orb slot.",
+  "THEENGINEER-LANDFILL.flavor": "Little extra leg room.",
+  "THEENGINEER-LANDFILL.title": "Landfill"
 }
