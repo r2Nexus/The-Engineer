@@ -21,5 +21,9 @@
 
   "THEENGINEER-LOGISTICS_BOT.description": "#At the end of your turn, *Retain a random Skill.",
   "THEENGINEER-LOGISTICS_BOT.flavor": "Beep boop, zwoop!",
-  "THEENGINEER-LOGISTICS_BOT.title": "Logistics Bot"
+  "THEENGINEER-LOGISTICS_BOT.title": "Logistics Bot",
+
+  "THEENGINEER-RESOURCE_BUFFER.description": "#At the start of combat, *Produce 3 in *Discard *Pile.",
+  "THEENGINEER-RESOURCE_BUFFER.flavor": "",
+  "THEENGINEER-RESOURCE_BUFFER.title": "Resource Buffer"
 }
