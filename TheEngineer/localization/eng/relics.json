@@ -13,5 +13,9 @@
 
   "THEENGINEER-LANDFILL.description": "#At the start of combat, gain 1 additional Orb slot.",
   "THEENGINEER-LANDFILL.flavor": "Little extra leg room.",
-  "THEENGINEER-LANDFILL.title": "Landfill"
+  "THEENGINEER-LANDFILL.title": "Landfill",
+
+  "THEENGINEER-TRAIN_TICKET.description": "#The first time each turn you play a *Wagon card, draw 1 card.",
+  "THEENGINEER-TRAIN_TICKET.flavor": "Choo choo!",
+  "THEENGINEER-TRAIN_TICKET.title": "Train Ticket"
 }
