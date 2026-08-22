@@ -6,7 +6,7 @@
   "THEENGINEER-DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-MATERIAL.title": "Material",
-  "THEENGINEER-MATERIAL.description": "[gold]Unplayable[/gold].",
+  "THEENGINEER-MATERIAL.description": "#{HasTungstenCarbide:Gain 1 *Thorns* this turn.|*Unplayable*.}",
 
   "THEENGINEER-MANUAL_LABOR.title": "Manual Labor",
   "THEENGINEER-MANUAL_LABOR.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] 2.",

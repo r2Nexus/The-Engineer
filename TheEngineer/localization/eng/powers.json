@@ -122,5 +122,9 @@
 
   "THEENGINEER-MINE_FIELD_POWER.description": "Gain additional Orb slots this turn.",
   "THEENGINEER-MINE_FIELD_POWER.smartDescription": "Gain {Amount} additional Orb slots this turn.",
-  "THEENGINEER-MINE_FIELD_POWER.title": "Mine Field"
+  "THEENGINEER-MINE_FIELD_POWER.title": "Mine Field",
+
+  "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.description": "Gain [gold]Thorns[/gold] until the end of this turn.",
+  "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Thorns[/gold] until the end of this turn.",
+  "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.title": "Tungsten Carbide"
 }
