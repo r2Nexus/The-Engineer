@@ -37,7 +37,7 @@ public class Arcosphere() : TheEngineerRelic
         int draw = MaterialHelper.CountMaterial(Owner, MaterialSource.Draw);
         int discard = MaterialHelper.CountMaterial(Owner, MaterialSource.Discard);
 
-        if (hand >= 2 || draw >= 2 || discard >= 2)
+        if (hand >= 2 && draw >= 2 && discard >= 2)
         {
             Flash();
             await CommonActions.Apply<StrengthPower>(choiceContext, Owner.Creature,this);
