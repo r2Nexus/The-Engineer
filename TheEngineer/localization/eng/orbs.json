@@ -7,7 +7,7 @@
   "THEENGINEER-LAND_MINE_ORB.smartDescription": "[gold]Passive:[/gold] If an enemy intends to Attack, [gold]Evoke[/gold] self.\n[gold]Evoke:[/gold] Gain [blue]{Passive}[/blue] Block. Apply [blue]{Evoke}[/blue] [gold]Oil[/gold] to all enemies.\nWhenever you [gold]Consume[/gold] [gold]Material[/gold], this Orb applies that much more [gold]Oil[/gold].",
   "THEENGINEER-LAND_MINE_ORB.title": "Land Mine",
 
-  "THEENGINEER-MINER_ORB.description": "Orb: [gold]Produces[/gold] [gold]Material[/gold] at the start of your turn.",
+  "THEENGINEER-MINER_ORB.description": "Orb: [gold]Produces[/gold] [blue]1[/blue] at the start of your turn.",
   "THEENGINEER-MINER_ORB.smartDescription": "[gold]Passive:[/gold] At the start of your turn, [gold]Produce[/gold] [blue]{Passive}[/blue].\n[gold]Evoke:[/gold] [gold]Produce[/gold] [blue]{Evoke}[/blue].",
   "THEENGINEER-MINER_ORB.title": "Miner"
 }

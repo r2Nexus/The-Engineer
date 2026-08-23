@@ -1,15 +1,15 @@
 {
   "THEENGINEER-CONSUME.title": "Consume {Consume}",
-  "THEENGINEER-CONSUME.description": "#*Exhaust [blue]{Consume}[/blue] *Material {Consume:plural:card|cards} from your *Hand (unless specified otherwise), to activate an additional effect.",
+  "THEENGINEER-CONSUME.description": "#*Exhaust [blue]{Consume}[/blue] *Material {Consume:plural:card|cards} from your *Hand, to activate an additional effect.",
 
   "THEENGINEER-CONSUMEALL.title": "Consume",
-  "THEENGINEER-CONSUMEALL.description": "#*Exhaust *Material from your *Hand (unless specified otherwise), to activate an additional effect.",
+  "THEENGINEER-CONSUMEALL.description": "#*Exhaust *Material from your *Hand, to activate an additional effect.",
 
   "THEENGINEER-PRODUCE.title": "Produce {Produce}",
-  "THEENGINEER-PRODUCE.description": "Create [blue]{Produce}[/blue] Material {Produce:plural:card|cards} in your *Hand (unless specified otherwise).",
+  "THEENGINEER-PRODUCE.description": "#Create [blue]{Produce}[/blue] {Produce:plural:*Iron* *Plate*|*Iron* *Plates*} in your *Hand.",
 
   "THEENGINEER-PRODUCEALL.title": "Produce",
-  "THEENGINEER-PRODUCEALL.description": "#*Create *Material cards in your *Hand (unless specified otherwise).",
+  "THEENGINEER-PRODUCEALL.description": "#*Create *Iron *Plate in your *Hand.",
   
   "THEENGINEER-STOCK.title": "Stock",
   "THEENGINEER-STOCK.description": "#*Stock refers to your *Hand, *Draw *Pile and *Discard *Pile specifically in this order.",
@@ -21,5 +21,5 @@
   "THEENGINEER-FIRE.description": "#*Fire causes the *Turret to deal its passive damage.",
 
   "THEENGINEER_MATERIAL_COUNTER.title": "Material",
-  "THEENGINEER_MATERIAL_COUNTER.description": "[gold]Material[/gold] can be [gold]Consumed[/gold] by other cards.\n\nIn Draw: [blue]{draw}[/blue]\nin Hand: [blue]{hand}[/blue]\nIn Discard: [blue]{discard}[/blue]"
+  "THEENGINEER_MATERIAL_COUNTER.description": "[gold]Material[/gold] can be [gold]Consumed[/gold] by other cards.\n\nIn [gold]Draw Pile[/gold]: [blue]{draw}[/blue]\nin [gold]Hand[/gold]: [blue]{hand}[/blue]\nIn [gold]Discard Pile[/gold]: [blue]{discard}[/blue]"
 }

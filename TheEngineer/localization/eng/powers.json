@@ -96,12 +96,12 @@
   "THEENGINEER-RESIDUE_POWER.smartDescription": "At the start of your turn, gets converted to [gold]Oil[gold] at 2:1 ratio.",
   "THEENGINEER-RESIDUE_POWER.title": "Residue",
 
-  "THEENGINEER-FOUNDRY_POWER.description": "Whenever you [gold]Produce[/gold] 2 or more material at once, [gold]Channel[/gold] 1 [gold]Turret[/gold].",
-  "THEENGINEER-FOUNDRY_POWER.smartDescription": "Whenever you [gold]Produce[/gold] 2 or more material at once, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Turret[/gold]",
+  "THEENGINEER-FOUNDRY_POWER.description": "Whenever you [gold]Produce[/gold] 2 or more at once, [gold]Channel[/gold] 1 [gold]Turret[/gold].",
+  "THEENGINEER-FOUNDRY_POWER.smartDescription": "Whenever you [gold]Produce[/gold] 2 or more at once, [gold]Channel[/gold] [blue]{Amount}[/blue] [gold]Turret[/gold]",
   "THEENGINEER-FOUNDRY_POWER.title": "Foundry",
 
-  "THEENGINEER-OVERHAUL_MOD_POWER.description": "*Produce now creates random Defect cards. They count as *Material.",
-  "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "*Produce now creates random Defect cards. They count as *Material.",
+  "THEENGINEER-OVERHAUL_MOD_POWER.description": "*Produce now creates random Defect cards. They count as *Material and gain *Exhaust.",
+  "THEENGINEER-OVERHAUL_MOD_POWER.smartDescription": "*Produce now creates random Defect cards. They count as *Material and gain *Exhaust.",
   "THEENGINEER-OVERHAUL_MOD_POWER.title": "Overhaul Mod",
 
   "THEENGINEER-ASTEROID_COLLECTOR_POWER.title": "Asteroid Collector",
