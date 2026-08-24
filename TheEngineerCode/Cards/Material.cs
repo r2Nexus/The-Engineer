@@ -22,8 +22,10 @@ public class Material() : TheEngineerCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
+    private bool HasTungstenCarbide =>
+        Owner?.GetRelic<TungstenCarbide>() != null;
     protected override bool IsPlayable =>
-        Owner.GetRelic<TungstenCarbide>() != null;
+        HasTungstenCarbide;
 
     public override int MaxUpgradeLevel => 0;
 
@@ -38,7 +40,7 @@ public class Material() : TheEngineerCard(
 
         description.Add(
             "HasTungstenCarbide",
-            Owner.GetRelic<TungstenCarbide>() != null);
+            HasTungstenCarbide);
     }
 
     public override void AfterCreated()
