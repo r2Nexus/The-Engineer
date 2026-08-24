@@ -20,7 +20,8 @@ public class Foundry() : TheEngineerCard(2,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromOrb<TurretOrb>()
+        HoverTipFactory.FromOrb<TurretOrb>(),
+        HoverTipFactory.FromCard<Material>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

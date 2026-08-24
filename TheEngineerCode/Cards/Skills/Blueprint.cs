@@ -18,7 +18,8 @@ public class Blueprint() : TheEngineerCard(2,
         HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromOrb<LandMineOrb>(),
         HoverTipFactory.FromOrb<TurretOrb>(),
-        HoverTipFactory.FromOrb<MinerOrb>()
+        HoverTipFactory.FromOrb<MinerOrb>(),
+        HoverTipFactory.FromCard<Material>()
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>

@@ -34,7 +34,8 @@ public sealed class Assembly() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<AssemblyPower>(),
-        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

@@ -20,7 +20,8 @@ public class RedScience() : TheEngineerCard(1,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL"),
+        HoverTipFactory.FromCard<Material>()
     ];
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];

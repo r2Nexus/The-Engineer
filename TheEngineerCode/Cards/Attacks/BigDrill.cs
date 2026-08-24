@@ -22,7 +22,8 @@ public class BigDrill() : TheEngineerCard(2,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromOrb<MinerOrb>()
+        HoverTipFactory.FromOrb<MinerOrb>(),
+        HoverTipFactory.FromCard<Material>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

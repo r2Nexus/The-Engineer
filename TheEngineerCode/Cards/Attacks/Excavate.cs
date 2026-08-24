@@ -33,7 +33,8 @@ public class Excavate() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FreeConsumePower>()
+        HoverTipFactory.FromPower<FreeConsumePower>(),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override async Task OnPlay(

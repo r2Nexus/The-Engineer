@@ -31,6 +31,11 @@ public sealed class AsteroidCollector() : TheEngineerCard(
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
         new ProduceVar(PRODUCE_PER_ATTACK)
     ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<Material>()
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

@@ -35,7 +35,8 @@ public class CliffExplosive() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromOrb<MinerOrb>(),
-        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override async Task OnPlay(

@@ -21,7 +21,8 @@ public class BuildMiner() : TheEngineerCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromOrb<MinerOrb>()
+        HoverTipFactory.FromOrb<MinerOrb>(),
+        HoverTipFactory.FromCard<Material>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(BASE_BLOCK, ValueProp.Move)

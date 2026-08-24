@@ -5,6 +5,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Util;
@@ -31,6 +32,11 @@ public class YellowBelt() : TheEngineerCard(
         new CardsVar(BASE_DRAW),
         new ProduceVar(BASE_PRODUCE),
         new ExhaustiveVar(EXHAUSTIVE)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override async Task OnPlay(

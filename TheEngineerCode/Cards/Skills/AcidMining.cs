@@ -30,7 +30,8 @@ public sealed class AcidMining() : TheEngineerCard(
     [
         HoverTipFactory.FromPower<TemporaryStrengthPower>(),
         HoverTipFactory.FromOrb<MinerOrb>(),
-        HoverTipFactory.Static(StaticHoverTip.Channeling)
+        HoverTipFactory.Static(StaticHoverTip.Channeling),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

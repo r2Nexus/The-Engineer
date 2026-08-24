@@ -33,6 +33,11 @@ public class ColdStart() : TheEngineerCard(
         new CardsVar(DRAW_PER_DISCARD),
         new ProduceVar(PRODUCE_PER_DISCARD)
     ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromCard<Material>()
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

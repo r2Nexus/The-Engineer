@@ -18,7 +18,8 @@ public class RedBelt() : TheEngineerCard(1,
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK"),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
