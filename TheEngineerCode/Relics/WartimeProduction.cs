@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Rooms;
+using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Orbs;
 using TheEngineer.TheEngineerCode.Util;
@@ -31,7 +32,8 @@ public class WartimeProduction : TheEngineerRelic
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL"),
         HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromOrb<TurretOrb>(),
-        HoverTipFactory.FromOrb<MinerOrb>()
+        HoverTipFactory.FromOrb<MinerOrb>(),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,

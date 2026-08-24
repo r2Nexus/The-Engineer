@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
+using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Relics;
@@ -16,7 +17,8 @@ public sealed class ProductivityModule : TheEngineerRelic
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL"),
+        HoverTipFactory.FromCard<Material>()
     ];
 
     public async Task OnConsumed(
