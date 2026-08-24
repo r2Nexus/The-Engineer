@@ -21,11 +21,6 @@ public class MaterialPotion : TheEngineerPotion
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.Self;
     
-    public override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
-    ];
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ProduceVar(3)
     ];

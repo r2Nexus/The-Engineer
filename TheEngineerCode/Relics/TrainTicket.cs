@@ -3,8 +3,10 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Relics;
 
@@ -13,6 +15,11 @@ public sealed class TrainTicket : TheEngineerRelic
     private bool _triggeredThisTurn;
 
     public override RelicRarity Rarity => RelicRarity.Uncommon;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Wagon)
+    ];
 
     public override async Task AfterCardPlayed(
         PlayerChoiceContext choiceContext,

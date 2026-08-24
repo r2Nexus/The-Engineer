@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 
 namespace TheEngineer.TheEngineerCode.Relics;
@@ -9,6 +10,11 @@ namespace TheEngineer.TheEngineerCode.Relics;
 public sealed class LogisticsBot : TheEngineerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Uncommon;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromKeyword(CardKeyword.Retain)
+    ];
 
     public override Task BeforeFlush(
         PlayerChoiceContext choiceContext,

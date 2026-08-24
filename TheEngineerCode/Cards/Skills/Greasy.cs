@@ -34,8 +34,7 @@ public class Greasy() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<OilPower>(),
-        HoverTipFactory.FromPower<WeakPower>()
+        HoverTipFactory.FromPower<OilPower>()
     ];
 
     protected override async Task OnPlay(

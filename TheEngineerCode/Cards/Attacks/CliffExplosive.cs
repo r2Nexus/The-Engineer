@@ -6,8 +6,10 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Orbs;
@@ -28,6 +30,12 @@ public class CliffExplosive() : TheEngineerCard(
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromOrb<MinerOrb>(),
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
 
     protected override async Task OnPlay(

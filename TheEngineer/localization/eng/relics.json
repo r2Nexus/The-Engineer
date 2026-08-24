@@ -31,7 +31,7 @@
   "THEENGINEER-TUNGSTEN_CARBIDE.flavor": "",
   "THEENGINEER-TUNGSTEN_CARBIDE.title": "Tungsten Carbide",
 
-  "THEENGINEER-PRODUCTIVITY_MODULE.description": "#The first time you Consume each turn, *Produce [blue]1[/blue] in *Discard *Pile.",
+  "THEENGINEER-PRODUCTIVITY_MODULE.description": "#The first time you *Consume each turn, *Produce [blue]1[/blue] in *Discard *Pile.",
   "THEENGINEER-PRODUCTIVITY_MODULE.flavor": "",
   "THEENGINEER-PRODUCTIVITY_MODULE.title": "Productivity Module"
 }

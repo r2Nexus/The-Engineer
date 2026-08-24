@@ -30,7 +30,8 @@ public class WartimeProduction : TheEngineerRelic
     [
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL"),
         HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromOrb<TurretOrb>()
+        HoverTipFactory.FromOrb<TurretOrb>(),
+        HoverTipFactory.FromOrb<MinerOrb>()
     ];
 
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,

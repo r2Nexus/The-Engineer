@@ -33,16 +33,11 @@ public sealed class RapidDeployment() : TheEngineerCard(
     protected override bool ShouldGlowGoldInternal =>
         ChargeHelper.IsFull(this);
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            yield return HoverTipFactory.FromOrb<TurretOrb>();
-
-            if (!IsUpgraded)
-                yield return HoverTipFactory.FromKeyword(CardKeyword.Exhaust);
-        }
-    }
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromOrb<TurretOrb>(),
+        HoverTipFactory.Static(StaticHoverTip.Channeling)
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

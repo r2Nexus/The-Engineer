@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Util;
@@ -26,6 +27,11 @@ public class BlueBelt : TheEngineerCard
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new ConsumeVar(BASE_CONSUME)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
     ];
 
     protected override async Task OnPlay(

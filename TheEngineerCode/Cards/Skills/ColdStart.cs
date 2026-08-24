@@ -26,11 +26,7 @@ public class ColdStart() : TheEngineerCard(
     private const decimal BASE_DISCARD = 3m;
     private const int DRAW_PER_DISCARD = 1;
     private const int PRODUCE_PER_DISCARD = 1;
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
-    ];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar(DiscardKey, BASE_DISCARD),

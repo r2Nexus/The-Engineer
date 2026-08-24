@@ -35,7 +35,7 @@ public class CombatStim() : TheEngineerCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.FromPower<FocusPower>()
+        HoverTipFactory.FromPower<VulnerablePower>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [

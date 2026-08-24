@@ -1,6 +1,7 @@
 ﻿using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Util;
 
@@ -11,6 +12,12 @@ public sealed class ProductivityModule : TheEngineerRelic
     private bool _triggeredThisTurn;
 
     public override RelicRarity Rarity => RelicRarity.Rare;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL"),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")
+    ];
 
     public async Task OnConsumed(
         PlayerChoiceContext choiceContext,
