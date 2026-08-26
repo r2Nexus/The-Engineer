@@ -24,8 +24,8 @@
   "THEENGINEER-RED_SCIENCE_POWER.smartDescription": "At the start of your turn, [gold]Produce[/gold] [blue]{Amount}[/blue].",
 
   "THEENGINEER-GREEN_SCIENCE_POWER.title": "Green Science",
-  "THEENGINEER-GREEN_SCIENCE_POWER.description": "At the start of your turn, draw 1 card.",
-  "THEENGINEER-GREEN_SCIENCE_POWER.smartDescription": "At the start of your turn, draw [blue]{Amount}[/blue] card{Amount:plural:|s}.",
+  "THEENGINEER-GREEN_SCIENCE_POWER.description": "#Whenever you draw a *Charge card, increase its *Charge.",
+  "THEENGINEER-GREEN_SCIENCE_POWER.smartDescription": "#Whenever you draw a *Charge card, increase its *Charge by [blue]{Amount}[/blue].",
 
   "THEENGINEER-PURPLE_SCIENCE_POWER.title": "Purple Science",
   "THEENGINEER-PURPLE_SCIENCE_POWER.description": "#At the start of your turn, *Upgrade a random card in your *Hand*.",
@@ -77,8 +77,8 @@
   "THEENGINEER-OIL_SPILL_POWER.smartDescription": "The next time this enemy's [gold]Oil[/gold] is spent, apply [blue]{Amount}[/blue] [gold]Weak[/gold].",
 
   "THEENGINEER-E_M_PLANT_POWER.title": "EM Plant",
-  "THEENGINEER-E_M_PLANT_POWER.description": "Whenever you draw a card with [gold]Charge[/gold], increase its [gold]Charge[/gold].",
-  "THEENGINEER-E_M_PLANT_POWER.smartDescription": "Whenever you draw a card with [gold]Charge[/gold], increase its [gold]Charge[/gold] by [blue]{Amount}[/blue].",
+  "THEENGINEER-E_M_PLANT_POWER.description": "#Whenever you spend *Charge*, draw a card.",
+  "THEENGINEER-E_M_PLANT_POWER.smartDescription": "#Whenever you spend *Charge*, draw [blue]{Amount}[/blue] card{Amount:plural:|s}.",
 
   "THEENGINEER-TRAIN_RAMP_POWER.title": "Train Ramp",
   "THEENGINEER-TRAIN_RAMP_POWER.description": "Whenever you draw a Wagon card, deal damage to a random enemy.",

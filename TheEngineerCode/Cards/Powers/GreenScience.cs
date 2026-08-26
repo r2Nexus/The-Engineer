@@ -18,7 +18,8 @@ public class GreenScience() : TheEngineerCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_POWER = 1;
+    private const decimal BASE_POWER = 2;
+    private const decimal UPGRADE_POWER = 1;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];
     
@@ -26,23 +27,22 @@ public class GreenScience() : TheEngineerCard(1,
     [
         new PowerVar<GreenSciencePower>(BASE_POWER),
     ];
-    
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        IsUpgraded
-            ? [EngineerHoverTips.GetStaticHoverTip("THEENGINEER-PRODUCEALL")]
-            : [];
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX"),
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Charge)
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
         await CommonActions.ApplySelf<GreenSciencePower>(this,DynamicVars.Power<GreenSciencePower>().BaseValue);
-        if (IsUpgraded)
-            await MaterialHelper.ProduceMaterial((CardModel)this, choiceContext, 2,
-                MaterialDestination.Hand);
     }
 
     protected override void OnUpgrade()
     {
+        DynamicVars.Power<GreenSciencePower>().UpgradeValueBy(UPGRADE_POWER);
     }
 }

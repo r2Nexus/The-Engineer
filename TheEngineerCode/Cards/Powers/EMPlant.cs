@@ -12,7 +12,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class EMPlant() : TheEngineerCard(2,
+public class EMPlant() : TheEngineerCard(1,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
@@ -24,7 +24,6 @@ public class EMPlant() : TheEngineerCard(2,
     ];
 
     private const decimal BASE_CHARGE = 1;
-    private const decimal UPGRADE_CHARGE = 1;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<EMPlantPower>(BASE_CHARGE)
@@ -39,6 +38,6 @@ public class EMPlant() : TheEngineerCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Power<EMPlantPower>().UpgradeValueBy(UPGRADE_CHARGE);
+        AddKeyword(CardKeyword.Innate);
     }
 }
