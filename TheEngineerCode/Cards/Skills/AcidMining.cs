@@ -28,7 +28,7 @@ public sealed class AcidMining() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<TemporaryStrengthPower>(),
+        HoverTipFactory.FromPower<StrengthPower>(),
         HoverTipFactory.FromOrb<MinerOrb>(),
         HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromCard<Material>()
