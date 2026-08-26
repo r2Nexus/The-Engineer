@@ -15,14 +15,14 @@ public class MissileBarrage() : TheEngineerCard(
     2,
     CardType.Attack,
     CardRarity.Rare,
-    TargetType.AllEnemies)
+    TargetType.RandomEnemy)
 {
     private const string CALCULATED_HITS_KEY = "CalculatedHits";
 
-    private const decimal BASE_DAMAGE = 5m;
-    private const decimal UPGRADE_DAMAGE = 2m;
+    private const decimal BASE_DAMAGE = 4m;
+    private const decimal UPGRADE_DAMAGE = 1m;
 
-    private const int BASE_HITS = 1;
+    private const int BASE_HITS = 0;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -58,7 +58,7 @@ public class MissileBarrage() : TheEngineerCard(
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(hits)
             .FromCard(this, play)
-            .TargetingAllOpponents(CombatState)
+            .TargetingRandomOpponents(CombatState)
             .WithAttackerAnim(
                 "Cast",
                 Owner.Character.CastAnimDelay)

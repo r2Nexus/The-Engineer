@@ -135,7 +135,7 @@
   "THEENGINEER-REPAIR_SYSTEM.description": "Whenever you [gold]Consume[/gold], gain {RepairSystemPower:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-MISSILE_BARRAGE.title": "Missile Barrage",
-  "THEENGINEER-MISSILE_BARRAGE.description": "#Deal {Damage:diff()} damage to ALL enemies {CalculatedHits:diff()} time{CalculatedHits:plural:|s}.\n*Consume ALL from *Stock.\n Hit an additional time for each *Consumed.",
+  "THEENGINEER-MISSILE_BARRAGE.description": "#*Consume ALL from *Stock*:\ndeal {Damage:diff()} damage to a random enemy for each *Material *Consumed.{InCombat:\n([blue]Currently: {CalculatedHits:diff()}[/blue] {CalculatedHits:plural:time|times})|}",
 
   "THEENGINEER-TANK.title": "Tank",
   "THEENGINEER-TANK.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] {Consume:diff()} from [gold]Stock[/gold]: Deal {Damage:diff()} damage.",
