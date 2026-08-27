@@ -18,10 +18,10 @@ public class NuclearOption() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AnyEnemy), IOnConsumed
 {
-    private const int BASE_COST = 16;
+    private const int BASE_COST = 12;
 
-    private const decimal BASE_DAMAGE = 25m;
-    private const decimal UPGRADE_DAMAGE = 5m;
+    private const decimal BASE_DAMAGE = 30m;
+    private const decimal UPGRADE_DAMAGE = 10m;
 
     private int _consumedThisCombat;
 
