@@ -120,7 +120,7 @@
   "THEENGINEER-BOOSTER_WAGON.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Charge[/gold]: Gain {Energy:energyIcons()}.",
 
   "THEENGINEER-STEAM_BATTERY.title": "Steam Battery",
-  "THEENGINEER-STEAM_BATTERY.description": "Gain {Block:diff()} [gold]Block[/gold].\n*Consume* 1:\nNext turn, gain {Energy:energyIcons()}.",
+  "THEENGINEER-STEAM_BATTERY.description": "#Gain {Block:diff()} [gold]Block[/gold].\n*Consume* 1:\nNext turn, gain {Energy:energyIcons()}.",
 
   "THEENGINEER-STORAGE_CHEST.title": "Toolbelt",
   "THEENGINEER-STORAGE_CHEST.description": "At the end of your turn, choose up to {StorageChestPower:diff()} card{StorageChestPower:plural:|s} to [gold]Retain[/gold].",
@@ -226,7 +226,7 @@
   "THEENGINEER-FOUNDRY.description": "#Whenever you *Produce 2 or more at once, *Channel 1 *Turret.",
   "THEENGINEER-FOUNDRY.title": "Foundry",
 
-  "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They count as *Material and gain *Exhaust.",
+  "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They gain *Material and *Exhaust.",
   "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod",
 
   "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits} times.\n*Charge: hit 2 additional times.",
@@ -270,7 +270,7 @@
   "THEENGINEER-ACID_MINING.title": "Acid Mining",
   "THEENGINEER-ACID_MINING.description": "#Channel a *Miner.\nTarget enemy loses {AcidMiningPower:diff()} *Strength this turn for each *Miner you have.",
   
-  "THEENGINEER-RECYCLER.description": "#Deal {Damage:diff()} damage.\nAll current *Status* cards count as *Material*.",
+  "THEENGINEER-RECYCLER.description": "#Deal {Damage:diff()} damage.\nAll cards in your *Hand* gain *Material*.",
   "THEENGINEER-RECYCLER.title": "Recycler",
 
   "THEENGINEER-PYLON.description": "#Deal {Damage:diff()} damage.\nGain {FocusedStrikePower:diff()} *Focus this turn.",

@@ -14,12 +14,12 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class Recycler() : TheEngineerCard(
-    1,
+    0,
     CardType.Attack,
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 10m;
+    private const decimal BASE_DAMAGE = 11m;
     private const decimal UPGRADE_DAMAGE = 3m;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -38,26 +38,15 @@ public class Recycler() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
-        foreach (CardPile pile in new[]
-                 {
-                     PileType.Hand.GetPile(Owner),
-                     PileType.Draw.GetPile(Owner),
-                     PileType.Discard.GetPile(Owner)
-                 })
+        foreach (CardModel card in PileType.Hand.GetPile(Owner).Cards)
         {
-            foreach (CardModel card in pile.Cards)
-            {
-                if (card.Type != CardType.Status)
-                    continue;
+            if (card.Keywords.Contains(TheEngineerKeyWords.Material))
+                continue;
 
-                if (card.Keywords.Contains(TheEngineerKeyWords.Material))
-                    continue;
-
-                card.AddKeyword(TheEngineerKeyWords.Material);
-            }
+            card.AddKeyword(TheEngineerKeyWords.Material);
         }
     }
 
