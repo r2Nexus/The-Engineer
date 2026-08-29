@@ -30,7 +30,7 @@
   "THEENGINEER-YELLOW_BELT.description": "#Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Produce[/gold] {Produce:diff()}.\nReturn this to your *Hand.\n*Exhaustive {Exhaustive:diff()}.",
 
   "THEENGINEER-DETONATOR.title": "Detonator",
-  "THEENGINEER-DETONATOR.description": "Deal {Damage:diff()} damage.\n[gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
+  "THEENGINEER-DETONATOR.description": "#Apply {OilPower:diff()} *Oil.\n*Charge*:\n*Channel 2 *Land *Mines.",
 
   "THEENGINEER-ENERGY_SHIELD.title": "Energy Shield",
   "THEENGINEER-ENERGY_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Charge[/gold]: Gain {ChargedBlock:diff()} [gold]Block[/gold].",
