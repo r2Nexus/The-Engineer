@@ -271,5 +271,8 @@
   "THEENGINEER-PYLON.title": "Pylon",
 
   "THEENGINEER-ARTILLERY_SHELL.description": "Deal {Damage:diff()} damage.",
-  "THEENGINEER-ARTILLERY_SHELL.title": "Artillery Shell"
+  "THEENGINEER-ARTILLERY_SHELL.title": "Artillery Shell",
+
+  "THEENGINEER-EXPANSION_POLICY.description": "#Gain {Block:diff()} *Block X times.\n*Channel your leftmost Orb X times.",
+  "THEENGINEER-EXPANSION_POLICY.title": "Expansion Policy"
 }
