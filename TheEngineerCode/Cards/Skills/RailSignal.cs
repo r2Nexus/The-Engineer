@@ -22,8 +22,7 @@ public sealed class RailSignal() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_PRODUCE = 1m;
-    private const decimal UPGRADE_PRODUCE = 0m;
+    private const decimal REDUCTION = 1m;
 
     private const decimal BASE_BLOCK = 6m;
     private const decimal UPGRADE_BLOCK = 3m;
@@ -34,8 +33,8 @@ public sealed class RailSignal() : TheEngineerCard(
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<RailSignalPower>(BASE_BLOCK),
-        new ProduceVar(BASE_PRODUCE)
+        new PowerVar<RailSignalPower>(REDUCTION),
+        new BlockVar(BASE_BLOCK, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(
@@ -47,21 +46,17 @@ public sealed class RailSignal() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        await MaterialHelper.ProduceMaterial(
-            Owner,
-            choiceContext,
-            (int)DynamicVars.Produce().BaseValue,
-            MaterialDestination.Hand,
-            this);
+        
+        await CommonActions.CardBlock(this, DynamicVars.Block, play);
 
         await CommonActions.ApplySelf<RailSignalPower>(
-            this,
+            choiceContext, 
+            this, 
             DynamicVars.Power<RailSignalPower>().BaseValue);
     }
 
     protected override void OnUpgrade()
     {
-        //DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
-        DynamicVars.Power<RailSignalPower>().UpgradeValueBy(UPGRADE_BLOCK);
+        DynamicVars.Block.UpgradeValueBy(UPGRADE_BLOCK);
     }
 }
