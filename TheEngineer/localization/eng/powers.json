@@ -39,11 +39,6 @@
   "THEENGINEER-SLOWDOWN_CAPSULE_POWER.description": "This turn, your [gold]Land Mine[/gold]s apply 1 [gold]Weak[/gold].",
   "THEENGINEER-SLOWDOWN_CAPSULE_POWER.smartDescription": "This turn, your [gold]Land Mine[/gold]s apply [blue]{Amount}[/blue] [gold]Weak[/gold].",
 
-  "THEENGINEER-STORAGE_CHEST_POWER.title": "Storage Chest",
-  "THEENGINEER-STORAGE_CHEST_POWER.description": "At the end of your turn, choose up to 1 card to [gold]Retain[/gold].",
-  "THEENGINEER-STORAGE_CHEST_POWER.smartDescription": "At the end of your turn, choose up to [blue]{Amount}[/blue] card{Amount:plural:|s} to [gold]Retain[/gold].",
-  "THEENGINEER-STORAGE_CHEST_POWER.selectionScreenPrompt": "Choose cards to Retain.",
-
   "THEENGINEER-PUMPJACK_POWER.title": "Pumpjack",
   "THEENGINEER-PUMPJACK_POWER.description": "At the start of your turn, add 1 Oil Barrel to your hand.",
   "THEENGINEER-PUMPJACK_POWER.smartDescription": "At the start of your turn, add [blue]{Amount}[/blue] Oil Barrel{Amount:plural:|s} to your hand.",

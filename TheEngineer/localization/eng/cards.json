@@ -122,9 +122,6 @@
   "THEENGINEER-STEAM_BATTERY.title": "Steam Battery",
   "THEENGINEER-STEAM_BATTERY.description": "#Gain {Block:diff()} [gold]Block[/gold].\n*Consume* 1:\nNext turn, gain {Energy:energyIcons()}.",
 
-  "THEENGINEER-STORAGE_CHEST.title": "Toolbelt",
-  "THEENGINEER-STORAGE_CHEST.description": "At the end of your turn, choose up to {StorageChestPower:diff()} card{StorageChestPower:plural:|s} to [gold]Retain[/gold].",
-
   "THEENGINEER-PUMPJACK.title": "Pumpjack",
   "THEENGINEER-PUMPJACK.description": "#{IfUpgraded:show:Now and at|At} the start of your turn, add 1 *Oil *Barrel to your [gold]Hand[/gold].",
 
@@ -177,10 +174,7 @@
 
   "THEENGINEER-RAINING_BULLETS.title": "Raining Bullets",
   "THEENGINEER-RAINING_BULLETS.description": "#Deal {Damage:diff()} damage to ALL enemies.\n*Fire all *Turrets twice.",
-
-  "THEENGINEER-PIPELINE.title": "Pipeline",
-  "THEENGINEER-PIPELINE.description": "Apply the target's [gold]Oil[/gold] to {IfUpgraded:show:ALL|all other} enemies.\n[gold]Produce[/gold] 1.",
-
+  
   "THEENGINEER-POLYMERISATION.title": "Polymerisation",
   "THEENGINEER-POLYMERISATION.description": "Whenever an enemy loses [gold]Oil[/gold], gain {PolymerisationPower:diff()} [gold]Block[/gold].",
 
