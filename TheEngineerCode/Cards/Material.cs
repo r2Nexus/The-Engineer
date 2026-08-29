@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Relics;
@@ -20,7 +21,9 @@ public class Material() : TheEngineerCard(
     CardRarity.Token,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new BlockVar(3,ValueProp.Move)
+    ];
 
     private bool HasTungstenCarbide =>
         Owner?.GetRelic<TungstenCarbide>() != null;
@@ -60,7 +63,7 @@ public class Material() : TheEngineerCard(
 
         relic.Flash();
 
-        await CommonActions.ApplySelf<TungstenCarbideThornsPower>(choiceContext,this,1);
+        await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()
