@@ -53,9 +53,6 @@ public class WartimeProduction : TheEngineerRelic
         await OrbCmd.Channel<MinerOrb>(
             new BlockingPlayerChoiceContext(),
             Owner);
-        await OrbCmd.Channel<MinerOrb>(
-            new BlockingPlayerChoiceContext(),
-            Owner);
         await MaterialHelper.ProduceMaterial(Owner, choiceContext, 1, MaterialDestination.Hand);
     }
 }
