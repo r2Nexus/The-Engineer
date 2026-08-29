@@ -20,7 +20,7 @@ public class CombatStim() : TheEngineerCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 7m;
+    private const decimal BASE_DAMAGE = 10m;
     private const decimal UPGRADE_DAMAGE = 2m;
     
     private const decimal BASE_CHARGE_INITIAL = 2m;
@@ -33,14 +33,11 @@ public class CombatStim() : TheEngineerCard(1,
     protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.FromPower<VulnerablePower>()
-    ];
+    [];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new PowerVar<VulnerablePower>(1),
+        new PowerVar<FreeAttackPower>(1),
         
         new ChargeInitialVar(BASE_CHARGE_INITIAL),
         new ChargeCurrentVar(BASE_CHARGE_INITIAL),
@@ -56,11 +53,10 @@ public class CombatStim() : TheEngineerCard(1,
         await CommonActions.CardAttack(this, play.Target)
             .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
-        await CommonActions.Apply<VulnerablePower>(choiceContext,this, play);
         
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
-            await CommonActions.ApplySelf<StrengthPower>(this,DynamicVars.Power<StrengthPower>().BaseValue);
+            await CommonActions.ApplySelf<FreeAttackPower>(this,DynamicVars.Power<StrengthPower>().BaseValue);
         }
     }
 
