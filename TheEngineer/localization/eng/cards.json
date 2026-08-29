@@ -120,7 +120,7 @@
   "THEENGINEER-BOOSTER_WAGON.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Charge[/gold]: Gain {Energy:energyIcons()}.",
 
   "THEENGINEER-STEAM_BATTERY.title": "Steam Battery",
-  "THEENGINEER-STEAM_BATTERY.description": "Gain {Block:diff()} [gold]Block[/gold].\nNext turn, gain {Energy:energyIcons()}.",
+  "THEENGINEER-STEAM_BATTERY.description": "Gain {Block:diff()} [gold]Block[/gold].\n*Consume* 1:\nNext turn, gain {Energy:energyIcons()}.",
 
   "THEENGINEER-STORAGE_CHEST.title": "Toolbelt",
   "THEENGINEER-STORAGE_CHEST.description": "At the end of your turn, choose up to {StorageChestPower:diff()} card{StorageChestPower:plural:|s} to [gold]Retain[/gold].",

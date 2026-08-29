@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
@@ -16,14 +17,16 @@ public class SteamBattery() : TheEngineerCard(
     CardRarity.Common,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 7m;
+    private const decimal BASE_BLOCK = 9m;
     private const decimal UPGRADE_BLOCK = 3m;
+    private const decimal CONSUME = 1;
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(BASE_BLOCK, ValueProp.Move),
+        new ConsumeVar(CONSUME),
         new EnergyVar(1)
     ];
 
@@ -36,7 +39,9 @@ public class SteamBattery() : TheEngineerCard(
             "Cast",
             Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, DynamicVars.Block, play);
-        await CommonActions.ApplySelf<EnergyNextTurnPower>(this, DynamicVars.Energy.BaseValue);
+        
+        var consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, (int)DynamicVars.Consume().BaseValue, MaterialSource.Hand, play);
+        if(consumed) await CommonActions.ApplySelf<EnergyNextTurnPower>(this, DynamicVars.Energy.BaseValue);
     }
 
     protected override void OnUpgrade()
