@@ -16,25 +16,25 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class AsteroidCollector() : TheEngineerCard(
-    0,
+    1,
     CardType.Attack,
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 6m;
+    private const decimal BASE_DAMAGE = 9m;
     private const decimal UPGRADE_DAMAGE = 3m;
-
-    private const decimal PRODUCE_PER_ATTACK = 1m;
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new ProduceVar(PRODUCE_PER_ATTACK)
+        new CalculationBaseVar(BASE_DAMAGE),
+        new ExtraDamageVar(1m),
+        new CalculatedDamageVar(ValueProp.Move)
+            .WithMultiplier((card, _) =>
+                MaterialHelper.CountMaterial(card, MaterialSource.Stock))
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<Material>()
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
     ];
 
     protected override async Task OnPlay(
@@ -42,17 +42,12 @@ public sealed class AsteroidCollector() : TheEngineerCard(
         CardPlay play)
     {
         ArgumentNullException.ThrowIfNull(play.Target);
-
-        await CommonActions.CardAttack(this, play.Target)
-            .Execute(choiceContext);
-
-        await CommonActions.ApplySelf<AsteroidCollectorPower>(
-            this,
-            DynamicVars.Produce().BaseValue);
+        
+        await CommonActions.CardAttack(this,play).Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        DynamicVars.CalculationBase.UpgradeValueBy(UPGRADE_DAMAGE);
     }
 }

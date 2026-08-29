@@ -233,7 +233,7 @@
   "THEENGINEER-LASER_TURRET.title": "Personal Laser",
 
   "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",
-  "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {Damage:diff()} damage.\nThis turn, whenever you play an Attack, *Produce {Produce:diff()}.",
+  "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {CalculatedDamage:diff()} damage.\nDeals 1 additional damage for every *Material* in *Stock.",
   
   "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTurn all *Residue on this enemy into *Oil.",
   "THEENGINEER-LIQUEFY.title": "Liquefy",
