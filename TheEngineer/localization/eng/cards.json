@@ -235,7 +235,7 @@
   "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",
   "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {CalculatedDamage:diff()} damage.\nDeals 1 additional damage for every *Material* in *Stock.",
   
-  "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTurn all *Residue on this enemy into *Oil.",
+  "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTriggers *Oil* without spending it.",
   "THEENGINEER-LIQUEFY.title": "Liquefy",
 
   "THEENGINEER-RAILGUN.description": "#Remove all *Charge\nfrom your cards.\nDeal damage equal to\n*X times *Charge removed.{InCombat:\n(Currently [blue]{CalculatedDamage:diff()}[/blue] damage)|}",

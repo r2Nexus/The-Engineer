@@ -29,13 +29,17 @@ public sealed class Liquefy() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<OilPower>(),
-        HoverTipFactory.FromPower<ResiduePower>()
+        HoverTipFactory.FromPower<OilPower>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move)
+    ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
     ];
 
     protected override async Task OnPlay(
@@ -48,27 +52,6 @@ public sealed class Liquefy() : TheEngineerCard(
 
         await CommonActions.CardAttack(this, target)
             .Execute(choiceContext);
-
-        ResiduePower? residue = target.Powers
-            .OfType<ResiduePower>()
-            .FirstOrDefault();
-
-        if (residue == null || residue.Amount <= 0)
-            return;
-
-        int amount = residue.Amount;
-
-        await PowerCmd.ModifyAmount(
-            choiceContext,
-            residue,
-            -amount,
-            null,
-            this);
-
-        await CommonActions.Apply<OilPower>(
-            target,
-            this,
-            amount);
     }
 
     protected override void OnUpgrade()

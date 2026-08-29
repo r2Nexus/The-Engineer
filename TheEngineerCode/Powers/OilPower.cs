@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.TestSupport;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheEngineer.TheEngineerCode.Cards.Attacks;
 
 namespace TheEngineer.TheEngineerCode.Powers;
 
@@ -21,7 +22,7 @@ public sealed class OilPower : TheEngineerPower
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
-    protected  IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
+    private  IEnumerable<string> ExtraRunAssetPaths => NGroundFireVfx.AssetPaths;
 
     public override async Task BeforeDamageReceived(
         PlayerChoiceContext choiceContext,
@@ -45,24 +46,55 @@ public sealed class OilPower : TheEngineerPower
             return;
 
         Flash();
-        await PowerCmd.ModifyAmount(choiceContext,this, -spent, dealer, null);
-        await PowerCmd.Apply<ResiduePower>(
-            choiceContext,
-            Owner,
-            spent,
-            dealer,
-            cardSource);
         
+        if(cardSource is Liquefy) await TriggerOil(choiceContext, dealer, cardSource, spendOil: false);
+        
+        else await TriggerOil(choiceContext, dealer, cardSource, spendOil: true);
+    }
+    
+    public async Task<int> TriggerOil(
+        PlayerChoiceContext choiceContext,
+        Creature? dealer,
+        CardModel? cardSource,
+        bool spendOil = true)
+    {
+        int triggeredAmount = Amount;
+
+        if (triggeredAmount <= 0)
+            return 0;
+
+        Flash();
+
+        if (spendOil)
+        {
+            await PowerCmd.ModifyAmount(
+                choiceContext,
+                this,
+                -triggeredAmount,
+                null,
+                cardSource);
+
+            await PowerCmd.Apply<ResiduePower>(
+                choiceContext,
+                Owner,
+                triggeredAmount,
+                dealer,
+                cardSource);
+        }
+
         var room = NCombatRoom.Instance;
+
         room?.CombatVfxContainer.AddChildSafely(
-            (Node)NGroundFireVfx.Create(Owner)!);
-        
+            NGroundFireVfx.Create(Owner)!);
+
         await CreatureCmd.Damage(
             choiceContext,
             Owner,
-            spent,
+            triggeredAmount,
             ValueProp.Unpowered | ValueProp.SkipHurtAnim,
             null,
             null);
+
+        return spendOil ? triggeredAmount : 0;
     }
 }
