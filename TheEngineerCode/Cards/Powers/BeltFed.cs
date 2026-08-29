@@ -14,7 +14,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 public class BeltFed() : TheEngineerCard(
     1,
     CardType.Power,
-    CardRarity.Rare,
+    CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
