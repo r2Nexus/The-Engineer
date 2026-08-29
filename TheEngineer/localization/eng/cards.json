@@ -129,7 +129,7 @@
   "THEENGINEER-PUMPJACK.description": "#{IfUpgraded:show:Now and at|At} the start of your turn, add 1 *Oil *Barrel to your [gold]Hand[/gold].",
 
   "THEENGINEER-REFINERY.title": "Refinery",
-  "THEENGINEER-REFINERY.description": "#Add {IfUpgraded:show:X+1|X} *Oil *Barrels to your *Hand*.",
+  "THEENGINEER-REFINERY.description": "#Trigger *Oil on ALL enemies.\n*Gain 1 *Block for every 3 *Oil spent.{InCombat:\n(Currently: {BlockAmount:diff() *Block*})|}",
 
   "THEENGINEER-REPAIR_SYSTEM.title": "Repair System",
   "THEENGINEER-REPAIR_SYSTEM.description": "Whenever you [gold]Consume[/gold], gain {RepairSystemPower:diff()} [gold]Block[/gold].",
