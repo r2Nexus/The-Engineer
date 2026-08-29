@@ -7,7 +7,7 @@
   "THEENGINEER-WARTIME_PRODUCTION.flavor": "The Engineer did nothing wrong.",
   "THEENGINEER-WARTIME_PRODUCTION.title": "Wartime Production",
 
-  "THEENGINEER-ARCOSPHERE.description": "#At the end of your turn, if you have at least [blue]2[/blue] *Materials in your *Hand, *Draw *Pile and *Discard *Pile, gain [blue]1[/blue] *Strength.",
+  "THEENGINEER-ARCOSPHERE.description": "#At the end of your turn, if you have at least [blue]{MaterialAmount:diff()}[/blue] *Material in *Stock,\ngain [blue]1[/blue] *Strength and increase the amount needed by [blue]1[/blue] this combat.",
   "THEENGINEER-ARCOSPHERE.flavor": "This makes my head hurt...",
   "THEENGINEER-ARCOSPHERE.title": "Arcosphere",
 

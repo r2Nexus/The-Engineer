@@ -1,16 +1,13 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Cards.Variables;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
-using TheEngineer.TheEngineerCode.Relics;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Relics;
@@ -18,29 +15,63 @@ namespace TheEngineer.TheEngineerCode.Relics;
 [Pool(typeof(TheEngineerRelicPool))]
 public class Arcosphere() : TheEngineerRelic
 {
-    public override RelicRarity Rarity =>
-        RelicRarity.Rare;
+    public override RelicRarity Rarity => RelicRarity.Rare;
+
+    private const int BASE_MATERIAL_REQS = 6;
+
+    private int _materialReqs = BASE_MATERIAL_REQS;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<StrengthPower>(1)
+        HoverTipFactory.FromPower<StrengthPower>(1),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
     ];
+
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<StrengthPower>(1)
-    ];
-    
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-    {
-        if(side != CombatSide.Player) return;
-        int hand = MaterialHelper.CountMaterial(Owner, MaterialSource.Hand);
-        int draw = MaterialHelper.CountMaterial(Owner, MaterialSource.Draw);
-        int discard = MaterialHelper.CountMaterial(Owner, MaterialSource.Discard);
+        new PowerVar<StrengthPower>(1),
 
-        if (hand >= 2 && draw >= 2 && discard >= 2)
+        new DisplayVar<Arcosphere>(
+            "MaterialAmount",
+            relic => relic._materialReqs.ToString())
         {
-            Flash();
-            await CommonActions.Apply<StrengthPower>(choiceContext, Owner.Creature,this);
+            BaseValue = BASE_MATERIAL_REQS
         }
+    ];
+
+    public override Task BeforeCombatStart()
+    {
+        _materialReqs = BASE_MATERIAL_REQS;
+
+        DynamicVars["MaterialAmount"].ResetToBase();
+
+        return Task.CompletedTask;
+    }
+
+    public override async Task AfterSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
+    {
+        if (side != CombatSide.Player)
+            return;
+
+        int material = MaterialHelper.CountMaterial(
+            Owner,
+            MaterialSource.Stock);
+
+        if (material < _materialReqs)
+            return;
+
+        Flash();
+
+        await CommonActions.Apply<StrengthPower>(
+            choiceContext,
+            Owner.Creature,
+            this);
+
+        _materialReqs++;
+
+        DynamicVars["MaterialAmount"].PreviewValue = _materialReqs;
     }
 }
