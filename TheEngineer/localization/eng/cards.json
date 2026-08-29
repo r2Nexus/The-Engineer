@@ -87,7 +87,7 @@
   "THEENGINEER-RED_BELT.description": "[gold]Consume[/gold] up to {Consume:diff()} from [gold]Stock[/gold]: [gold]Produce[/gold] that much.",
 
   "THEENGINEER-FLAMETHROWER.title": "Flamethrower",
-  "THEENGINEER-FLAMETHROWER.description": "Deal {Damage:diff()} damage.\n[gold]Consume[/gold] 1: Apply {OilPower:diff()} [gold]Oil[/gold].",
+  "THEENGINEER-FLAMETHROWER.description": "#Deal {Damage:diff()} damage.\n[gold]Consume[/gold] 1 from *Stock*:\nApply {OilPower:diff()} [gold]Oil[/gold].",
 
   "THEENGINEER-NUCLEAR_OPTION.title": "Nuclear Option",
   "THEENGINEER-NUCLEAR_OPTION.description": "#Deal {Damage:diff()} damage.\nCosts 1 less for each *Material *Consumed this combat.",

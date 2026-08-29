@@ -23,7 +23,8 @@ public class Flamethrower : TheEngineerCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<OilPower>()
+        HoverTipFactory.FromPower<OilPower>(),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-STOCK")
     ];
     public Flamethrower() : base(
         2,
@@ -49,7 +50,7 @@ public class Flamethrower : TheEngineerCard
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
 
-        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Hand, play);
+        bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Stock, play);
 
         if (consumed)
         {
