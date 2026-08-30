@@ -77,7 +77,7 @@ public sealed class TurretOrb : CustomOrbModel
 
         for (int i = 0; i < fireCount; i++)
         {
-            Creature? enemy = target ?? GetRandomEnemy();
+            Creature? enemy = target ?? GetTurretTarget();
 
             if (enemy == null || !enemy.IsHittable)
                 return;
@@ -92,19 +92,29 @@ public sealed class TurretOrb : CustomOrbModel
                 PassiveVal,
                 ValueProp.Unpowered,
                 Owner.Creature);
+            
+            await ApplyFlameTurretOil(
+                choiceContext,
+                enemy);
         }
     }
 
-    public override async Task<IEnumerable<Creature>> Evoke(PlayerChoiceContext choiceContext)
+    public override async Task<IEnumerable<Creature>> Evoke(
+        PlayerChoiceContext choiceContext)
     {
-        Creature? enemy = GetRandomEnemy();
+        Creature? enemy = GetTurretTarget();
+
         if (enemy == null)
             return Array.Empty<Creature>();
 
-        VfxCmd.PlayOnCreature(enemy, "vfx/vfx_attack_lightning");
+        VfxCmd.PlayOnCreature(
+            enemy,
+            "vfx/vfx_attack_lightning");
+
         PlayEvokeSfx();
 
         ActivatePassive();
+
         await CreatureCmd.Damage(
             choiceContext,
             new[] { enemy },
@@ -112,18 +122,62 @@ public sealed class TurretOrb : CustomOrbModel
             ValueProp.Unpowered,
             Owner.Creature);
 
+        await ApplyFlameTurretOil(
+            choiceContext,
+            enemy);
+
         return new[] { enemy };
     }
-
-    private Creature? GetRandomEnemy()
+    
+    private Creature? GetTurretTarget()
     {
         List<Creature> enemies = CombatState
             .GetOpponentsOf(Owner.Creature)
             .Where(e => e.IsHittable)
             .ToList();
 
-        return enemies.Count == 0
-            ? null
-            : Owner.RunState.Rng.CombatTargets.NextItem(enemies);
+        if (enemies.Count == 0)
+            return null;
+
+        FlameTurretPower? flameTurret =
+            Owner.Creature.GetPower<FlameTurretPower>();
+
+        if (flameTurret == null)
+            return Owner.RunState.Rng.CombatTargets.NextItem(enemies);
+
+        decimal highestResidue = enemies.Max(
+            e => e.GetPower<ResiduePower>()?.Amount ?? 0m);
+
+        List<Creature> preferredTargets = enemies
+            .Where(e =>
+                (e.GetPower<ResiduePower>()?.Amount ?? 0m)
+                == highestResidue)
+            .ToList();
+
+        return Owner.RunState.Rng.CombatTargets
+            .NextItem(preferredTargets);
+    }
+
+    private async Task ApplyFlameTurretOil(
+        PlayerChoiceContext choiceContext,
+        Creature enemy)
+    {
+        FlameTurretPower? flameTurret =
+            Owner.Creature.GetPower<FlameTurretPower>();
+
+        if (flameTurret == null || flameTurret.Amount <= 0)
+            return;
+
+        if (!enemy.IsHittable)
+            return;
+
+        flameTurret.Flash();
+
+        await PowerCmd.Apply<OilPower>(
+            choiceContext,
+            enemy,
+            flameTurret.Amount,
+            Owner.Creature,
+            null);
     }
 }

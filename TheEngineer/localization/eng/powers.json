@@ -121,5 +121,9 @@
 
   "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.description": "Gain [gold]Thorns[/gold] until the end of this turn.",
   "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Thorns[/gold] until the end of this turn.",
-  "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.title": "Tungsten Carbide"
+  "THEENGINEER-TUNGSTEN_CARBIDE_THORNS_POWER.title": "Tungsten Carbide",
+
+  "THEENGINEER-FLAME_TURRET_POWER.description": "#Turrets apply *Oil. *Turrets target the enemy with the most *Residue.",
+  "THEENGINEER-FLAME_TURRET_POWER.smartDescription": "#Turrets apply {Amount} *Oil. *Turrets target the enemy with the most *Residue.",
+  "THEENGINEER-FLAME_TURRET_POWER.title": "Flame Turret"
 }

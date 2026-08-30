@@ -277,5 +277,8 @@
   "THEENGINEER-EXPANSION_POLICY.title": "Expansion Policy",
 
   "THEENGINEER-DISCHARGE_DEFENSE.description": "#Give another player {Block:diff()} *Block.\n*Charge: Deal damage equal to their *Block to a random enemy.",
-  "THEENGINEER-DISCHARGE_DEFENSE.title": "Discharge Defense"
+  "THEENGINEER-DISCHARGE_DEFENSE.title": "Discharge Defense",
+
+  "THEENGINEER-FLAME_TURRET.description": "#*Turrets apply {FlameTurretPower:diff()} *Oil. *Turrets target the enemy with the most *Residue*.",
+  "THEENGINEER-FLAME_TURRET.title": "Flame Turret"
 }
