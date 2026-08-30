@@ -274,5 +274,8 @@
   "THEENGINEER-ARTILLERY_SHELL.title": "Artillery Shell",
 
   "THEENGINEER-EXPANSION_POLICY.description": "#Gain {Block:diff()} *Block X times.\n*Channel your leftmost Orb X times.",
-  "THEENGINEER-EXPANSION_POLICY.title": "Expansion Policy"
+  "THEENGINEER-EXPANSION_POLICY.title": "Expansion Policy",
+
+  "THEENGINEER-DISCHARGE_DEFENSE.description": "#Give another player {Block:diff()} *Block.\n*Charge: Deal damage equal to their *Block to a random enemy.",
+  "THEENGINEER-DISCHARGE_DEFENSE.title": "Discharge Defense"
 }
