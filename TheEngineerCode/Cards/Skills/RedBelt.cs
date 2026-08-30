@@ -14,7 +14,7 @@ public class RedBelt() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const int MaxConsume = 5;
+    private const int MaxConsume = 3;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
