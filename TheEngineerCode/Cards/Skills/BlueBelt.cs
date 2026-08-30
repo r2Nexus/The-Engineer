@@ -16,7 +16,7 @@ public class BlueBelt : TheEngineerCard
     private const int UPGRADE_REPLAY = 1;
     
     public BlueBelt() : base(
-        0,
+        1,
         CardType.Skill,
         CardRarity.Rare,
         TargetType.Self)
