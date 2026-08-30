@@ -17,7 +17,7 @@ public class Arcosphere() : TheEngineerRelic
 {
     public override RelicRarity Rarity => RelicRarity.Rare;
 
-    private const int BASE_MATERIAL_REQS = 6;
+    private const int BASE_MATERIAL_REQS = 4;
 
     private int _materialReqs = BASE_MATERIAL_REQS;
 
