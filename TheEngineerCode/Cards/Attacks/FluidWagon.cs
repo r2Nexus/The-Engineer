@@ -31,6 +31,10 @@ public class FluidWagon() : TheEngineerCard(
     [
         TheEngineerCardTags.Wagon
     ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Wagon
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

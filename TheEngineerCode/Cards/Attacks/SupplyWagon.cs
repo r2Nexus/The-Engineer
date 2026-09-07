@@ -30,6 +30,10 @@ public sealed class ResupplyWagon() : TheEngineerCard(
     [
         TheEngineerCardTags.Wagon
     ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Wagon
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

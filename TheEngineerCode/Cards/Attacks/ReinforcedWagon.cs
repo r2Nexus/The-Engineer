@@ -21,6 +21,10 @@ public class ReinforcedWagon() : TheEngineerCard(1,
     private const decimal UPGRADE_BLOCK = 1;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Wagon];
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Wagon
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(BASE_DAMAGE,ValueProp.Move),

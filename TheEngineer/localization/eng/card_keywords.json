@@ -1,4 +1,7 @@
 {
   "THEENGINEER-MATERIAL.description": "#This card can be spent by *Consume effects.",
-  "THEENGINEER-MATERIAL.title": "Material"
+  "THEENGINEER-MATERIAL.title": "Material",
+
+  "THEENGINEER-WAGON.description": "When played, replay your previously played Wagon with its damage reduced to 0.",
+  "THEENGINEER-WAGON.title": "Wagon"
 }

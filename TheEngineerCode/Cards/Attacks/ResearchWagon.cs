@@ -27,6 +27,10 @@ public sealed class ResearchWagon() : TheEngineerCard(
     [
         TheEngineerCardTags.Wagon
     ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Wagon
+    ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

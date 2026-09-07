@@ -28,6 +28,10 @@ public sealed class CargoWagon() : TheEngineerCard(
     private const decimal UPGRADE_PRODUCE = 1m;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Wagon];
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Wagon
+    ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
