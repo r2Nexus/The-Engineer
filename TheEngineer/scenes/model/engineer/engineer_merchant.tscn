@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfebsm586vaok"]
+
+[ext_resource type="PackedScene" uid="uid://ctyk6m66hj550" path="res://TheEngineer/scenes/model/engineer/engineer_char_imported.tscn" id="1_mdiqm"]
+
+[node name="EngineerMerchant" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -486.0
+offset_right = 256.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="engineer_char" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_mdiqm")]
+
+[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/engineer_char/Armature" index="0"]
+bones/0/position = Vector3(0.0011237471, 0.5564627, 0.6195998)
+bones/0/rotation = Quaternion(-0.19390838, -0.0018242513, 0.009228818, 0.9809746)
+bones/1/rotation = Quaternion(0.11091164, 0.014316195, -0.053590268, 0.99228114)
+bones/2/rotation = Quaternion(0.061666798, -0.010186931, 0.09603047, 0.99341416)
+bones/3/rotation = Quaternion(0.018605296, 0.0005943349, -0.028263705, 0.9994272)
+bones/4/rotation = Quaternion(0.0037639057, -0.04558067, 0.9989382, 0.005538121)
+bones/5/rotation = Quaternion(-0.095702894, -0.016997015, -0.1696933, 0.9806918)
+bones/6/rotation = Quaternion(0.0016084325, -0.14201842, 0.9753927, -0.16863365)
+bones/7/rotation = Quaternion(0.026650362, 0.079247855, -0.21314271, 0.97343713)
+bones/9/rotation = Quaternion(0.053462222, -0.19341442, 0.9728538, 0.11527464)
+bones/10/rotation = Quaternion(-0.01745879, 0.0030995677, 0.12699702, 0.9917447)
+bones/11/rotation = Quaternion(0.0019926548, -0.19313678, 0.981147, 0.006699129)
+bones/12/rotation = Quaternion(-0.006074918, -5.4915246e-05, 0.123886496, 0.9922778)
+bones/13/position = Vector3(-1.2749379, 2.0815287, -0.1459241)
+bones/13/rotation = Quaternion(0.017010104, -0.031331453, 0.47682312, 0.87827605)
+bones/14/position = Vector3(-5.437999e-05, -7.932735e-06, 2.6295875e-05)
+bones/15/position = Vector3(-0.9044976, -3.8584297, 0.68318576)
+bones/15/rotation = Quaternion(0.01660002, 0.020549264, -0.62817585, 0.77762294)
+bones/16/rotation = Quaternion(-0.023617828, -0.028133925, 0.9912492, -0.1267905)
+bones/19/position = Vector3(1.3509005, 0.9662859, -0.85384125)
+bones/19/rotation = Quaternion(0.019850712, 0.06357527, 0.95243454, 0.29737616)
+bones/20/rotation = Quaternion(-0.12904435, 0.16526514, 0.10976043, 0.9715903)
+bones/21/position = Vector3(0.3795299, 3.0918171, 0.019109678)
+bones/21/rotation = Quaternion(-0.017568802, -0.0015680958, 0.0063528125, 0.9998243)
+bones/22/position = Vector3(1.2411325, -3.7813392, 0.40214357)
+bones/22/rotation = Quaternion(-0.00621822, 0.0037822998, 0.854346, 0.5196538)
+
+[node name="Bone_003" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.9989973, -0.04469951, -0.0025068955, 0.044715032, 0.9989784, 0.006511893, 0.002213255, -0.0066175014, 0.9999755, 0.19212608, 4.834648, -0.28776568)
+
+[node name="Bone_002" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.9948738, -0.10092012, -0.006403451, 0.10110385, 0.9939232, 0.04352495, 0.0019719917, -0.0439493, 0.99903166, 0.2414042, 4.349327, -0.26630574)
+
+[node name="Bone_012" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.90189844, -0.43188345, -0.00732496, 0.42966098, -0.8952577, -0.117918484, 0.04436934, -0.10949785, 0.9929959, -0.90025944, 2.8583608, -0.050920248)
+
+[node name="Bone_007" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="3"]
+transform = Transform3D(-0.9945795, -0.10326858, 0.012029877, 0.10388446, -0.99172145, 0.07547359, 0.004136228, 0.07631437, 0.9970751, -0.7355243, 4.440369, -0.17265797)
+
+[node name="Bone_009" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="4"]
+transform = Transform3D(-0.9748663, -0.18687406, -0.12130149, 0.19591796, -0.9783021, -0.0673893, -0.106076226, -0.089460604, 0.99032557, 1.6208224, 2.3799186, -0.7247143)
+
+[node name="Bone_008" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="5"]
+transform = Transform3D(-0.96971756, 0.24117689, 0.03849443, -0.24406603, -0.96272224, -0.116610125, 0.008935794, -0.12247397, 0.9924317, 1.1885827, 4.105319, -0.5052153)
+
+[node name="Bone_001" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.9957539, 0.09107389, 0.013398159, -0.09203264, 0.9817775, 0.16626081, 0.0019880123, -0.166788, 0.98599064, -0.017690206, 1.5562861, 0.20818648)
+
+[node name="Bone_014" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="7"]
+transform = Transform3D(-0.9984735, 0.023730751, 0.04986847, -0.025863893, -0.99875826, -0.04257375, 0.048796237, -0.04379849, 0.9978477, -0.9650271, -1.3099439, 0.7949657)
+
+[node name="Bone_004" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="8"]
+transform = Transform3D(-0.972142, -0.22668765, 0.05960025, 0.2265904, -0.97395307, -0.008473247, 0.059968606, 0.0052677095, 0.99818605, -0.42341444, 1.0170693, 0.78237987)
+
+[node name="Bone_016" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="9"]
+transform = Transform3D(-0.96808916, 0.25058866, 0.0029657432, -0.2506061, -0.96803284, -0.010438306, 0.00025524537, -0.010848323, 0.99994093, 0.67053425, -1.5780472, 0.4268438)
+
+[node name="Bone_005" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="10"]
+transform = Transform3D(-0.99998707, 0.0048991907, 0.0012926781, -0.0048971297, -0.9999866, 0.0015961528, 0.0013004802, 0.0015899241, 0.99999756, 0.6583683, 0.90510976, 0.42289567)
+
+[node name="Bone" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="11"]
+transform = Transform3D(0.9998229, -0.01739899, -0.007158176, 0.018813943, 0.92462856, 0.38040456, -2.0954756e-09, -0.38047194, 0.9247922, 0.0011237471, 0.5564627, 0.6195998)
+
+[node name="Bone_013" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="12"]
+transform = Transform3D(-0.68966097, -0.72413224, 4.5448542e-07, 0.7241321, -0.68966097, -3.5762787e-07, 5.736947e-07, 8.195639e-08, 0.9999998, -1.2749618, 2.0814772, -0.14590175)
+
+[node name="Bone_015" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="13"]
+transform = Transform3D(-0.44800654, -0.8921708, -0.057642672, 0.8940289, -0.4472745, -0.025733285, -0.002823621, -0.06306271, 0.99800557, -0.90449786, -3.8584297, 0.68318576)
+
+[node name="Gun" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="14"]
+transform = Transform3D(-0.8802655, -0.33731925, -0.33368856, 0.34692723, -0.937334, 0.032343328, -0.32368782, -0.087295026, 0.9421282, 0.887217, 0.29613048, -0.7445604)
+
+[node name="Bone_010" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="15"]
+transform = Transform3D(-0.82234657, -0.5639385, 0.07562453, 0.56898654, -0.815051, 0.1092963, 1.4714894e-06, 0.13290879, 0.9911282, 1.3509005, 0.9662859, -0.85384125)
+
+[node name="Bone_017" parent="SubViewportContainer/SubViewport/engineer_char/Armature/Skeleton3D" index="16"]
+transform = Transform3D(-0.4598425, -0.8879751, -0.006694048, 0.887881, -0.4598913, 0.012925426, -0.014555993, 1.4202668e-07, 0.99989396, 1.2411325, -3.7813392, 0.40214357)
+
+[node name="AnimationPlayer" parent="SubViewportContainer/SubViewport/engineer_char" index="1"]
+autoplay = "shop"
+speed_scale = 0.95
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/engineer_char"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.4326697, -1.0769207)
+projection = 1
+
+[editable path="SubViewportContainer/SubViewport/engineer_char"]

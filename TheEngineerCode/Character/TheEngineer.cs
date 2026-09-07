@@ -51,8 +51,8 @@ public class TheEngineer : PlaceholderCharacterModel
     ];
     
     public override string CustomVisualPath => "res://TheEngineer/scenes/model/engineer/engineer_character.tscn";
+    public override string CustomMerchantAnimPath => "res://TheEngineer/scenes/model/engineer/engineer_merchant.tscn";
     public override string CustomCharacterSelectBg => "res://TheEngineer/scenes/character_select.tscn";
-    
     public override string? CustomCharacterSelectIconPath => "res://TheEngineer/images/charui/select/character_select_engineer.png";
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheEngineerCardPool>();
