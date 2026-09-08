@@ -26,7 +26,7 @@ public class CorrosiveMixture() : TheEngineerCard(1,
     [
         HoverTipFactory.Static(StaticHoverTip.Channeling),
         HoverTipFactory.FromOrb<LandMineOrb>(),
-        HoverTipFactory.FromPower<VulnerablePower>()
+        HoverTipFactory.FromPower<WeakPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ConsumeVar(1),

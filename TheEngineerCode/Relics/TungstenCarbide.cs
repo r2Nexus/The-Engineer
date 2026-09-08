@@ -17,7 +17,6 @@ public class TungstenCarbide() : TheEngineerRelic
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<ThornsPower>(),
         HoverTipFactory.FromCard<Material>()
     ];
     
