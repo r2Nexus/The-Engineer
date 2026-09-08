@@ -42,7 +42,7 @@
   "THEENGINEER-HEAVY_ARMOR.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] 2: Gain {PlatingPower:diff()} [gold]Plating[/gold].",
 
   "THEENGINEER-CARGO_WAGON.title": "Cargo Wagon",
-  "THEENGINEER-CARGO_WAGON.description": "Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\n[gold]Produce[/gold] {Produce:diff()} in discard pile.",
+  "THEENGINEER-CARGO_WAGON.description": "#Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\n[gold]Produce[/gold] {Produce:diff()} in *Discard *Pile.",
 
   "THEENGINEER-EXOSKELETON.title": "Exoskeleton",
   "THEENGINEER-EXOSKELETON.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Charge[/gold]: Gain {DexterityPower:diff()} [gold]Dexterity[/gold].",
