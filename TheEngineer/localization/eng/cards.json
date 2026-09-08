@@ -149,9 +149,6 @@
   "THEENGINEER-RAIL_SIGNAL.title": "Rail Signal",
   "THEENGINEER-RAIL_SIGNAL.description": "#Gain {Block:diff()} *Block*.\nThe next *Wagon card you play costs 1 less {energyPrefix:energyIcons(1)}.",
 
-  "THEENGINEER-BLUEPRINT.title": "Blueprint",
-  "THEENGINEER-BLUEPRINT.description": "#*Channel 2 *Land *Mines.\n*Channel 1 *Turret.\n*Channel 1 *Miner.",
-
   "THEENGINEER-LOCOMOTIVE.title": "Locomotive",
   "THEENGINEER-LOCOMOTIVE.description": "#Deal {Damage:diff()} damage.\nPermanently increase this card's damage by {IncreasePerWagon:diff()} for ALL your *Wagon cards.{InCombat:\n([blue]Currently: {Increase:diff()}[/blue])|}",
   
