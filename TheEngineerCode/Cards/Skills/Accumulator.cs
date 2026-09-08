@@ -12,7 +12,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
-public sealed class BoosterWagon() : TheEngineerCard(
+public sealed class Accumulator() : TheEngineerCard(
     1,
     CardType.Skill,
     CardRarity.Uncommon,
@@ -30,7 +30,7 @@ public sealed class BoosterWagon() : TheEngineerCard(
     private const decimal BASE_CHARGE_MAX = 7m;
     private const decimal UPGRADE_CHARGE_MAX = -2m;
     
-    protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge, TheEngineerCardTags.Wagon];
+    protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
     protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

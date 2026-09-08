@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo53yiyxlh5ks"
-path="res://.godot/imported/booster_wagon.png-ba668c39d3df234943afecd454992587.ctex"
+uid="uid://0gdp1p7mu7xg"
+path="res://.godot/imported/accumulator.png-17e7af8337806fe187786884631ed4f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheEngineer/images/card_portraits/big/booster_wagon.png"
-dest_files=["res://.godot/imported/booster_wagon.png-ba668c39d3df234943afecd454992587.ctex"]
+source_file="res://TheEngineer/images/card_portraits/big/accumulator.png"
+dest_files=["res://.godot/imported/accumulator.png-17e7af8337806fe187786884631ed4f4.ctex"]
 
 [params]
 

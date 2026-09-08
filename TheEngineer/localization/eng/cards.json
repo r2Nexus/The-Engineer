@@ -116,8 +116,8 @@
   "THEENGINEER-SLOWDOWN_CAPSULE.title": "Slowdown Capsule",
   "THEENGINEER-SLOWDOWN_CAPSULE.description": "[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] {Consume:diff()}: This turn, your [gold]Land Mine[/gold]s apply {SlowdownCapsulePower:diff()} [gold]Weak[/gold].",
 
-  "THEENGINEER-BOOSTER_WAGON.title": "Booster Wagon",
-  "THEENGINEER-BOOSTER_WAGON.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Charge[/gold]: Gain {Energy:energyIcons()}.",
+  "THEENGINEER-ACCUMULATOR.title": "Accumulator",
+  "THEENGINEER-ACCUMULATOR.description": "Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Charge[/gold]: Gain {Energy:energyIcons()}.",
 
   "THEENGINEER-STEAM_BATTERY.title": "Steam Battery",
   "THEENGINEER-STEAM_BATTERY.description": "#Gain {Block:diff()} [gold]Block[/gold].\n*Consume* 1:\nNext turn, gain {Energy:energyIcons()}.",
