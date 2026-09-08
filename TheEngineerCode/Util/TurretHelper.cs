@@ -27,4 +27,24 @@ public static class TurretHelper
         foreach (TurretOrb turret in turrets)
             await turret.Fire(choiceContext, target);
     }
+    
+    public static bool IncreaseRandomTurretDamage(
+        Player player,
+        int amount)
+    {
+        if (amount <= 0)
+            return false;
+
+        List<TurretOrb> turrets = GetOrbs<TurretOrb>(player);
+
+        if (turrets.Count == 0)
+            return false;
+
+        TurretOrb turret =
+            player.RunState.Rng.CombatTargets.NextItem(turrets);
+
+        turret.IncreaseDamage(amount);
+
+        return true;
+    }
 }

@@ -31,11 +31,25 @@ public sealed class TurretOrb : CustomOrbModel
     private const decimal BASE_PASSIVE_DAMAGE = 7m;
     private const decimal BASE_EVOKE_DAMAGE = 9m;
 
+    private int _damageBonus;
+    public int DamageBonus => _damageBonus;
+
     public override decimal PassiveVal =>
-        ModifyOrbValue(BeltFedPower.ModifyTurretFireDamage(Owner, BASE_PASSIVE_DAMAGE));
+        ModifyOrbValue(
+            BeltFedPower.ModifyTurretFireDamage(
+                Owner,
+                BASE_PASSIVE_DAMAGE + _damageBonus));
 
     public override decimal EvokeVal =>
-        ModifyOrbValue(BASE_EVOKE_DAMAGE);
+        ModifyOrbValue(BASE_EVOKE_DAMAGE + _damageBonus);
+
+    public void IncreaseDamage(int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        _damageBonus += amount;
+    }
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

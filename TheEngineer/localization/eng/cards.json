@@ -277,5 +277,8 @@
   "THEENGINEER-DISCHARGE_DEFENSE.title": "Discharge Defense",
 
   "THEENGINEER-FLAME_TURRET.description": "#*Turrets apply {FlameTurretPower:diff()} *Oil. *Turrets target the enemy with the most *Residue*.",
-  "THEENGINEER-FLAME_TURRET.title": "Flame Turret"
+  "THEENGINEER-FLAME_TURRET.title": "Flame Turret",
+
+  "THEENGINEER-MUNITIONS_WAGON.description": "#Deal {Damage:diff()} damage.\nIncrease the damage of a random *Turret* by {TurretDamage:diff()}.",
+  "THEENGINEER-MUNITIONS_WAGON.title": "Munitions Wagon"
 }
