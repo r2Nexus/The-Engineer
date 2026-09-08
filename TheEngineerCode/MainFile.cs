@@ -1,7 +1,9 @@
 using System.Reflection;
+using BaseLib.Config;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
+using TheEngineer.TheEngineerCode.Data;
 using TheEngineer.TheEngineerCode.Ui;
 
 namespace TheEngineer.TheEngineerCode;
@@ -25,5 +27,8 @@ public partial class MainFile : Node
         
         Harmony harmony = new(ModId);
         harmony.PatchAll();
+        
+        ModManager.OnMetricsUpload += EngineerMetrics.OnMetricsUpload;
+        ModConfigRegistry.Register(ModId, new EngineerConfig());
     }
 }
