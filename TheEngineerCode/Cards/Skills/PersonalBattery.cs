@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
@@ -25,7 +26,9 @@ public sealed class PersonalBattery() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<PowerCell>(IsUpgraded)
+        HoverTipFactory.FromCard<PowerCell>(IsUpgraded),
+        EnergyHoverTip,
+        HoverTipFactory.FromPower<PersonalBatteryPower>()
     ];
 
     

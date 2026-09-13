@@ -7,11 +7,11 @@ using TheEngineer.TheEngineerCode.Extensions;
 
 namespace TheEngineer.TheEngineerCode.Powers;
 
-public class PersonalBatteryPower : TemporaryFocusPower, ICustomPower
+public class PylonPower : TemporaryFocusPower, ICustomPower
 {
     public override AbstractModel OriginModel =>
         ModelDb.Card<PersonalBattery>();
     protected override bool IsPositive => true;
-    public string? CustomPackedIconPath => "personal_battery_power.png".PowerImagePath();
-    public string? CustomBigIconPath => "personal_battery_power.png".BigPowerImagePath();
+    public string? CustomPackedIconPath => "pylon_power.png".PowerImagePath();
+    public string? CustomBigIconPath => "pylon_power.png".BigPowerImagePath();
 }

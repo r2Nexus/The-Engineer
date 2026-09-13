@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Powers;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
@@ -24,12 +25,12 @@ public class Pylon() : TheEngineerCard(2,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
-        new PowerVar<FocusedStrikePower>(BASE_FOCUS)
+        new PowerVar<PylonPower>(BASE_FOCUS)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FocusedStrikePower>()
+        HoverTipFactory.FromPower<PylonPower>()
     ];
 
     protected override async Task OnPlay(
@@ -39,15 +40,15 @@ public class Pylon() : TheEngineerCard(2,
         await CommonActions.CardAttack(this, play.Target)
             .Execute(choiceContext);
 
-        await CommonActions.ApplySelf<FocusedStrikePower>(
+        await CommonActions.ApplySelf<PylonPower>(
             this,
-            DynamicVars.Power<FocusedStrikePower>().BaseValue);
+            DynamicVars.Power<PylonPower>().BaseValue);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
-        DynamicVars.Power<FocusedStrikePower>()
+        DynamicVars.Power<PylonPower>()
             .UpgradeValueBy(UPGRADE_FOCUS);
     }
 }
