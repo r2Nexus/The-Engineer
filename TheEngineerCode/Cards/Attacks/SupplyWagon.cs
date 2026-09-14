@@ -23,8 +23,8 @@ public sealed class ResupplyWagon() : TheEngineerCard(
     CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 8m;
-    private const decimal UPGRADE_DAMAGE = 2m;
+    private const decimal BASE_DAMAGE = 7m;
+    private const decimal UPGRADE_DAMAGE = 3m;
 
     protected override HashSet<CardTag> CanonicalTags =>
     [
@@ -32,7 +32,8 @@ public sealed class ResupplyWagon() : TheEngineerCard(
     ];
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        TheEngineerKeyWords.Wagon
+        TheEngineerKeyWords.Wagon,
+        CardKeyword.Exhaust
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
