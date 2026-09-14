@@ -16,7 +16,7 @@ public class ReinforcedWagon() : TheEngineerCard(1,
     TargetType.AnyEnemy)
 {
 
-    private const decimal BASE_DAMAGE = 8;
+    private const decimal BASE_DAMAGE = 7;
     private const decimal BASE_BLOCK = 3;
     private const decimal UPGRADE_BLOCK = 1;
     
