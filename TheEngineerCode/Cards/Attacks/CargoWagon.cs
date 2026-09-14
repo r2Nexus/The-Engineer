@@ -16,16 +16,16 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class CargoWagon() : TheEngineerCard(
-    1,
+    2,
     CardType.Attack,
     CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 8m;
-    private const decimal UPGRADE_DAMAGE = 0m;
+    private const decimal BASE_DAMAGE = 12m;
+    private const decimal UPGRADE_DAMAGE = 4m;
 
-    private const decimal BASE_PRODUCE = 1m;
-    private const decimal UPGRADE_PRODUCE = 1m;
+    private const decimal BASE_PRODUCE = 2m;
+    private const decimal UPGRADE_PRODUCE = 0m;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Wagon];
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -75,7 +75,7 @@ public sealed class CargoWagon() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        //DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
-        DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
+        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
+        //DynamicVars.Produce().UpgradeValueBy(UPGRADE_PRODUCE);
     }
 }

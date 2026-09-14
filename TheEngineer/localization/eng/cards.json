@@ -160,7 +160,7 @@
   "THEENGINEER-STICKY_TAR.selectionScreenPrompt": "Choose a card to gain Retain.",
 
   "THEENGINEER-RESUPPLY_WAGON.title": "Resupply Wagon",
-  "THEENGINEER-RESUPPLY_WAGON.description": "Deal {Damage:diff()} damage.\nPut a card from your discard pile into your [gold]Hand[/gold].",
+  "THEENGINEER-RESUPPLY_WAGON.description": "#Deal {Damage:diff()} damage.\nPut a card from your *Discard *Pile into your [gold]Hand[/gold].",
   "THEENGINEER-RESUPPLY_WAGON.selectionScreenPrompt": "Choose a card to put into your [gold]Hand[/gold].",
 
   "THEENGINEER-SPACE_SCIENCE.title": "Space Science",
