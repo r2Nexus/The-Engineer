@@ -21,7 +21,7 @@ public sealed class ExpansionPolicy() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 4m;
+    private const decimal BASE_BLOCK = 3m;
     private const decimal UPGRADE_BLOCK = 1m;
 
     protected override bool HasEnergyCostX => true;
