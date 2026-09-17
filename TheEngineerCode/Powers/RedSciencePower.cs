@@ -16,7 +16,7 @@ public class RedSciencePower : TheEngineerPower
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
-    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if(player != Owner.Player) return;
         Flash();
