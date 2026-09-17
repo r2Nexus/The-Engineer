@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Patches.UI;
 using BaseLib.Utils;
 using BaseLib.Utils.NodeFactories;
 using TheEngineer.TheEngineerCode.Extensions;
@@ -109,5 +110,9 @@ public class TheEngineer : PlaceholderCharacterModel
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "engin_marker.png".CharacterUiPath();
     
-    
+    public override RelicIconData CustomYummyCookie => new(
+        "engineer_cookie.png".BigRelicImagePath(),
+        "engineer_cookie.png".RelicImagePath(),
+        "engineer_cookie_outline.png".RelicImagePath()
+    );
 }
