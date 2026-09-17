@@ -15,7 +15,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class TrainStop() : TheEngineerCard(1,
+public class TrainStop() : TheEngineerCard(2,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
