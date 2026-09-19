@@ -40,7 +40,7 @@ public class YellowInserter() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CommonActions.Draw(this, choiceContext);
+        await CommonActions.Draw(this, choiceContext);
         
         await MaterialHelper.ProduceMaterial(
             Owner,
@@ -49,7 +49,7 @@ public class YellowInserter() : TheEngineerCard(1,
             MaterialDestination.Hand,
             this);
         
-        CommonActions.ApplySelf<YellowInserterPower>(this );
+        await CommonActions.ApplySelf<YellowInserterPower>(this );
     }
 
     protected override void OnUpgrade()
