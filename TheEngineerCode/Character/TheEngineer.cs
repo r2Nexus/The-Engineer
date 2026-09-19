@@ -115,4 +115,13 @@ public class TheEngineer : PlaceholderCharacterModel
         "engineer_cookie.png".RelicImagePath(),
         "engineer_cookie_outline.png".RelicImagePath()
     );
+    
+    public override string? CustomArmPointingTexturePath =>
+        "res://TheEngineer/images/charui/hands/engineer_hand_point.png";
+    public override string? CustomArmRockTexturePath =>
+        "res://TheEngineer/images/charui/hands/engineer_hand_rock.png";
+    public override string? CustomArmPaperTexturePath =>
+        "res://TheEngineer/images/charui/hands/engineer_hand_paper.png";
+    public override string? CustomArmScissorsTexturePath =>
+        "res://TheEngineer/images/charui/hands/engineer_hand_scisors.png";
 }
