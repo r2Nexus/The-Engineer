@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://dayqoyg0gei5d"]
+
+[ext_resource type="Texture2D" uid="uid://d2yb7nvffl1ra" path="res://TheEngineer/images/charui/engineer_campfire.png" id="1_cabte"]
+
+[node name="EngineerRestSite" type="Node2D"]
+position = Vector2(7, 46)
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -112.0
+offset_top = -264.0
+offset_right = -72.0
+offset_bottom = -224.0
+scale = Vector2(8.397697, 13.415076)
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -112.0
+offset_top = -264.0
+offset_right = -72.0
+offset_bottom = -224.0
+scale = Vector2(8.397697, 13.415076)
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -171.0
+offset_top = -329.0
+offset_right = -171.0
+offset_bottom = -329.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 136.0
+offset_top = -309.0
+offset_right = 136.0
+offset_bottom = -309.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRoot"]
+position = Vector2(54, 1)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_cabte")

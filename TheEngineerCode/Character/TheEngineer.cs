@@ -124,4 +124,7 @@ public class TheEngineer : PlaceholderCharacterModel
         "res://TheEngineer/images/charui/hands/engineer_hand_paper.png";
     public override string? CustomArmScissorsTexturePath =>
         "res://TheEngineer/images/charui/hands/engineer_hand_scisors.png";
+    
+    public override string? CustomRestSiteAnimPath =>
+        "res://TheEngineer/scenes/engineer_rest_site.tscn";
 }
