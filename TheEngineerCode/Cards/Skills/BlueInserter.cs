@@ -30,7 +30,7 @@ public class BlueInserter() : TheEngineerCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CommonActions.Draw(this, choiceContext);
+        await CommonActions.Draw(this, choiceContext);
         await CardCmd.Discard(choiceContext, await CardSelectCmd.FromHandForDiscard(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, (int)DynamicVars["Discard"].BaseValue), null,  this));
     }
 
