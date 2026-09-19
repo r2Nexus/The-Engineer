@@ -32,10 +32,16 @@ public class Material() : TheEngineerCard(
 
     public override int MaxUpgradeLevel => 0;
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-    [
-        TheEngineerKeyWords.Material
-    ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords
+    {
+        get
+        {
+            yield return TheEngineerKeyWords.Material;
+
+            if (HasTungstenCarbide)
+                yield return CardKeyword.Exhaust;
+        }
+    }
     
     protected override void AddExtraArgsToDescription(LocString description)
     {
