@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -26,6 +27,6 @@ public class FlameTurret() : TheEngineerCard(2,
 
     protected override void OnUpgrade()
     {
-
+        DynamicVars.Power<FlameTurretPower>().UpgradeValueBy(UPGRADE_OIL);
     }
 }
