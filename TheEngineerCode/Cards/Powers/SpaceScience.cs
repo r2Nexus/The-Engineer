@@ -45,6 +45,6 @@ public sealed class SpaceScience() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Retain);
+        AddKeyword(CardKeyword.Innate);
     }
 }
