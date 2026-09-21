@@ -19,7 +19,7 @@ public sealed class Detonator() : TheEngineerCard(
     CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_OIL = 7m;
+    private const decimal BASE_OIL = 8m;
     private const decimal UPGRADE_OIL = 2m;
 
     private const decimal BASE_CHARGE_INITIAL = 0m;
