@@ -17,15 +17,11 @@ namespace TheEngineer.TheEngineerCode.Relics;
 [Pool(typeof(TheEngineerRelicPool))]
 public class WartimeProduction : TheEngineerRelic
 {
-    private const int ACTIVE_TURNS = 3;
-
-    private int _turnsRemaining;
+    
 
     public override RelicRarity Rarity => RelicRarity.Starter;
 
     public override bool ShowCounter => CombatManager.Instance.IsInProgress;
-
-    public override int DisplayAmount => _turnsRemaining;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -53,6 +49,6 @@ public class WartimeProduction : TheEngineerRelic
         await OrbCmd.Channel<MinerOrb>(
             new BlockingPlayerChoiceContext(),
             Owner);
-        await MaterialHelper.ProduceMaterial(Owner, choiceContext, 1, MaterialDestination.Hand);
+        await MaterialHelper.ProduceMaterial(Owner, choiceContext, 2, MaterialDestination.Hand);
     }
 }
