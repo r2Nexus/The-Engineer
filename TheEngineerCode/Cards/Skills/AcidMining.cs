@@ -1,77 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using BaseLib.Extensions;
-using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
-using TheEngineer.TheEngineerCode.Character;
-using TheEngineer.TheEngineerCode.Orbs;
-using TheEngineer.TheEngineerCode.Powers;
-using TheEngineer.TheEngineerCode.Util;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using BaseLib.Extensions;
+    using BaseLib.Utils;
+    using MegaCrit.Sts2.Core.Commands;
+    using MegaCrit.Sts2.Core.Entities.Cards;
+    using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+    using MegaCrit.Sts2.Core.HoverTips;
+    using MegaCrit.Sts2.Core.Localization.DynamicVars;
+    using MegaCrit.Sts2.Core.Models.Powers;
+    using TheEngineer.TheEngineerCode.Character;
+    using TheEngineer.TheEngineerCode.Orbs;
+    using TheEngineer.TheEngineerCode.Powers;
+    using TheEngineer.TheEngineerCode.Util;
 
-namespace TheEngineer.TheEngineerCode.Cards.Skills;
+    namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
-[Pool(typeof(TheEngineerCardPool))]
-public sealed class AcidMining() : TheEngineerCard(
-    1,
-    CardType.Skill,
-    CardRarity.Uncommon,
-    TargetType.AnyEnemy)
-{
-    private const decimal BASE_STRENGTH_LOSS = 1m;
-    private const decimal UPGRADE_STRENGTH_LOSS = 1m;
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.FromOrb<MinerOrb>(),
-        HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromCard<Material>()
-    ];
-
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new PowerVar<AcidMiningPower>(BASE_STRENGTH_LOSS)
-    ];
-
-    protected override async Task OnPlay(
-        PlayerChoiceContext choiceContext,
-        CardPlay play)
+    [Pool(typeof(TheEngineerCardPool))]
+    public sealed class AcidMining() : TheEngineerCard(
+        1,
+        CardType.Skill,
+        CardRarity.Uncommon,
+        TargetType.AnyEnemy)
     {
-        ArgumentNullException.ThrowIfNull(play.Target);
+        private const decimal BASE_STRENGTH_LOSS = 1m;
+        private const decimal UPGRADE_STRENGTH_LOSS = 1m;
 
-        await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            HoverTipFactory.FromPower<StrengthPower>(),
+            HoverTipFactory.FromOrb<MinerOrb>(),
+            HoverTipFactory.Static(StaticHoverTip.Channeling),
+            HoverTipFactory.FromCard<Material>()
+        ];
 
-        int minerCount = TurretHelper.GetOrbs<MinerOrb>(Owner).Count;
+        protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [
+            new PowerVar<AcidMiningPower>(BASE_STRENGTH_LOSS)
+        ];
 
-        await CreatureCmd.TriggerAnim(
-            Owner.Creature,
-            "Cast",
-            Owner.Character.CastAnimDelay);
-        
-        if (minerCount <= 0)
-            return;
+        protected override async Task OnPlay(
+            PlayerChoiceContext choiceContext,
+            CardPlay play)
+        {
+            ArgumentNullException.ThrowIfNull(play.Target);
 
-        decimal strengthLoss =
-            DynamicVars.Power<AcidMiningPower>().BaseValue * minerCount;
+            await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
 
-        if (strengthLoss <= 0m)
-            return;
+            int minerCount = TurretHelper.GetOrbs<MinerOrb>(Owner).Count;
 
-        await CommonActions.Apply<AcidMiningPower>(
-            play.Target,
-            this,
-            -strengthLoss);
+            await CreatureCmd.TriggerAnim(
+                Owner.Creature,
+                "Cast",
+                Owner.Character.CastAnimDelay);
+            
+            if (minerCount <= 0)
+                return;
+
+            decimal strengthLoss =
+                DynamicVars.Power<AcidMiningPower>().BaseValue * minerCount;
+
+            if (strengthLoss <= 0m)
+                return;
+
+            await CommonActions.Apply<AcidMiningPower>(
+                play.Target,
+                this,
+                strengthLoss);
+        }
+
+        protected override void OnUpgrade()
+        {
+            DynamicVars.Power<AcidMiningPower>()
+                .UpgradeValueBy(UPGRADE_STRENGTH_LOSS);
+        }
     }
-
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Power<AcidMiningPower>()
-            .UpgradeValueBy(UPGRADE_STRENGTH_LOSS);
-    }
-}
