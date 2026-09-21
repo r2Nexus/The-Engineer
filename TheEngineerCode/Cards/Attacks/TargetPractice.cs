@@ -16,7 +16,7 @@ public class TargetPractice() : TheEngineerCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 7m;
+    private const decimal BASE_DAMAGE = 8m;
     private const decimal UPGRADE_DAMAGE = 3m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
