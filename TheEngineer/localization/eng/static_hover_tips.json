@@ -15,7 +15,7 @@
   "THEENGINEER-STOCK.description": "#*Stock refers to your *Hand, *Draw *Pile and *Discard *Pile specifically in this order.",
 
   "THEENGINEER-CHARGE_MAX.title": "Charge",
-  "THEENGINEER-CHARGE_MAX.description": "#When *Material is *Consumed, this card gains *Charge. When it reaches its maximum *Charge, its *Charge effect activates the next time it is played.",
+  "THEENGINEER-CHARGE_MAX.description": "#When *Material is *Consumed, this card gains *Charge. When it reaches its maximum *Charge, its *Charge effect activates the next time it is played and spends its *Charge.",
 
   "THEENGINEER-FIRE.title": "Fire",
   "THEENGINEER-FIRE.description": "#*Fire causes the *Turret to deal its passive damage.",

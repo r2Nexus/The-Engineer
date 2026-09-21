@@ -21,7 +21,8 @@ public class Pumpjack() : TheEngineerCard(2,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<OilBarrel>()
+        HoverTipFactory.FromCard<OilBarrel>(),
+        HoverTipFactory.FromPower<OilPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<PumpjackPower>(1)

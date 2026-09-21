@@ -57,7 +57,7 @@
   "THEENGINEER-BUILD_LAND_MINE.description": "#[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n[gold]Consume[/gold] 1:\n[gold]Channel[/gold] 1 [gold]Land Mine[/gold].\n*Exhaustive {Exhaustive:diff()}.",
 
   "THEENGINEER-ECONOMY_BOOM.title": "Economy Boom",
-  "THEENGINEER-ECONOMY_BOOM.description": "#{IfUpgraded:show:*Channel* 1 *Miner*.\n|}.At the start of your turn, [gold]Channel[/gold] 1 [gold]Miner[/gold].",
+  "THEENGINEER-ECONOMY_BOOM.description": "#{IfUpgraded:show:*Channel* 1 *Miner*.\n|}At the start of your turn, [gold]Channel[/gold] 1 [gold]Miner[/gold].",
 
   "THEENGINEER-NUCLEAR_REACTOR.title": "Nuclear Reactor",
   "THEENGINEER-NUCLEAR_REACTOR.description": "At the start of your turn, [gold]Consume[/gold] 2 from [gold]Stock[/gold]: Gain {Energy:energyIcons(1)}.",
