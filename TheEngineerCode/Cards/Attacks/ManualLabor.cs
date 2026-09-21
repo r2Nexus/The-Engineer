@@ -25,7 +25,7 @@ public class ManualLabor() : TheEngineerCard(
     TargetType.AnyEnemy),
     ITranscendenceCard
 {
-    private const decimal BASE_DAMAGE = 6m;
+    private const decimal BASE_DAMAGE = 8m;
     private const decimal UPGRADE_DAMAGE = 3m;
     
 
