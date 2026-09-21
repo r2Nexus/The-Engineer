@@ -27,7 +27,8 @@ public class HeavyArmor() : TheEngineerCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<PlatingPower>()
+        HoverTipFactory.FromPower<PlatingPower>(),
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -58,6 +59,8 @@ public class HeavyArmor() : TheEngineerCard(
             await CommonActions.ApplySelf<PlatingPower>(
                 this,
                 DynamicVars.Power<PlatingPower>().BaseValue);
+
+            await CardCmd.Exhaust(choiceContext, this);
         }
     }
 

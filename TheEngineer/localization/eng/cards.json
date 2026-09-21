@@ -39,7 +39,7 @@
   "THEENGINEER-TURRET_PUSH.description": "Deal {Damage:diff()} damage.\n[gold]Channel[/gold] 1 [gold]Turret[/gold].",
 
   "THEENGINEER-HEAVY_ARMOR.title": "Heavy Armor",
-  "THEENGINEER-HEAVY_ARMOR.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] 2: Gain {PlatingPower:diff()} [gold]Plating[/gold].",
+  "THEENGINEER-HEAVY_ARMOR.description": "#Gain {Block:diff()} [gold]Block[/gold].\n[gold]Consume[/gold] 2: Gain {PlatingPower:diff()} *Plating and *Exhaust.",
 
   "THEENGINEER-CARGO_WAGON.title": "Cargo Wagon",
   "THEENGINEER-CARGO_WAGON.description": "#Deal {Damage:diff()} damage.\n[gold]Produce[/gold] {Produce:diff()}.\n[gold]Produce[/gold] {Produce:diff()} in *Discard *Pile.",
