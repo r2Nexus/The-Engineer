@@ -20,7 +20,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 16m;
+    private const decimal BASE_DAMAGE = 12m;
     private const decimal UPGRADE_DAMAGE = 4m;
 
     protected override HashSet<CardTag> CanonicalTags =>
