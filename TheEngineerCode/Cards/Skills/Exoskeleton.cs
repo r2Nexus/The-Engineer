@@ -20,8 +20,8 @@ public sealed class Exoskeleton() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 14m;
-    private const decimal UPGRADE_BLOCK = 3m;
+    private const decimal BASE_BLOCK = 12m;
+    private const decimal UPGRADE_BLOCK = 4m;
 
     private const decimal BASE_DEXTERITY = 2m;
     private const decimal UPGRADE_DEXTERITY = 0m;
@@ -29,7 +29,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
     private const decimal BASE_CHARGE_INITIAL = 3m;
     private const decimal UPGRADE_CHARGE_INITIAL = 0m;
 
-    private const decimal BASE_CHARGE_MAX = 8m;
+    private const decimal BASE_CHARGE_MAX = 9m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
     protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
