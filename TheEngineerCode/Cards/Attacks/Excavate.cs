@@ -13,12 +13,12 @@ namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class Excavate() : TheEngineerCard(
-    1,
+    0,
     CardType.Attack,
     CardRarity.Ancient,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 13m;
+    private const decimal BASE_DAMAGE = 15m;
     private const decimal UPGRADE_DAMAGE = 3m;
 
     private const decimal BASE_PRODUCE = 2m;
