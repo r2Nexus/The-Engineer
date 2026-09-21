@@ -25,7 +25,7 @@ public class OilCanister : TheEngineerPotion
         HoverTipFactory.FromPower<OilPower>()
     ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<OilPower>(14)
+        new PowerVar<OilPower>(20)
     ];
 
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
