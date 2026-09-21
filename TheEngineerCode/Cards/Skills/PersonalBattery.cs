@@ -22,7 +22,7 @@ public sealed class PersonalBattery() : TheEngineerCard(
     private const int BASE_CARDS = 2;
 
     private const decimal BASE_CHARGE_INITIAL = 2m;
-    private const decimal BASE_CHARGE_MAX = 8m;
+    private const decimal BASE_CHARGE_MAX = 9m;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
