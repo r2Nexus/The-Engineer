@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Abstracts;
+using BaseLib.Hooks;
 using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
@@ -65,23 +66,6 @@ public sealed class OilPower : TheEngineerPower
 
         Flash();
 
-        if (spendOil)
-        {
-            await PowerCmd.ModifyAmount(
-                choiceContext,
-                this,
-                -triggeredAmount,
-                null,
-                cardSource);
-
-            await PowerCmd.Apply<ResiduePower>(
-                choiceContext,
-                Owner,
-                triggeredAmount,
-                dealer,
-                cardSource);
-        }
-
         var room = NCombatRoom.Instance;
 
         room?.CombatVfxContainer.AddChildSafely(
@@ -94,7 +78,47 @@ public sealed class OilPower : TheEngineerPower
             ValueProp.Unpowered | ValueProp.SkipHurtAnim,
             null,
             null);
+        
+        if (spendOil)
+        {
+            await PowerCmd.ModifyAmount(
+                choiceContext,
+                this,
+                -triggeredAmount,
+                null,
+                cardSource, true);
+
+            await PowerCmd.Apply<ResiduePower>(
+                choiceContext,
+                Owner,
+                triggeredAmount,
+                dealer,
+                cardSource, true);
+        }
 
         return spendOil ? triggeredAmount : 0;
+    }
+    
+    private static readonly ShaderMaterial OilForecastMaterial = new()
+    {
+        Shader = GD.Load<Shader>(
+            "res://TheEngineer/shaders/oil_forecast.gdshader")
+    };
+
+    public override IEnumerable<HealthBarForecastSegment>
+        GetHealthBarForecastSegments(
+            HealthBarForecastContext context)
+    {
+        int damage = Amount;
+
+        if (damage <= 0)
+            yield break;
+
+        yield return new HealthBarForecastSegment(
+            damage,
+            new Color("ea37fb"),
+            HealthBarForecastDirection.FromRight,
+            order: 0,
+            overlayMaterial: OilForecastMaterial);
     }
 }
