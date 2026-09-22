@@ -21,12 +21,12 @@ public sealed class AsteroidCollector() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 9m;
-    private const decimal UPGRADE_DAMAGE = 3m;
+    private const decimal BASE_DAMAGE = 7m;
+    private const decimal UPGRADE_DAMAGE = 1m;
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CalculationBaseVar(BASE_DAMAGE),
-        new ExtraDamageVar(1m),
+        new ExtraDamageVar(2m),
         new CalculatedDamageVar(ValueProp.Move)
             .WithMultiplier((card, _) =>
                 MaterialHelper.CountMaterial(card, MaterialSource.Stock))
@@ -48,6 +48,6 @@ public sealed class AsteroidCollector() : TheEngineerCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.CalculationBase.UpgradeValueBy(UPGRADE_DAMAGE);
+        DynamicVars.ExtraDamage.UpgradeValueBy(UPGRADE_DAMAGE);
     }
 }

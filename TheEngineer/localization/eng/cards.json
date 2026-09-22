@@ -224,7 +224,7 @@
   "THEENGINEER-LASER_TURRET.title": "Personal Laser",
 
   "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",
-  "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {CalculatedDamage:diff()} damage.\nDeals 1 additional damage for every *Material* in *Stock.",
+  "THEENGINEER-ASTEROID_COLLECTOR.description": "#Deal {CalculatedDamage:diff()} damage.\nDeals {ExtraDamage:diff()} additional damage for every *Material* in *Stock.",
   
   "THEENGINEER-LIQUEFY.description": "#Deal {Damage:diff()} damage.\nTriggers *Oil* without spending it.",
   "THEENGINEER-LIQUEFY.title": "Liquefy",
