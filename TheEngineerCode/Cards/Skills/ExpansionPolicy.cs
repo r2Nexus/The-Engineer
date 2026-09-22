@@ -57,7 +57,7 @@ public sealed class ExpansionPolicy() : TheEngineerCard(
             OrbModel? leftMostOrb = Owner.PlayerCombatState
                 .OrbQueue
                 .Orbs
-                .FirstOrDefault();
+                .LastOrDefault();
 
             if (leftMostOrb == null)
                 return;
