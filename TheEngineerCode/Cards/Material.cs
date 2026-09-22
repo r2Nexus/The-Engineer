@@ -17,7 +17,7 @@ namespace TheEngineer.TheEngineerCode.Cards;
 [Pool(typeof(TokenCardPool))]
 public class Material() : TheEngineerCard(
     -1,
-    CardType.Skill,
+    CardType.Status,
     CardRarity.Token,
     TargetType.Self)
 {
