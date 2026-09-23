@@ -1,5 +1,6 @@
 ﻿using BaseLib.Utils;
 using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards;
@@ -10,20 +11,6 @@ namespace TheEngineer.TheEngineerCode.Ui;
 [GlobalClass]
 public partial class EngineerChargeMeter : Control
 {
-    public static readonly AddedNode<NCard, EngineerChargeMeter> Node = new(
-        "res://TheEngineer/scenes/EngineerChargeMeter.tscn",
-        static (cardNode, meter) =>
-        {
-            meter.Name = nameof(EngineerChargeMeter);
-            meter.SetCardNode(cardNode);
-
-            meter.MouseFilter = MouseFilterEnum.Ignore;
-            meter.Position = new Vector2(110, -235);
-            
-            meter.ZIndex = 0;
-            meter.ZAsRelative = true;
-        });
-
     private NCard? _cardNode;
 
     private Label? _label;
@@ -113,5 +100,36 @@ public partial class EngineerChargeMeter : Control
 
         foreach (Node child in node.GetChildren())
             SetMouseFilterRecursive(child, mouseFilter);
+    }
+}
+
+[HarmonyPatch(typeof(NCard), nameof(NCard._Ready))]
+public static class NCardReadyChargeMeterPatch
+{
+    private const string ScenePath =
+        "res://TheEngineer/scenes/EngineerChargeMeter.tscn";
+
+    [HarmonyPostfix]
+    public static void Postfix(NCard __instance)
+    {
+        if (__instance.GetNodeOrNull<EngineerChargeMeter>(
+                nameof(EngineerChargeMeter)) != null)
+        {
+            return;
+        }
+
+        PackedScene scene = GD.Load<PackedScene>(ScenePath);
+        EngineerChargeMeter meter =
+            scene.Instantiate<EngineerChargeMeter>();
+
+        meter.Name = nameof(EngineerChargeMeter);
+        meter.SetCardNode(__instance);
+
+        meter.MouseFilter = Control.MouseFilterEnum.Ignore;
+        meter.Position = new Vector2(110, -235);
+        meter.ZIndex = 0;
+        meter.ZAsRelative = true;
+
+        __instance.AddChild(meter);
     }
 }

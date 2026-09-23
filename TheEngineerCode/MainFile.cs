@@ -23,8 +23,6 @@ public partial class MainFile : Node
         
         Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(assembly);
         
-        _ = EngineerChargeMeter.Node;
-        
         Harmony harmony = new(ModId);
         harmony.PatchAll();
         
