@@ -33,7 +33,7 @@
   "THEENGINEER-DETONATOR.description": "#Apply {OilPower:diff()} *Oil.\n*Charge*:\n*Channel 2 *Land *Mines.",
 
   "THEENGINEER-ENERGY_SHIELD.title": "Energy Shield",
-  "THEENGINEER-ENERGY_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Charge[/gold]: Gain {ChargedBlock:diff()} [gold]Block[/gold].",
+  "THEENGINEER-ENERGY_SHIELD.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Charge[/gold]: Gain {Block:diff()} [gold]Block[/gold].",
 
   "THEENGINEER-TURRET_PUSH.title": "Turret Push",
   "THEENGINEER-TURRET_PUSH.description": "Deal {Damage:diff()} damage.\n[gold]Channel[/gold] 1 [gold]Turret[/gold].",
