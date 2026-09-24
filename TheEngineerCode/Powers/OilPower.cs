@@ -85,7 +85,7 @@ public sealed class OilPower : TheEngineerPower
                 choiceContext,
                 this,
                 -triggeredAmount,
-                null,
+                dealer,
                 cardSource, true);
 
             await PowerCmd.Apply<ResiduePower>(

@@ -45,7 +45,7 @@ public class GreasyPower : TheEngineerPower
         await PowerCmd.ModifyAmount(
             choiceContext,
             this,
-            -1,
+            -Amount,
             applier,
             cardSource);
     }
