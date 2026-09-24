@@ -9,4 +9,5 @@ public class AcidMiningPower : TemporaryStrengthPower, ICustomModel
 {
     public override AbstractModel OriginModel =>
         ModelDb.Card<AcidMining>();
+    protected override bool IsPositive => false;
 }
