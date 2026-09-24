@@ -85,7 +85,18 @@ public static class MaterialHelper
             return false;
 
         if (await TrySpendFreeConsume(owner, choiceContext, causedBy))
+        {
+            await EngineerHooks.OnConsumed(
+                owner.Creature.CombatState,
+                choiceContext,
+                owner,
+                amount,
+                source,
+                causedBy,
+                play);
+
             return true;
+        }
 
         var materials = GetMaterials(owner, source);
 
