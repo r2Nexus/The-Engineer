@@ -282,6 +282,6 @@
   "THEENGINEER-MUNITIONS_WAGON.description": "#Deal {Damage:diff()} damage.\nIncrease the damage of a random *Turret* by {TurretDamage:diff()}.",
   "THEENGINEER-MUNITIONS_WAGON.title": "Munitions Wagon",
 
-  "THEENGINEER-GRENADE.description": "#Deal {Damage:diff()} damage and apply 1 *Vulnerable to ALL enemies.\nConsume 1: Add a copy of this into your *Discard* Pile.",
+  "THEENGINEER-GRENADE.description": "#Deal {Damage:diff()} damage and apply 1 *Vulnerable to ALL enemies.\n*Consume* 1: Add a copy of this into your *Discard* *Pile*.",
   "THEENGINEER-GRENADE.title": "Grenade"
 }
