@@ -19,7 +19,7 @@ public class OilSpill() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
-    private const decimal BASE_OIL = 4m;
+    private const decimal BASE_OIL = 5m;
     private const decimal UPGRADE_OIL = 2m;
 
     private const decimal BASE_WEAKEN_ON_SPENT = 1m;
