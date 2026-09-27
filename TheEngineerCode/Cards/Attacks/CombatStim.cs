@@ -21,7 +21,7 @@ public class CombatStim() : TheEngineerCard(1,
     TargetType.AnyEnemy)
 {
     private const decimal BASE_DAMAGE = 10m;
-    private const decimal UPGRADE_DAMAGE = 2m;
+    private const decimal UPGRADE_DAMAGE = 3m;
     
     private const decimal BASE_CHARGE_INITIAL = 2m;
     private const decimal UPGRADE_CHARGE_INITIAL = 2m;
