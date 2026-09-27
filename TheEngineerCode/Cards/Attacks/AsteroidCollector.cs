@@ -22,7 +22,7 @@ public sealed class AsteroidCollector() : TheEngineerCard(
     TargetType.AnyEnemy)
 {
     private const decimal BASE_DAMAGE = 7m;
-    private const decimal UPGRADE_DAMAGE = 1m;
+    private const decimal UPGRADE_DAMAGE = 2m;
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CalculationBaseVar(BASE_DAMAGE),
