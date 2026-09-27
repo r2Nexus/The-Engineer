@@ -18,8 +18,8 @@ public class Excavate() : TheEngineerCard(
     CardRarity.Ancient,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 15m;
-    private const decimal UPGRADE_DAMAGE = 3m;
+    private const decimal BASE_DAMAGE = 18m;
+    private const decimal UPGRADE_DAMAGE = 5m;
 
     private const decimal BASE_PRODUCE = 2m;
     private const decimal BASE_FREE_CONSUME = 1m;
