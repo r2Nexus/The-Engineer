@@ -15,7 +15,7 @@
   "THEENGINEER-BUILD_TURRET.description": "[gold]Channel[/gold] 1 [gold]Turret[/gold].",
 
   "THEENGINEER-OIL_BARREL.title": "Oil Barrel",
-  "THEENGINEER-OIL_BARREL.description": "Apply {OilPower:diff()} [gold]Oil[/gold] to a random enemy.",
+  "THEENGINEER-OIL_BARREL.description": "Apply {OilPower:diff()} [gold]Oil[/gold.",
 
   "THEENGINEER-BUDGET_DEFENSES.title": "Budget Defenses",
   "THEENGINEER-BUDGET_DEFENSES.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Produce[/gold] {Produce:diff()}.",

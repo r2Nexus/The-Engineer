@@ -18,7 +18,7 @@ public class OilBarrel() : TheEngineerCard(
     0,
     CardType.Skill,
     CardRarity.Token,
-    TargetType.RandomEnemy)
+    TargetType.AnyEnemy)
 {
     private const decimal BASE_OIL = 5m;
     private const decimal UPGRADE_OIL = 2m;
@@ -44,13 +44,9 @@ public class OilBarrel() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        Creature? target = Owner.RunState.Rng.CombatTargets.NextItem(
-            CombatState.HittableEnemies);
 
-        if (target == null)
-            return;
-
-        await CommonActions.Apply<OilPower>(target,this,DynamicVars.Power<OilPower>().BaseValue);
+        if (play.Target != null)
+            await CommonActions.Apply<OilPower>(play.Target, this, DynamicVars.Power<OilPower>().BaseValue);
     }
 
     protected override void OnUpgrade()
