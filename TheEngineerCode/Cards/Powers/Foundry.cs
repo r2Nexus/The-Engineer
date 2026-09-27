@@ -34,10 +34,10 @@ public class Foundry() : TheEngineerCard(2,
         CardPlay play)
     {
         await CommonActions.ApplySelf<FoundryPower>(this, DynamicVars.Power<FoundryPower>().BaseValue);
+        await MaterialHelper.ProduceMaterial(Owner, choiceContext, (int)DynamicVars.Produce().BaseValue, MaterialDestination.Hand);
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
     }
 }

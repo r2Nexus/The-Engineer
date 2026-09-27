@@ -214,7 +214,7 @@
   "THEENGINEER-BIG_DRILL.description": "#Deal {Damage:diff()} damage.\n*Channel 2 *Miners.",
   "THEENGINEER-BIG_DRILL.title": "Big Drill",
 
-  "THEENGINEER-FOUNDRY.description": "#Whenever you *Produce 2 or more at once, *Channel 1 *Turret.",
+  "THEENGINEER-FOUNDRY.description": "#Whenever you *Produce 2 or more at once, *Channel 1 *Turret.{IfUpgraded:show:\n*Produce 2.|}",
   "THEENGINEER-FOUNDRY.title": "Foundry",
 
   "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They gain *Material and *Exhaust.",
