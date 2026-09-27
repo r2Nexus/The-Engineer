@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -80,7 +81,11 @@ public sealed class DischargeDefense() : TheEngineerCard(
         if (enemy == null)
             return;
 
-        await CommonActions.CardAttack(this,play.Target,damage,1).Execute(choiceContext);
+        await DamageCmd.Attack(damage)
+            .WithValueProp(ValueProp.Move)
+            .FromCard(this, play)
+            .Targeting(enemy)
+            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
