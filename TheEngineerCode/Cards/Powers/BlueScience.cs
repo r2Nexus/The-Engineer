@@ -11,7 +11,7 @@ using TheEngineer.TheEngineerCode.Character;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class BlueScience() : TheEngineerCard(1,
+public class BlueScience() : TheEngineerCard(2,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
