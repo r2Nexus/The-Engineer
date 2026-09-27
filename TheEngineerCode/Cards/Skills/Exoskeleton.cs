@@ -9,27 +9,28 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Powers;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public sealed class Exoskeleton() : TheEngineerCard(
-    2,
+    1,
     CardType.Skill,
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 12m;
-    private const decimal UPGRADE_BLOCK = 4m;
+    private const decimal BASE_BLOCK = 7m;
+    private const decimal UPGRADE_BLOCK = 3m;
 
-    private const decimal BASE_DEXTERITY = 2m;
+    private const decimal BASE_DEXTERITY = 3m;
     private const decimal UPGRADE_DEXTERITY = 0m;
 
     private const decimal BASE_CHARGE_INITIAL = 3m;
     private const decimal UPGRADE_CHARGE_INITIAL = 0m;
 
-    private const decimal BASE_CHARGE_MAX = 9m;
+    private const decimal BASE_CHARGE_MAX = 7m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
     protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
@@ -44,7 +45,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
         new ChargeInitialVar(BASE_CHARGE_INITIAL),
         new ChargeCurrentVar(BASE_CHARGE_INITIAL),
         new ChargeMaxVar(BASE_CHARGE_MAX),
-        new PowerVar<DexterityPower>(BASE_DEXTERITY)
+        new PowerVar<ExoskeletonPower>(BASE_DEXTERITY)
     ];
 
     protected override async Task OnPlay(
@@ -59,7 +60,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
-            await CommonActions.ApplySelf<DexterityPower>(this, DynamicVars.Power<DexterityPower>().BaseValue);
+            await CommonActions.ApplySelf<ExoskeletonPower>(this, DynamicVars.Power<ExoskeletonPower>().BaseValue);
         }
     }
 
