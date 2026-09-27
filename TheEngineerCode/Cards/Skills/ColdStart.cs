@@ -16,7 +16,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class ColdStart() : TheEngineerCard(
-    0,
+    1,
     CardType.Skill,
     CardRarity.Rare,
     TargetType.Self)
