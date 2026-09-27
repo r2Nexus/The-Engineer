@@ -21,7 +21,7 @@ public class Grenade() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
-    private const decimal BASE_DAMAGE = 4m;
+    private const decimal BASE_DAMAGE = 5m;
     private const decimal UPGRADE_DAMAGE = 2m;
 
     private const decimal BASE_VULNERABLE = 1m;
