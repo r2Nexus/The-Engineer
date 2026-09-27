@@ -11,3 +11,4 @@ riderModule.iml
 .import/
 
 EngineerMetricsEndpoint.cs
+/TheEngineerCode/Data/EngineerMetricsEndpoint.Local.cs
