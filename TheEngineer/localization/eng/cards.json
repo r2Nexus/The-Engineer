@@ -27,7 +27,7 @@
   "THEENGINEER-SHOTGUN.description": "Deal {Damage:diff()} damage to ALL enemies.\n[gold]Consume[/gold] {Consume:diff()}: Apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
 
   "THEENGINEER-YELLOW_BELT.title": "Yellow Belt",
-  "THEENGINEER-YELLOW_BELT.description": "#Draw {Cards:diff()} card{Cards:plural:|s}.\n[gold]Produce[/gold] {Produce:diff()}.\nReturn this to your *Hand.\n*Exhaustive {Exhaustive:diff()}.",
+  "THEENGINEER-YELLOW_BELT.description": "#*Produce 1. Put the last card from *Discard *Pile into your *Hand.\n*Exhaustive {Exhaustive:diff()}.",
 
   "THEENGINEER-DETONATOR.title": "Detonator",
   "THEENGINEER-DETONATOR.description": "#Apply {OilPower:diff()} *Oil.\n*Charge*:\n*Channel 2 *Land *Mines.",
