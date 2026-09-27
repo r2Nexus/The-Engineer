@@ -37,9 +37,6 @@ public class Material() : TheEngineerCard(
         get
         {
             yield return TheEngineerKeyWords.Material;
-
-            if (HasTungstenCarbide)
-                yield return CardKeyword.Exhaust;
         }
     }
     
@@ -81,9 +78,13 @@ public class Material() : TheEngineerCard(
         if (Owner == null)
             return;
 
-        EnergyCost.SetCustomBaseCost(
-            Owner.GetRelic<TungstenCarbide>() != null
-                ? 0
-                : -1);
+        bool hasCarbide = Owner.GetRelic<TungstenCarbide>() != null;
+
+        EnergyCost.SetCustomBaseCost(hasCarbide ? 0 : -1);
+
+        if (hasCarbide)
+            AddKeyword(CardKeyword.Exhaust);
+        else
+            RemoveKeyword(CardKeyword.Exhaust);
     }
 }
