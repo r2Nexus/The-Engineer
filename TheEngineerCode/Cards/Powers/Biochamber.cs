@@ -16,8 +16,8 @@ public class Biochamber() : TheEngineerCard(2,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
-    private const int BASE_OIL = 3;
-    private const int UPGRADE_OIL = 1;
+    private const int BASE_OIL = 2;
+    private const int UPGRADE_OIL = 2;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
