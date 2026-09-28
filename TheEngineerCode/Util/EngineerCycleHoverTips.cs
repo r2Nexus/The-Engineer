@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
-using TheEngineer.TheEngineerCode.HoverTips;
+using TheEngineer.TheEngineerCode.Ui;
 
 namespace TheEngineer.TheEngineerCode.Util;
 

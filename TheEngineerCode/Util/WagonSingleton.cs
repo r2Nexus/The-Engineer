@@ -128,4 +128,13 @@ public sealed class WagonSingleton()
 
         return isGhostDamage ? 0m : 1m;
     }
+    
+    public CardModel? GetLastWagon(Player player)
+    {
+        return _lastWagons.TryGetValue(
+            player,
+            out WagonMemory? memory)
+            ? memory.Card
+            : null;
+    }
 }

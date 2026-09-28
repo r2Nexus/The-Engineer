@@ -13,7 +13,6 @@ using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards.Attacks;
 using TheEngineer.TheEngineerCode.Cards.Powers;
 using TheEngineer.TheEngineerCode.Character;
-using TheEngineer.TheEngineerCode.HoverTips;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;

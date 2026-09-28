@@ -5,11 +5,14 @@ using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
+using TheEngineer.TheEngineerCode.Ui;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
@@ -41,7 +44,20 @@ public sealed class CargoWagon() : TheEngineerCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<Material>()
+        HoverTipFactory.FromCard<Material>(),
+        new DynamicCardHoverTip(() =>
+        {
+            if (!IsMutable)
+                return null;
+
+            Player? owner = Owner;
+
+            if (owner is null)
+                return null;
+
+            return ModelDb.Singleton<WagonSingleton>()
+                .GetLastWagon(owner);
+        })
     ];
 
     protected override async Task OnPlay(
