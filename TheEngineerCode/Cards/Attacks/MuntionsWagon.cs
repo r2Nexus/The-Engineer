@@ -38,19 +38,9 @@ public sealed class MunitionsWagon() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromOrb<TurretOrb>(),
-        new DynamicCardHoverTip(() =>
-        {
-            if (!IsMutable)
-                return null;
-
-            Player? owner = Owner;
-
-            if (owner is null)
-                return null;
-
-            return ModelDb.Singleton<WagonSingleton>()
-                .GetLastWagon(owner);
-        })
+        DynamicCombatHoverTip(owner =>
+            ModelDb.Singleton<WagonSingleton>()
+                .GetLastWagon(owner))
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

@@ -31,21 +31,11 @@ public class YellowBelt() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        new DynamicCardHoverTip(() =>
-        {
-            if (!IsMutable)
-                return null;
-
-            Player? owner = Owner;
-
-            if (owner is null)
-                return null;
-
-            return PileType.Discard
+        DynamicCombatHoverTip(owner =>
+            PileType.Discard
                 .GetPile(owner)
                 .Cards
-                .LastOrDefault();
-        })
+                .LastOrDefault())
     ];
 
     protected override async Task OnPlay(

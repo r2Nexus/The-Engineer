@@ -46,19 +46,9 @@ public sealed class ResupplyWagon() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        new DynamicCardHoverTip(() =>
-        {
-            if (!IsMutable)
-                return null;
-
-            Player? owner = Owner;
-
-            if (owner is null)
-                return null;
-
-            return ModelDb.Singleton<WagonSingleton>()
-                .GetLastWagon(owner);
-        })
+        DynamicCombatHoverTip(owner =>
+            ModelDb.Singleton<WagonSingleton>()
+                .GetLastWagon(owner))
     ];
 
     protected override async Task OnPlay(

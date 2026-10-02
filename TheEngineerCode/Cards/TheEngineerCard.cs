@@ -4,6 +4,10 @@ using BaseLib.Utils;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
+using TheEngineer.TheEngineerCode.Ui;
 
 namespace TheEngineer.TheEngineerCode.Cards;
 
@@ -23,4 +27,24 @@ public abstract class TheEngineerCard(int cost, CardType type, CardRarity rarity
     //Uses card_portraits/card_name.png as image path. These should be smaller images.
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+    
+    protected IHoverTip DynamicCombatHoverTip(
+        Func<Player, CardModel?> resolver)
+    {
+        return new DynamicCardHoverTip(() =>
+        {
+            if (!IsMutable)
+                return null;
+
+            if (Pile is not { IsCombatPile: true })
+                return null;
+
+            Player? owner = Owner;
+
+            if (owner is null)
+                return null;
+
+            return resolver(owner);
+        });
+    }
 }

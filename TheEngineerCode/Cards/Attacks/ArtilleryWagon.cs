@@ -42,19 +42,9 @@ public class ArtilleryWagon() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromCard<ArtilleryShell>(),
-        new DynamicCardHoverTip(() =>
-        {
-            if (!IsMutable)
-                return null;
-
-            Player? owner = Owner;
-
-            if (owner is null)
-                return null;
-
-            return ModelDb.Singleton<WagonSingleton>()
-                .GetLastWagon(owner);
-        })
+        DynamicCombatHoverTip(owner =>
+            ModelDb.Singleton<WagonSingleton>()
+                .GetLastWagon(owner))
     ];
 
     protected override async Task OnPlay(
