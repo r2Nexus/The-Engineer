@@ -72,7 +72,8 @@ public sealed class PersonalBattery() : TheEngineerCard(
             await CardPileCmd.AddGeneratedCardToCombat(
                 powerCell,
                 destination,
-                Owner);
+                Owner,
+                CardPilePosition.Random);
         }
     }
 
