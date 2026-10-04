@@ -17,7 +17,7 @@ public class BigDrill() : TheEngineerCard(2,
     TargetType.AnyEnemy)
 {
     private const decimal BASE_DAMAGE = 14;
-    private const decimal UPGRADE_DAMAGE = 4;
+    private const decimal UPGRADE_DAMAGE = 6;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
