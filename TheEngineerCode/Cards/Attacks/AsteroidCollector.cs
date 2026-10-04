@@ -21,7 +21,7 @@ public sealed class AsteroidCollector() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 7m;
+    private const decimal BASE_DAMAGE = 9m;
     private const decimal UPGRADE_DAMAGE = 2m;
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
