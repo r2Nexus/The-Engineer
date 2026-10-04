@@ -17,7 +17,7 @@ public class RainingBullets() : TheEngineerCard(
     CardRarity.Rare,
     TargetType.AllEnemies)
 {
-    private const decimal BASE_DAMAGE = 5m;
+    private const decimal BASE_DAMAGE = 6m;
     private const decimal UPGRADE_DAMAGE = 3m;
 
     private const int FIRE_COUNT = 2;
