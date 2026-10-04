@@ -19,7 +19,7 @@ public sealed class LaserTurret() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    private const decimal BASE_DAMAGE = 5m;
+    private const decimal BASE_DAMAGE = 6m;
 
     private const int BASE_HITS = 2;
     private const int CHARGED_EXTRA_HITS = 2;
