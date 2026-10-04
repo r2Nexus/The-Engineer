@@ -15,7 +15,7 @@ public class BuildMiner() : TheEngineerCard(1,
     TargetType.Self)
 {
     
-    private const decimal BASE_BLOCK = 5m;
+    private const decimal BASE_BLOCK = 6m;
     private const decimal UPGRADE_BLOCK = 3m;
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
