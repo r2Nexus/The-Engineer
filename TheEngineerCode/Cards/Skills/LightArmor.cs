@@ -17,7 +17,7 @@ public class LightArmor() : TheEngineerCard(0,
     TargetType.Self)
 {
     private const decimal BASE_BLOCK = 7m;
-    private const decimal UPGRADE_BLOCK = 2m;
+    private const decimal UPGRADE_BLOCK = 3m;
 
     private const decimal CONSUEM = 1m;
     
