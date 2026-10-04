@@ -27,10 +27,10 @@ public sealed class Exoskeleton() : TheEngineerCard(
     private const decimal BASE_DEXTERITY = 3m;
     private const decimal UPGRADE_DEXTERITY = 0m;
 
-    private const decimal BASE_CHARGE_INITIAL = 3m;
-    private const decimal UPGRADE_CHARGE_INITIAL = 0m;
+    private const decimal BASE_CHARGE_INITIAL = 0m;
+    private const decimal UPGRADE_CHARGE_INITIAL = 3m;
 
-    private const decimal BASE_CHARGE_MAX = 7m;
+    private const decimal BASE_CHARGE_MAX = 6m;
     private const decimal UPGRADE_CHARGE_MAX = 0m;
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Charge];
     protected override bool ShouldGlowGoldInternal => ChargeHelper.IsFull(this);
