@@ -22,6 +22,7 @@ public sealed class MunitionsWagon() : TheEngineerCard(
     TargetType.AnyEnemy)
 {
     private const decimal BASE_DAMAGE = 8m;
+    private const decimal UPGRADE_DAMAGE = 3m;
 
     private const decimal BASE_TURRET_DAMAGE = 2m;
     private const decimal UPGRADE_TURRET_DAMAGE = 1m;
@@ -72,5 +73,6 @@ public sealed class MunitionsWagon() : TheEngineerCard(
     {
         DynamicVars["TurretDamage"]
             .UpgradeValueBy(UPGRADE_TURRET_DAMAGE);
+        DynamicVars.Damage.UpgradeValueBy(UPGRADE_DAMAGE);
     }
 }
