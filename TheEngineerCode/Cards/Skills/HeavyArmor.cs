@@ -20,7 +20,7 @@ public class HeavyArmor() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_BLOCK = 7m;
+    private const decimal BASE_BLOCK = 8m;
     private const decimal UPGRADE_BLOCK = 2m;
 
     private const decimal BASE_PLATED = 4m;
