@@ -25,10 +25,15 @@ public class Material() : TheEngineerCard(
         new BlockVar(3,ValueProp.Move)
     ];
 
-    private bool HasTungstenCarbide =>
-        Owner?.GetRelic<TungstenCarbide>() != null;
+    private bool HasTungstenCarbide()
+    {
+        if (!IsMutable) return false;
+        return Owner?.GetRelic<TungstenCarbide>() != null;
+    }
+        
+        
     protected override bool IsPlayable =>
-        HasTungstenCarbide;
+        HasTungstenCarbide();
 
     public override int MaxUpgradeLevel => 0;
 
@@ -46,7 +51,7 @@ public class Material() : TheEngineerCard(
 
         description.Add(
             "HasTungstenCarbide",
-            HasTungstenCarbide);
+            HasTungstenCarbide());
     }
 
     public override void AfterCreated()
