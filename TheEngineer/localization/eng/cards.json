@@ -313,5 +313,8 @@
   "THEENGINEER-SHELL_SHOCK.title": "Shell Shock",
 
   "THEENGINEER-KOVAREX_PROCESS.description": "#Add a copy of the first card each ally plays each turn to your hand.\nIt gains *Material.",
-  "THEENGINEER-KOVAREX_PROCESS.title": "Kovarex Process"
+  "THEENGINEER-KOVAREX_PROCESS.title": "Kovarex Process",
+  
+  "THEENGINEER-IMPROVISED_STRIKE.description": "#Deal {CalculatedDamage:diff()} damage.\n Whenever you *Consume,\nincrease this card's damage by 2 until played.",
+  "THEENGINEER-IMPROVISED_STRIKE.title": "Improvised Strike"
 }
