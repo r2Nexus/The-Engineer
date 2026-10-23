@@ -17,7 +17,7 @@ public class BlackScience() : TheEngineerCard(1,
     CardType.Power, CardRarity.Token,
     TargetType.Self)
 {
-    private const decimal BASE_POWER = 2;
+    private const decimal BASE_POWER = 1;
     private const decimal UPGRADE_POWER = 1;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];

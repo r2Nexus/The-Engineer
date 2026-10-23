@@ -13,11 +13,11 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TokenCardPool))]
-public class BlueScience() : TheEngineerCard(2,
+public class BlueScience() : TheEngineerCard(1,
     CardType.Power, CardRarity.Token,
     TargetType.Self)
 {
-    private const decimal BASE_POWER = 2;
+    private const decimal BASE_POWER = 1;
     private const decimal UPGRADE_POWER = 1;
     
     protected override HashSet<CardTag> CanonicalTags => [TheEngineerCardTags.Science];
@@ -30,8 +30,6 @@ public class BlueScience() : TheEngineerCard(2,
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<FocusPower>(BASE_POWER)
     ];
-    
-    
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
