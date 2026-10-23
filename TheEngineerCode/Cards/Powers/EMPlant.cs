@@ -13,7 +13,7 @@ namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 [Pool(typeof(TheEngineerCardPool))]
 public class EMPlant() : TheEngineerCard(1,
-    CardType.Power, CardRarity.Rare,
+    CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
     
