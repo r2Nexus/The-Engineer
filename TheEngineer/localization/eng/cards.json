@@ -14,6 +14,9 @@
   "THEENGINEER-BUILD_TURRET.title": "Build Turret",
   "THEENGINEER-BUILD_TURRET.description": "[gold]Channel[/gold] 1 [gold]Turret[/gold].",
 
+  "THEENGINEER-SCRAP.description": "#Gain {Block:diff()} *Block*.",
+  "THEENGINEER-SCRAP.title": "Scrap",
+
   "THEENGINEER-OIL_BARREL.title": "Oil Barrel",
   "THEENGINEER-OIL_BARREL.description": "Apply {OilPower:diff()} [gold]Oil[/gold].",
 

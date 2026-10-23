@@ -14,7 +14,6 @@ using TheEngineer.TheEngineerCode.Cards.Attacks;
 using TheEngineer.TheEngineerCode.Cards.Skills;
 using TheEngineer.TheEngineerCode.Relics;
 using TheEngineer.TheEngineerCode.Ui;
-using MaterialCard = TheEngineer.TheEngineerCode.Cards.Material;
 
 namespace TheEngineer.TheEngineerCode.Character;
 
@@ -41,7 +40,7 @@ public class TheEngineer : PlaceholderCharacterModel
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
         ModelDb.Card<Defend>(),
-        ModelDb.Card<MaterialCard>(),
+        ModelDb.Card<Scrap>(),
         ModelDb.Card<BuildTurret>(),
         ModelDb.Card<ManualLabor>()
     ];
