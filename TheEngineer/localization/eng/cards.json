@@ -286,5 +286,8 @@
   "THEENGINEER-MUNITIONS_WAGON.title": "Munitions Wagon",
 
   "THEENGINEER-GRENADE.description": "#Deal {Damage:diff()} damage and apply 1 *Vulnerable to ALL enemies.\n*Consume* 1: Add a copy of this into your *Discard* *Pile*.",
-  "THEENGINEER-GRENADE.title": "Grenade"
+  "THEENGINEER-GRENADE.title": "Grenade",
+
+  "THEENGINEER-DEATHWORLD.description": "#Add {Cards:diff()} *Black *Sciences to your *Hand.",
+  "THEENGINEER-DEATHWORLD.title": "Deathworld"
 }
