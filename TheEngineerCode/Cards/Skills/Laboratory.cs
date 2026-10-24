@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using TheEngineer.TheEngineerCode.Cards.Attacks;
 using TheEngineer.TheEngineerCode.Cards.Powers;
 using TheEngineer.TheEngineerCode.Character;
@@ -34,7 +35,7 @@ public sealed class Laboratory() : TheEngineerCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Science)
+        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science)
     ];
 
     protected override HashSet<CardTag> CanonicalTags =>
@@ -65,7 +66,7 @@ public sealed class Laboratory() : TheEngineerCard(
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
-            IEnumerable<CardModel> scienceCards = Owner.Character.CardPool
+            IEnumerable<CardModel> scienceCards = ModelDb.CardPool<TokenCardPool>()
                 .GetUnlockedCards(
                     Owner.UnlockState,
                     Owner.RunState.CardMultiplayerConstraint)

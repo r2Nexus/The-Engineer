@@ -10,7 +10,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 public class RepairSystem() : TheEngineerCard(2,
-    CardType.Power, CardRarity.Uncommon,
+    CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
     private const decimal BASE_REPAIR = 3m;

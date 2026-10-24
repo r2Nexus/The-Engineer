@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
@@ -13,9 +14,9 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
 
-[Pool(typeof(TheEngineerCardPool))]
+[Pool(typeof(TokenCardPool))]
 public class GreenScience() : TheEngineerCard(1,
-    CardType.Power, CardRarity.Uncommon,
+    CardType.Power, CardRarity.Token,
     TargetType.Self)
 {
     private const decimal BASE_POWER = 2;
@@ -31,7 +32,14 @@ public class GreenScience() : TheEngineerCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CHARGE_MAX"),
-        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Charge)
+        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Charge),
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
+    ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheEngineerKeyWords.Material,
+        TheEngineerKeyWords.Science
     ];
 
     protected override async Task OnPlay(

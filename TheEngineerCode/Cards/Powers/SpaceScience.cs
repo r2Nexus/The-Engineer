@@ -26,7 +26,7 @@ public sealed class SpaceScience() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Science)
+        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science)
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>

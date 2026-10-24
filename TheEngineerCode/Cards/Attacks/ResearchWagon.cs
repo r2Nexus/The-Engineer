@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Ui;
@@ -36,7 +37,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerCycleHoverTips.ForTag(TheEngineerCardTags.Science),
+        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science),
         DynamicCombatHoverTip(owner =>
             ModelDb.Singleton<WagonSingleton>()
                 .GetLastWagon(owner))
@@ -74,7 +75,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
         if (original == null)
             return;
 
-        IEnumerable<CardModel> sciencePool = Owner.Character.CardPool
+        IEnumerable<CardModel> sciencePool = ModelDb.CardPool<TokenCardPool>()
             .GetUnlockedCards(
                 Owner.UnlockState,
                 Owner.RunState.CardMultiplayerConstraint)

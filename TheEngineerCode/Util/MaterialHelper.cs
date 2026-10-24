@@ -340,17 +340,24 @@ public static class MaterialHelper
 
         var combatState = card.CombatState ?? card.Owner.Creature.CombatState;
 
-        await CardPileCmd.Add(card, PileType.Exhaust);
-
-        if (combatState != null)
+        if (card.Keywords.Contains(TheEngineerKeyWords.Science))
         {
-            CombatManager.Instance.History.CardExhausted(combatState, card);
+            await CardCmd.AutoPlay(choiceContext, card, null);
+        }
+        else
+        {
+            await CardPileCmd.Add(card, PileType.Exhaust);
 
-            await Hook.AfterCardExhausted(
-                combatState,
-                choiceContext,
-                card,
-                causedByEthereal);
+            if (combatState != null)
+            {
+                CombatManager.Instance.History.CardExhausted(combatState, card);
+
+                await Hook.AfterCardExhausted(
+                    combatState,
+                    choiceContext,
+                    card,
+                    causedByEthereal);
+            }
         }
     }
 }

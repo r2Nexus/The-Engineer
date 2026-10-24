@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -46,7 +47,7 @@ public class Recycler() : TheEngineerCard(
             if (card.Keywords.Contains(TheEngineerKeyWords.Material))
                 continue;
 
-            card.AddKeyword(TheEngineerKeyWords.Material);
+            CardCmd.ApplyKeyword(card,TheEngineerKeyWords.Material);
         }
     }
 

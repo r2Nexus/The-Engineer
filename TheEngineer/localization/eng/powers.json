@@ -125,5 +125,17 @@
 
   "THEENGINEER-FLAME_TURRET_POWER.description": "#Turrets apply *Oil. *Turrets target the enemy with the most *Residue.",
   "THEENGINEER-FLAME_TURRET_POWER.smartDescription": "#Turrets apply {Amount} *Oil. *Turrets target the enemy with the most *Residue.",
-  "THEENGINEER-FLAME_TURRET_POWER.title": "Flame Turret"
+  "THEENGINEER-FLAME_TURRET_POWER.title": "Flame Turret",
+
+  "THEENGINEER-SCIENTIFIC_FORM_POWER.description": "#At the start of your turn, add *Science card to your *Hand.",
+  "THEENGINEER-SCIENTIFIC_FORM_POWER.smartDescription": "#At the start of your turn, add {Amount} *Science card{Amount:plural:|s} to your *Hand.",
+  "THEENGINEER-SCIENTIFIC_FORM_POWER.title": "Scientific Form",
+
+  "THEENGINEER-POLLUTION_CLOUD_POWER.description": "#Whenever you *Produce, deal damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD_POWER.smartDescription": "#Whenever you *Produce, deal [blue]{Amount}[/blue] damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD_POWER.title": "Pollution Cloud",
+
+  "THEENGINEER-LIGHT_OIL_POWER.description": "#*Oil deals damage an additional time.",
+  "THEENGINEER-LIGHT_OIL_POWER.smartDescription": "Oil deals damage {Amount} additional time{Amount:plural:|s}.",
+  "THEENGINEER-LIGHT_OIL_POWER.title": "Light Oil"
 }

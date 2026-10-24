@@ -51,4 +51,7 @@ public static class TheEngineerKeyWords
     
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Wagon;
+    
+    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Science;
 }

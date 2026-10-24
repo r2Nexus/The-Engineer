@@ -47,7 +47,15 @@ public sealed class OilPower : TheEngineerPower
             return;
 
         Flash();
-        
+
+        if (dealer != null)
+        {
+            var extraTrigger = dealer.Powers
+                .OfType<LightOilPower>()
+                .FirstOrDefault()?.Amount ?? 0;
+            for(int i = 0; i < extraTrigger; i++) await TriggerOil(choiceContext, dealer, cardSource, false);
+        }
+
         if(cardSource is Liquefy) await TriggerOil(choiceContext, dealer, cardSource, spendOil: false);
         
         else await TriggerOil(choiceContext, dealer, cardSource, spendOil: true);

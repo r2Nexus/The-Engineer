@@ -3,5 +3,8 @@
   "THEENGINEER-MATERIAL.title": "Material",
 
   "THEENGINEER-WAGON.description": "#When played, play a copy of your last played *Wagon card, dealing no damage.",
-  "THEENGINEER-WAGON.title": "Wagon"
+  "THEENGINEER-WAGON.title": "Wagon",
+
+  "THEENGINEER-SCIENCE.description": "#Gets played when *Consumed*.",
+  "THEENGINEER-SCIENCE.title": "Science"
 }
