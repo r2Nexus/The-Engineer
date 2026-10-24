@@ -129,5 +129,9 @@
 
   "THEENGINEER-SCIENTIFIC_FORM_POWER.description": "#At the start of your turn, add *Science card to your *Hand.",
   "THEENGINEER-SCIENTIFIC_FORM_POWER.smartDescription": "#At the start of your turn, add {Amount} *Science card{Amount:plural:|s} to your *Hand.",
-  "THEENGINEER-SCIENTIFIC_FORM_POWER.title": "Scientific Form"
+  "THEENGINEER-SCIENTIFIC_FORM_POWER.title": "Scientific Form",
+
+  "THEENGINEER-POLLUTION_CLOUD_POWER.description": "#Whenever you *Produce, deal damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD_POWER.smartDescription": "#Whenever you *Produce, deal [blue]{Amount}[/blue] damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD_POWER.title": "Pollution Cloud"
 }

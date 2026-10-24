@@ -295,5 +295,8 @@
   "THEENGINEER-SCIENTIFIC_FORM.title": "Scientific Form",
 
   "THEENGINEER-GLEBA_SPECIAL.description": "#Add *Ethereal to 2 random cards in your hand.\nAdd 2 random *Science cards to your *Hand.",
-  "THEENGINEER-GLEBA_SPECIAL.title": "Gleba Special"
+  "THEENGINEER-GLEBA_SPECIAL.title": "Gleba Special",
+
+  "THEENGINEER-POLLUTION_CLOUD.description": "#Whenever you *Consume\ndeal {PollutionCloudPower:diff()} damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud"
 }
