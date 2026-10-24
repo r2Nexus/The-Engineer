@@ -301,5 +301,8 @@
   "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud",
 
   "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage {LightOilPower:diff()} time{LightOilPower:plural:s|}.",
-  "THEENGINEER-LIGHT_OIL.title": "Light Oil"
+  "THEENGINEER-LIGHT_OIL.title": "Light Oil",
+
+  "THEENGINEER-PILLBOX.description": "#Gain {PlatingPower:diff()} *Plating.\nChannel 2 *Turrets.",
+  "THEENGINEER-PILLBOX.title": "Pillbox"
 }
