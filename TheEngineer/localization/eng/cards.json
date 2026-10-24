@@ -289,5 +289,8 @@
   "THEENGINEER-GRENADE.title": "Grenade",
 
   "THEENGINEER-DEATHWORLD.description": "#Add {Cards:diff()} *Black *Sciences to your *Hand.",
-  "THEENGINEER-DEATHWORLD.title": "Deathworld"
+  "THEENGINEER-DEATHWORLD.title": "Deathworld",
+
+  "THEENGINEER-SCIENTIFIC_FORM.description": "#At the start of your turn, add {ScientificFormPower:diff()} random *Science cards to your *Hand.",
+  "THEENGINEER-SCIENTIFIC_FORM.title": "Scientific Form"
 }
