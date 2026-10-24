@@ -292,5 +292,8 @@
   "THEENGINEER-DEATHWORLD.title": "Deathworld",
 
   "THEENGINEER-SCIENTIFIC_FORM.description": "#At the start of your turn, add {ScientificFormPower:diff()} random *Science cards to your *Hand.",
-  "THEENGINEER-SCIENTIFIC_FORM.title": "Scientific Form"
+  "THEENGINEER-SCIENTIFIC_FORM.title": "Scientific Form",
+
+  "THEENGINEER-GLEBA_SPECIAL.description": "#Add *Ethereal to 2 random cards in your hand.\nAdd 2 random *Science cards to your *Hand.",
+  "THEENGINEER-GLEBA_SPECIAL.title": "Gleba Special"
 }
