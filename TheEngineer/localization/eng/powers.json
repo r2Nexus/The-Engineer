@@ -133,5 +133,9 @@
 
   "THEENGINEER-POLLUTION_CLOUD_POWER.description": "#Whenever you *Produce, deal damage to ALL enemies.",
   "THEENGINEER-POLLUTION_CLOUD_POWER.smartDescription": "#Whenever you *Produce, deal [blue]{Amount}[/blue] damage to ALL enemies.",
-  "THEENGINEER-POLLUTION_CLOUD_POWER.title": "Pollution Cloud"
+  "THEENGINEER-POLLUTION_CLOUD_POWER.title": "Pollution Cloud",
+
+  "THEENGINEER-LIGHT_OIL_POWER.description": "#*Oil deals damage an additional time.",
+  "THEENGINEER-LIGHT_OIL_POWER.smartDescription": "Oil deals damage {Amount} additional time{Amount:plural:|s}.",
+  "THEENGINEER-LIGHT_OIL_POWER.title": "Light Oil"
 }

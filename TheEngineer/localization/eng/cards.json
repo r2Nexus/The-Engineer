@@ -298,5 +298,8 @@
   "THEENGINEER-GLEBA_SPECIAL.title": "Gleba Special",
 
   "THEENGINEER-POLLUTION_CLOUD.description": "#Whenever you *Consume\ndeal {PollutionCloudPower:diff()} damage to ALL enemies.",
-  "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud"
+  "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud",
+
+  "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage {LightOilPower:diff()} time{LightOilPower:plural:s|}.",
+  "THEENGINEER-LIGHT_OIL.title": "Light Oil"
 }
