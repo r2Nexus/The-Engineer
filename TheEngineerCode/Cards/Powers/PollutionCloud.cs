@@ -2,10 +2,12 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 using TheEngineer.TheEngineerCode.Powers;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Cards.Powers;
 
@@ -19,6 +21,11 @@ public class PollutionCloud() : TheEngineerCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<PollutionCloudPower>(BASE_POLLUTION)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        EngineerHoverTips.GetStaticHoverTip("THEENGINEER-CONSUMEALL")
     ];
 
     protected override async Task OnPlay(
