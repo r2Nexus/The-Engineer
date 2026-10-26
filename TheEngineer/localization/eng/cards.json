@@ -300,7 +300,7 @@
   "THEENGINEER-POLLUTION_CLOUD.description": "#Whenever you *Produce\ndeal {PollutionCloudPower:diff()} damage to ALL enemies.",
   "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud",
 
-  "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage additional {LightOilPower:diff()} time{LightOilPower:plural:|s}.",
+  "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage {LightOilPower:diff()} additional time{LightOilPower:plural:|s}.",
   "THEENGINEER-LIGHT_OIL.title": "Light Oil",
 
   "THEENGINEER-PILLBOX.description": "#Gain {PlatingPower:diff()} *Plating.\nChannel 2 *Turrets.",
