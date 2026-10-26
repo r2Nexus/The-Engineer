@@ -68,12 +68,14 @@ public sealed class PersonalBattery() : TheEngineerCard(
 
             if (IsUpgraded)
                 CardCmd.Upgrade(powerCell);
-
+            
+            CardCmd.PreviewCardPileAdd(
             await CardPileCmd.AddGeneratedCardToCombat(
                 powerCell,
                 destination,
                 Owner,
-                CardPilePosition.Random);
+                CardPilePosition.Random)
+                );
         }
     }
 
