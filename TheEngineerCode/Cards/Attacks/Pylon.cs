@@ -30,7 +30,7 @@ public class Pylon() : TheEngineerCard(2,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<PylonPower>()
+        HoverTipFactory.FromPower<FocusPower>()
     ];
 
     protected override async Task OnPlay(
