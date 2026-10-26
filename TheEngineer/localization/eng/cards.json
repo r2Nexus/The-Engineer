@@ -144,7 +144,7 @@
   "THEENGINEER-REACTIVE_ARMOUR.description": "Gain {Block:diff()} [gold]Block[/gold].\nNow and at the start of your next turn, [gold]Channel[/gold] 1 [gold]Land Mine[/gold].",
 
   "THEENGINEER-PERSONAL_BATTERY.title": "Personal Battery",
-  "THEENGINEER-PERSONAL_BATTERY.description": "Add {Cards:diff()} {IfUpgraded:show:Power Cells+|Power Cells} to your draw pile.\n[gold]Charge[/gold]: Add the card{Cards:plural:|s} to your [gold]Hand[/gold] instead.",
+  "THEENGINEER-PERSONAL_BATTERY.description": "#Add {Cards:diff()} {IfUpgraded:show:Power Cells+|Power Cells} to your *Draw *Pile.\n[gold]Charge[/gold]: Add the card{Cards:plural:|s} to your [gold]Hand[/gold] instead.",
 
   "THEENGINEER-CHAIN_SIGNAL.title": "Chain Signal",
   "THEENGINEER-CHAIN_SIGNAL.description": "#Your next {ChainSignalPower:diff()} *Wagon card{ChainSignalPower:plural:|s} {ChainSignalPower:plural:gets|get} played twice.",
@@ -297,10 +297,10 @@
   "THEENGINEER-GLEBA_SPECIAL.description": "#Add *Ethereal to 2 random cards in your hand.\nAdd 2 random *Science cards to your *Hand.",
   "THEENGINEER-GLEBA_SPECIAL.title": "Gleba Special",
 
-  "THEENGINEER-POLLUTION_CLOUD.description": "#Whenever you *Consume\ndeal {PollutionCloudPower:diff()} damage to ALL enemies.",
+  "THEENGINEER-POLLUTION_CLOUD.description": "#Whenever you *Produce\ndeal {PollutionCloudPower:diff()} damage to ALL enemies.",
   "THEENGINEER-POLLUTION_CLOUD.title": "Pollution Cloud",
 
-  "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage {LightOilPower:diff()} time{LightOilPower:plural:s|}.",
+  "THEENGINEER-LIGHT_OIL.description": "#*Oil deals damage additional {LightOilPower:diff()} time{LightOilPower:plural:|s}.",
   "THEENGINEER-LIGHT_OIL.title": "Light Oil",
 
   "THEENGINEER-PILLBOX.description": "#Gain {PlatingPower:diff()} *Plating.\nChannel 2 *Turrets.",
