@@ -38,6 +38,11 @@ public class Grenade() : TheEngineerCard(
     [
         HoverTipFactory.FromPower<VulnerablePower>()
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
