@@ -54,6 +54,12 @@ public class BlueBelt : TheEngineerCard
             CardPilePosition.Top,
             false);
     }
+    
+    public override bool ReplayIncreasedOnUpgrade => true;
+    protected override void AfterDowngraded()
+    {
+        BaseReplayCount -= UPGRADE_REPLAY;
+    }
 
     protected override void OnUpgrade()
     {

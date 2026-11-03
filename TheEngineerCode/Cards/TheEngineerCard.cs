@@ -47,4 +47,5 @@ public abstract class TheEngineerCard(int cost, CardType type, CardRarity rarity
             return resolver(owner);
         });
     }
+    public virtual bool ReplayIncreasedOnUpgrade => false;
 }

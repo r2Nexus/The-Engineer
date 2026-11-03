@@ -58,6 +58,12 @@ public class Flamethrower : TheEngineerCard
         }
     }
 
+    public override bool ReplayIncreasedOnUpgrade => true;
+    protected override void AfterDowngraded()
+    {
+        BaseReplayCount -= UPGRADE_REPLAY;
+    }
+
     protected override void OnUpgrade()
     {
         BaseReplayCount += UPGRADE_REPLAY;
