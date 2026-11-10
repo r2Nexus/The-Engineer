@@ -33,16 +33,14 @@ public class TrainStopPower : TheEngineerPower
         if (player != Owner.Player)
             return;
 
-        IEnumerable<CardModel> wagonCards = player.Character.CardPool
-            .GetUnlockedCards(
-                player.UnlockState,
-                player.RunState.CardMultiplayerConstraint)
+        IEnumerable<CardModel> wagonCards = ModelDb.CardPool<TheEngineerCardPool>()
+            .AllCards
             .Where(card => card.Tags.Contains(TheEngineerCardTags.Wagon));
 
         List<CardModel> cards = CardFactory.GetDistinctForCombat(
                 player,
                 wagonCards,
-                (int)Amount,
+                Amount,
                 player.RunState.Rng.CombatCardGeneration)
             .ToList();
 
