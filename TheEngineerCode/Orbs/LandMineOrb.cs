@@ -101,12 +101,24 @@ public sealed class LandMineOrb : CustomOrbModel, IOnConsumed
         {
             for (int i = 0; i < oilApplications; i++)
             {
-                await CommonActions.Apply<OilPower>(choiceContext,enemy,null,EvokeVal);
+                await PowerCmd.Apply<OilPower>(
+                    choiceContext,
+                    enemy,
+                    EvokeVal,
+                    Owner.Creature,
+                    null
+                );
             }
 
             if (slowPower > 0)
             {
-                await CommonActions.Apply<WeakPower>(choiceContext,enemy,null, slowPower);
+               await PowerCmd.Apply<WeakPower>(
+                    choiceContext,
+                    enemy,
+                    slowPower,
+                    Owner.Creature,
+                    null
+                );
             }
         }
 

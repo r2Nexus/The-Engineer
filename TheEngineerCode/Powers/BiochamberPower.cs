@@ -1,5 +1,6 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -38,6 +39,12 @@ public class BiochamberPower : TheEngineerPower, IOnConsumed
         if (target == null)
             return;
 
-        await CommonActions.Apply<OilPower>(choiceContext, target, null, Amount);
+        await PowerCmd.Apply<OilPower>(
+            choiceContext,
+            target,
+            Amount,
+            Owner,
+            null
+        );
     }
 }
