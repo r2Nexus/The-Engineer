@@ -20,7 +20,8 @@ public class Arcosphere() : TheEngineerRelic
     private const int BASE_MATERIAL_REQS = 4;
 
     private int _materialReqs = BASE_MATERIAL_REQS;
-    public override int DisplayAmount => _materialReqs;
+    public override bool ShowCounter => true;
+    public override int DisplayAmount => GetMaterialAmount();
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -72,7 +73,9 @@ public class Arcosphere() : TheEngineerRelic
             this);
 
         _materialReqs++;
+        InvokeDisplayAmountChanged();
 
         DynamicVars["MaterialAmount"].PreviewValue = _materialReqs;
     }
+    private int GetMaterialAmount() => _materialReqs;
 }
