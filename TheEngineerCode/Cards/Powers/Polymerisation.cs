@@ -34,7 +34,7 @@ public class Polymerisation() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<PolymerisationPower>(this,DynamicVars.Power<PolymerisationPower>().BaseValue);
+        await CommonActions.ApplySelf<PolymerisationPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

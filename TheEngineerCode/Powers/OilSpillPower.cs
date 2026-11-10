@@ -24,7 +24,7 @@ public class OilSpillPower : TheEngineerPower
         if (amount < 0M && power.Owner.IsEnemy && power.Owner == Owner && (power is OilPower))
         {
             Flash();
-            await CommonActions.Apply<WeakPower>(Owner,null,Amount);
+            await CommonActions.Apply<WeakPower>(choiceContext, Owner,null,Amount);
             
             await PowerCmd.ModifyAmount(
                 choiceContext,

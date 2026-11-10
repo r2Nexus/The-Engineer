@@ -41,7 +41,7 @@ public class ReactiveArmour() : TheEngineerCard(1,
             Owner.Character.CastAnimDelay);
         await CommonActions.CardBlock(this, play);
         await OrbCmd.Channel<LandMineOrb>(choiceContext, Owner);
-        await CommonActions.ApplySelf<ReactiveArmourPower>(this);
+        await CommonActions.ApplySelf<ReactiveArmourPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

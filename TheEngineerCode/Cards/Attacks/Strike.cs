@@ -28,7 +28,7 @@ public class Strike() : TheEngineerCard(1,
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
     }
 

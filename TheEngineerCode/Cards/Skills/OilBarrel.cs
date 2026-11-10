@@ -46,7 +46,7 @@ public class OilBarrel() : TheEngineerCard(
             Owner.Character.CastAnimDelay);
 
         if (play.Target != null)
-            await CommonActions.Apply<OilPower>(play.Target, this, DynamicVars.Power<OilPower>().BaseValue);
+            await CommonActions.Apply<OilPower>(choiceContext,play.Target, this);
     }
 
     protected override void OnUpgrade()

@@ -46,7 +46,7 @@ public class GreenScience() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<GreenSciencePower>(this,DynamicVars.Power<GreenSciencePower>().BaseValue);
+        await CommonActions.ApplySelf<GreenSciencePower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

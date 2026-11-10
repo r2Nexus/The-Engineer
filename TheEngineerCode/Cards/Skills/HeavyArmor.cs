@@ -57,9 +57,7 @@ public class HeavyArmor() : TheEngineerCard(
 
         if (consumed)
         {
-            await CommonActions.ApplySelf<PlatingPower>(
-                this,
-                DynamicVars.Power<PlatingPower>().BaseValue);
+            await CommonActions.ApplySelf<PlatingPower>(choiceContext,this);
 
             await CardCmd.Exhaust(choiceContext, this);
         }

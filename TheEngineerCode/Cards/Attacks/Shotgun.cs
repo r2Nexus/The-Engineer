@@ -63,10 +63,7 @@ public class Shotgun() : TheEngineerCard(
         {
             foreach (Creature enemy in CombatState.HittableEnemies)
             {
-                await CommonActions.Apply<WeakPower>(
-                    enemy,
-                    this,
-                    DynamicVars.Power<WeakPower>().BaseValue);
+                await CommonActions.Apply<WeakPower>(choiceContext, enemy, this);
             }
         }
     }

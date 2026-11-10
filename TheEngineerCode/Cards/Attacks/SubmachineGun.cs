@@ -40,7 +40,7 @@ public class SubmachineGun() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(
@@ -52,7 +52,7 @@ public class SubmachineGun() : TheEngineerCard(
 
         if (consumed)
         {
-            await CommonActions.CardAttack(this, play.Target)
+            await CommonActions.CardAttack(this, play)
                 .Execute(choiceContext);
         }
     }

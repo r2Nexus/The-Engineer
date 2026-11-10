@@ -39,7 +39,7 @@ public class EconomyBoom() : TheEngineerCard(2,
             await OrbCmd.Channel<MinerOrb>(choiceContext, Owner);
         }
         
-        await CommonActions.Apply<EconomyBoomPower>(Owner.Creature, this, DynamicVars.Power<EconomyBoomPower>().BaseValue);
+        await CommonActions.ApplySelf<EconomyBoomPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

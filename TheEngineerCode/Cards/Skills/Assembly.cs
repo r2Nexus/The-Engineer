@@ -54,9 +54,7 @@ public sealed class Assembly() : TheEngineerCard(
             (int)DynamicVars.Produce().BaseValue,
             MaterialDestination.Hand);
 
-        await CommonActions.ApplySelf<AssemblyPower>(
-            this,
-            DynamicVars.Power<AssemblyPower>().BaseValue);
+        await CommonActions.ApplySelf<AssemblyPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

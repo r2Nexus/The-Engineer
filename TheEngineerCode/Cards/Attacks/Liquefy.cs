@@ -50,7 +50,7 @@ public sealed class Liquefy() : TheEngineerCard(
 
         Creature target = play.Target;
 
-        await CommonActions.CardAttack(this, target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
     }
 

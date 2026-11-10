@@ -47,14 +47,14 @@ public class Flamethrower : TheEngineerCard
     {
         ArgumentNullException.ThrowIfNull(play.Target);
         
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
         bool consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, 1, MaterialSource.Stock, play);
 
         if (consumed)
         {
-            await CommonActions.Apply<OilPower>(play.Target,this,DynamicVars.Power<OilPower>().BaseValue);
+            await CommonActions.Apply<OilPower>(choiceContext,play.Target, this);
         }
     }
 

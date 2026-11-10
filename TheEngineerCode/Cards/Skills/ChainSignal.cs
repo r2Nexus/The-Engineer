@@ -39,9 +39,7 @@ public sealed class ChainSignal() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        await CommonActions.ApplySelf<ChainSignalPower>(
-            this,
-            DynamicVars.Power<ChainSignalPower>().BaseValue);
+        await CommonActions.ApplySelf<ChainSignalPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

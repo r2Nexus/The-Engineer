@@ -30,7 +30,7 @@ public class NuclearReactor() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<NuclearReactorPower>(this, 1);
+        await CommonActions.ApplySelf<NuclearReactorPower>(choiceContext,this,1);
     }
 
     protected override void OnUpgrade()

@@ -59,10 +59,7 @@ public class Grenade() : TheEngineerCard(
 
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
-            await CommonActions.Apply<VulnerablePower>(
-                enemy,
-                this,
-                DynamicVars.Power<VulnerablePower>().BaseValue);
+            await CommonActions.Apply<VulnerablePower>(choiceContext, enemy, this);
         }
 
         bool consumed = await MaterialHelper.ConsumeMaterial(

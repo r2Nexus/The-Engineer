@@ -53,8 +53,7 @@ public sealed class PowerCell() : TheEngineerCard(
             Owner);
 
         await CommonActions.ApplySelf<PersonalBatteryPower>(
-            this,
-            DynamicVars.Power<PersonalBatteryPower>().BaseValue);
+            choiceContext,this);
     }
 
     protected override void OnUpgrade()

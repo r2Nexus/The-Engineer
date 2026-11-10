@@ -33,7 +33,7 @@ public class Biochamber() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<BiochamberPower>(this, DynamicVars.Power<BiochamberPower>().BaseValue);
+        await CommonActions.ApplySelf<BiochamberPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

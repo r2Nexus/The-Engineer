@@ -33,7 +33,7 @@ public class Foundry() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<FoundryPower>(this, DynamicVars.Power<FoundryPower>().BaseValue);
+        await CommonActions.ApplySelf<FoundryPower>(choiceContext,this);
         if(IsUpgraded) await MaterialHelper.ProduceMaterial(Owner, choiceContext, (int)DynamicVars.Produce().BaseValue, MaterialDestination.Hand);
     }
 

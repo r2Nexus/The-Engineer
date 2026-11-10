@@ -43,7 +43,7 @@ public class Excavate() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
         await MaterialHelper.ProduceMaterial(
@@ -52,9 +52,7 @@ public class Excavate() : TheEngineerCard(
             (int)DynamicVars.Produce().BaseValue,
             MaterialDestination.Hand);
 
-        await CommonActions.ApplySelf<FreeConsumePower>(
-            this,
-            DynamicVars.Power<FreeConsumePower>().BaseValue);
+        await CommonActions.ApplySelf<FreeConsumePower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

@@ -55,7 +55,7 @@ public class SlowdownCapsule() : TheEngineerCard(1,
             play);
         if (consumed)
         {
-            await CommonActions.ApplySelf<SlowdownCapsulePower>(this, DynamicVars.Power<SlowdownCapsulePower>().BaseValue);
+            await CommonActions.ApplySelf<SlowdownCapsulePower>(choiceContext,this);
         }
     }
 

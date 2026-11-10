@@ -41,7 +41,7 @@ public class BlackScience() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<StrengthPower>(this,DynamicVars.Power<StrengthPower>().BaseValue);
+        await CommonActions.ApplySelf<StrengthPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

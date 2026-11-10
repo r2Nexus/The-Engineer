@@ -42,7 +42,7 @@ public class RedScience() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<RedSciencePower>(this,DynamicVars.Power<RedSciencePower>().BaseValue);
+        await CommonActions.ApplySelf<RedSciencePower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

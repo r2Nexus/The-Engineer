@@ -42,7 +42,7 @@ public class PurpleScience() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<PurpleSciencePower>(this,DynamicVars.Power<PurpleSciencePower>().BaseValue);
+        await CommonActions.ApplySelf<PurpleSciencePower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

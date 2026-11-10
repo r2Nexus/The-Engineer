@@ -31,7 +31,7 @@ public class OverhaulMod() : TheEngineerCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<OverhaulModPower>(this, DynamicVars.Power<OverhaulModPower>().BaseValue);
+        await CommonActions.ApplySelf<OverhaulModPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

@@ -33,7 +33,7 @@ public class EMPlant() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<EMPlantPower>(this);
+        await CommonActions.ApplySelf<EMPlantPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

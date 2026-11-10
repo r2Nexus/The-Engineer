@@ -37,7 +37,7 @@ public class PiercingRounds() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
         
         bool consumed = await MaterialHelper.ConsumeMaterial(
@@ -50,7 +50,7 @@ public class PiercingRounds() : TheEngineerCard(1,
         if (consumed)
         {
             if (play.Target != null)
-                await CommonActions.Apply<VulnerablePower>(play.Target, this, DynamicVars.Power<VulnerablePower>().BaseValue);
+                await CommonActions.Apply<VulnerablePower>(choiceContext,play.Target, this);
         }
     }
 

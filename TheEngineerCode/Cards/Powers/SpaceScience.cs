@@ -38,9 +38,7 @@ public sealed class SpaceScience() : TheEngineerCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<SpaceSciencePower>(
-            this,
-            DynamicVars.Power<SpaceSciencePower>().BaseValue);
+        await CommonActions.ApplySelf<SpaceSciencePower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

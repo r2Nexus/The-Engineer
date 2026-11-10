@@ -10,7 +10,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Character;
 
 public class TheEngineerSingleton()
-    : CustomSingletonModel(true, true), IOnConsumed
+    : CustomSingletonModel(HookType.Combat), IOnConsumed
 {
     public Task OnConsumed(PlayerChoiceContext choiceContext,
         Player player,

@@ -35,7 +35,7 @@ public class TrainRamp() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<TrainRampPower>(this);
+        await CommonActions.ApplySelf<TrainRampPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

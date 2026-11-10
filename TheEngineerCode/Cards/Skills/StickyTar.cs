@@ -49,10 +49,7 @@ public sealed class StickyTar() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        await CommonActions.Apply<OilPower>(
-            play.Target,
-            this,
-            DynamicVars.Power<OilPower>().BaseValue);
+        await CommonActions.Apply<OilPower>(choiceContext, play.Target, this);
 
         CardSelectorPrefs prefs = new CardSelectorPrefs(
             SelectionScreenPrompt,

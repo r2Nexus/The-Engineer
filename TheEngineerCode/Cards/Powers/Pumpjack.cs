@@ -42,7 +42,7 @@ public class Pumpjack() : TheEngineerCard(2,
                 Owner);
         }
         
-        await CommonActions.ApplySelf<PumpjackPower>(this,DynamicVars.Power<PumpjackPower>().BaseValue);
+        await CommonActions.ApplySelf<PumpjackPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

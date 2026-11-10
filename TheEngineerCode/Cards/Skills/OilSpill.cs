@@ -43,18 +43,14 @@ public class OilSpill() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        foreach (Creature enemy in CombatState.HittableEnemies)
-        {
-            await CommonActions.Apply<OilPower>(
-                enemy,
-                this,
-                DynamicVars.Power<OilPower>().BaseValue);
+        if (CombatState != null)
+            foreach (Creature enemy in CombatState.HittableEnemies)
+            {
+                await CommonActions.Apply<OilPower>(choiceContext, enemy, this);
 
-            await CommonActions.Apply<OilSpillPower>(
-                enemy,
-                this,
-                BASE_WEAKEN_ON_SPENT);
-        }
+                await CommonActions.Apply<OilSpillPower>(
+                    choiceContext, enemy, this, BASE_WEAKEN_ON_SPENT);
+            }
     }
 
     protected override void OnUpgrade()

@@ -50,13 +50,13 @@ public class CombatStim() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
         
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
-            await CommonActions.ApplySelf<FreeAttackPower>(this,DynamicVars.Power<StrengthPower>().BaseValue);
+            await CommonActions.ApplySelf<FreeAttackPower>(choiceContext,this);
         }
     }
 

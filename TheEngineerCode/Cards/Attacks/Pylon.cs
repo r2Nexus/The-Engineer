@@ -37,12 +37,11 @@ public class Pylon() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
         await CommonActions.ApplySelf<PylonPower>(
-            this,
-            DynamicVars.Power<PylonPower>().BaseValue);
+            choiceContext,this);
     }
 
     protected override void OnUpgrade()

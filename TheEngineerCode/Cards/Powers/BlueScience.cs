@@ -41,7 +41,7 @@ public class BlueScience() : TheEngineerCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<FocusPower>(this,DynamicVars.Power<FocusPower>().BaseValue);
+        await CommonActions.ApplySelf<FocusPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

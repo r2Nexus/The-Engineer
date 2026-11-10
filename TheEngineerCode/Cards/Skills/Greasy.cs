@@ -45,12 +45,12 @@ public class Greasy() : TheEngineerCard(
             Owner.Creature,
             "Cast",
             Owner.Character.CastAnimDelay);
-        await CommonActions.Apply<OilPower>(
-            play.Target,
-            this,
-            DynamicVars.Power<OilPower>().BaseValue);
-        
-        await CommonActions.Apply<GreasyPower>(choiceContext,play.Target,this);
+        if (play.Target != null)
+        {
+            await CommonActions.Apply<OilPower>(choiceContext, play.Target, this);
+
+            await CommonActions.Apply<GreasyPower>(choiceContext, play.Target, this);
+        }
     }
 
     protected override void OnUpgrade()

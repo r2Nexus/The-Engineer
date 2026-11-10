@@ -38,9 +38,6 @@ public class BiochamberPower : TheEngineerPower, IOnConsumed
         if (target == null)
             return;
 
-        await CommonActions.Apply<OilPower>(
-            target,
-            null,
-            Amount);
+        await CommonActions.Apply<OilPower>(choiceContext, target, null, Amount);
     }
 }

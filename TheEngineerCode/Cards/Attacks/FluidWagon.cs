@@ -72,7 +72,7 @@ public class FluidWagon() : TheEngineerCard(
         if (oil <= 0)
             return;
 
-        await CommonActions.Apply<OilPower>(
+        await CommonActions.Apply<OilPower>(choiceContext,
             play.Target,
             this,
             oil);

@@ -29,7 +29,7 @@ public class RepairSystem() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.ApplySelf<RepairSystemPower>(this, DynamicVars.Power<RepairSystemPower>().BaseValue);
+        await CommonActions.ApplySelf<RepairSystemPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

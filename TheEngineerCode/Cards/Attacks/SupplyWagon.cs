@@ -57,7 +57,7 @@ public sealed class ResupplyWagon() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .WithAttackerAnim("Cast", Owner.Character.CastAnimDelay)
             .Execute(choiceContext);
 

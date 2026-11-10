@@ -46,7 +46,7 @@ public class ManualLabor() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play)
             .Execute(choiceContext);
 
         await MaterialHelper.ProduceMaterial(

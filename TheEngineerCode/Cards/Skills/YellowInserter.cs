@@ -49,7 +49,7 @@ public class YellowInserter() : TheEngineerCard(1,
             MaterialDestination.Hand,
             this);
         
-        await CommonActions.ApplySelf<YellowInserterPower>(this );
+        await CommonActions.ApplySelf<YellowInserterPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

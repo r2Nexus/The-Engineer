@@ -60,7 +60,7 @@ public sealed class Exoskeleton() : TheEngineerCard(
 
         if (await ChargeHelper.TrySpendFullCharge(choiceContext, this, this))
         {
-            await CommonActions.ApplySelf<ExoskeletonPower>(this, DynamicVars.Power<ExoskeletonPower>().BaseValue);
+            await CommonActions.ApplySelf<ExoskeletonPower>(choiceContext,this);
         }
     }
 

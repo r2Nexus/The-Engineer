@@ -33,7 +33,7 @@ public class TrainStop() : TheEngineerCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.Apply<TrainStopPower>(Owner.Creature, this, DynamicVars.Power<TrainStopPower>().BaseValue);
+        await CommonActions.ApplySelf<TrainStopPower>(choiceContext,this);
     }
 
     protected override void OnUpgrade()

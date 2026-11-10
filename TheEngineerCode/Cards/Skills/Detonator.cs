@@ -62,10 +62,7 @@ public sealed class Detonator() : TheEngineerCard(
             "Cast",
             Owner.Character.CastAnimDelay);
 
-        await CommonActions.Apply<OilPower>(
-            cardPlay.Target,
-            this,
-            DynamicVars.Power<OilPower>().BaseValue);
+        await CommonActions.Apply<OilPower>(choiceContext, cardPlay.Target, this);
 
         if (await ChargeHelper.TrySpendFullCharge(
                 choiceContext,

@@ -52,7 +52,7 @@ public class CorrosiveMixture() : TheEngineerCard(1,
             play);
         if (consumed)
         {
-            await CommonActions.ApplySelf<CorrosiveMixturePower>(this, DynamicVars.Power<CorrosiveMixturePower>().BaseValue);
+            await CommonActions.ApplySelf<CorrosiveMixturePower>(choiceContext,this);
         }
     }
 
