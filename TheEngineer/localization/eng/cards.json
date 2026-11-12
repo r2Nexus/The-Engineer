@@ -304,5 +304,8 @@
   "THEENGINEER-LIGHT_OIL.title": "Light Oil",
 
   "THEENGINEER-PILLBOX.description": "#Gain {PlatingPower:diff()} *Plating.\nChannel 2 *Turrets.",
-  "THEENGINEER-PILLBOX.title": "Pillbox"
+  "THEENGINEER-PILLBOX.title": "Pillbox",
+
+  "THEENGINEER-DERAILMENT.description": "#Add *Wagon to {Cards:diff()} random {Cards:plural:card|cards} in an ally's hand.",
+  "THEENGINEER-DERAILMENT.title": "Derailment"
 }
