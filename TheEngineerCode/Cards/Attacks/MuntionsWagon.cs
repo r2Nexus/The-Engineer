@@ -40,7 +40,7 @@ public sealed class MunitionsWagon() : TheEngineerCard(
     [
         HoverTipFactory.FromOrb<TurretOrb>(),
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
 

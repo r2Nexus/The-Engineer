@@ -47,7 +47,7 @@ public sealed class ResupplyWagon() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
 

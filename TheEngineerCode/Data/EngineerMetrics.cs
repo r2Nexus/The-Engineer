@@ -41,8 +41,7 @@ public static class EngineerMetrics
         try
         {
             RunMetrics metrics;
-
-            // Keeps any localized strings in the collected data consistent.
+            
             LocManager.Instance.StartOverridingLanguageAsEnglish();
 
             try
@@ -92,7 +91,7 @@ public static class EngineerMetrics
         ulong localPlayerId)
     {
         // Respect the game's own metrics preference.
-        if (!MetricUtilities.ShouldUploadMetrics())
+        if (!MetricUtilities.ShouldUploadMetrics(true))
         {
             Console.WriteLine(
                 "[TheEngineer] Metrics skipped: " +
@@ -307,6 +306,7 @@ public static class EngineerMetrics
 
         return new RunMetrics
         {
+            GameMode = run.GameMode.ToString(),
             Ascension = run.Ascension,
 
             NumReloads = run.NumReloads,

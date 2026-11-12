@@ -49,7 +49,7 @@ public class FluidWagon() : TheEngineerCard(
     [
         HoverTipFactory.FromPower<OilPower>(),
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
 

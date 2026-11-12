@@ -38,7 +38,7 @@ public class ReinforcedWagon() : TheEngineerCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
 

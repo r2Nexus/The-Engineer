@@ -11,9 +11,14 @@ using TheEngineer.TheEngineerCode.Character;
 
 namespace TheEngineer.TheEngineerCode.Util;
 
-public sealed class WagonSingleton()
-    : CustomSingletonModel(HookType.Combat)
+public sealed class WagonSingleton
+    : CustomSingletonModel
 {
+    public static WagonSingleton Instance { get; private set; } = null!;
+    public WagonSingleton() : base(HookType.Combat)
+    {
+        Instance = this;
+    }
     private sealed record WagonMemory(
         CardModel Card,
         Creature? Target);

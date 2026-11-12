@@ -46,10 +46,9 @@ public sealed class CargoWagon() : TheEngineerCard(
     [
         HoverTipFactory.FromCard<Material>(),
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
-
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

@@ -17,8 +17,10 @@ namespace TheEngineer.TheEngineerCode.Data;
 internal static class EngineerMetricsConsentPatch
 {
     [HarmonyPostfix]
-    internal static void Postfix(CharacterModel characterModel)
+    internal static void Postfix(NCharacterSelectButton charSelectButton)
     {
+        CharacterModel? characterModel = charSelectButton.Character;
+
         bool isEngineer =
             characterModel.GetType().Assembly ==
             typeof(TheEngineerCardPool).Assembly;

@@ -39,7 +39,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
     [
         EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science),
         DynamicCombatHoverTip(owner =>
-            ModelDb.Singleton<WagonSingleton>()
+            WagonSingleton.Instance
                 .GetLastWagon(owner))
     ];
 
