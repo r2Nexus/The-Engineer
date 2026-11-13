@@ -223,7 +223,7 @@
   "THEENGINEER-OVERHAUL_MOD.description": "#*Produce now creates random Defect cards. They gain *Material and *Exhaust.",
   "THEENGINEER-OVERHAUL_MOD.title": "Overhaul Mod",
 
-  "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits} times.\n*Charge: hit 2 additional times.",
+  "THEENGINEER-LASER_TURRET.description": "#Deal {Damage:diff()} damage {CalculatedHits:diff()} times.\n*Charge: hit 2 additional times.",
   "THEENGINEER-LASER_TURRET.title": "Personal Laser",
 
   "THEENGINEER-ASTEROID_COLLECTOR.title": "Asteroid Collector",

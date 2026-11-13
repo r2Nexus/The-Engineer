@@ -33,11 +33,10 @@ public class MissileBarrage() : TheEngineerCard(
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(BASE_DAMAGE, ValueProp.Move),
-
-        ..MakeCalculatedVar(
-            CALCULATED_HITS_KEY,
-            BASE_HITS,
-            (card, _) =>
+        new CalculationBaseVar(BASE_HITS),
+        new CalculationExtraVar(1m),
+        new CalculatedHitCountVar(CALCULATED_HITS_KEY)
+            .WithMultiplier((card, _) =>
                 MaterialHelper.CountMaterial(
                     card,
                     MaterialSource.Stock))

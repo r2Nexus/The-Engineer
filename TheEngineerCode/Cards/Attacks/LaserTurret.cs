@@ -46,13 +46,13 @@ public sealed class LaserTurret() : TheEngineerCard(
         new ChargeCurrentVar(BASE_CHARGE_INITIAL),
         new ChargeMaxVar(BASE_CHARGE_MAX),
 
-        ..MakeCalculatedVar(
-            "CalculatedHits",
-            2,
-            (card, _) =>
+        new CalculationBaseVar(2m),
+        new CalculationExtraVar(1m),
+        new CalculatedHitCountVar("CalculatedHits")
+            .WithMultiplier((card, _) =>
                 ChargeHelper.IsFull(card)
                     ? CHARGED_EXTRA_HITS
-                    : 0)
+                    : 0m)
     ];
 
     protected override async Task OnPlay(
@@ -61,11 +61,11 @@ public sealed class LaserTurret() : TheEngineerCard(
     {
         ArgumentNullException.ThrowIfNull(play.Target);
 
-        int hitCount = (int)
-            ((CustomCalculatedVar)DynamicVars["CalculatedHits"])
-            .CalculateCustom(play.Target);
-
         bool wasFullyCharged = ChargeHelper.IsFull(this);
+
+        int hitCount = 2 + (wasFullyCharged
+            ? CHARGED_EXTRA_HITS
+            : 0);
 
         await CommonActions.CardAttack(
                 this,

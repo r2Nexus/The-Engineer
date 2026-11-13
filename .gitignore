@@ -9,6 +9,8 @@ riderModule.iml
 .godot/
 **/.godot/
 .import/
+*.cs.uid
+*.import
 
 EngineerMetricsEndpoint.cs
 /TheEngineerCode/Data/EngineerMetricsEndpoint.Local.cs
