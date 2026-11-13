@@ -307,5 +307,8 @@
   "THEENGINEER-PILLBOX.title": "Pillbox",
 
   "THEENGINEER-DERAILMENT.description": "#Add *Wagon to {Cards:diff()} random {Cards:plural:card|cards} in an ally's hand.",
-  "THEENGINEER-DERAILMENT.title": "Derailment"
+  "THEENGINEER-DERAILMENT.title": "Derailment",
+
+  "THEENGINEER-SHELL_SHOCK.description": "#Deal {Damage:diff()} damage.\nShuffle {Cards:diff()} {Cards:plural:*Artillery* *Shell*|*Artillery* *Shells*} in to ALL player's *Draw *Piles.",
+  "THEENGINEER-SHELL_SHOCK.title": "Shell Shock"
 }

@@ -1,4 +1,5 @@
 ﻿using BaseLib.Patches.Localization;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -10,6 +11,7 @@ using TheEngineer.TheEngineerCode.Character;
 
 namespace TheEngineer.TheEngineerCode.Cards.Skills;
 
+[Pool(typeof(TheEngineerCardPool))]
 public class Derailment() : TheEngineerCard(1,
     CardType.Skill, CardRarity.Rare,
     TargetType.AnyAlly)
