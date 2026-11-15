@@ -46,13 +46,13 @@ public class ShellShock() : TheEngineerCard(2,
         {
             for (int i = 0; i < DynamicVars.Cards.IntValue; i++)
             {
-                ArtilleryShell shell = CombatState.CreateCard<ArtilleryShell>(Owner);
+                ArtilleryShell shell = CombatState.CreateCard<ArtilleryShell>(ally.Player);
             
                 CardCmd.PreviewCardPileAdd(
                     await CardPileCmd.AddGeneratedCardToCombat(
                         shell,
                         PileType.Draw,
-                        Owner,
+                        ally.Player,
                         CardPilePosition.Random)
                 );
             }
