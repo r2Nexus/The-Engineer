@@ -4,10 +4,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Cards.Powers;
 using TheEngineer.TheEngineerCode.Character;
@@ -47,7 +50,16 @@ public class GlebaSpecial() : TheEngineerCard(1,
             if (selected == null) break;
             
             hand.Remove(selected);
-            CardCmd.ApplyKeyword(selected, CardKeyword.Ethereal);
+            selected.AddKeyword(CardKeyword.Ethereal);
+            var node = NCard.FindOnTable(selected);
+
+            if (node != null)
+            {
+                var vfx = NCardTransformShineVfx.Create(node, selected, null);
+
+                if (vfx != null)
+                    TaskHelper.RunSafely(vfx.PlayShineAndReveal());
+            }
         }
         
         IEnumerable<CardModel> scienceCards = ModelDb.CardPool<TokenCardPool>()

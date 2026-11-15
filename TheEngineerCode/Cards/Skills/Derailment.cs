@@ -3,9 +3,12 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
 
@@ -54,7 +57,16 @@ public class Derailment() : TheEngineerCard(1,
             if (selected == null) break;
             
             hand.Remove(selected);
-            CardCmd.ApplyKeyword(selected, TheEngineerKeyWords.Wagon);
+            selected.AddKeyword(TheEngineerKeyWords.Wagon);
+            var node = NCard.FindOnTable(selected);
+
+            if (node != null)
+            {
+                var vfx = NCardTransformShineVfx.Create(node, selected, null);
+
+                if (vfx != null)
+                    TaskHelper.RunSafely(vfx.PlayShineAndReveal());
+            }
         }
     }
 

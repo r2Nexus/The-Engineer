@@ -5,9 +5,12 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Character;
 
@@ -47,7 +50,16 @@ public class Recycler() : TheEngineerCard(
             if (card.Keywords.Contains(TheEngineerKeyWords.Material))
                 continue;
 
-            CardCmd.ApplyKeyword(card,TheEngineerKeyWords.Material);
+            card.AddKeyword(TheEngineerKeyWords.Material);
+            var node = NCard.FindOnTable(card);
+
+            if (node != null)
+            {
+                var vfx = NCardTransformShineVfx.Create(node, card, null);
+
+                if (vfx != null)
+                    TaskHelper.RunSafely(vfx.PlayShineAndReveal());
+            }
         }
     }
 
