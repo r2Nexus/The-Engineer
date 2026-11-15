@@ -310,5 +310,8 @@
   "THEENGINEER-DERAILMENT.title": "Derailment",
 
   "THEENGINEER-SHELL_SHOCK.description": "#Deal {Damage:diff()} damage.\nShuffle {Cards:diff()} {Cards:plural:*Artillery* *Shell*|*Artillery* *Shells*} in to ALL player's *Draw *Piles.",
-  "THEENGINEER-SHELL_SHOCK.title": "Shell Shock"
+  "THEENGINEER-SHELL_SHOCK.title": "Shell Shock",
+
+  "THEENGINEER-KOVAREX_PROCESS.description": "#Add a copy of the first card each ally plays each turn to your hand.\nIt gains *Material.",
+  "THEENGINEER-KOVAREX_PROCESS.title": "Kovarex Process"
 }

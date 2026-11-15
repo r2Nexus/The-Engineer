@@ -137,5 +137,9 @@
 
   "THEENGINEER-LIGHT_OIL_POWER.description": "#*Oil deals damage an additional time.",
   "THEENGINEER-LIGHT_OIL_POWER.smartDescription": "Oil deals damage {Amount} additional time{Amount:plural:|s}.",
-  "THEENGINEER-LIGHT_OIL_POWER.title": "Light Oil"
+  "THEENGINEER-LIGHT_OIL_POWER.title": "Light Oil",
+
+  "THEENGINEER-KOVAREX_PROCESS_POWER.description": "#Add a copy of the first card each ally plays each turn to your hand.\nIt gains *Material.",
+  "THEENGINEER-KOVAREX_PROCESS_POWER.smartDescription": "Add a copy of the first {Amount} {Amount:plural:card|cards} each ally plays each turn to your hand.\n{Amount:plural:It|They} gain{Amount:plural:s|} *Material.",
+  "THEENGINEER-KOVAREX_PROCESS_POWER.title": "Kovarex Process"
 }
