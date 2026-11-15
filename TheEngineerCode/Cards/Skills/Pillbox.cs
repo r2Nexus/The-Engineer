@@ -14,7 +14,7 @@ public class Pillbox() : TheEngineerCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_PLATING = 5m;
+    private const decimal BASE_PLATING = 4m;
     private const decimal UPGRADE_PLATING = 2m;
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
