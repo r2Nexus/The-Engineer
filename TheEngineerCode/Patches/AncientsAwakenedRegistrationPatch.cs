@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using MegaCrit.Sts2.Core.Models;
 using TheEngineer.TheEngineerCode.Cards.Attacks;
+using TheEngineer.TheEngineerCode.Cards.Skills;
 using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Patches;
@@ -21,6 +22,24 @@ public static class AncientsAwakenedRegistrationPatch
 
         MainFile.Logger.Info(
             "[AncientsInterop] Registered Improvised Strike"
+        );
+        
+        ModelDb.Card<ImprovisedDefend>()
+            .AddPerfectedCardForCustomCharacters(
+                ModelDb.Card<Defend>()
+            );
+        
+        MainFile.Logger.Info(
+            "[AncientsInterop] Registered Improvised Defend"
+        );
+        
+        AncientsAwakenedExperimentalInterop
+            .AddExperimentalCardForCustomCharacters(
+                ModelDb.Card<IndustrialGrowth>(),
+                ModelDb.Character<Character.TheEngineer>()
+            );
+        MainFile.Logger.Info(
+            "[AncientsInterop] Registered Industrial Growth"
         );
     }
 }

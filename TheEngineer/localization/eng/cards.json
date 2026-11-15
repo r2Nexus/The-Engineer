@@ -316,5 +316,11 @@
   "THEENGINEER-KOVAREX_PROCESS.title": "Kovarex Process",
   
   "THEENGINEER-IMPROVISED_STRIKE.description": "#Deal {CalculatedDamage:diff()} damage.\n Whenever you *Consume,\nincrease this card's damage by 2 until played.",
-  "THEENGINEER-IMPROVISED_STRIKE.title": "Improvised Strike"
+  "THEENGINEER-IMPROVISED_STRIKE.title": "Improvised Strike",
+
+  "THEENGINEER-IMPROVISED_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "THEENGINEER-IMPROVISED_DEFEND.title": "Improvised Defend",
+
+  "THEENGINEER-INDUSTRIAL_GROWTH.description": "#Apply {CalculatedOil:diff()} *Oil.\nIncreased by {CalculatedOilExtra:diff()} for every *Material *Produced.",
+  "THEENGINEER-INDUSTRIAL_GROWTH.title": "Industrial Growth"
 }
