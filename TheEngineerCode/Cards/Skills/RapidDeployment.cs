@@ -20,7 +20,7 @@ public sealed class RapidDeployment() : TheEngineerCard(
     CardRarity.Uncommon,
     TargetType.Self)
 {
-    private const decimal BASE_CHARGE_INITIAL = 3m;
+    private const decimal BASE_CHARGE_INITIAL = 0m;
     private const decimal BASE_CHARGE_MAX = 8m;
 
     private const int BASE_CONSUME = 2;
