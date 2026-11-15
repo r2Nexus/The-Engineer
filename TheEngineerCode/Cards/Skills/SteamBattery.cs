@@ -41,7 +41,7 @@ public class SteamBattery() : TheEngineerCard(
         await CommonActions.CardBlock(this, DynamicVars.Block, play);
         
         var consumed = await MaterialHelper.ConsumeMaterial(this, choiceContext, (int)DynamicVars.Consume().BaseValue, MaterialSource.Hand, play);
-        if(consumed) await CommonActions.ApplySelf<EnergyNextTurnPower>(choiceContext,this);
+        if(consumed) await CommonActions.ApplySelf<EnergyNextTurnPower>(choiceContext,this, DynamicVars.Energy.IntValue);
     }
 
     protected override void OnUpgrade()
