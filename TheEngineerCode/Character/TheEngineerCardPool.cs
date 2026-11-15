@@ -3,6 +3,9 @@ using BaseLib.Patches.Content;
 using TheEngineer.TheEngineerCode.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Modding;
+using MegaCrit.Sts2.Core.Models;
+using TheEngineer.TheEngineerCode.Util;
 
 namespace TheEngineer.TheEngineerCode.Character;
 
@@ -33,6 +36,29 @@ public class TheEngineerCardPool : CustomCardPoolModel
     public override Color DeckEntryCardColor => new("ffffff");
 
     public override bool IsColorless => false;
+    
+    public override IEnumerable<CardModel> AllCards
+    {
+        get
+        {
+            if (_allCards == null)
+            {
+                _allCards = this.GenerateAllCards();
+                _allCards = ModHelper.ConcatModelsFromMods(
+                    this, _allCards
+                ).ToArray();
+
+                if (AncientsAwakenedInterop.PerfectedCardPool(null) == null)
+                {
+                    _allCards = _allCards.Where(c =>
+                        c is not IAncientAwakenedCard
+                    ).ToArray();
+                }
+            }
+
+            return _allCards;
+        }
+    }
 }
 
 public static class TheEngineerCardTags

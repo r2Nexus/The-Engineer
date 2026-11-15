@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheEngineer.TheEngineerCode.Cards;
 using TheEngineer.TheEngineerCode.Character;
@@ -13,7 +14,7 @@ using TheEngineer.TheEngineerCode.Util;
 namespace TheEngineer.TheEngineerCode.Cards.Attacks;
 
 [Pool(typeof(TheEngineerCardPool))]
-public class ImprovisedStrike : TheEngineerCard, IOnConsumed
+public class ImprovisedStrike : TheEngineerCard, IOnConsumed, IAncientAwakenedCard
 {
     public ImprovisedStrike() : base(
         1,
@@ -21,11 +22,9 @@ public class ImprovisedStrike : TheEngineerCard, IOnConsumed
         CardRarity.Token,
         TargetType.AnyEnemy)
     {
-        AncientsAwakenedPerfectedInterop.AddPerfectedCardForCustomCharacters(
-            ModelDb.Card<ImprovisedStrike>(),
-            ModelDb.Character<Character.TheEngineer>()
-        );
+        //this.AddPerfectedCardForCustomCharacters(ModelDb.Card<Strike>());
     }
+    public override CardPoolModel VisualCardPool => AncientsAwakenedInterop.PerfectedCardPool(Pool);
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -35,7 +34,9 @@ public class ImprovisedStrike : TheEngineerCard, IOnConsumed
             .WithMultiplier(static (card, _) =>
                 ((ImprovisedStrike)card)._consumeCount)
     ];
-    protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
+    protected override HashSet<CardTag> CanonicalTags => [
+        CardTag.Strike
+    ];
 
     private int _consumeCount = 0;
 
