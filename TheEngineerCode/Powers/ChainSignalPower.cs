@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -17,26 +18,14 @@ public sealed class ChainSignalPower : TheEngineerPower
         Creature? target,
         int playCount)
     {
-        if (Amount <= 0)
-            return playCount;
-
-        if (card.Owner.Creature != Owner)
-            return playCount;
-
-        if (!IsWagon(card))
-            return playCount;
-
-        return playCount + 1;
+        return card.Owner.Creature != Owner || !IsWagon(card) ? playCount : playCount + 1;
     }
 
-    public override Task AfterModifyingCardPlayCount(CardModel card)
+    public override async Task AfterModifyingCardPlayCount(CardModel card)
     {
         Flash();
 
-        // See note below.
-        Amount--;
-
-        return Task.CompletedTask;
+        await PowerCmd.Decrement(this);
     }
 
     private static bool IsWagon(CardModel card)
