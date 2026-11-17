@@ -25,7 +25,7 @@ public class Pillbox() : TheEngineerCard(2,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.Static(StaticHoverTip.Channeling),
-        HoverTipFactory.FromOrb<MinerOrb>()
+        HoverTipFactory.FromOrb<TurretOrb>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
