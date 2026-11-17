@@ -28,7 +28,8 @@ public class GlebaSpecial() : TheEngineerCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromKeyword(CardKeyword.Ethereal),
-        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science)
+        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science),
+        HoverTipFactory.FromKeyword(TheEngineerKeyWords.Material)
     ];
 
     protected override async Task OnPlay(

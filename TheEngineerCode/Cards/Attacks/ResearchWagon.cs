@@ -38,6 +38,7 @@ public sealed class ResearchWagon() : TheEngineerCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science),
+        HoverTipFactory.FromKeyword(TheEngineerKeyWords.Material),
         DynamicCombatHoverTip(owner =>
             WagonSingleton.Instance
                 .GetLastWagon(owner))

@@ -30,7 +30,9 @@ public class Deathworld() : TheEngineerCard(1,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromCard<BlackScience>()
+        HoverTipFactory.FromCard<BlackScience>(),
+        HoverTipFactory.FromKeyword(TheEngineerKeyWords.Science),
+        HoverTipFactory.FromKeyword(TheEngineerKeyWords.Material)
     ];
 
     protected override async Task OnPlay(

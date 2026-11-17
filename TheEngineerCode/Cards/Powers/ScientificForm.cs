@@ -25,7 +25,8 @@ public class ScientificForm() : TheEngineerCard(3,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science)
+        EngineerCycleHoverTips.ForKeyword(TheEngineerKeyWords.Science),
+        HoverTipFactory.FromKeyword(TheEngineerKeyWords.Material)
     ];
 
     protected override async Task OnPlay(
